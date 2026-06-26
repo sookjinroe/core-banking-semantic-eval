@@ -1,0 +1,5 @@
+# macOS junk
+.DS_Store
+# raw download cache (not part of the bundle)
+dev.zip
+bird_dev.zip
