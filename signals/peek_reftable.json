@@ -1,0 +1,1387 @@
+{
+  "source": "apache/fineract Liquibase changelog (static parse)",
+  "fineract_commit": "0b87e480554adbb07fab52e9044ffdf4b10c640d",
+  "extraction_note": "그룹과 컬럼의 연결은 미선언. Render가 dig로 풀어야 한다.",
+  "group_count": 27,
+  "row_count": 189,
+  "files_with_rows": 14,
+  "groups": {
+    "account_type_type_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "INVALID",
+        "enum_value": "INVALID",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "INDIVIDUAL",
+        "enum_value": "INDIVIDUAL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "GROUP",
+        "enum_value": "GROUP",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "JLG",
+        "enum_value": "JLG",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "accrual_accounts_for_loan_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "FUND_SOURCE",
+        "enum_value": "FUND_SOURCE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "LOAN_PORTFOLIO",
+        "enum_value": "LOAN_PORTFOLIO",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "INTEREST_ON_LOANS",
+        "enum_value": "INTEREST_ON_LOANS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "INCOME_FROM_FEES",
+        "enum_value": "INCOME_FROM_FEES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "INCOME_FROM_PENALTIES",
+        "enum_value": "INCOME_FROM_PENALTIES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "LOSSES_WRITTEN_OFF",
+        "enum_value": "LOSSES_WRITTEN_OFF",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 7,
+        "enum_message_property": "INTEREST_RECEIVABLE",
+        "enum_value": "INTEREST_RECEIVABLE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 8,
+        "enum_message_property": "FEES_RECEIVABLE",
+        "enum_value": "FEES_RECEIVABLE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 9,
+        "enum_message_property": "PENALTIES_RECEIVABLE",
+        "enum_value": "PENALTIES_RECEIVABLE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 10,
+        "enum_message_property": "TRANSFERS_SUSPENSE",
+        "enum_value": "TRANSFERS_SUSPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 11,
+        "enum_message_property": "OVERPAYMENT",
+        "enum_value": "OVERPAYMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "INCOME_FROM_RECOVERY",
+        "enum_value": "INCOME_FROM_RECOVERY",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "amortization_method_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Equal principle payments",
+        "enum_value": "Equal principle payments",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "Equal installments",
+        "enum_value": "Equal installments",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "calendar_type_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "INVALID",
+        "enum_value": "INVALID",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "CLIENTS",
+        "enum_value": "CLIENTS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "GROUPS",
+        "enum_value": "GROUPS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "LOANS",
+        "enum_value": "LOANS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "CENTERS",
+        "enum_value": "CENTERS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "SAVINGS",
+        "enum_value": "SAVINGS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "LOAN_RECALCULATION_REST_DETAIL",
+        "enum_value": "LOAN_RECALCULATION_REST_DETAIL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 7,
+        "enum_message_property": "LOAN_RECALCULATION_COMPOUNDING_DETAIL",
+        "enum_value": "LOAN_RECALCULATION_COMPOUNDING_DETAIL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "cash_accounts_for_loan_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "FUND_SOURCE",
+        "enum_value": "FUND_SOURCE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "LOAN_PORTFOLIO",
+        "enum_value": "LOAN_PORTFOLIO",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "INTEREST_ON_LOANS",
+        "enum_value": "INTEREST_ON_LOANS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "INCOME_FROM_FEES",
+        "enum_value": "INCOME_FROM_FEES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "INCOME_FROM_PENALTIES",
+        "enum_value": "INCOME_FROM_PENALTIES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "LOSSES_WRITTEN_OFF",
+        "enum_value": "LOSSES_WRITTEN_OFF",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 10,
+        "enum_message_property": "TRANSFERS_SUSPENSE",
+        "enum_value": "TRANSFERS_SUSPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 11,
+        "enum_message_property": "OVERPAYMENT",
+        "enum_value": "OVERPAYMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "INCOME_FROM_RECOVERY",
+        "enum_value": "INCOME_FROM_RECOVERY",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "cash_accounts_for_savings_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "SAVINGS_REFERENCE",
+        "enum_value": "SAVINGS_REFERENCE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "SAVINGS_CONTROL",
+        "enum_value": "SAVINGS_CONTROL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "INTEREST_ON_SAVINGS",
+        "enum_value": "INTEREST_ON_SAVINGS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "INCOME_FROM_FEES",
+        "enum_value": "INCOME_FROM_FEES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "INCOME_FROM_PENALTIES",
+        "enum_value": "INCOME_FROM_PENALTIES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 10,
+        "enum_message_property": "TRANSFERS_SUSPENSE",
+        "enum_value": "TRANSFERS_SUSPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 11,
+        "enum_message_property": "OVERDRAFT_PORTFOLIO_CONTROL",
+        "enum_value": "OVERDRAFT_PORTFOLIO_CONTROL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "INCOME_FROM_INTEREST",
+        "enum_value": "INCOME_FROM_INTEREST",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "cash_account_for_shares_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "SHARES_REFERENCE",
+        "enum_value": "SHARES_REFERENCE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "SHARES_SUSPENSE",
+        "enum_value": "SHARES_SUSPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "INCOME_FROM_FEES",
+        "enum_value": "INCOME_FROM_FEES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "SHARES_EQUITY",
+        "enum_value": "SHARES_EQUITY",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "client_transaction_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "PAY_CHARGE",
+        "enum_value": "PAY_CHARGE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "WAIVE_CHARGE",
+        "enum_value": "WAIVE_CHARGE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "entity_account_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "CLIENT",
+        "enum_value": "CLIENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "LOAN",
+        "enum_value": "LOAN",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "SAVINGS",
+        "enum_value": "SAVINGS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "CENTER",
+        "enum_value": "CENTER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "GROUP",
+        "enum_value": "GROUP",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "SHARES",
+        "enum_value": "SHARES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "financial_activity_type_enum": [
+      {
+        "enum_id": 100,
+        "enum_message_property": "ASSET_TRANSFER",
+        "enum_value": "ASSET_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 101,
+        "enum_message_property": "CASH_AT_MAINVAULT",
+        "enum_value": "CASH_AT_MAINVAULT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 102,
+        "enum_message_property": "CASH_AT_TELLER",
+        "enum_value": "CASH_AT_TELLER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 103,
+        "enum_message_property": "ASSET_FUND_SOURCE",
+        "enum_value": "ASSET_FUND_SOURCE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 200,
+        "enum_message_property": "LIABILITY_TRANSFER",
+        "enum_value": "LIABILITY_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 201,
+        "enum_message_property": "PAYABLE_DIVIDENDS",
+        "enum_value": "PAYABLE_DIVIDENDS",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 300,
+        "enum_message_property": "OPENING_BALANCES_TRANSFER_CONTRA",
+        "enum_value": "OPENING_BALANCES_TRANSFER_CONTRA",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "glaccount_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "ASSET",
+        "enum_value": "ASSET",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "LIABILITY",
+        "enum_value": "LIABILITY",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "EQUITY",
+        "enum_value": "EQUITY",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "INCOME",
+        "enum_value": "INCOME",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "EXPENSE",
+        "enum_value": "EXPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "interest_calculated_in_period_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Daily",
+        "enum_value": "Daily",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "Same as repayment period",
+        "enum_value": "Same as repayment period",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "interest_method_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Declining Balance",
+        "enum_value": "Declining Balance",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "Flat",
+        "enum_value": "Flat",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "interest_period_frequency_enum": [
+      {
+        "enum_id": 2,
+        "enum_message_property": "Per month",
+        "enum_value": "Per month",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "Per year",
+        "enum_value": "Per year",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "journal_entry_type_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "CREDIT",
+        "enum_value": "CREDIT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "DEBIT",
+        "enum_value": "DEBIT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "loan_status_id": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Invalid",
+        "enum_value": "Invalid",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 100,
+        "enum_message_property": "Submitted and awaiting approval",
+        "enum_value": "Submitted and awaiting approval",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 200,
+        "enum_message_property": "Approved",
+        "enum_value": "Approved",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 300,
+        "enum_message_property": "Active",
+        "enum_value": "Active",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 400,
+        "enum_message_property": "Withdrawn by client",
+        "enum_value": "Withdrawn by client",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 500,
+        "enum_message_property": "Rejected",
+        "enum_value": "Rejected",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 600,
+        "enum_message_property": "Closed",
+        "enum_value": "Closed",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 601,
+        "enum_message_property": "Written-Off",
+        "enum_value": "Written-Off",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 602,
+        "enum_message_property": "Rescheduled",
+        "enum_value": "Rescheduled",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 700,
+        "enum_message_property": "Overpaid",
+        "enum_value": "Overpaid",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "loan_transaction_strategy_id": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "mifos-standard-strategy",
+        "enum_value": "Mifos style",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "heavensfamily-strategy",
+        "enum_value": "Heavensfamily",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "creocore-strategy",
+        "enum_value": "Creocore",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "rbi-india-strategy",
+        "enum_value": "RBI (India)",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 8,
+        "enum_message_property": "Due penalty, fee, interest, principal, In advance principal, penalty, fee, interest",
+        "enum_value": "Due penalty, fee, interest, principal, In advance principal, penalty, fee, interest",
+        "enum_type": false,
+        "source_file": "tenant/parts/0100_new_repayment_strategy.xml"
+      },
+      {
+        "enum_id": 9,
+        "enum_message_property": "Due penalty, interest, principal, fee, In advance penalty, interest, principal, fee",
+        "enum_value": "Due penalty, interest, principal, fee, In advance penalty, interest, principal, fee",
+        "enum_type": false,
+        "source_file": "tenant/parts/0106_new_repayment_strategy.xml"
+      }
+    ],
+    "loan_transaction_type_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "INVALID",
+        "enum_value": "INVALID",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "DISBURSEMENT",
+        "enum_value": "DISBURSEMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "REPAYMENT",
+        "enum_value": "REPAYMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "CONTRA",
+        "enum_value": "CONTRA",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "WAIVE_INTEREST",
+        "enum_value": "WAIVE_INTEREST",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "REPAYMENT_AT_DISBURSEMENT",
+        "enum_value": "REPAYMENT_AT_DISBURSEMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "WRITEOFF",
+        "enum_value": "WRITEOFF",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 7,
+        "enum_message_property": "MARKED_FOR_RESCHEDULING",
+        "enum_value": "MARKED_FOR_RESCHEDULING",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 8,
+        "enum_message_property": "RECOVERY_REPAYMENT",
+        "enum_value": "RECOVERY_REPAYMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 9,
+        "enum_message_property": "WAIVE_CHARGES",
+        "enum_value": "WAIVE_CHARGES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 10,
+        "enum_message_property": "ACCRUAL",
+        "enum_value": "ACCRUAL",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "INITIATE_TRANSFER",
+        "enum_value": "INITIATE_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 13,
+        "enum_message_property": "APPROVE_TRANSFER",
+        "enum_value": "APPROVE_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 14,
+        "enum_message_property": "WITHDRAW_TRANSFER",
+        "enum_value": "WITHDRAW_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 15,
+        "enum_message_property": "REJECT_TRANSFER",
+        "enum_value": "REJECT_TRANSFER",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 16,
+        "enum_message_property": "REFUND",
+        "enum_value": "REFUND",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 17,
+        "enum_message_property": "CHARGE_PAYMENT",
+        "enum_value": "CHARGE_PAYMENT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 18,
+        "enum_message_property": "REFUND_FOR_ACTIVE_LOAN",
+        "enum_value": "REFUND_FOR_ACTIVE_LOAN",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 19,
+        "enum_message_property": "INCOME_POSTING",
+        "enum_value": "INCOME_POSTING",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "loan_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "Individual Loan",
+        "enum_value": "Individual Loan",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "Group Loan",
+        "enum_value": "Group Loan",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "portfolio_account_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "LOAN",
+        "enum_value": "LOAN",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "SAVING",
+        "enum_value": "EXPENSE",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "PROVISIONING",
+        "enum_value": "PROVISIONING",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "SHARES",
+        "enum_value": "SHARES",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "processing_result_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "invalid",
+        "enum_value": "Invalid",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "processed",
+        "enum_value": "Processed",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "awaiting.approval",
+        "enum_value": "Awaiting Approval",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "rejected",
+        "enum_value": "Rejected",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "underProcessing",
+        "enum_value": "Under Processing",
+        "enum_type": false,
+        "source_file": "tenant/parts/0234_add_missing_processing_result_enum_values.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "error",
+        "enum_value": "Error",
+        "enum_type": false,
+        "source_file": "tenant/parts/0234_add_missing_processing_result_enum_values.xml"
+      }
+    ],
+    "repayment_period_frequency_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Days",
+        "enum_value": "Days",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "Weeks",
+        "enum_value": "Weeks",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "Months",
+        "enum_value": "Months",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "savings_transaction_type_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "INVALID",
+        "enum_value": "INVALID",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "deposit",
+        "enum_value": "deposit",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "withdrawal",
+        "enum_value": "withdrawal",
+        "enum_type": true,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "Interest Posting",
+        "enum_value": "Interest Posting",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "Withdrawal Fee",
+        "enum_value": "Withdrawal Fee",
+        "enum_type": true,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "Annual Fee",
+        "enum_value": "Annual Fee",
+        "enum_type": true,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "Waive Charge",
+        "enum_value": "Waive Charge",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 7,
+        "enum_message_property": "Pay Charge",
+        "enum_value": "Pay Charge",
+        "enum_type": true,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 8,
+        "enum_message_property": "DIVIDEND_PAYOUT",
+        "enum_value": "DIVIDEND_PAYOUT",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "Initiate Transfer",
+        "enum_value": "Initiate Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 13,
+        "enum_message_property": "Approve Transfer",
+        "enum_value": "Approve Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 14,
+        "enum_message_property": "Withdraw Transfer",
+        "enum_value": "Withdraw Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 15,
+        "enum_message_property": "Reject Transfer",
+        "enum_value": "Reject Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 16,
+        "enum_message_property": "Written-Off",
+        "enum_value": "Written-Off",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 17,
+        "enum_message_property": "Overdraft Interest",
+        "enum_value": "Overdraft Interest",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 19,
+        "enum_message_property": "WITHHOLD_TAX",
+        "enum_value": "WITHHOLD_TAX",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "status_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Invalid",
+        "enum_value": "Invalid",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 100,
+        "enum_message_property": "Pending",
+        "enum_value": "Pending",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 300,
+        "enum_message_property": "Active",
+        "enum_value": "Active",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 600,
+        "enum_message_property": "Closed",
+        "enum_value": "Closed",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "teller_status": [
+      {
+        "enum_id": 300,
+        "enum_message_property": "Active",
+        "enum_value": "Active",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 400,
+        "enum_message_property": "Inactive",
+        "enum_value": "Inactive",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 600,
+        "enum_message_property": "Closed",
+        "enum_value": "Closed",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "term_period_frequency_enum": [
+      {
+        "enum_id": 0,
+        "enum_message_property": "Days",
+        "enum_value": "Days",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 1,
+        "enum_message_property": "Weeks",
+        "enum_value": "Weeks",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "Months",
+        "enum_value": "Months",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "Years",
+        "enum_value": "Years",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      }
+    ],
+    "transaction_type_enum": [
+      {
+        "enum_id": 1,
+        "enum_message_property": "Disbursement",
+        "enum_value": "Disbursement",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 2,
+        "enum_message_property": "Repayment",
+        "enum_value": "Repayment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 3,
+        "enum_message_property": "Contra",
+        "enum_value": "Contra",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 4,
+        "enum_message_property": "Waive Interest",
+        "enum_value": "Waive Interest",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 5,
+        "enum_message_property": "Repayment At Disbursement",
+        "enum_value": "Repayment At Disbursement",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 6,
+        "enum_message_property": "Write-Off",
+        "enum_value": "Write-Off",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 7,
+        "enum_message_property": "Marked for Rescheduling",
+        "enum_value": "Marked for Rescheduling",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 8,
+        "enum_message_property": "Recovery Repayment",
+        "enum_value": "Recovery Repayment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 9,
+        "enum_message_property": "Waive Charges",
+        "enum_value": "Waive Charges",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 10,
+        "enum_message_property": "Apply Charges",
+        "enum_value": "Apply Charges",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 11,
+        "enum_message_property": "Apply Interest",
+        "enum_value": "Apply Interest",
+        "enum_type": false,
+        "source_file": "tenant/parts/0002_initial_data.xml"
+      },
+      {
+        "enum_id": 12,
+        "enum_message_property": "Initiate Transfer",
+        "enum_value": "Initiate Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 13,
+        "enum_message_property": "Approve Transfer",
+        "enum_value": "Approve Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 14,
+        "enum_message_property": "Withdraw Transfer",
+        "enum_value": "Withdraw Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 15,
+        "enum_message_property": "Reject Transfer",
+        "enum_value": "Reject Transfer",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 16,
+        "enum_message_property": "Refund",
+        "enum_value": "Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 17,
+        "enum_message_property": "Charge Payment",
+        "enum_value": "Charge Payment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 18,
+        "enum_message_property": "Refund for Active Loan",
+        "enum_value": "Refund for Active Loan",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 19,
+        "enum_message_property": "Income Posting",
+        "enum_value": "Income Posting",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 20,
+        "enum_message_property": "Credit Balance Refund",
+        "enum_value": "Credit Balance Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 21,
+        "enum_message_property": "Merchant Issued Refund",
+        "enum_value": "Merchant Issued Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 22,
+        "enum_message_property": "Payout Refund",
+        "enum_value": "Payout Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 23,
+        "enum_message_property": "Goodwill Credit",
+        "enum_value": "Goodwill Credit",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 24,
+        "enum_message_property": "Charge Refund",
+        "enum_value": "Charge Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 25,
+        "enum_message_property": "Chargeback",
+        "enum_value": "Chargeback",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 26,
+        "enum_message_property": "Charge Adjustment",
+        "enum_value": "Charge Adjustment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0076_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 27,
+        "enum_message_property": "Charge-off",
+        "enum_value": "Charge-off",
+        "enum_type": false,
+        "source_file": "tenant/parts/0083_add_loan_transaction_enum_values.xml"
+      },
+      {
+        "enum_id": 31,
+        "enum_message_property": "Interest Payment Waiver",
+        "enum_value": "Interest Payment Waiver",
+        "enum_type": false,
+        "source_file": "tenant/parts/0141_add_interest_payment_waiver_transaction_type.xml"
+      },
+      {
+        "enum_id": 32,
+        "enum_message_property": "Accrual Activity",
+        "enum_value": "Accrual Activity",
+        "enum_type": false,
+        "source_file": "tenant/parts/0142_add_accrual_activity_transaction.xml"
+      },
+      {
+        "enum_id": 33,
+        "enum_message_property": "Interest Refund",
+        "enum_value": "Interest Refund",
+        "enum_type": false,
+        "source_file": "tenant/parts/0154_add_interest_refund_to_r_enum_value.xml"
+      },
+      {
+        "enum_id": 36,
+        "enum_message_property": "Capitalized Income Amortization",
+        "enum_value": "Capitalized Income Amortization",
+        "enum_type": false,
+        "source_file": "tenant/parts/0176_add_capitalized_income_amortization_transaction.xml"
+      },
+      {
+        "enum_id": 37,
+        "enum_message_property": "Capitalized Income Adjustment",
+        "enum_value": "Capitalized Income Adjustment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0179_add_capitalized_income_adjustment_transaction.xml"
+      },
+      {
+        "enum_id": 39,
+        "enum_message_property": "Capitalized Income Amortization Adjustment",
+        "enum_value": "Capitalized Income Amortization Adjustment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0181_add_capitalized_income_amortization_adjustment_transaction.xml"
+      },
+      {
+        "enum_id": 40,
+        "enum_message_property": "Buy Down Fee",
+        "enum_value": "Buy Down Fee",
+        "enum_type": false,
+        "source_file": "tenant/parts/0186_add_buy_down_fee_to_loan_product.xml"
+      },
+      {
+        "enum_id": 41,
+        "enum_message_property": "Buy Down Fee Adjustment",
+        "enum_value": "Buy Down Fee Adjustment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0186_add_buy_down_fee_to_loan_product.xml"
+      },
+      {
+        "enum_id": 42,
+        "enum_message_property": "Buy Down Fee Amortization",
+        "enum_value": "Buy Down Fee Amortization",
+        "enum_type": false,
+        "source_file": "tenant/parts/0190_buy_down_fee_amortization.xml"
+      },
+      {
+        "enum_id": 43,
+        "enum_message_property": "Buy Down Fee Amortization Adjustment",
+        "enum_value": "Buy Down Fee Amortization Adjustment",
+        "enum_type": false,
+        "source_file": "tenant/parts/0190_buy_down_fee_amortization.xml"
+      }
+    ]
+  }
+}

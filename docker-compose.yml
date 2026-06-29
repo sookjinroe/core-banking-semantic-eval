@@ -1,0 +1,56 @@
+# PostgreSQL + Apache Fineract 부팅 정의.
+# 샌드박스에선 띄울 수 없음 — 숙진 님 로컬 (Docker + 8GB+ RAM) 환경에서 사용.
+#
+# 시작:
+#   docker compose up -d
+# 정지:
+#   docker compose down
+# 데이터 초기화 (볼륨 포함):
+#   docker compose down -v
+#
+# 부팅 후 확인:
+#   curl --insecure https://localhost:8443/fineract-provider/actuator/health
+services:
+  postgres:
+    image: postgres:18-alpine
+    container_name: cbse-postgres
+    environment:
+      POSTGRES_USER: fineract
+      POSTGRES_PASSWORD: fineract
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fineract"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  fineract:
+    image: apache/fineract:latest
+    container_name: cbse-fineract
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DRIVERCLASS_NAME: org.postgresql.Driver
+      PROTOCOL: jdbc
+      SUB_PROTOCOL: postgresql
+      fineract_tenants_driver: org.postgresql.Driver
+      fineract_tenants_url: jdbc:postgresql://postgres:5432/fineract_tenants
+      fineract_tenants_uid: fineract
+      fineract_tenants_pwd: fineract
+      FINERACT_DEFAULT_TENANTDB_HOSTNAME: postgres
+      FINERACT_DEFAULT_TENANTDB_PORT: 5432
+      FINERACT_DEFAULT_TENANTDB_UID: fineract
+      FINERACT_DEFAULT_TENANTDB_PWD: fineract
+      FINERACT_DEFAULT_TENANTDB_IDENTIFIER: default
+      FINERACT_DEFAULT_TENANTDB_NAME: fineract_default
+      JAVA_TOOL_OPTIONS: -Xms512m -Xmx2g
+    ports:
+      - "8443:8443"
+
+volumes:
+  pgdata:
