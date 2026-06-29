@@ -34,48 +34,59 @@ data/       운영 데이터 dump (운영 데이터는 .gitignore, reference만 
 scripts/    빌드/추출 스크립트
 ```
 
-## 진행 단계
+## 진행 단계 (3-track)
 
-### 1단계 (완료) — 골격 + 정적 추출
+평가 환경 구축은 세 자원의 확보 순서로 진행한다.
 
-샌드박스(Java만, Docker 없음)에서 가능한 범위. PostgreSQL 부팅 없이 Liquibase XML을
-정적 파싱해 reference data 전체를 확보한다.
+### ① 재료 확보 (완료)
 
-```bash
-# Fineract 원본 받기 (depth=1)
-bash scripts/fetch_fineract.sh
-
-# r_enum_value 시드 정적 추출 → signals/peek_reftable.json
-python3 scripts/extract_reftable.py \
-  fineract-source/fineract-provider/src/main/resources/db/changelog \
-  signals/peek_reftable.json
-```
-
-현 산출: 27개 그룹 / 189 행. 그룹과 컬럼의 연결은 미선언 — Render가 dig로 풀어야 함.
-
-### 2단계 (다음) — 코드 슬라이스 (corpus/)
-
-Tier A(도메인 핵심) + Tier B(공유 권위) ≈ 1,200~1,800 자바 파일 + Liquibase XML 263개.
-fineract-core, fineract-loan, fineract-savings, fineract-accounting, fineract-charge,
-fineract-tax 모듈 일부.
-
-### 3단계 (로컬) — 부팅 + 운영 데이터 시드
-
-샌드박스 한계 (메모리 4GB, Docker 없음)로 로컬 환경 필요. docker-compose.yml로 정의됨.
+Render가 읽을 *원본 신호* + Render dig 대상 코드 코퍼스.
 
 ```bash
-docker compose up -d                # PostgreSQL + Fineract 부팅
-bash scripts/fetch_seed_data.sh     # API 호출로 운영 데이터 시드 (작성 예정)
+bash scripts/fetch_fineract.sh                    # apache/fineract depth=1
+python3 scripts/extract_reftable.py ...           # → signals/peek_reftable.json
+python3 scripts/extract_orm.py ...                # → signals/peek_orm.json
 ```
 
-### 4단계 — peek_orm·peek_profile 빌드
+산출 (push 완료):
+- `signals/peek_reftable.json` — 27 그룹 / 189 행 (Liquibase 정적 추출)
+- `signals/peek_orm.json` — 114 entity / 1,029 필드 (JPA 정적 추출)
+- `corpus/` — 4 모듈 / 2,063 파일 / 20MB (Render tier-2 dig 대상)
 
-JPA Entity 정적 파싱 + 실제 DB 프로파일링.
+### ② 슬라이스 (완료)
 
-### 5단계 — 슬라이스 + 골든 작성
+평가 대상 모집단 + 슬라이스 결정. 자세한 내용은 `slice/README.md`.
 
-컬럼 100~120, NL question 50~60, gold SQL 1:1. archetype별 균형 배분.
+```bash
+python3 scripts/build_slice.py                    # → slice/columns.jsonl
+```
 
+- 모집단: 3 도메인 패키지 (portfolio.loanaccount + portfolio.savings + portfolio.client) = 50 entity / 564 필드
+- 슬라이스: 101 컬럼 (결정 archetype 70개 전수 + 비결정 31개 stratified)
+
+### ③ 행 데이터 확보 (로컬 작업, 미시작)
+
+PostgreSQL + Fineract 부팅 → 운영 데이터 시드 → peek_profile 빌드.
+
+```bash
+docker compose up -d                              # PostgreSQL + Fineract
+bash scripts/fetch_seed_data.sh                   # API 시드 (작성 예정)
+python3 scripts/build_peek_profile.py             # → signals/peek_profile.json
+```
+
+### ④ 골든 + 평가 (미시작)
+
+```bash
+# 골든 작성: 코드만 보고, Render 도구는 미참조
+python3 scripts/author_gold_description.py        # → eval/gold_description.jsonl
+python3 scripts/author_nl_questions.py            # → eval/questions.jsonl
+python3 scripts/author_gold_sql.py                # → eval/gold_sql.jsonl
+
+# 평가: baseline vs Render
+python3 scripts/run_baseline.py
+python3 scripts/run_render.py
+python3 scripts/compare.py
+```
 ## 자기충족 차단
 
 세 가지 leak 위험에 대해 명시적 분리:

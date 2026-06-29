@@ -1,54 +1,63 @@
 #!/usr/bin/env python3
 """
-peek_orm.json을 휴리스틱으로 archetype 분류하고 슬라이스 후보 풀 + 추천 슬라이스를 만든다.
+도메인 패키지 단위 모집단 정의 → archetype 자동 분류 → stratified sampling 슬라이스.
+
+모집단 (TARGET_DOMAINS):
+  portfolio.loanaccount  — 30 entity / 326 fields  (대출 원장)
+  portfolio.savings      — 18 entity / 189 fields  (예금/적금)
+  portfolio.client       —  2 entity /  49 fields  (고객 마스터)
+  총 50 entity / 564 fields
 
 Archetypes (학습 사이트 CH4-3 기준):
-  enum-clean       — @Convert converter 있음 + typed enum (peek_orm만으로 정답)
+  enum-clean       — @Convert / typed enum (peek_orm tier-1만으로 정답)
   collision-crux   — Integer + *_enum / *_id (★연결 검증 필수)
-  reftable-link    — @ManyToOne CodeValue (m_code_value 참조)
-  trivial          — name+type 자명 (amount/date/name/count, control 케이스)
-  lineage          — 산출/누적/이자 계산 (calculated/total/accrued/paid)
-  technical        — audit/version/system 컬럼 (floor 후보)
-  unclassified     — 위 어디에도 안 잡힘 (수동 분류 필요)
+  reftable-link    — @ManyToOne CodeValue (m_code_value 매칭)
+  lineage          — accrued/charged_off/derived 등 산출 컬럼
+  trivial          — name+type 자명 (amount/date/flag 등)
+  technical        — audit/system (floor)
+  exclude          — @Embedded composite, PK 등 평가 단위 아님
 
-NL2SQL 카테고리도 동시 부여 (질문 작성 시 참고용).
-
-산출:
-  slice/columns_candidates.jsonl   — 전체 후보 풀 (7개 테이블 모든 컬럼 + 자동 archetype)
-  slice/columns.jsonl              — 추천 슬라이스 (archetype별 균형 배분)
-  slice/slice_summary.json         — 분류 통계 (archetype × table 매트릭스)
+Stratified sampling 전략:
+  - collision-crux (★결정 케이스): 전수 포함
+  - enum-clean (★결정 케이스):     전수 포함
+  - reftable-link (★결정 케이스):  전수 포함
+  - lineage / trivial / technical: 모집단 비율 유지하며 sampling
+  - 슬라이스 목표 ~100컬럼, 모집단 564의 ~18%
 """
 import json, re
 from pathlib import Path
 from collections import Counter, defaultdict
 
-TARGET_TABLES = [
-    "m_loan", "m_savings_account", "m_client",
-    "m_loan_transaction", "m_savings_account_transaction",
-    "m_loan_repayment_schedule",
-    "acc_gl_journal_entry",
-]
+TARGET_DOMAINS = {
+    "portfolio.loanaccount",
+    "portfolio.savings",
+    "portfolio.client",
+}
 
-# 휴리스틱 규칙들 -----------------------------------------------------------
-TYPE_TRIVIAL = {"LocalDate", "LocalDateTime", "OffsetDateTime", "Date", "BigDecimal", "String", "Long", "Boolean"}
-TYPE_PRIMITIVE_NUMERIC = {"Integer", "Long", "BigDecimal", "Short"}
-
+# 휴리스틱 ----------------------------------------------------------------
+TYPE_TRIVIAL = {"LocalDate","LocalDateTime","OffsetDateTime","Date","BigDecimal","String","Long","Boolean","Integer","Short"}
+TYPE_PRIMITIVE_NUMERIC = {"Integer","Long","BigDecimal","Short"}
+EMBEDDED_TYPES = {"LoanProductRelatedDetail","LoanSummary","MonetaryCurrency",
+                  "SavingsAccountSummary","ExternalId"}
+TYPED_ENUM_TOKENS = re.compile(r"(Type|Status|Form|Strategy|Frequency|State|Method|Kind|Mode|Period)$")
 TRIVIAL_NAME_HINTS = re.compile(r"(_date$|_at$|_on$|_name$|_amount$|_balance$|_count$|_number$|_no$|principal_amount|description$|email|mobile|phone)", re.I)
 LINEAGE_NAME_HINTS = re.compile(r"(accrued|calculated|outstanding|paid|written_off|charged_off|completed|cumulative|total_|interest_(amount|paid)|fee_charges|penalty_charges|adjusted|derived|expected)", re.I)
 TECH_NAME_HINTS    = re.compile(r"(^id$|^version$|created_(by|date)|last_modified|lastmodified|deleted|audit|external_id|tenant_id|reserved)", re.I)
 STATUS_ENUM_NAME   = re.compile(r"(_enum$|_id$|_type$|_status$|status_|type_)", re.I)
 
 
-EMBEDDED_TYPES = {
-    "LoanProductRelatedDetail", "LoanSummary", "MonetaryCurrency",
-    "SavingsAccountSummary", "ExternalId",
-}
-# Fineract의 typed enum 식별 어휘 (Type/Status/Form/Strategy/Frequency …)
-TYPED_ENUM_TOKENS = re.compile(r"(Type|Status|Form|Strategy|Frequency|State|Method|Kind|Mode|Period)$")
+def package_domain(fqn: str) -> str:
+    parts = fqn.split(".")
+    if "portfolio" in parts:
+        i = parts.index("portfolio")
+        if i+1 < len(parts): return f"portfolio.{parts[i+1]}"
+    if "accounting" in parts:
+        i = parts.index("accounting")
+        if i+1 < len(parts): return f"accounting.{parts[i+1]}"
+    return parts[3] if len(parts) > 3 else "other"
 
 
-def classify(field, table):
-    fname = field["java_field"]
+def classify(field):
     jt = field["java_type"]
     col = field.get("column") or {}
     join = field.get("join_column") or {}
@@ -56,246 +65,224 @@ def classify(field, table):
     rel = field.get("relationship")
     converter = field.get("converter")
     enumerated = field.get("enumerated")
-    is_id_pk = field.get("is_id")
 
-    # 평가에서 무의미하거나 분리 처리: PK, embedded composite
-    if is_id_pk:
-        return "technical", "primary key field"
-    if jt in EMBEDDED_TYPES:
-        return "exclude", f"@Embedded composite type ({jt})"
-    if TECH_NAME_HINTS.search(col_name) or TECH_NAME_HINTS.search(fname):
-        return "technical", f"audit/system column ({col_name})"
+    if field.get("is_id"): return "technical", "primary key"
+    if jt in EMBEDDED_TYPES: return "exclude", f"@Embedded composite ({jt})"
+    if not col_name: return "exclude", f"no column mapping (likely collection)"
+    if TECH_NAME_HINTS.search(col_name): return "technical", f"audit/system ({col_name})"
 
-    # @Convert converter → enum-clean (peek_orm만으로 정답)
-    if converter:
-        return "enum-clean", f"@Convert({converter}) → typed enum"
+    if converter: return "enum-clean", f"@Convert({converter})"
+    if enumerated == "STRING": return "enum-clean", "@Enumerated(STRING)"
 
-    # @Enumerated(STRING) → enum-clean
-    if enumerated == "STRING":
-        return "enum-clean", "@Enumerated(STRING)"
-
-    # @ManyToOne CodeValue → reftable-link
     if rel == "ManyToOne" and jt == "CodeValue":
-        return "reftable-link", "@ManyToOne CodeValue (m_code_value)"
-
-    # 다른 @ManyToOne / @OneToOne (Office, Currency, Group 등) — relational lookup
-    if rel in ("ManyToOne", "OneToOne"):
+        return "reftable-link", "@ManyToOne CodeValue"
+    if rel in ("ManyToOne","OneToOne"):
         return "trivial", f"@{rel} {jt} reference"
-    if rel in ("OneToMany", "ManyToMany", "ElementCollection"):
-        return "lineage", f"@{rel} collection (derived from children)"
+    if rel in ("OneToMany","ManyToMany","ElementCollection"):
+        return "lineage", f"@{rel} collection"
 
-    # ─── typed enum without @Convert (Fineract에서 가장 흔한 enum-clean 패턴) ───
-    # 예: AccountType, LoanSubStatus, PeriodFrequencyType, LoanTransactionType
-    # peek_orm이 java_type을 알므로 tier-2 escalation으로 enum 정의 파일 찾으면 의미 회수.
-    # converter는 없지만 본질적으로 enum-clean.
+    # typed enum without converter (Fineract default enum-clean 패턴)
     if jt not in TYPE_TRIVIAL and jt not in TYPE_PRIMITIVE_NUMERIC and TYPED_ENUM_TOKENS.search(jt):
-        return "enum-clean", f"typed enum without converter ({jt})"
+        return "enum-clean", f"typed enum ({jt})"
 
-    # Integer + *_enum/*_id/*_type/*_status — 충돌-크럭스 후보
+    # Integer + status/type 컬럼 → collision-crux
     if jt == "Integer" and STATUS_ENUM_NAME.search(col_name):
-        return "collision-crux", f"Integer + status/type column ({col_name})"
+        return "collision-crux", f"Integer + status/type ({col_name})"
 
-    # lineage: 누적·산출 컬럼
     if LINEAGE_NAME_HINTS.search(col_name):
-        return "lineage", f"derived/aggregated column ({col_name})"
-
-    # boolean (대소문자) — flag, 자명
-    if jt.lower() == "boolean":
-        return "trivial", f"boolean flag ({col_name})"
-
-    # BigDecimal 일반 (금액 류) — 자명
-    if jt == "BigDecimal":
-        return "trivial", f"BigDecimal amount column"
-
-    # LocalDate/LocalDateTime — 자명
-    if jt in ("LocalDate", "LocalDateTime", "OffsetDateTime", "Date"):
+        return "lineage", f"derived/aggregated ({col_name})"
+    if jt.lower() == "boolean": return "trivial", f"boolean flag"
+    if jt == "BigDecimal": return "trivial", f"BigDecimal amount"
+    if jt in ("LocalDate","LocalDateTime","OffsetDateTime","Date"):
         return "trivial", f"{jt} column"
-
-    # 자명한 이름 패턴
     if jt in TYPE_TRIVIAL and TRIVIAL_NAME_HINTS.search(col_name):
-        return "trivial", f"self-evident name+type ({col_name})"
-
-    # String — 도메인 식별자/이름 류
-    if jt == "String":
-        return "trivial", f"String text/identifier ({col_name})"
-
-    # Long/Integer (technical에 안 잡힌 것들) — 도메인 식별자, trivial로
-    if jt in ("Long", "Integer"):
-        return "trivial", f"{jt} count/identifier ({col_name})"
-
+        return "trivial", f"self-evident ({col_name})"
+    if jt == "String": return "trivial", f"String text"
+    if jt in ("Long","Integer"): return "trivial", f"{jt} count/identifier"
     return "unclassified", f"type={jt}, col={col_name}"
 
 
-# NL2SQL 카테고리 매핑 (질문 작성용 힌트) -------------------------------------
-
-def nl_category(field, table, archetype):
+def nl_category(field, arch):
     col = (field.get("column") or {}).get("name") or (field.get("join_column") or {}).get("name") or ""
-    fname = field["java_field"]
-    if archetype == "collision-crux":
-        if "transaction_type" in col:
-            return "code-collision-tx-type"
-        if "status" in col:
-            return "status-disambiguation"
+    if arch == "collision-crux":
+        if "transaction_type" in col: return "code-collision-tx-type"
+        if "status" in col: return "status-disambiguation"
         return "code-collision"
-    if archetype == "enum-clean":
-        return "status-filter"
-    if archetype == "reftable-link":
-        return "reftable-resolution"
-    if archetype == "lineage":
-        return "lineage-required"
-    if archetype == "trivial":
-        if re.search(r"date|on|at", col, re.I):
-            return "time-bounded"
-        if re.search(r"amount|balance|principal|interest", col, re.I):
-            return "aggregation"
+    if arch == "enum-clean": return "status-filter"
+    if arch == "reftable-link": return "reftable-resolution"
+    if arch == "lineage": return "lineage-required"
+    if arch == "trivial":
+        if re.search(r"date|on|at", col, re.I): return "time-bounded"
+        if re.search(r"amount|balance|principal|interest", col, re.I): return "aggregation"
         return "general-fact"
-    if archetype == "technical":
-        return "floor"
+    if arch == "technical": return "floor"
     return "general-fact"
 
 
 def main():
     repo = Path(__file__).resolve().parents[1]
     orm = json.loads((repo / "signals/peek_orm.json").read_text())
-    by_table = {e["table_name"]: e for e in orm["entities"]}
 
+    # ─── 모집단: 3도메인 ─────────────────────────────────────────────
     candidates = []
-    table_arch = defaultdict(lambda: Counter())
-
-    for t in TARGET_TABLES:
-        if t not in by_table:
-            print(f"[!] missing in peek_orm: {t}"); continue
-        ent = by_table[t]
-        for idx, f in enumerate(ent["fields"]):
-            arch, reason = classify(f, t)
+    for e in orm["entities"]:
+        dom = package_domain(e["fqn"])
+        if dom not in TARGET_DOMAINS: continue
+        for f in e["fields"]:
+            arch, reason = classify(f)
             col_name = (f.get("column") or {}).get("name") or (f.get("join_column") or {}).get("name") or ""
-            # 컬럼명이 빈 필드는 평가 단위가 아님 (컬렉션/PK Long 등) → exclude
-            if not col_name:
-                arch, reason = "exclude", f"no column mapping (likely collection/PK), type={f['java_type']}"
-            cand = {
-                "id": f"{t}.{col_name or f['java_field']}",
-                "table": t,
-                "entity_class": ent["class_name"],
+            candidates.append({
+                "id": f"{e['table_name']}.{col_name or f['java_field']}",
+                "table": e["table_name"],
+                "entity_class": e["class_name"],
+                "domain_package": dom,
                 "column": col_name,
                 "java_field": f["java_field"],
                 "java_type": f["java_type"],
                 "archetype": arch,
                 "archetype_reason": reason,
-                "nl_category": nl_category(f, t, arch),
+                "nl_category": nl_category(f, arch),
                 "converter": f.get("converter"),
                 "enumerated": f.get("enumerated"),
                 "relationship": f.get("relationship"),
                 "is_id": f.get("is_id"),
-                "selected": False,           # 추천 슬라이스 마킹
-                "selection_priority": 99,    # 1이 가장 높음
-            }
-            candidates.append(cand)
-            table_arch[t][arch] += 1
+                "source_file": e["source_file"],
+                "selected": False,
+                "selection_strategy": None,
+            })
 
-    # 통계
+    # 모집단 통계
     arch_counter = Counter(c["archetype"] for c in candidates)
-    print("=== archetype 분포 (자동 분류) ===")
-    for a, n in arch_counter.most_common():
-        print(f"  {a:18s}  {n:>3d}")
-    print(f"  TOTAL                {len(candidates)}")
-    print()
-    print("=== table × archetype 매트릭스 ===")
-    all_arches = sorted(arch_counter)
-    head = f"{'table':32s}" + "".join(f"{a[:14]:>16s}" for a in all_arches) + f"{'sum':>6s}"
-    print(head)
-    for t in TARGET_TABLES:
-        if t not in by_table: continue
-        row = f"{t:32s}" + "".join(f"{table_arch[t][a]:>16d}" for a in all_arches) + f"{sum(table_arch[t].values()):>6d}"
-        print(row)
+    dom_arch = defaultdict(Counter)
+    for c in candidates: dom_arch[c["domain_package"]][c["archetype"]] += 1
 
-    # ---- 추천 슬라이스 선정 (archetype별 목표 수) -----------------------
-    # archetype별 목표 (현실적 ≤ 사용가능)
-    targets = {
-        "collision-crux": 25,    # 우선 핵심
-        "enum-clean":     15,    # typed enum without converter까지 잡으면 다수 가능
-        "reftable-link": 10,
-        "trivial":        30,    # NL2SQL 자연성 위해 충분히
-        "lineage":        12,
-        "technical":       5,    # floor 확인용 소수
-        "unclassified":    8,    # 수동 검토 대상
-        "exclude":         0,    # @Embedded 등은 슬라이스 제외
-    }
-    # 우선순위 1순위 키워드 (★연결 검증의 결정적 케이스)
-    PRIO_HINTS = {
-        "status_enum", "loan_status_id", "transaction_type_enum",
-        "sub_status_enum", "loan_sub_status_id", "loan_type_enum",
-        "deposit_type_enum", "account_type_enum",
-    }
+    print("=== 모집단 (3 도메인 패키지) ===")
+    pop_total = len(candidates)
+    pop_eval = sum(1 for c in candidates if c["archetype"] not in ("exclude",))
+    print(f"  총 필드: {pop_total}")
+    print(f"  평가 대상 (exclude 제외): {pop_eval}")
+    print()
+
+    print("=== 모집단 archetype 분포 ===")
+    for a, n in arch_counter.most_common():
+        pct = n*100/pop_total
+        print(f"  {a:18s} {n:>4d}  ({pct:>5.1f}%)")
+    print()
+
+    print("=== 도메인 × archetype 매트릭스 ===")
+    all_arches = ["enum-clean","collision-crux","reftable-link","lineage","trivial","technical","exclude","unclassified"]
+    head = f"{'도메인':32s}" + "".join(f"{a[:12]:>14s}" for a in all_arches if arch_counter[a]>0) + f"{'sum':>6s}"
+    print(head)
+    for dom in TARGET_DOMAINS:
+        row = f"{dom:32s}" + "".join(f"{dom_arch[dom][a]:>14d}" for a in all_arches if arch_counter[a]>0) + f"{sum(dom_arch[dom].values()):>6d}"
+        print(row)
+    print()
+
+    # ─── Stratified sampling ─────────────────────────────────────────
+    # 결정 케이스 (★)는 전수 또는 우선 포함, 그 외는 모집단 비율로 sampling.
+    # 슬라이스 ~100컬럼 목표.
+
+    # 우선순위 키워드 (가장 sharp한 케이스)
+    PRIO_HINTS = {"status_enum","loan_status_id","transaction_type_enum",
+                  "sub_status_enum","loan_sub_status_id","loan_type_enum",
+                  "deposit_type_enum","account_type_enum"}
 
     grouped = defaultdict(list)
     for c in candidates:
-        grouped[c["archetype"]].append(c)
+        if c["archetype"] != "exclude":
+            grouped[c["archetype"]].append(c)
 
-    # 각 그룹에서 우선순위 정렬: PRIO_HINTS 매칭 → 핵심 7개 테이블 → 알파벳
     selected = []
-    table_order = {t: i for i, t in enumerate(TARGET_TABLES)}
+    strategy_counts = Counter()
 
-    # trivial은 *테이블별 quota*로 도메인 균등 배분 (NL2SQL 다양성 위해)
-    # 그 외 archetype은 전체 풀에서 우선순위대로
-    for arch, items in grouped.items():
-        if arch == "exclude": continue
-        if arch == "trivial":
-            cap = targets.get(arch, 0)
-            per_table = max(1, cap // len([t for t in TARGET_TABLES if t in by_table]))
-            for t in TARGET_TABLES:
-                if t not in by_table: continue
-                t_items = [c for c in items if c["table"] == t]
-                t_items.sort(key=lambda c: c["column"] or c["java_field"])
-                for c in t_items[:per_table]:
-                    c["selected"] = True
-                    c["selection_priority"] = 3
-                    selected.append(c)
-        else:
-            items.sort(key=lambda c: (
-                0 if c["column"] in PRIO_HINTS else 1,
-                table_order.get(c["table"], 999),
-                c["column"] or c["java_field"],
-            ))
-            cap = targets.get(arch, 0)
-            for c in items[:cap]:
-                c["selected"] = True
-                c["selection_priority"] = 1 if c["column"] in PRIO_HINTS else 2
-                selected.append(c)
+    # (a) ★ archetype 전수 포함 (이게 평가의 결정 케이스)
+    for arch in ("collision-crux", "enum-clean", "reftable-link"):
+        items = grouped[arch]
+        items.sort(key=lambda c: (0 if c["column"] in PRIO_HINTS else 1, c["table"], c["column"]))
+        for c in items:
+            c["selected"] = True
+            c["selection_strategy"] = "critical-include"
+            selected.append(c)
+            strategy_counts["critical-include"] += 1
 
-    # ---- 산출 ----
+    # (b) 나머지 archetype: 모집단 비율 유지하며 sampling
+    # 슬라이스 ~100 목표 → 비결정 archetype 가용량
+    target_total = 100
+    decided = len(selected)
+    quota_remain = max(0, target_total - decided)
+
+    # 비결정 archetype: lineage, trivial, technical
+    nondecisive = [a for a in ("trivial","lineage","technical","unclassified") if grouped[a]]
+    nondecisive_pop = sum(len(grouped[a]) for a in nondecisive)
+    for arch in nondecisive:
+        items = grouped[arch]
+        # 모집단 비율 보존: arch / nondecisive_pop * quota_remain
+        n_take = max(1, round(len(items) / nondecisive_pop * quota_remain)) if items else 0
+        n_take = min(n_take, len(items))
+        # 도메인 균형: 각 도메인에서 최소 1개씩 가져오도록 시도
+        items.sort(key=lambda c: (c["domain_package"], c["table"], c["column"] or c["java_field"]))
+        per_dom = defaultdict(list)
+        for c in items: per_dom[c["domain_package"]].append(c)
+        picked = []
+        # round-robin
+        idx = {d: 0 for d in per_dom}
+        while len(picked) < n_take:
+            progress = False
+            for d in TARGET_DOMAINS:
+                if d in per_dom and idx[d] < len(per_dom[d]) and len(picked) < n_take:
+                    picked.append(per_dom[d][idx[d]])
+                    idx[d] += 1
+                    progress = True
+            if not progress: break
+        for c in picked:
+            c["selected"] = True
+            c["selection_strategy"] = "stratified"
+            selected.append(c)
+            strategy_counts["stratified"] += 1
+
+    # ─── 산출 ───
     cand_path = repo / "slice/columns_candidates.jsonl"
     sel_path  = repo / "slice/columns.jsonl"
     sum_path  = repo / "slice/slice_summary.json"
 
     with cand_path.open("w") as f:
-        for c in candidates:
-            f.write(json.dumps(c, ensure_ascii=False) + "\n")
+        for c in candidates: f.write(json.dumps(c, ensure_ascii=False)+"\n")
     with sel_path.open("w") as f:
         for c in selected:
-            # 선정된 컬럼만 (slim)
             slim = {k: v for k, v in c.items()
-                    if k in ("id", "table", "entity_class", "column", "java_field",
-                             "java_type", "archetype", "archetype_reason", "nl_category",
-                             "converter", "selection_priority")}
-            f.write(json.dumps(slim, ensure_ascii=False) + "\n")
+                    if k in ("id","table","entity_class","domain_package","column","java_field",
+                             "java_type","archetype","archetype_reason","nl_category",
+                             "converter","selection_strategy")}
+            f.write(json.dumps(slim, ensure_ascii=False)+"\n")
+
+    sel_arch = Counter(c["archetype"] for c in selected)
+    sel_dom  = Counter(c["domain_package"] for c in selected)
 
     summary = {
-        "candidate_count": len(candidates),
-        "selected_count": len(selected),
-        "archetype_distribution_all": dict(arch_counter),
-        "archetype_distribution_selected": dict(Counter(c["archetype"] for c in selected)),
-        "table_archetype_matrix": {t: dict(table_arch[t]) for t in TARGET_TABLES if t in by_table},
-        "targets": targets,
-        "note": "자동 휴리스틱 분류. unclassified는 수동 검토 필요. selection_priority=1은 ★연결 검증 결정 케이스.",
+        "target_domains": list(TARGET_DOMAINS),
+        "population_total": pop_total,
+        "population_evaluable": pop_eval,
+        "population_archetype_distribution": dict(arch_counter),
+        "population_domain_archetype_matrix": {d: dict(dom_arch[d]) for d in TARGET_DOMAINS},
+        "slice_size": len(selected),
+        "slice_archetype_distribution": dict(sel_arch),
+        "slice_domain_distribution": dict(sel_dom),
+        "selection_strategy_counts": dict(strategy_counts),
+        "note": "결정 archetype (collision-crux / enum-clean / reftable-link)은 전수 포함. "
+                "비결정 (trivial / lineage / technical)은 모집단 비율로 stratified sampling.",
     }
     sum_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2))
 
+    print(f"=== 슬라이스 ({len(selected)} 컬럼) ===")
+    for a, n in sel_arch.most_common():
+        pop_n = arch_counter[a]
+        print(f"  {a:18s} {n:>3d} / {pop_n:>3d}  ({n*100/pop_n:>5.1f}% of pop)")
     print()
-    print(f"=== 추천 슬라이스 ({len(selected)} 컬럼) ===")
-    for arch, n in Counter(c["archetype"] for c in selected).most_common():
-        print(f"  {arch:18s}  {n:>3d}")
+    print("=== 도메인 분포 ===")
+    for d, n in sel_dom.most_common():
+        print(f"  {d:32s} {n:>3d}")
     print()
-    print(f"산출: {cand_path.name}, {sel_path.name}, {sum_path.name}")
+    print(f"산출: {cand_path.name} ({pop_total} 후보), {sel_path.name} ({len(selected)} 슬라이스), {sum_path.name}")
 
 
 if __name__ == "__main__":

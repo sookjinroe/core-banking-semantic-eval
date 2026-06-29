@@ -1,77 +1,65 @@
 {
-  "candidate_count": 292,
-  "selected_count": 71,
-  "archetype_distribution_all": {
-    "trivial": 168,
-    "exclude": 41,
-    "enum-clean": 6,
-    "reftable-link": 11,
-    "lineage": 51,
-    "collision-crux": 14,
-    "technical": 1
+  "target_domains": [
+    "portfolio.client",
+    "portfolio.savings",
+    "portfolio.loanaccount"
+  ],
+  "population_total": 564,
+  "population_evaluable": 497,
+  "population_archetype_distribution": {
+    "trivial": 341,
+    "collision-crux": 38,
+    "reftable-link": 15,
+    "exclude": 67,
+    "lineage": 77,
+    "enum-clean": 17,
+    "unclassified": 1,
+    "technical": 8
   },
-  "archetype_distribution_selected": {
-    "trivial": 28,
-    "enum-clean": 6,
-    "reftable-link": 10,
-    "lineage": 12,
-    "collision-crux": 14,
-    "technical": 1
-  },
-  "table_archetype_matrix": {
-    "m_loan": {
-      "trivial": 44,
-      "exclude": 17,
-      "enum-clean": 5,
-      "reftable-link": 3,
-      "lineage": 13
-    },
-    "m_savings_account": {
+  "population_domain_archetype_matrix": {
+    "portfolio.client": {
       "trivial": 36,
-      "exclude": 6,
-      "collision-crux": 9,
-      "lineage": 4
-    },
-    "m_client": {
-      "trivial": 31,
       "collision-crux": 2,
-      "reftable-link": 7,
+      "reftable-link": 8,
       "exclude": 2,
       "lineage": 1
     },
-    "m_loan_transaction": {
-      "exclude": 9,
-      "trivial": 10,
-      "enum-clean": 1,
-      "lineage": 7,
-      "reftable-link": 1
+    "portfolio.savings": {
+      "trivial": 121,
+      "exclude": 25,
+      "collision-crux": 22,
+      "technical": 4,
+      "lineage": 17
     },
-    "m_savings_account_transaction": {
-      "trivial": 15,
-      "collision-crux": 1,
-      "exclude": 3,
-      "lineage": 5,
-      "technical": 1
-    },
-    "m_loan_repayment_schedule": {
-      "trivial": 14,
-      "lineage": 21,
-      "exclude": 4
-    },
-    "acc_gl_journal_entry": {
-      "trivial": 18,
-      "collision-crux": 2
+    "portfolio.loanaccount": {
+      "trivial": 184,
+      "exclude": 40,
+      "collision-crux": 14,
+      "enum-clean": 17,
+      "reftable-link": 7,
+      "lineage": 59,
+      "unclassified": 1,
+      "technical": 4
     }
   },
-  "targets": {
-    "collision-crux": 25,
-    "enum-clean": 15,
-    "reftable-link": 10,
-    "trivial": 30,
-    "lineage": 12,
-    "technical": 5,
-    "unclassified": 8,
-    "exclude": 0
+  "slice_size": 101,
+  "slice_archetype_distribution": {
+    "collision-crux": 38,
+    "enum-clean": 17,
+    "reftable-link": 15,
+    "trivial": 24,
+    "lineage": 5,
+    "technical": 1,
+    "unclassified": 1
   },
-  "note": "자동 휴리스틱 분류. unclassified는 수동 검토 필요. selection_priority=1은 ★연결 검증 결정 케이스."
+  "slice_domain_distribution": {
+    "portfolio.loanaccount": 49,
+    "portfolio.client": 19,
+    "portfolio.savings": 33
+  },
+  "selection_strategy_counts": {
+    "critical-include": 70,
+    "stratified": 31
+  },
+  "note": "결정 archetype (collision-crux / enum-clean / reftable-link)은 전수 포함. 비결정 (trivial / lineage / technical)은 모집단 비율로 stratified sampling."
 }
