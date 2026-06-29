@@ -1,0 +1,77 @@
+{
+  "candidate_count": 292,
+  "selected_count": 71,
+  "archetype_distribution_all": {
+    "trivial": 168,
+    "exclude": 41,
+    "enum-clean": 6,
+    "reftable-link": 11,
+    "lineage": 51,
+    "collision-crux": 14,
+    "technical": 1
+  },
+  "archetype_distribution_selected": {
+    "trivial": 28,
+    "enum-clean": 6,
+    "reftable-link": 10,
+    "lineage": 12,
+    "collision-crux": 14,
+    "technical": 1
+  },
+  "table_archetype_matrix": {
+    "m_loan": {
+      "trivial": 44,
+      "exclude": 17,
+      "enum-clean": 5,
+      "reftable-link": 3,
+      "lineage": 13
+    },
+    "m_savings_account": {
+      "trivial": 36,
+      "exclude": 6,
+      "collision-crux": 9,
+      "lineage": 4
+    },
+    "m_client": {
+      "trivial": 31,
+      "collision-crux": 2,
+      "reftable-link": 7,
+      "exclude": 2,
+      "lineage": 1
+    },
+    "m_loan_transaction": {
+      "exclude": 9,
+      "trivial": 10,
+      "enum-clean": 1,
+      "lineage": 7,
+      "reftable-link": 1
+    },
+    "m_savings_account_transaction": {
+      "trivial": 15,
+      "collision-crux": 1,
+      "exclude": 3,
+      "lineage": 5,
+      "technical": 1
+    },
+    "m_loan_repayment_schedule": {
+      "trivial": 14,
+      "lineage": 21,
+      "exclude": 4
+    },
+    "acc_gl_journal_entry": {
+      "trivial": 18,
+      "collision-crux": 2
+    }
+  },
+  "targets": {
+    "collision-crux": 25,
+    "enum-clean": 15,
+    "reftable-link": 10,
+    "trivial": 30,
+    "lineage": 12,
+    "technical": 5,
+    "unclassified": 8,
+    "exclude": 0
+  },
+  "note": "자동 휴리스틱 분류. unclassified는 수동 검토 필요. selection_priority=1은 ★연결 검증 결정 케이스."
+}
