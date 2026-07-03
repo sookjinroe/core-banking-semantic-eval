@@ -64,16 +64,23 @@ python3 scripts/build_slice.py                    # → slice/columns.jsonl
 - 모집단: 3 도메인 패키지 (portfolio.loanaccount + portfolio.savings + portfolio.client) = 50 entity / 564 필드
 - 슬라이스: 101 컬럼 (결정 archetype 70개 전수 + 비결정 31개 stratified)
 
-### ③ 행 데이터 확보 (로컬 작업, 미시작)
+### ③ 행 데이터 확보 (파일럿 완료)
 
-PostgreSQL + Fineract 부팅 → 운영 데이터 시드 → peek_profile 빌드.
+Fineract Liquibase XML을 정적 파싱해 SQLite 데이터베이스 생성 (Docker/PostgreSQL 불필요).
+브라우저에서 sql.js-httpvfs로 HTTP Range 부분 로딩 가능 (GitHub Pages 정적 호스팅).
 
 ```bash
-docker compose up -d                              # PostgreSQL + Fineract
-bash scripts/fetch_seed_data.sh                   # API 시드 (작성 예정)
-python3 scripts/build_peek_profile.py             # → signals/peek_profile.json
+python3 scripts/build_sqlite.py --config pilot     # 소규모 (~1MB)
+python3 scripts/build_sqlite.py --config medium    # 중규모 (~10MB)
+python3 scripts/build_peek_profile.py              # → signals/peek_profile.json
 ```
 
+파일럿 산출 (push 완료):
+- `data/fineract_3domain.sqlite` — 47 테이블, 0.9MB
+  - Fineract initial data 417행 (r_enum_value 189 포함)
+  - Client 100 / Loan 300 / Savings 150 / LoanTx 1,500 / SavingsTx 800
+  - ★ 결정 케이스 자연 발생: loan_status=700(11), savings_status=700(11)/800(4)
+- `signals/peek_profile.json` — 슬라이스 컬럼 프로파일 58개
 ### ④ 골든 + 평가 (미시작)
 
 ```bash

@@ -1,0 +1,600 @@
+{
+  "source": "static profile from data/fineract_3domain.sqlite (pilot)",
+  "slice_columns_profiled": 58,
+  "slice_columns_missing_table": 43,
+  "profiles": {
+    "m_client.status_enum": {
+      "row_count": 100,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 4,
+      "distinct_values": [
+        {
+          "value": 300,
+          "count": 77
+        },
+        {
+          "value": 100,
+          "count": 10
+        },
+        {
+          "value": 600,
+          "count": 7
+        },
+        {
+          "value": 500,
+          "count": 6
+        }
+      ]
+    },
+    "m_deposit_account_on_hold_transaction.transaction_type_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_savings_account.account_type_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.deposit_type_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 100,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.status_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 7,
+      "distinct_values": [
+        {
+          "value": 300,
+          "count": 112
+        },
+        {
+          "value": 600,
+          "count": 14
+        },
+        {
+          "value": 700,
+          "count": 11
+        },
+        {
+          "value": 100,
+          "count": 4
+        },
+        {
+          "value": 800,
+          "count": 4
+        },
+        {
+          "value": 200,
+          "count": 3
+        },
+        {
+          "value": 500,
+          "count": 2
+        }
+      ]
+    },
+    "m_savings_account.sub_status_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account_transaction.transaction_type_enum": {
+      "row_count": 800,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 4,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 288
+        },
+        {
+          "value": 3,
+          "count": 236
+        },
+        {
+          "value": 2,
+          "count": 232
+        },
+        {
+          "value": 4,
+          "count": 44
+        }
+      ]
+    },
+    "m_client.legal_form_enum": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_loan_charge.charge_calculation_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_loan_charge.charge_payment_mode_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_loan_charge.charge_time_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_savings_account.interest_calculation_days_in_year_type_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 365,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.interest_calculation_type_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.interest_compounding_period_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.interest_posting_period_enum": {
+      "row_count": 150,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 150
+        }
+      ]
+    },
+    "m_savings_account.lockin_period_frequency_enum": {
+      "row_count": 150,
+      "null_count": 150,
+      "null_rate": 1.0
+    },
+    "m_savings_account_charge.charge_calculation_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_savings_account_charge.charge_time_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_savings_product.accounting_type": {
+      "row_count": 1,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 1
+        }
+      ]
+    },
+    "m_savings_product.interest_calculation_days_in_year_type_enum": {
+      "row_count": 1,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 365,
+          "count": 1
+        }
+      ]
+    },
+    "m_savings_product.interest_calculation_type_enum": {
+      "row_count": 1,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 1
+        }
+      ]
+    },
+    "m_savings_product.interest_compounding_period_enum": {
+      "row_count": 1,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 1
+        }
+      ]
+    },
+    "m_savings_product.interest_posting_period_enum": {
+      "row_count": 1,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 1
+        }
+      ]
+    },
+    "m_savings_product.lockin_period_frequency_enum": {
+      "row_count": 1,
+      "null_count": 1,
+      "null_rate": 1.0
+    },
+    "m_loan.loan_status_id": {
+      "row_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 7,
+      "distinct_values": [
+        {
+          "value": 300,
+          "count": 185
+        },
+        {
+          "value": 600,
+          "count": 45
+        },
+        {
+          "value": 100,
+          "count": 21
+        },
+        {
+          "value": 200,
+          "count": 21
+        },
+        {
+          "value": 500,
+          "count": 13
+        },
+        {
+          "value": 700,
+          "count": 11
+        },
+        {
+          "value": 601,
+          "count": 4
+        }
+      ]
+    },
+    "m_loan.loan_sub_status_id": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan.loan_type_enum": {
+      "row_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 300
+        }
+      ]
+    },
+    "m_loan_transaction.transaction_type_enum": {
+      "row_count": 1500,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 6,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 897
+        },
+        {
+          "value": 6,
+          "count": 293
+        },
+        {
+          "value": 4,
+          "count": 87
+        },
+        {
+          "value": 3,
+          "count": 86
+        },
+        {
+          "value": 1,
+          "count": 73
+        },
+        {
+          "value": 8,
+          "count": 64
+        }
+      ]
+    },
+    "m_loan.repayment_start_date_type_enum": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan.term_period_frequency_enum": {
+      "row_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 300
+        }
+      ]
+    },
+    "m_client.client_classification_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.client_type_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.closure_reason_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.gender_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.reject_reason_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.sub_status": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.withdraw_reason_cv_id": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client_identifier.document_type_id": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_loan.charge_off_reason_cv_id": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan.loanpurpose_cv_id": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan.writeoff_reason_cv_id": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan_transaction.classification_cv_id": {
+      "error": "column not found in table"
+    },
+    "m_client.account_no": {
+      "row_count": 100,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 100,
+      "min": "C1000000",
+      "max": "C1000099",
+      "top_values": [
+        {
+          "value": "C1000000",
+          "count": 1
+        },
+        {
+          "value": "C1000001",
+          "count": 1
+        },
+        {
+          "value": "C1000002",
+          "count": 1
+        },
+        {
+          "value": "C1000003",
+          "count": 1
+        },
+        {
+          "value": "C1000004",
+          "count": 1
+        }
+      ]
+    },
+    "m_client.activatedon_userid": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.activation_date": {
+      "row_count": 100,
+      "null_count": 16,
+      "null_rate": 0.16,
+      "distinct_count": 79,
+      "min": "2023-12-10",
+      "max": "2026-07-01",
+      "top_values": [
+        {
+          "value": "2026-06-10",
+          "count": 2
+        },
+        {
+          "value": "2026-04-25",
+          "count": 2
+        },
+        {
+          "value": "2026-04-11",
+          "count": 2
+        },
+        {
+          "value": "2026-01-19",
+          "count": 2
+        },
+        {
+          "value": "2025-12-14",
+          "count": 2
+        }
+      ]
+    },
+    "m_client.closedon_date": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.closedon_userid": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.date_of_birth": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_client.default_savings_account": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_loan.account_no": {
+      "row_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 300,
+      "min": "L3000000",
+      "max": "L3000299",
+      "top_values": [
+        {
+          "value": "L3000000",
+          "count": 1
+        },
+        {
+          "value": "L3000001",
+          "count": 1
+        },
+        {
+          "value": "L3000002",
+          "count": 1
+        },
+        {
+          "value": "L3000003",
+          "count": 1
+        },
+        {
+          "value": "L3000004",
+          "count": 1
+        }
+      ]
+    },
+    "m_client.default_savings_product": {
+      "row_count": 100,
+      "null_count": 100,
+      "null_rate": 1.0
+    },
+    "m_deposit_account_on_hold_transaction.amount": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_loan.allow_full_term_for_tranche": {
+      "row_count": 300,
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 300
+        }
+      ]
+    },
+    "m_client.client_id": {
+      "error": "column not found in table"
+    },
+    "m_loan.accrued_till": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_loan.charged_off_on_date": {
+      "row_count": 300,
+      "null_count": 300,
+      "null_rate": 1.0
+    },
+    "m_deposit_account_on_hold_transaction.created_date": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    },
+    "m_loan_transaction_relation.relation_type_enum": {
+      "row_count": 0,
+      "null_count": 0,
+      "null_rate": null
+    }
+  }
+}
