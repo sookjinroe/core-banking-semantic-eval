@@ -206,8 +206,9 @@ def main():
             strategy_counts["critical-include"] += 1
 
     # (b) 나머지 archetype: 모집단 비율 유지하며 sampling
-    # 슬라이스 ~100 목표 → 비결정 archetype 가용량
-    target_total = 100
+    # 슬라이스 ~150 목표 → 비결정 archetype 가용량
+    # (v2 파서로 상속 필드 검출 후 결정 archetype 83개 전수 + 비결정 67개 stratified)
+    target_total = 150
     decided = len(selected)
     quota_remain = max(0, target_total - decided)
 

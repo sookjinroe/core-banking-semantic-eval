@@ -50,7 +50,7 @@ python3 scripts/extract_orm.py ...                # → signals/peek_orm.json
 
 산출 (push 완료):
 - `signals/peek_reftable.json` — 27 그룹 / 189 행 (Liquibase 정적 추출)
-- `signals/peek_orm.json` — 114 entity / 1,029 필드 (JPA 정적 추출)
+- `signals/peek_orm.json` — 113 entity / 1,358 필드 (tree-sitter-java 파싱, 상속 필드 포함)
 - `corpus/` — 4 모듈 / 2,063 파일 / 20MB (Render tier-2 dig 대상)
 
 ### ② 슬라이스 (완료)
