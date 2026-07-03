@@ -301,7 +301,8 @@ CLIENT_STATUS_DIST = [
 
 def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42):
     """운영 데이터 시드 — Faker + numpy로 clients·loans·savings·transactions 생성.
-       smart_insert로 NOT NULL 컬럼은 자동 default 채움."""
+       smart_insert로 NOT NULL 컬럼은 자동 default 채움.
+       다양성: 지점 5개, 대출 상품 4종, 예금 상품 3종, 직원 8명, client 세그먼트 4가지."""
     from faker import Faker
     import numpy as np
     random.seed(seed)
@@ -313,55 +314,121 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
     today = date.today()
     date_min = today - timedelta(days=3*365)
 
-    # office_id 확보
-    cur.execute("SELECT id FROM m_office ORDER BY id LIMIT 1")
-    r = cur.fetchone()
-    if not r:
-        smart_insert(conn, "m_office", {"name":"Head Office","opening_date":str(date_min),"hierarchy":"."})
-        cur.execute("SELECT id FROM m_office ORDER BY id LIMIT 1")
-        r = cur.fetchone()
-    office_id = r[0]
-
-    # currency 확보
+    currency_code = "KRW"
     cur.execute("SELECT code FROM m_currency LIMIT 1")
     r = cur.fetchone()
-    currency_code = r[0] if r else "KRW"
+    if r: currency_code = r[0]
 
-    # savings product
-    cur.execute("SELECT id FROM m_savings_product LIMIT 1")
-    r = cur.fetchone()
-    if not r:
-        savings_product_id = smart_insert(conn, "m_savings_product", {
-            "name":"파일럿 예금","short_name":"PILOT",
+    # ─── (1) 지점 5개 ───
+    print(f"      Diversity: 지점 5개, 상품 4+3종, 직원 8명, client 세그먼트 4", flush=True)
+    office_ids = []
+    OFFICES = [
+        ("Head Office",".","2020-01-01"),
+        ("강남지점",".1.","2020-03-15"),
+        ("부산지점",".1.","2020-04-20"),
+        ("대구지점",".1.","2021-02-10"),
+        ("인천지점",".1.","2021-06-05"),
+    ]
+    cur.execute("SELECT COUNT(*) FROM m_office")
+    if cur.fetchone()[0] == 0:
+        for name, hier, opening in OFFICES:
+            oid = smart_insert(conn, "m_office", {
+                "name": name, "hierarchy": hier, "opening_date": opening,
+            })
+            office_ids.append(oid)
+    else:
+        # Head Office는 이미 있음, 나머지만 추가
+        cur.execute("SELECT id FROM m_office")
+        office_ids = [r[0] for r in cur.fetchall()]
+        for name, hier, opening in OFFICES[1:]:
+            oid = smart_insert(conn, "m_office", {
+                "name": name, "hierarchy": hier, "opening_date": opening,
+            })
+            office_ids.append(oid)
+
+    # ─── (2) 대출 상품 4종 ───
+    LOAN_PRODUCTS = [
+        # (이름, short, 원금범위, 이율범위, 기간후보, 가중치, 특징)
+        ("일반대출",   "GNL", (1_000_000,  5_000_000),  (8, 12),   [6,12,24],       0.40, "normal"),
+        ("주택대출",   "HSG", (50_000_000, 200_000_000), (4, 6),    [60,84,120],     0.15, "long"),
+        ("소액대출",   "MCR", (300_000,    2_000_000),  (12, 18),  [3,6,12],        0.30, "short"),
+        ("긴급대출",   "EMG", (1_000_000,  10_000_000), (15, 22),  [6,12,24,36],    0.15, "strict"),
+    ]
+    loan_product_ids = []  # [(id, name, principal_range, rate_range, terms, feature)]
+    for name, short, prng, rrng, terms, w, feat in LOAN_PRODUCTS:
+        lpid = smart_insert(conn, "m_product_loan", {
+            "name": name, "short_name": short,
             "currency_code": currency_code, "currency_digits": 2,
-            "nominal_annual_interest_rate": 3.5,
+            "principal_amount": (prng[0]+prng[1])//2,
+            "min_principal_amount": prng[0], "max_principal_amount": prng[1],
+            "nominal_interest_rate_per_period": (rrng[0]+rrng[1])/2/12,
+            "interest_period_frequency_enum": 3,
+            "annual_nominal_interest_rate": (rrng[0]+rrng[1])/2,
+            "interest_method_enum": 1, "interest_calculated_in_period_enum": 1,
+            "repay_every": 1, "repayment_period_frequency_enum": 2,
+            "number_of_repayments": terms[len(terms)//2],
+            "amortization_method_enum": 1, "accounting_type": 1,
+            "loan_transaction_strategy_code": "mifos-standard-strategy",
+        })
+        loan_product_ids.append((lpid, name, prng, rrng, terms, w, feat))
+    lp_weights = [x[5] for x in loan_product_ids]
+
+    # ─── (3) 예금 상품 3종 ───
+    SAVINGS_PRODUCTS = [
+        ("자유입출금", "SAV", 100, 1.5,  0.60, "flex"),   # deposit_type_enum=100
+        ("정기예금",   "FXD", 200, 3.5,  0.25, "fixed"),  # 200
+        ("정기적금",   "RCR", 300, 3.0,  0.15, "recur"),  # 300
+    ]
+    savings_product_ids = []
+    for name, short, dep_type, rate, w, feat in SAVINGS_PRODUCTS:
+        spid = smart_insert(conn, "m_savings_product", {
+            "name": name, "short_name": short,
+            "currency_code": currency_code, "currency_digits": 2,
+            "nominal_annual_interest_rate": rate,
             "interest_compounding_period_enum": 4, "interest_posting_period_enum": 4,
             "interest_calculation_type_enum": 1,
             "interest_calculation_days_in_year_type_enum": 365,
-            "accounting_type": 1, "deposit_type_enum": 100,
+            "accounting_type": 1, "deposit_type_enum": dep_type,
         })
-    else:
-        savings_product_id = r[0]
+        savings_product_ids.append((spid, name, dep_type, rate, w, feat))
+    sp_weights = [x[4] for x in savings_product_ids]
 
-    # loan product
-    cur.execute("SELECT id FROM m_product_loan LIMIT 1")
-    r = cur.fetchone()
-    if not r:
-        loan_product_id = smart_insert(conn, "m_product_loan", {
-            "name":"파일럿 대출","short_name":"PILOT-L",
-            "currency_code": currency_code, "currency_digits": 2,
-            "principal_amount": 1000000, "nominal_interest_rate_per_period": 1.0,
-            "interest_period_frequency_enum": 3, "annual_nominal_interest_rate": 12.0,
-            "interest_method_enum": 1, "interest_calculated_in_period_enum": 1,
-            "repay_every": 1, "repayment_period_frequency_enum": 2,
-            "number_of_repayments": 12, "amortization_method_enum": 1,
-            "accounting_type": 1,
-            "loan_transaction_strategy_code": "mifos-standard-strategy",
+    # ─── (4) Loan Officer 8명 (m_staff) ───
+    STAFF_NAMES = [
+        "김철수","이영희","박민수","최지영",
+        "정성훈","한소영","윤재현","조은지",
+    ]
+    staff_ids = []
+    for i, name in enumerate(STAFF_NAMES):
+        first, last = name[1:], name[:1]
+        sid = smart_insert(conn, "m_staff", {
+            "firstname": first, "lastname": last,
+            "display_name": name,
+            "office_id": random.choice(office_ids[1:]),  # 지점 소속
+            "is_loan_officer": 1,
+            "is_active": 1,
         })
-    else:
-        loan_product_id = r[0]
+        staff_ids.append(sid)
 
-    # ─── Client ───
+    # ─── (5) Client CodeValue (gender, classification) ───
+    # 기존 m_code에 Gender(id=4), ClientClassification(id=17)가 있음
+    # code_value를 시드
+    gender_map = {}
+    for name in ("남성", "여성"):
+        cvid = smart_insert(conn, "m_code_value", {
+            "code_id": 4, "code_value": name, "code_description": f"{name} gender",
+            "order_position": len(gender_map)+1, "is_active": 1, "is_mandatory": 0,
+        })
+        gender_map[name] = cvid
+    classification_map = {}
+    for name in ("Salaried", "Self-Employed", "Student", "Retired"):
+        cvid = smart_insert(conn, "m_code_value", {
+            "code_id": 17, "code_value": name, "code_description": f"{name} classification",
+            "order_position": len(classification_map)+1, "is_active": 1, "is_mandatory": 0,
+        })
+        classification_map[name] = cvid
+
+    # ─── (6) Client 생성 (세그먼트 부여) ───
     print(f"      Client 생성 ({config['clients']})...", flush=True)
     client_ids = []
     for i in range(config["clients"]):
@@ -372,40 +439,87 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
         activation = None
         if status_val in (300, 600, 700, 800):
             activation = str(_random_date(submit, today))
+        # 세그먼트
+        classification = random.choices(
+            list(classification_map.keys()),
+            weights=[0.5, 0.25, 0.10, 0.15])[0]  # 급여자 많음
+        gender_name = random.choices(["남성","여성"], weights=[0.52, 0.48])[0]
+        # 나이는 20~70. Retired는 60+, Student는 18~30
+        if classification == "Retired":
+            age = random.randint(60, 80)
+        elif classification == "Student":
+            age = random.randint(18, 30)
+        else:
+            age = random.randint(25, 60)
+        dob = today - timedelta(days=age*365 + random.randint(-180, 180))
+        # 지점 배정 (Head Office 아닌 4개 지점 중)
+        office = random.choice(office_ids[1:]) if len(office_ids) > 1 else office_ids[0]
+        staff = random.choice(staff_ids)
         cid = smart_insert(conn, "m_client", {
             "account_no": f"C{1000000+i:07d}",
-            "office_id": office_id,
+            "office_id": office,
+            "staff_id": staff,
             "status_enum": status_val,
             "firstname": first, "lastname": last,
             "display_name": f"{last}{first}",
+            "gender_cv_id": gender_map[gender_name],
+            "client_classification_cv_id": classification_map[classification],
+            "date_of_birth": str(dob),
             "submittedon_date": str(submit),
             "activation_date": activation,
             "is_staff": 0,
         })
-        client_ids.append(cid)
+        client_ids.append((cid, classification, age))
 
     active_clients = [c for c in client_ids
-                      if conn.execute("SELECT status_enum FROM m_client WHERE id=?",(c,)).fetchone()[0]==300]
+                      if conn.execute("SELECT status_enum FROM m_client WHERE id=?",(c[0],)).fetchone()[0]==300]
     print(f"      active clients: {len(active_clients)}", flush=True)
 
-    # ─── Savings ───
+    # ─── (7) Savings 상품별 시나리오 ───
     print(f"      Savings 계좌 생성 ({config['savings']})...", flush=True)
-    savings_active = []
+    savings_active = []  # [(id, activation_date)]
     for i in range(config["savings"]):
         if not active_clients: break
-        cid = random.choice(active_clients)
-        status_val = random.choices([s[0] for s in SAVINGS_STATUS_DIST],
-                                    weights=[s[2] for s in SAVINGS_STATUS_DIST])[0]
+        cid, classification, age = random.choice(active_clients)
+        # 상품 선택 (세그먼트에 따라 다르게)
+        if classification == "Student":
+            sp_choice = random.choices(savings_product_ids, weights=[0.85, 0.10, 0.05])[0]
+        elif classification == "Retired":
+            sp_choice = random.choices(savings_product_ids, weights=[0.35, 0.55, 0.10])[0]
+        else:
+            sp_choice = random.choices(savings_product_ids, weights=sp_weights)[0]
+        spid, sp_name, dep_type, rate, _, feat = sp_choice
+        # 상품에 따라 status 분포 조정
+        if feat == "flex":
+            status_dist = SAVINGS_STATUS_DIST
+        elif feat == "fixed":
+            # 정기예금은 status=800(MATURED), 700(PRE_MATURE) 비율 높음
+            status_dist = [
+                (100,"submitted",0.03),(200,"approved",0.03),(300,"active",0.50),
+                (500,"rejected",0.01),(600,"closed",0.05),
+                (700,"premature",0.15),(800,"matured",0.23),
+            ]
+        else:  # recur
+            status_dist = [
+                (100,"submitted",0.05),(200,"approved",0.05),(300,"active",0.60),
+                (500,"rejected",0.02),(600,"closed",0.15),
+                (700,"premature",0.08),(800,"matured",0.05),
+            ]
+        # 정규화
+        total_p = sum(p for _,_,p in status_dist)
+        status_dist_n = [(v,n,p/total_p) for v,n,p in status_dist]
+        status_val = random.choices([s[0] for s in status_dist_n],
+                                    weights=[s[2] for s in status_dist_n])[0]
         submit = _random_date(date_min, today)
         approve = _random_date(submit, today) if status_val >= 200 else None
         activation = _random_date(approve, today) if (approve and status_val >= 300) else None
         sid = smart_insert(conn, "m_savings_account", {
             "account_no": f"S{2000000+i:07d}",
-            "client_id": cid, "product_id": savings_product_id,
+            "client_id": cid, "product_id": spid,
             "status_enum": status_val, "sub_status_enum": 0,
-            "account_type_enum": 1, "deposit_type_enum": 100,
+            "account_type_enum": 1, "deposit_type_enum": dep_type,
             "currency_code": currency_code, "currency_digits": 2,
-            "nominal_annual_interest_rate": 3.5,
+            "nominal_annual_interest_rate": rate,
             "interest_compounding_period_enum": 4, "interest_posting_period_enum": 4,
             "interest_calculation_type_enum": 1,
             "interest_calculation_days_in_year_type_enum": 365,
@@ -417,26 +531,50 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
         if status_val in (300,600,700,800) and activation:
             savings_active.append((sid, activation))
 
-    # ─── Loan ───
+    # ─── (8) Loan 상품별 시나리오 ───
     print(f"      Loan 생성 ({config['loans']})...", flush=True)
     loans_disbursed = []
     for i in range(config["loans"]):
         if not active_clients: break
-        cid = random.choice(active_clients)
-        status_val = random.choices([s[0] for s in LOAN_STATUS_DIST],
-                                    weights=[s[2] for s in LOAN_STATUS_DIST])[0]
+        cid, classification, age = random.choice(active_clients)
+        # 상품 선택 (세그먼트별)
+        if classification == "Student":
+            lp_choice = random.choices(loan_product_ids, weights=[0.1, 0.05, 0.7, 0.15])[0]  # 소액 위주
+        elif classification == "Retired":
+            lp_choice = random.choices(loan_product_ids, weights=[0.5, 0.3, 0.15, 0.05])[0]  # 주택 조금 있음
+        else:
+            lp_choice = random.choices(loan_product_ids, weights=lp_weights)[0]
+        lpid, lp_name, prng, rrng, terms, _, feat = lp_choice
+        # 상품별 status 분포 조정
+        if feat == "long":  # 주택
+            status_dist = [(100,"s",0.02),(200,"a",0.03),(300,"active",0.75),
+                          (500,"r",0.05),(600,"c",0.10),(601,"wo",0.02),(700,"ov",0.03)]
+        elif feat == "short":  # 소액
+            status_dist = [(100,"s",0.05),(200,"a",0.05),(300,"active",0.40),
+                          (500,"r",0.03),(600,"c",0.30),(601,"wo",0.05),(700,"ov",0.12)]
+        elif feat == "strict":  # 긴급
+            status_dist = [(100,"s",0.05),(200,"a",0.05),(300,"active",0.45),
+                          (500,"r",0.20),(600,"c",0.15),(601,"wo",0.05),(700,"ov",0.05)]
+        else:  # normal
+            status_dist = [(100,"s",0.05),(200,"a",0.08),(300,"active",0.55),
+                          (500,"r",0.05),(600,"c",0.15),(601,"wo",0.03),(700,"ov",0.09)]
+        total_p = sum(p for _,_,p in status_dist)
+        status_dist_n = [(v,n,p/total_p) for v,n,p in status_dist]
+        status_val = random.choices([s[0] for s in status_dist_n],
+                                    weights=[s[2] for s in status_dist_n])[0]
         submit = _random_date(date_min, today - timedelta(days=30))
         approve = _random_date(submit, today) if status_val >= 200 else None
         disburse = _random_date(approve, today) if (approve and status_val >= 300) else None
-        principal = round(random.lognormvariate(14.5, 0.7), 2)
-        rate = round(random.uniform(6.0, 18.0), 2)
-        terms = random.choice([6, 12, 24, 36, 48])
+        principal = round(random.uniform(*prng), 2)
+        rate = round(random.uniform(*rrng), 2)
+        term = random.choice(terms)
         closed_on = None
         if status_val in (600, 601) and disburse:
             closed_on = _random_date(disburse, today)
         lid = smart_insert(conn, "m_loan", {
             "account_no": f"L{3000000+i:07d}",
-            "client_id": cid, "product_id": loan_product_id,
+            "client_id": cid, "product_id": lpid,
+            "loan_officer_id": random.choice(staff_ids),
             "loan_status_id": status_val, "loan_type_enum": 1,
             "currency_code": currency_code, "currency_digits": 2,
             "principal_amount_proposed": principal,
@@ -447,9 +585,9 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
             "annual_nominal_interest_rate": rate,
             "interest_period_frequency_enum": 3,
             "interest_method_enum": 1, "interest_calculated_in_period_enum": 1,
-            "term_frequency": terms, "term_period_frequency_enum": 3,
+            "term_frequency": term, "term_period_frequency_enum": 3,
             "repay_every": 1, "repayment_period_frequency_enum": 2,
-            "number_of_repayments": terms,
+            "number_of_repayments": term,
             "amortization_method_enum": 1,
             "submittedon_date": str(submit),
             "approvedon_date": str(approve) if approve else None,
@@ -459,16 +597,16 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
             "days_in_month_enum": 30, "days_in_year_enum": 365,
         })
         if disburse and status_val in (300, 600, 601, 700):
-            loans_disbursed.append((lid, disburse, principal, terms))
+            loans_disbursed.append((lid, disburse, principal, term))
 
-    # ─── Loan Transaction ───
+    # ─── (9) Loan Transaction ───
     print(f"      Loan tx ({config['loan_tx']})...", flush=True)
     for i in range(config["loan_tx"]):
         if not loans_disbursed: break
-        lid, disburse, principal, terms = random.choice(loans_disbursed)
+        lid, disburse, principal, term = random.choice(loans_disbursed)
         tx_type = random.choices([1,2,3,4,6,8], weights=[0.05,0.60,0.05,0.05,0.20,0.05])[0]
         tx_date = _random_date(disburse, today)
-        amount = round(principal / terms * random.uniform(0.9, 1.1), 2)
+        amount = round(principal / term * random.uniform(0.9, 1.1), 2)
         smart_insert(conn, "m_loan_transaction", {
             "loan_id": lid, "transaction_type_enum": tx_type,
             "transaction_date": str(tx_date), "amount": amount,
@@ -478,7 +616,7 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
             "is_reversed": 0, "submitted_on_date": str(tx_date),
         })
 
-    # ─── Savings Transaction ───
+    # ─── (10) Savings Transaction ───
     print(f"      Savings tx ({config['sv_tx']})...", flush=True)
     for i in range(config["sv_tx"]):
         if not savings_active: break
