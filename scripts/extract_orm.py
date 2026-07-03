@@ -197,10 +197,25 @@ def collect_all_fields(cls_name: str, index: ClassIndex, visited=None):
     return my_fields
 
 
-def get_table_name(cls_node, src: bytes) -> str:
+def get_table_name(cls_node, src: bytes, index=None) -> str:
+    """@Table이 있으면 그 name. 없고 @DiscriminatorValue 있으면 부모의 table (SINGLE_TABLE inheritance).
+       둘 다 없으면 클래스명 lower로 fallback."""
     anns = get_class_annotations(cls_node, src)
     tbl = anns.get("Table")
-    if tbl and tbl["args"].get("name"): return tbl["args"]["name"]
+    if tbl and tbl["args"].get("name"):
+        return tbl["args"]["name"]
+    # SINGLE_TABLE inheritance — 자식은 @Table 없고 @DiscriminatorValue 있음
+    if "DiscriminatorValue" in anns and index is not None:
+        parent_name = get_superclass_name(cls_node, src)
+        while parent_name:
+            parent_got = index.get(parent_name)
+            if not parent_got: break
+            _, p_node, p_src = parent_got
+            p_anns = get_class_annotations(p_node, p_src)
+            p_tbl = p_anns.get("Table")
+            if p_tbl and p_tbl["args"].get("name"):
+                return p_tbl["args"]["name"]
+            parent_name = get_superclass_name(p_node, p_src)
     name_node = find_child(cls_node, "identifier")
     return text_of(name_node, src).lower() if name_node else "?"
 
@@ -231,7 +246,7 @@ def main():
         rel = str(jp.relative_to(corpus))
         pkg = get_package(PARSER.parse(src).root_node, src)
         fqn = f"{pkg}.{cls_name}" if pkg else cls_name
-        table = get_table_name(cls_node, src)
+        table = get_table_name(cls_node, src, index)
         fields = collect_all_fields(cls_name, index)
         entities.append({
             "class_name": cls_name, "fqn": fqn,

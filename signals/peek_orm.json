@@ -1,6 +1,6 @@
 {
   "source": "apache/fineract @Entity classes (tree-sitter-java parse, v2)",
-  "fineract_commit": "482aad58a53c9a35b78e2eca39d6d94813139fc8",
+  "fineract_commit": "74638ae8c87f8570be68ab607541d22abe9c09a5",
   "parser_version": "v2 (tree-sitter-java)",
   "entity_count": 113,
   "field_count": 1358,
@@ -14400,7 +14400,7 @@
     {
       "class_name": "FixedDepositProduct",
       "fqn": "org.apache.fineract.portfolio.savings.domain.FixedDepositProduct",
-      "table_name": "fixeddepositproduct",
+      "table_name": "m_savings_product",
       "source_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/FixedDepositProduct.java",
       "field_count": 33,
       "fields": [
@@ -14951,7 +14951,7 @@
     {
       "class_name": "RecurringDepositProduct",
       "fqn": "org.apache.fineract.portfolio.savings.domain.RecurringDepositProduct",
-      "table_name": "recurringdepositproduct",
+      "table_name": "m_savings_product",
       "source_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/RecurringDepositProduct.java",
       "field_count": 34,
       "fields": [

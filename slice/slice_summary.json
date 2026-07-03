@@ -1,8 +1,8 @@
 {
   "target_domains": [
-    "portfolio.loanaccount",
     "portfolio.savings",
-    "portfolio.client"
+    "portfolio.client",
+    "portfolio.loanaccount"
   ],
   "population_total": 766,
   "population_evaluable": 688,
@@ -17,16 +17,6 @@
     "unclassified": 1
   },
   "population_domain_archetype_matrix": {
-    "portfolio.loanaccount": {
-      "trivial": 187,
-      "exclude": 40,
-      "collision-crux": 15,
-      "technical": 91,
-      "enum-clean": 17,
-      "reftable-link": 7,
-      "lineage": 58,
-      "unclassified": 1
-    },
     "portfolio.savings": {
       "trivial": 165,
       "exclude": 35,
@@ -40,6 +30,16 @@
       "reftable-link": 8,
       "exclude": 3,
       "technical": 10
+    },
+    "portfolio.loanaccount": {
+      "trivial": 187,
+      "exclude": 40,
+      "collision-crux": 15,
+      "technical": 91,
+      "enum-clean": 17,
+      "reftable-link": 7,
+      "lineage": 58,
+      "unclassified": 1
     }
   },
   "slice_size": 151,
@@ -53,9 +53,9 @@
     "unclassified": 1
   },
   "slice_domain_distribution": {
-    "portfolio.loanaccount": 65,
+    "portfolio.loanaccount": 63,
     "portfolio.client": 29,
-    "portfolio.savings": 57
+    "portfolio.savings": 59
   },
   "selection_strategy_counts": {
     "critical-include": 83,

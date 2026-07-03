@@ -31,12 +31,23 @@ DOMAIN_TABLES = {
     "m_loan_officer_assignment_history", "m_product_loan",
     "m_loan_transaction_relation", "m_loan_delinquency_action",
     "m_loan_delinquency_tag_history",
+    # portfolio.loanaccount — 세부 (v2 슬라이스가 참조)
+    "m_loan_recalculation_details", "m_loan_payment_allocation_rule",
+    "m_loan_reage_parameter", "m_loan_reschedule_request",
+    "m_loan_term_variations", "m_loan_credit_allocation_rule",
+    "m_loan_reamortization_parameter", "m_loan_amortization_allocation_mapping",
+    "m_loan_status_change_history",
+    "glim_accounts", "gsim_accounts",
     # portfolio.savings
     "m_savings_account", "m_savings_account_transaction",
     "m_savings_account_charge", "m_savings_account_charge_paid_by",
     "m_deposit_account_on_hold_transaction", "m_savings_product",
     "m_deposit_product_recurring_detail", "m_deposit_product_term_and_preclosure",
     "m_savings_account_lock",
+    # portfolio.savings — 정기예금·적금 (v2 슬라이스가 참조)
+    "fixeddepositproduct", "recurringdepositproduct",
+    "m_deposit_account_term_and_preclosure",
+    "m_deposit_account_interest_incentives",
     # portfolio.client
     "m_client", "m_client_charge", "m_client_transaction",
     "m_client_identifier", "m_client_non_person",
