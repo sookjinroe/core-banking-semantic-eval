@@ -3353,7 +3353,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "gsim_accounts.parent_deposit": {
@@ -3715,7 +3720,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_loan.approvedon_date": {
@@ -4310,7 +4320,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_client.is_staff": {
@@ -4678,7 +4693,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_loan.created_by": {
@@ -4706,7 +4726,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_client.last_modified_by": {
@@ -4734,7 +4759,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_deposit_account_on_hold_transaction.created_by": {
@@ -4762,7 +4792,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_loan.last_modified_by": {
@@ -4790,7 +4825,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_client.last_modified_on_utc": {
@@ -4818,7 +4858,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_deposit_account_on_hold_transaction.created_date": {
@@ -4846,7 +4891,16 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 1,
+        "distinct_sample": [
+          "2026-07-07"
+        ],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "2026-07-07": 1.0
+        }
       }
     },
     "m_loan.last_modified_on_utc": {
@@ -4874,7 +4928,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_client_identifier.created_by": {
@@ -4902,7 +4961,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {}
       }
     },
     "m_loan_transaction_relation.relation_type_enum": {
