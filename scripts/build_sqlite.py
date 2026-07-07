@@ -645,7 +645,247 @@ def _random_date(start, end):
     return start + timedelta(days=random.randint(0, delta))
 
 
-# ─── 인덱스 ─────────────────────────────────────────────────────────
+def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
+    """3 도메인의 세부 서브 테이블에 stub 시드 — 결정 archetype 컬럼이 값을 갖도록.
+
+    각 테이블별 자연 분포로:
+    - m_client_identifier: client당 1개 신분증
+    - m_loan_charge: 활성/종료 loan의 30%에 1~2개 수수료
+    - m_savings_account_charge: 활성 savings의 20%에 1개
+    - m_loan_recalculation_details: 활성/종료 loan의 40%에 재계산 설정
+    - m_deposit_account_term_and_preclosure: FXD/RCR savings의 대다수
+    - m_loan_term_variations: 활성 loan의 10%
+    - m_loan_reschedule_request: 활성 loan의 5%
+    - glim_accounts / gsim_accounts: 소수 그룹 대출·예금
+    - m_loan_transaction_relation: 일부 tx 쌍
+    - m_deposit_account_on_hold_transaction: 소수 savings
+    - m_loan_amortization_allocation_mapping: 일부 loan
+    """
+    random.seed(seed + 1)  # child 시드는 다른 seed offset
+    cur = conn.cursor()
+
+    # 활성/종료 loan 목록
+    active_loan_ids = [r[0] for r in cur.execute(
+        "SELECT id FROM m_loan WHERE loan_status_id IN (300, 600, 601, 700)"
+    )]
+    # 활성 savings 목록 + product 정보
+    savings_rows = list(cur.execute(
+        "SELECT s.id, s.status_enum, s.product_id, p.deposit_type_enum "
+        "FROM m_savings_account s JOIN m_savings_product p ON s.product_id=p.id "
+        "WHERE s.status_enum IN (300, 600, 700, 800)"
+    ))
+    # 모든 client
+    client_ids = [r[0] for r in cur.execute("SELECT id FROM m_client")]
+
+    # ─── (1) m_client_identifier: client당 1개 신분증 ───
+    print(f"      client_identifier ({len(client_ids)})...", flush=True)
+    for cid in client_ids:
+        smart_insert(conn, "m_client_identifier", {
+            "client_id": cid,
+            "document_type_id": random.choice([1, 2, 3]),  # 1=주민등록증, 2=여권, 3=운전면허
+            "document_key": f"ID{random.randint(1000000, 9999999)}",
+            "status": 300,  # ACTIVE
+            "active": 1,
+        })
+
+    # ─── (2) m_loan_charge: 활성/종료 loan의 30% ───
+    charged_loans = random.sample(active_loan_ids, k=int(len(active_loan_ids) * 0.3))
+    print(f"      loan_charge ({len(charged_loans)} loans)...", flush=True)
+    # charge_time_enum: 1=DISBURSEMENT, 2=SPECIFIED_DUE_DATE, 3=INSTALLMENT_FEE, 4=OVERDUE_INSTALLMENT, 7=OVERDUE_MATURITY, 9=TRANCHE_DISBURSEMENT
+    # charge_calculation_enum: 1=FLAT_AMOUNT, 2=PERCENT_OF_AMOUNT, 3=PERCENT_OF_AMOUNT_AND_INTEREST, 4=PERCENT_OF_INTEREST
+    # charge_payment_mode_enum: 0=REGULAR, 1=ACCOUNT_TRANSFER
+    for lid in charged_loans:
+        for _ in range(random.randint(1, 2)):
+            amount = round(random.uniform(1000, 50000), 2)
+            smart_insert(conn, "m_loan_charge", {
+                "loan_id": lid, "charge_id": 1,
+                "is_penalty": random.choices([0, 1], weights=[0.7, 0.3])[0],
+                "charge_time_enum": random.choices([1, 2, 3, 4, 7, 9], weights=[0.25, 0.2, 0.2, 0.15, 0.1, 0.1])[0],
+                "charge_calculation_enum": random.choices([1, 2, 3, 4], weights=[0.5, 0.3, 0.1, 0.1])[0],
+                "charge_payment_mode_enum": random.choices([0, 1], weights=[0.8, 0.2])[0],
+                "amount": amount,
+                "amount_outstanding_derived": amount * random.uniform(0, 1),
+                "is_active": 1,
+            })
+
+    # ─── (3) m_savings_account_charge: 활성 savings의 20% ───
+    savings_ids_active = [s[0] for s in savings_rows]
+    charged_savings = random.sample(savings_ids_active, k=int(len(savings_ids_active) * 0.2))
+    print(f"      savings_account_charge ({len(charged_savings)})...", flush=True)
+    for sid in charged_savings:
+        amount = round(random.uniform(500, 5000), 2)
+        smart_insert(conn, "m_savings_account_charge", {
+            "savings_account_id": sid, "charge_id": 1,
+            "is_penalty": 0,
+            "charge_time_enum": random.choices([1, 5, 6, 12, 13], weights=[0.2, 0.3, 0.2, 0.15, 0.15])[0],
+            "charge_calculation_enum": random.choices([1, 2, 5], weights=[0.6, 0.3, 0.1])[0],
+            "amount": amount,
+            "amount_outstanding_derived": amount * random.uniform(0, 1),
+            "is_active": 1,
+        })
+
+    # ─── (4) m_loan_recalculation_details: 활성/종료 loan의 40% ───
+    recalc_loans = random.sample(active_loan_ids, k=int(len(active_loan_ids) * 0.4))
+    print(f"      loan_recalculation_details ({len(recalc_loans)})...", flush=True)
+    # compound_type_enum: 0=NONE, 1=INTEREST, 2=FEE, 3=INTEREST_AND_FEE
+    # reschedule_strategy_enum: 1=REDUCE_EMI_AMOUNT, 2=REDUCE_NUMBER_OF_INSTALLMENTS, 3=RESCHEDULE_NEXT_REPAYMENTS, 4=ADJUST_LAST_UNPAID_PERIOD
+    # rest_frequency_type_enum: 1=DAILY, 2=WEEKLY, 4=MONTHLY
+    # compounding_frequency_type_enum: 1,2,3,4
+    for lid in recalc_loans:
+        smart_insert(conn, "m_loan_recalculation_details", {
+            "loan_id": lid,
+            "compound_type_enum": random.choices([0, 1, 2, 3], weights=[0.3, 0.5, 0.1, 0.1])[0],
+            "reschedule_strategy_enum": random.choices([1, 2, 3, 4], weights=[0.4, 0.3, 0.2, 0.1])[0],
+            "rest_frequency_type_enum": random.choice([1, 2, 4]),
+            "rest_frequency_interval": random.choice([1, 7, 30]),
+            "compounding_frequency_type_enum": random.choice([1, 2, 3, 4]) if random.random() < 0.6 else None,
+            "compounding_frequency_interval": random.choice([1, 7, 30]) if random.random() < 0.6 else None,
+            "compounding_frequency_nth_day_enum": random.choice([1, 2, 3, 4]) if random.random() < 0.3 else None,
+            "compounding_frequency_weekday_enum": random.choice([1, 2, 3, 4, 5, 6, 7]) if random.random() < 0.3 else None,
+            "is_compounding_to_be_posted_as_transaction": 0,
+            "allow_compounding_on_eod": 0,
+            "disallow_interest_calc_on_past_due": random.choices([0, 1], weights=[0.7, 0.3])[0],
+        })
+
+    # ─── (5) m_deposit_account_term_and_preclosure: FXD/RCR savings 대다수 ───
+    # deposit_type_enum: 200=FIXED_DEPOSIT, 300=RECURRING_DEPOSIT
+    term_savings = [s[0] for s in savings_rows if s[3] in (200, 300)]
+    print(f"      deposit_term_and_preclosure ({len(term_savings)})...", flush=True)
+    for sid in term_savings:
+        deposit_amount = round(random.lognormvariate(15, 0.5), 2)
+        maturity_period = random.choice([6, 12, 24, 36])
+        smart_insert(conn, "m_deposit_account_term_and_preclosure", {
+            "savings_account_id": sid,
+            "min_deposit_term": 6, "max_deposit_term": 60,
+            "deposit_period": maturity_period,
+            "deposit_period_frequency_enum": random.choices([1, 2, 3], weights=[0.05, 0.15, 0.8])[0],  # 3=MONTHS
+            "deposit_amount": deposit_amount,
+            "maturity_amount": deposit_amount * random.uniform(1.02, 1.15),
+            "on_account_closure_enum": random.choices([100, 200, 300], weights=[0.5, 0.3, 0.2])[0],  # 100=WITHDRAW, 200=REINVEST, 300=TRANSFER
+            "pre_closure_penal_applicable": 1,
+            "pre_closure_penal_interest": round(random.uniform(0.5, 2.0), 2),
+            "pre_closure_penal_interest_on_enum": 1,
+        })
+
+    # ─── (6) m_loan_term_variations: 활성 loan의 10% ───
+    varied_loans = random.sample(active_loan_ids, k=int(len(active_loan_ids) * 0.1))
+    print(f"      loan_term_variations ({len(varied_loans)})...", flush=True)
+    # term_type: 1=EMI_AMOUNT, 2=NUMBER_OF_INSTALLMENTS, 3=INTEREST_RATE, 4=DELETE_INSTALLMENT, 5=DUE_DATE, 6=INSERT_INSTALLMENT, 7=PRINCIPAL_AMOUNT, 8=GRACE_ON_PRINCIPAL, 9=GRACE_ON_INTEREST
+    # applied_on_loan_status: 100,200,300 (submit/approve/active 상태에서 변경)
+    for lid in varied_loans:
+        smart_insert(conn, "m_loan_term_variations", {
+            "loan_id": lid,
+            "term_type": random.choices([1, 2, 3, 5, 7], weights=[0.3, 0.2, 0.2, 0.2, 0.1])[0],
+            "applicable_date": str(_random_date(date.today() - timedelta(days=365), date.today())),
+            "decimal_value": round(random.uniform(1000, 100000), 2),
+            "is_specific_to_installment": 0,
+            "applied_on_loan_status": random.choices([100, 200, 300], weights=[0.1, 0.2, 0.7])[0],
+            "is_active": 1,
+        })
+
+    # ─── (7) m_loan_reschedule_request: 활성 loan의 5% ───
+    resch_loans = random.sample(active_loan_ids, k=int(len(active_loan_ids) * 0.05))
+    print(f"      loan_reschedule_request ({len(resch_loans)})...", flush=True)
+    # status_enum: 100=SUBMITTED, 200=APPROVED, 300=REJECTED
+    for lid in resch_loans:
+        smart_insert(conn, "m_loan_reschedule_request", {
+            "loan_id": lid,
+            "status_enum": random.choices([100, 200, 300], weights=[0.3, 0.5, 0.2])[0],
+            "reschedule_from_installment": random.randint(1, 10),
+            "reschedule_from_date": str(_random_date(date.today() - timedelta(days=180), date.today())),
+            "reschedule_reason_cv_id": None,  # code_value가 없어서 null
+            "submitted_on_date": str(_random_date(date.today() - timedelta(days=90), date.today())),
+            "submitted_by_user_id": 1,
+        })
+
+    # ─── (8) glim_accounts / gsim_accounts: 소수 그룹 대출·예금 ───
+    print(f"      glim/gsim_accounts (5+5)...", flush=True)
+    # glim: 그룹 대출 개별 모니터링
+    for i in range(5):
+        smart_insert(conn, "glim_accounts", {
+            "group_id": 0,
+            "account_number": f"GLIM{i:05d}",
+            "principal_amount": round(random.lognormvariate(14, 0.5), 2),
+            "child_accounts_count": random.randint(2, 8),
+            "accepting_child": random.choices([0, 1], weights=[0.6, 0.4])[0],
+            "loan_status_id": random.choices([100, 200, 300, 600, 700], weights=[0.1, 0.1, 0.5, 0.2, 0.1])[0],
+        })
+    for i in range(5):
+        smart_insert(conn, "gsim_accounts", {
+            "group_id": 0,
+            "account_number": f"GSIM{i:05d}",
+            "parent_deposit": round(random.lognormvariate(14, 0.5), 2),
+            "child_accounts_count": random.randint(2, 8),
+            "accepting_child": random.choices([0, 1], weights=[0.6, 0.4])[0],
+            "savings_status_id": random.choices([300, 600, 700, 800], weights=[0.6, 0.15, 0.1, 0.15])[0],
+        })
+
+    # ─── (9) m_loan_transaction_relation: 소수 tx 관계 ───
+    tx_ids = [r[0] for r in cur.execute("SELECT id FROM m_loan_transaction LIMIT 3000")]
+    if len(tx_ids) >= 100:
+        n_rel = min(300, len(tx_ids) // 10)
+        print(f"      loan_transaction_relation ({n_rel})...", flush=True)
+        # relation_type_enum: 1=RELATED, 2=REPLAYED, 3=CHARGEBACK, 4=ADJUSTMENT
+        for _ in range(n_rel):
+            f, t = random.sample(tx_ids, 2)
+            smart_insert(conn, "m_loan_transaction_relation", {
+                "from_loan_transaction_id": f,
+                "to_loan_transaction_id": t,
+                "relation_type_enum": random.choices([1, 2, 3, 4], weights=[0.3, 0.4, 0.2, 0.1])[0],
+                "version": 1,
+            })
+
+    # ─── (10) m_deposit_account_on_hold_transaction: 소수 savings 동결 ───
+    if savings_ids_active:
+        held_savings = random.sample(savings_ids_active, k=min(50, len(savings_ids_active) // 20))
+        print(f"      deposit_on_hold_transaction ({len(held_savings)})...", flush=True)
+        for sid in held_savings:
+            smart_insert(conn, "m_deposit_account_on_hold_transaction", {
+                "savings_account_id": sid,
+                "amount": round(random.uniform(10000, 100000), 2),
+                "transaction_type_enum": random.choices([1, 2], weights=[0.7, 0.3])[0],  # 1=HOLD, 2=RELEASE
+                "transaction_date": str(_random_date(date.today() - timedelta(days=90), date.today())),
+                "is_reversed": 0,
+                "created_date": str(date.today()),
+            })
+
+    # ─── (11) m_loan_amortization_allocation_mapping: 일부 loan tx 매핑 ───
+    if tx_ids and len(tx_ids) >= 20:
+        n_map = min(200, len(tx_ids) // 20)
+        print(f"      loan_amortization_allocation_mapping ({n_map})...", flush=True)
+        # amortization_type: PRINCIPAL / INTEREST / FEE (TEXT!)
+        for _ in range(n_map):
+            base_tx, amort_tx = random.sample(tx_ids, 2)
+            loan_id = cur.execute("SELECT loan_id FROM m_loan_transaction WHERE id=?", (base_tx,)).fetchone()
+            if not loan_id: continue
+            smart_insert(conn, "m_loan_amortization_allocation_mapping", {
+                "loan_id": loan_id[0],
+                "base_loan_transaction_id": base_tx,
+                "amortization_loan_transaction_id": amort_tx,
+                "date": str(_random_date(date.today() - timedelta(days=180), date.today())),
+                "amortization_type": random.choices(["PRINCIPAL", "INTEREST", "FEE"], weights=[0.6, 0.3, 0.1])[0],
+                "amount": round(random.uniform(1000, 50000), 2),
+            })
+
+    # ─── (12) m_loan_reage_parameter: 소수 loan_tx의 재적용 파라미터 ───
+    if tx_ids and len(tx_ids) >= 50:
+        n_reage = min(80, len(tx_ids) // 50)
+        print(f"      loan_reage_parameter ({n_reage})...", flush=True)
+        # frequency: "MONTHS" / "WEEKS" / "DAYS"
+        for _ in range(n_reage):
+            tx_id = random.choice(tx_ids)
+            smart_insert(conn, "m_loan_reage_parameter", {
+                "frequency": random.choices(["MONTHS", "WEEKS", "DAYS"], weights=[0.7, 0.2, 0.1])[0],
+                "number_of_installments": random.randint(3, 12),
+                "start_date": str(_random_date(date.today() - timedelta(days=180), date.today())),
+                "created_by": 1, "last_modified_by": 1,
+                "created_on_utc": str(datetime.now()),
+                "last_modified_on_utc": str(datetime.now()),
+                "loan_transaction_id": tx_id,
+                "frequency_number": random.choice([1, 2, 3]),
+            })
+
+    conn.commit()
 
 INDEXES = [
     # 상태·타입 필터에 자주 걸리는 것
@@ -746,6 +986,8 @@ def main():
     print("[4/5] 운영 데이터 시드...")
     try:
         seed_operational_data(conn, CONFIGS[args.config], seed=args.seed)
+        print("      세부 서브 테이블 stub 시드...")
+        seed_child_tables(conn, seed=args.seed)
     except Exception as e:
         import traceback
         print(f"  [!] 시드 오류: {e}")
