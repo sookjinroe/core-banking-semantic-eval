@@ -1,6 +1,6 @@
 {
   "source": "apache/fineract @Entity classes (tree-sitter-java parse, v2)",
-  "fineract_commit": "74638ae8c87f8570be68ab607541d22abe9c09a5",
+  "fineract_commit": "095989857a304b91e8dd01440e50799d49af3fc6",
   "parser_version": "v2 (tree-sitter-java)",
   "entity_count": 113,
   "field_count": 1358,
@@ -694,7 +694,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -708,7 +708,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -722,7 +722,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -735,7 +735,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -1014,7 +1014,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -1028,7 +1028,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -1042,7 +1042,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -1055,7 +1055,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -1851,7 +1851,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -1865,7 +1865,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -1879,7 +1879,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -1892,7 +1892,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -3188,7 +3188,7 @@
           "java_field": "repaymentReschedulingType",
           "java_type": "Integer",
           "column": {
-            "name": "repayment_rescheduling_enum",
+            "name": "repaymentRescheduleType",
             "nullable": false
           },
           "converter": null,
@@ -3429,7 +3429,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -3443,7 +3443,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -3457,7 +3457,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -3470,7 +3470,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -4283,7 +4283,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -4297,7 +4297,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -4311,7 +4311,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -4324,7 +4324,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -4433,7 +4433,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -4447,7 +4447,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -4461,7 +4461,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -4474,7 +4474,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -4806,7 +4806,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -4820,7 +4820,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -4834,7 +4834,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -4847,7 +4847,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -4915,7 +4915,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -4929,7 +4929,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -4943,7 +4943,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -4956,7 +4956,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -5056,7 +5056,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -5070,7 +5070,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -5084,7 +5084,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -5097,7 +5097,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -5178,7 +5178,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -5192,7 +5192,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -5206,7 +5206,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -5219,7 +5219,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -5303,7 +5303,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -5317,7 +5317,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -5331,7 +5331,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -5344,7 +5344,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -5438,7 +5438,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -5452,7 +5452,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -5466,7 +5466,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -5479,7 +5479,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -5613,7 +5613,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -5627,7 +5627,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -5641,7 +5641,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -5654,7 +5654,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -7508,7 +7508,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -7522,7 +7522,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -7536,7 +7536,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -7549,7 +7549,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -7661,7 +7661,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -7675,7 +7675,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -7689,7 +7689,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -7702,7 +7702,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -7777,7 +7777,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -7791,7 +7791,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -7805,7 +7805,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -7818,7 +7818,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -8210,7 +8210,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -8224,7 +8224,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -8238,7 +8238,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -8251,7 +8251,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -8541,7 +8541,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -8555,7 +8555,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -8569,7 +8569,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -8582,7 +8582,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -9389,7 +9389,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -9403,7 +9403,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -9417,7 +9417,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -9430,7 +9430,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -9980,7 +9980,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -9994,7 +9994,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -10008,7 +10008,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -10021,7 +10021,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -10137,7 +10137,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -10151,7 +10151,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -10165,7 +10165,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -10178,7 +10178,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -10326,7 +10326,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -10340,7 +10340,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -10354,7 +10354,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -10367,7 +10367,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -10914,7 +10914,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -10928,7 +10928,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -10942,7 +10942,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -10955,7 +10955,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -11037,7 +11037,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -11051,7 +11051,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -11065,7 +11065,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -11078,7 +11078,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -11319,7 +11319,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -11333,7 +11333,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -11347,7 +11347,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -11360,7 +11360,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -11430,7 +11430,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -11444,7 +11444,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -11458,7 +11458,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -11471,7 +11471,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -11674,7 +11674,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD"
+            "name": "created_on_utc"
           },
           "converter": null,
           "enumerated": null,
@@ -11686,7 +11686,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD"
+            "name": "last_modified_on_utc"
           },
           "converter": null,
           "enumerated": null,
@@ -12751,7 +12751,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -12765,7 +12765,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -12779,7 +12779,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -12792,7 +12792,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -13301,7 +13301,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -13315,7 +13315,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -13329,7 +13329,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -13342,7 +13342,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -14060,7 +14060,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -14074,7 +14074,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -14088,7 +14088,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -14101,7 +14101,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -16136,7 +16136,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -16150,7 +16150,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -16164,7 +16164,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -16177,7 +16177,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -16508,7 +16508,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -16522,7 +16522,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -16536,7 +16536,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -16549,7 +16549,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -16971,7 +16971,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -16985,7 +16985,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -16999,7 +16999,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -17012,7 +17012,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,
@@ -17178,7 +17178,7 @@
           "java_field": "createdBy",
           "java_type": "Long",
           "column": {
-            "name": "CREATED_BY_DB_FIELD",
+            "name": "created_by",
             "updatable": false,
             "nullable": false
           },
@@ -17192,7 +17192,7 @@
           "java_field": "createdDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "CREATED_DATE_DB_FIELD",
+            "name": "created_on_utc",
             "updatable": false,
             "nullable": false
           },
@@ -17206,7 +17206,7 @@
           "java_field": "lastModifiedBy",
           "java_type": "Long",
           "column": {
-            "name": "LAST_MODIFIED_BY_DB_FIELD",
+            "name": "last_modified_by",
             "nullable": false
           },
           "converter": null,
@@ -17219,7 +17219,7 @@
           "java_field": "lastModifiedDate",
           "java_type": "OffsetDateTime",
           "column": {
-            "name": "LAST_MODIFIED_DATE_DB_FIELD",
+            "name": "last_modified_on_utc",
             "nullable": false
           },
           "converter": null,

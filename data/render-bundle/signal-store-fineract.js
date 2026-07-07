@@ -2700,10 +2700,10 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "gsim_accounts.accepting_child": {
+    "glim_accounts.accepting_child": {
       "archetype": "자명",
       "schema": {
-        "table": "gsim_accounts",
+        "table": "glim_accounts",
         "name": "accepting_child",
         "type": "INTEGER",
         "nullable": false,
@@ -2778,10 +2778,10 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "glim_accounts.accepting_child": {
+    "gsim_accounts.accepting_child": {
       "archetype": "자명",
       "schema": {
-        "table": "glim_accounts",
+        "table": "gsim_accounts",
         "name": "accepting_child",
         "type": "INTEGER",
         "nullable": false,
@@ -2815,86 +2815,6 @@ window.SIGNAL_STORE = {
           "1": 0.6,
           "0": 0.4
         }
-      }
-    },
-    "gsim_accounts.account_number": {
-      "archetype": "자명",
-      "schema": {
-        "table": "gsim_accounts",
-        "name": "account_number",
-        "type": "TEXT",
-        "nullable": false,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "accountNumber",
-        "java_type": "String",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 5,
-        "distinct_sample": [
-          "GSIM00000",
-          "GSIM00001",
-          "GSIM00002",
-          "GSIM00003",
-          "GSIM00004"
-        ],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "GSIM00000": 0.2,
-          "GSIM00001": 0.2,
-          "GSIM00002": 0.2,
-          "GSIM00003": 0.2,
-          "GSIM00004": 0.2
-        }
-      }
-    },
-    "m_client.activatedon_userid": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "activatedon_userid",
-        "type": "INTEGER",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "activatedBy",
-        "java_type": "AppUser",
-        "is_id": false,
-        "enum": null,
-        "annotations": [
-          "@ManyToOne"
-        ],
-        "format_pattern": null,
-        "join_column": "activatedon_userid",
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
       }
     },
     "glim_accounts.account_number": {
@@ -2942,10 +2862,90 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "gsim_accounts.application_id": {
+    "m_client.activatedon_userid": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "activatedon_userid",
+        "type": "INTEGER",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "activatedBy",
+        "java_type": "AppUser",
+        "is_id": false,
+        "enum": null,
+        "annotations": [
+          "@ManyToOne"
+        ],
+        "format_pattern": null,
+        "join_column": "activatedon_userid",
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
+      }
+    },
+    "gsim_accounts.account_number": {
       "archetype": "자명",
       "schema": {
         "table": "gsim_accounts",
+        "name": "account_number",
+        "type": "TEXT",
+        "nullable": false,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "accountNumber",
+        "java_type": "String",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 5,
+        "distinct_sample": [
+          "GSIM00000",
+          "GSIM00001",
+          "GSIM00002",
+          "GSIM00003",
+          "GSIM00004"
+        ],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "GSIM00000": 0.2,
+          "GSIM00001": 0.2,
+          "GSIM00002": 0.2,
+          "GSIM00003": 0.2,
+          "GSIM00004": 0.2
+        }
+      }
+    },
+    "glim_accounts.application_id": {
+      "archetype": "자명",
+      "schema": {
+        "table": "glim_accounts",
         "name": "application_id",
         "type": "NUMERIC",
         "nullable": true,
@@ -3018,10 +3018,10 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "glim_accounts.application_id": {
+    "gsim_accounts.application_id": {
       "archetype": "자명",
       "schema": {
-        "table": "glim_accounts",
+        "table": "gsim_accounts",
         "name": "application_id",
         "type": "NUMERIC",
         "nullable": true,
@@ -3053,80 +3053,6 @@ window.SIGNAL_STORE = {
         "top_values": {
           "0": 1.0
         }
-      }
-    },
-    "gsim_accounts.child_accounts_count": {
-      "archetype": "자명",
-      "schema": {
-        "table": "gsim_accounts",
-        "name": "child_accounts_count",
-        "type": "INTEGER",
-        "nullable": false,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "childAccountsCount",
-        "java_type": "Long",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 3,
-        "distinct_sample": [
-          8,
-          7,
-          5
-        ],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "8": 0.4,
-          "7": 0.4,
-          "5": 0.2
-        }
-      }
-    },
-    "m_client.closedon_date": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "closedon_date",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "closureDate",
-        "java_type": "LocalDate",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
       }
     },
     "glim_accounts.child_accounts_count": {
@@ -3170,10 +3096,84 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "gsim_accounts.group_id": {
+    "m_client.closedon_date": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "closedon_date",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "closureDate",
+        "java_type": "LocalDate",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
+      }
+    },
+    "gsim_accounts.child_accounts_count": {
       "archetype": "자명",
       "schema": {
         "table": "gsim_accounts",
+        "name": "child_accounts_count",
+        "type": "INTEGER",
+        "nullable": false,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "childAccountsCount",
+        "java_type": "Long",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 3,
+        "distinct_sample": [
+          8,
+          7,
+          5
+        ],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "8": 0.4,
+          "7": 0.4,
+          "5": 0.2
+        }
+      }
+    },
+    "glim_accounts.group_id": {
+      "archetype": "자명",
+      "schema": {
+        "table": "glim_accounts",
         "name": "group_id",
         "type": "INTEGER",
         "nullable": false,
@@ -3244,10 +3244,10 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "glim_accounts.group_id": {
+    "gsim_accounts.group_id": {
       "archetype": "자명",
       "schema": {
-        "table": "glim_accounts",
+        "table": "gsim_accounts",
         "name": "group_id",
         "type": "INTEGER",
         "nullable": false,
@@ -3280,90 +3280,6 @@ window.SIGNAL_STORE = {
         "null_rate": 0,
         "top_values": {
           "0": 1.0
-        }
-      }
-    },
-    "gsim_accounts.parent_deposit": {
-      "archetype": "자명",
-      "schema": {
-        "table": "gsim_accounts",
-        "name": "parent_deposit",
-        "type": "NUMERIC",
-        "nullable": false,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "parentDeposit",
-        "java_type": "BigDecimal",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 5,
-        "distinct_sample": [
-          2511745.83,
-          1089422.11,
-          858900.58,
-          693386.39,
-          557043.87
-        ],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "2511745.83": 0.2,
-          "1089422.11": 0.2,
-          "858900.58": 0.2,
-          "693386.39": 0.2,
-          "557043.87": 0.2
-        }
-      }
-    },
-    "m_client.date_of_birth": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "date_of_birth",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "dateOfBirth",
-        "java_type": "LocalDate",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 979,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "2001-01-26": 0.002,
-          "2000-01-09": 0.002,
-          "1999-03-02": 0.002,
-          "1996-12-18": 0.002,
-          "1996-11-15": 0.002
         }
       }
     },
@@ -3412,11 +3328,11 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_deposit_account_interest_incentives.deposit_account_interest_rate_slab_id": {
+    "m_client.created_on_utc": {
       "archetype": "자명",
       "schema": {
-        "table": "m_deposit_account_interest_incentives",
-        "name": "deposit_account_interest_rate_slab_id",
+        "table": "m_client",
+        "name": "created_on_utc",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -3424,15 +3340,13 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "depositAccountInterestRateChartSlabs",
-        "java_type": "DepositAccountInterestRateChartSlabs",
+        "field": "createdDate",
+        "java_type": "OffsetDateTime",
         "is_id": false,
         "enum": null,
-        "annotations": [
-          "@ManyToOne"
-        ],
+        "annotations": [],
         "format_pattern": null,
-        "join_column": "deposit_account_interest_rate_slab_id",
+        "join_column": null,
         "deprecated": false
       },
       "reftable": {
@@ -3442,20 +3356,20 @@ window.SIGNAL_STORE = {
         "present": false
       }
     },
-    "m_client.default_savings_account": {
+    "gsim_accounts.parent_deposit": {
       "archetype": "자명",
       "schema": {
-        "table": "m_client",
-        "name": "default_savings_account",
-        "type": "INTEGER",
-        "nullable": true,
+        "table": "gsim_accounts",
+        "name": "parent_deposit",
+        "type": "NUMERIC",
+        "nullable": false,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "savingsAccountId",
-        "java_type": "Long",
+        "field": "parentDeposit",
+        "java_type": "BigDecimal",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -3468,11 +3382,23 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 5,
+        "distinct_sample": [
+          2511745.83,
+          1089422.11,
+          858900.58,
+          693386.39,
+          557043.87
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2511745.83": 0.2,
+          "1089422.11": 0.2,
+          "858900.58": 0.2,
+          "693386.39": 0.2,
+          "557043.87": 0.2
+        }
       }
     },
     "m_loan.account_no": {
@@ -3514,59 +3440,20 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_deposit_account_on_hold_transaction.amount": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_deposit_account_on_hold_transaction",
-        "name": "amount",
-        "type": "NUMERIC",
-        "nullable": false,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "amount",
-        "java_type": "BigDecimal",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 50,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "99246.47": 0.02,
-          "97215.64": 0.02,
-          "93686.86": 0.02,
-          "92280.5": 0.02,
-          "90562.75": 0.02
-        }
-      }
-    },
-    "m_client.default_savings_product": {
+    "m_client.date_of_birth": {
       "archetype": "자명",
       "schema": {
         "table": "m_client",
-        "name": "default_savings_product",
-        "type": "INTEGER",
+        "name": "date_of_birth",
+        "type": "TEXT",
         "nullable": true,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "savingsProductId",
-        "java_type": "Long",
+        "field": "dateOfBirth",
+        "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -3579,11 +3466,47 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 979,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2001-01-26": 0.002,
+          "2000-01-09": 0.002,
+          "1999-03-02": 0.002,
+          "1996-12-18": 0.002,
+          "1996-11-15": 0.002
+        }
+      }
+    },
+    "m_deposit_account_interest_incentives.deposit_account_interest_rate_slab_id": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_deposit_account_interest_incentives",
+        "name": "deposit_account_interest_rate_slab_id",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "depositAccountInterestRateChartSlabs",
+        "java_type": "DepositAccountInterestRateChartSlabs",
+        "is_id": false,
+        "enum": null,
+        "annotations": [
+          "@ManyToOne"
+        ],
+        "format_pattern": null,
+        "join_column": "deposit_account_interest_rate_slab_id",
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": false
       }
     },
     "m_loan.allow_full_term_for_tranche": {
@@ -3623,20 +3546,20 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_deposit_account_on_hold_transaction.is_reversed": {
+    "m_client.default_savings_account": {
       "archetype": "자명",
       "schema": {
-        "table": "m_deposit_account_on_hold_transaction",
-        "name": "is_reversed",
+        "table": "m_client",
+        "name": "default_savings_account",
         "type": "INTEGER",
-        "nullable": false,
+        "nullable": true,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "reversed",
-        "java_type": "boolean",
+        "field": "savingsAccountId",
+        "java_type": "Long",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -3649,14 +3572,188 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 1,
-        "distinct_sample": [
-          0
-        ],
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
+      }
+    },
+    "m_deposit_account_on_hold_transaction.amount": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_deposit_account_on_hold_transaction",
+        "name": "amount",
+        "type": "NUMERIC",
+        "nullable": false,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "amount",
+        "java_type": "BigDecimal",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 50,
+        "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "0": 1.0
+          "99246.47": 0.02,
+          "97215.64": 0.02,
+          "93686.86": 0.02,
+          "92280.5": 0.02,
+          "90562.75": 0.02
+        }
+      }
+    },
+    "m_loan.approved_principal": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_loan",
+        "name": "approved_principal",
+        "type": "NUMERIC",
+        "nullable": false,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "approvedPrincipal",
+        "java_type": "BigDecimal",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 3000,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "199352340.33": 0.0003,
+          "199250976.01": 0.0003,
+          "198925628.68": 0.0003,
+          "198815588.32": 0.0003,
+          "198570048.77": 0.0003
+        }
+      }
+    },
+    "m_client.default_savings_product": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "default_savings_product",
+        "type": "INTEGER",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "savingsProductId",
+        "java_type": "Long",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
+      }
+    },
+    "m_deposit_account_on_hold_transaction.created_on_utc": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_deposit_account_on_hold_transaction",
+        "name": "created_on_utc",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "createdDate",
+        "java_type": "OffsetDateTime",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": false
+      }
+    },
+    "m_loan.approvedon_date": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_loan",
+        "name": "approvedon_date",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "approvedOnDate",
+        "java_type": "LocalDate",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 793,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 0.05,
+        "top_values": {
+          "2026-07-07": 0.005,
+          "2026-06-05": 0.0047,
+          "2026-06-27": 0.0043,
+          "2026-06-18": 0.0043,
+          "2026-04-21": 0.0043
         }
       }
     },
@@ -3699,20 +3796,20 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_loan.approved_principal": {
+    "m_deposit_account_on_hold_transaction.is_reversed": {
       "archetype": "자명",
       "schema": {
-        "table": "m_loan",
-        "name": "approved_principal",
-        "type": "NUMERIC",
+        "table": "m_deposit_account_on_hold_transaction",
+        "name": "is_reversed",
+        "type": "INTEGER",
         "nullable": false,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "approvedPrincipal",
-        "java_type": "BigDecimal",
+        "field": "reversed",
+        "java_type": "boolean",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -3725,17 +3822,83 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 3000,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "199352340.33": 0.0003,
-          "199250976.01": 0.0003,
-          "198925628.68": 0.0003,
-          "198815588.32": 0.0003,
-          "198570048.77": 0.0003
+          "0": 1.0
         }
+      }
+    },
+    "m_loan.approvedon_userid": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_loan",
+        "name": "approvedon_userid",
+        "type": "INTEGER",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "approvedBy",
+        "java_type": "AppUser",
+        "is_id": false,
+        "enum": null,
+        "annotations": [
+          "@ManyToOne"
+        ],
+        "format_pattern": null,
+        "join_column": "approvedon_userid",
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
+      }
+    },
+    "m_client.email_address": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "email_address",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "emailAddress",
+        "java_type": "String",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_deposit_account_on_hold_transaction.savings_account_id": {
@@ -3779,25 +3942,27 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_client.email_address": {
+    "m_loan.charged_off_by_userid": {
       "archetype": "자명",
       "schema": {
-        "table": "m_client",
-        "name": "email_address",
-        "type": "TEXT",
+        "table": "m_loan",
+        "name": "charged_off_by_userid",
+        "type": "INTEGER",
         "nullable": true,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "emailAddress",
-        "java_type": "String",
+        "field": "chargedOffBy",
+        "java_type": "AppUser",
         "is_id": false,
         "enum": null,
-        "annotations": [],
+        "annotations": [
+          "@ManyToOne"
+        ],
         "format_pattern": null,
-        "join_column": null,
+        "join_column": "charged_off_by_userid",
         "deprecated": false
       },
       "reftable": {
@@ -3812,11 +3977,11 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "m_loan.approvedon_date": {
+    "m_client.firstname": {
       "archetype": "자명",
       "schema": {
-        "table": "m_loan",
-        "name": "approvedon_date",
+        "table": "m_client",
+        "name": "firstname",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -3824,8 +3989,8 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "approvedOnDate",
-        "java_type": "LocalDate",
+        "field": "firstname",
+        "java_type": "String",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -3838,16 +4003,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 793,
+        "cardinality": 121,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.05,
+        "null_rate": 0,
         "top_values": {
-          "2026-07-07": 0.005,
-          "2026-06-05": 0.0047,
-          "2026-06-27": 0.0043,
-          "2026-06-18": 0.0043,
-          "2026-04-21": 0.0043
+          "영철": 0.015,
+          "지연": 0.014,
+          "정순": 0.014,
+          "옥자": 0.013,
+          "아름": 0.013
         }
       }
     },
@@ -3890,50 +4055,11 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_client.firstname": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "firstname",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "firstname",
-        "java_type": "String",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 121,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "영철": 0.015,
-          "지연": 0.014,
-          "정순": 0.014,
-          "옥자": 0.013,
-          "아름": 0.013
-        }
-      }
-    },
-    "m_loan.approvedon_userid": {
+    "m_loan.client_id": {
       "archetype": "자명",
       "schema": {
         "table": "m_loan",
-        "name": "approvedon_userid",
+        "name": "client_id",
         "type": "INTEGER",
         "nullable": true,
         "pk": false,
@@ -3941,15 +4067,54 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "approvedBy",
-        "java_type": "AppUser",
+        "field": "client",
+        "java_type": "Client",
         "is_id": false,
         "enum": null,
         "annotations": [
           "@ManyToOne"
         ],
         "format_pattern": null,
-        "join_column": "approvedon_userid",
+        "join_column": "client_id",
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": true,
+        "cardinality": 735,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "921": 0.004,
+          "87": 0.0037,
+          "658": 0.0037,
+          "472": 0.0033,
+          "722": 0.0033
+        }
+      }
+    },
+    "m_client.fullname": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "fullname",
+        "type": "TEXT",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "fullname",
+        "java_type": "String",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
         "deprecated": false
       },
       "reftable": {
@@ -4003,11 +4168,11 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_client.fullname": {
+    "m_loan.closedon_date": {
       "archetype": "자명",
       "schema": {
-        "table": "m_client",
-        "name": "fullname",
+        "table": "m_loan",
+        "name": "closedon_date",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4015,8 +4180,8 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "fullname",
-        "java_type": "String",
+        "field": "closedOnDate",
+        "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -4029,18 +4194,24 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 205,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.779,
+        "top_values": {
+          "2026-07-07": 0.0107,
+          "2026-07-06": 0.0097,
+          "2026-07-03": 0.0087,
+          "2026-07-05": 0.007,
+          "2026-06-29": 0.0067
+        }
       }
     },
-    "m_loan.charged_off_by_userid": {
+    "m_client.image_id": {
       "archetype": "자명",
       "schema": {
-        "table": "m_loan",
-        "name": "charged_off_by_userid",
+        "table": "m_client",
+        "name": "image_id",
         "type": "INTEGER",
         "nullable": true,
         "pk": false,
@@ -4048,15 +4219,13 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "chargedOffBy",
-        "java_type": "AppUser",
+        "field": "imageId",
+        "java_type": "Long",
         "is_id": false,
         "enum": null,
-        "annotations": [
-          "@ManyToOne"
-        ],
+        "annotations": [],
         "format_pattern": null,
-        "join_column": "charged_off_by_userid",
+        "join_column": null,
         "deprecated": false
       },
       "reftable": {
@@ -4114,11 +4283,11 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_client.image_id": {
+    "m_loan.closedon_userid": {
       "archetype": "자명",
       "schema": {
-        "table": "m_client",
-        "name": "image_id",
+        "table": "m_loan",
+        "name": "closedon_userid",
         "type": "INTEGER",
         "nullable": true,
         "pk": false,
@@ -4126,8 +4295,38 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "imageId",
-        "java_type": "Long",
+        "field": "closedBy",
+        "java_type": "AppUser",
+        "is_id": false,
+        "enum": null,
+        "annotations": [
+          "@ManyToOne"
+        ],
+        "format_pattern": null,
+        "join_column": "closedon_userid",
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": false
+      }
+    },
+    "m_client.is_staff": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_client",
+        "name": "is_staff",
+        "type": "INTEGER",
+        "nullable": false,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "isStaff",
+        "java_type": "boolean",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -4140,51 +4339,14 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
-      }
-    },
-    "m_loan.client_id": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_loan",
-        "name": "client_id",
-        "type": "INTEGER",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "client",
-        "java_type": "Client",
-        "is_id": false,
-        "enum": null,
-        "annotations": [
-          "@ManyToOne"
+        "cardinality": 1,
+        "distinct_sample": [
+          0
         ],
-        "format_pattern": null,
-        "join_column": "client_id",
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 735,
-        "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "921": 0.004,
-          "87": 0.0037,
-          "658": 0.0037,
-          "472": 0.0033,
-          "722": 0.0033
+          "0": 1.0
         }
       }
     },
@@ -4227,48 +4389,11 @@ window.SIGNAL_STORE = {
         }
       }
     },
-    "m_client.is_staff": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "is_staff",
-        "type": "INTEGER",
-        "nullable": false,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "isStaff",
-        "java_type": "boolean",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 1,
-        "distinct_sample": [
-          0
-        ],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {
-          "0": 1.0
-        }
-      }
-    },
-    "m_loan.closedon_date": {
-      "archetype": "자명",
+    "m_loan.accrued_till": {
+      "archetype": "lineage",
       "schema": {
         "table": "m_loan",
-        "name": "closedon_date",
+        "name": "accrued_till",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4276,46 +4401,7 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "closedOnDate",
-        "java_type": "LocalDate",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 205,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0.779,
-        "top_values": {
-          "2026-07-07": 0.0107,
-          "2026-07-06": 0.0097,
-          "2026-07-03": 0.0087,
-          "2026-07-05": 0.007,
-          "2026-06-29": 0.0067
-        }
-      }
-    },
-    "m_deposit_account_term_and_preclosure.maturity_date": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_deposit_account_term_and_preclosure",
-        "name": "maturity_date",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "maturityDate",
+        "field": "accruedTill",
         "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
@@ -4369,11 +4455,11 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "m_loan.accrued_till": {
+    "m_loan.charged_off_on_date": {
       "archetype": "lineage",
       "schema": {
         "table": "m_loan",
-        "name": "accrued_till",
+        "name": "charged_off_on_date",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4381,7 +4467,7 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "accruedTill",
+        "field": "chargedOffOnDate",
         "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
@@ -4435,11 +4521,11 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "m_loan.charged_off_on_date": {
+    "m_loan.expected_disbursedon_date": {
       "archetype": "lineage",
       "schema": {
         "table": "m_loan",
-        "name": "charged_off_on_date",
+        "name": "expected_disbursedon_date",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4447,7 +4533,7 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "chargedOffOnDate",
+        "field": "expectedDisbursementDate",
         "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
@@ -4501,11 +4587,11 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "m_loan.expected_disbursedon_date": {
+    "m_loan.expected_firstrepaymenton_date": {
       "archetype": "lineage",
       "schema": {
         "table": "m_loan",
-        "name": "expected_disbursedon_date",
+        "name": "expected_firstrepaymenton_date",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4513,7 +4599,7 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "expectedDisbursementDate",
+        "field": "expectedFirstRepaymentOnDate",
         "java_type": "LocalDate",
         "is_id": false,
         "enum": null,
@@ -4567,45 +4653,12 @@ window.SIGNAL_STORE = {
         "top_values": {}
       }
     },
-    "m_loan.expected_firstrepaymenton_date": {
-      "archetype": "lineage",
-      "schema": {
-        "table": "m_loan",
-        "name": "expected_firstrepaymenton_date",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "expectedFirstRepaymentOnDate",
-        "java_type": "LocalDate",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
-        "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
-      }
-    },
-    "m_client.CREATED_BY_DB_FIELD": {
+    "m_client.created_by": {
       "archetype": "자명",
       "schema": {
         "table": "m_client",
-        "name": "CREATED_BY_DB_FIELD",
-        "type": "TEXT",
+        "name": "created_by",
+        "type": "INTEGER",
         "nullable": true,
         "pk": false,
         "fk": null
@@ -4625,53 +4678,15 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
-      }
-    },
-    "m_client.CREATED_DATE_DB_FIELD": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_client",
-        "name": "CREATED_DATE_DB_FIELD",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "createdDate",
-        "java_type": "OffsetDateTime",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
         "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
       }
     },
-    "m_loan.CREATED_BY_DB_FIELD": {
+    "m_loan.created_by": {
       "archetype": "자명",
       "schema": {
         "table": "m_loan",
-        "name": "CREATED_BY_DB_FIELD",
-        "type": "TEXT",
+        "name": "created_by",
+        "type": "INTEGER",
         "nullable": true,
         "pk": false,
         "fk": null
@@ -4691,53 +4706,15 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
-      }
-    },
-    "m_deposit_account_on_hold_transaction.CREATED_BY_DB_FIELD": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_deposit_account_on_hold_transaction",
-        "name": "CREATED_BY_DB_FIELD",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "createdBy",
-        "java_type": "Long",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
         "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
       }
     },
-    "m_client.LAST_MODIFIED_BY_DB_FIELD": {
+    "m_client.last_modified_by": {
       "archetype": "자명",
       "schema": {
         "table": "m_client",
-        "name": "LAST_MODIFIED_BY_DB_FIELD",
-        "type": "TEXT",
+        "name": "last_modified_by",
+        "type": "INTEGER",
         "nullable": true,
         "pk": false,
         "fk": null
@@ -4757,61 +4734,23 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
-      }
-    },
-    "m_loan.CREATED_DATE_DB_FIELD": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_loan",
-        "name": "CREATED_DATE_DB_FIELD",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "createdDate",
-        "java_type": "OffsetDateTime",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
         "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
       }
     },
-    "m_deposit_account_on_hold_transaction.CREATED_DATE_DB_FIELD": {
+    "m_deposit_account_on_hold_transaction.created_by": {
       "archetype": "자명",
       "schema": {
         "table": "m_deposit_account_on_hold_transaction",
-        "name": "CREATED_DATE_DB_FIELD",
-        "type": "TEXT",
+        "name": "created_by",
+        "type": "INTEGER",
         "nullable": true,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "createdDate",
-        "java_type": "OffsetDateTime",
+        "field": "createdBy",
+        "java_type": "Long",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -4823,19 +4762,42 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "present": false
       }
     },
-    "m_client.LAST_MODIFIED_DATE_DB_FIELD": {
+    "m_loan.last_modified_by": {
+      "archetype": "자명",
+      "schema": {
+        "table": "m_loan",
+        "name": "last_modified_by",
+        "type": "INTEGER",
+        "nullable": true,
+        "pk": false,
+        "fk": null
+      },
+      "orm": {
+        "present": true,
+        "field": "lastModifiedBy",
+        "java_type": "Long",
+        "is_id": false,
+        "enum": null,
+        "annotations": [],
+        "format_pattern": null,
+        "join_column": null,
+        "deprecated": false
+      },
+      "reftable": {
+        "present": false
+      },
+      "profile": {
+        "present": false
+      }
+    },
+    "m_client.last_modified_on_utc": {
       "archetype": "자명",
       "schema": {
         "table": "m_client",
-        "name": "LAST_MODIFIED_DATE_DB_FIELD",
+        "name": "last_modified_on_utc",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4856,61 +4818,23 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
-      }
-    },
-    "m_loan.LAST_MODIFIED_BY_DB_FIELD": {
-      "archetype": "자명",
-      "schema": {
-        "table": "m_loan",
-        "name": "LAST_MODIFIED_BY_DB_FIELD",
-        "type": "TEXT",
-        "nullable": true,
-        "pk": false,
-        "fk": null
-      },
-      "orm": {
-        "present": true,
-        "field": "lastModifiedBy",
-        "java_type": "Long",
-        "is_id": false,
-        "enum": null,
-        "annotations": [],
-        "format_pattern": null,
-        "join_column": null,
-        "deprecated": false
-      },
-      "reftable": {
         "present": false
-      },
-      "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
       }
     },
-    "m_deposit_account_on_hold_transaction.LAST_MODIFIED_BY_DB_FIELD": {
+    "m_deposit_account_on_hold_transaction.created_date": {
       "archetype": "자명",
       "schema": {
         "table": "m_deposit_account_on_hold_transaction",
-        "name": "LAST_MODIFIED_BY_DB_FIELD",
+        "name": "created_date",
         "type": "TEXT",
-        "nullable": true,
+        "nullable": false,
         "pk": false,
         "fk": null
       },
       "orm": {
         "present": true,
-        "field": "lastModifiedBy",
-        "java_type": "Long",
+        "field": "createdDateToRemove",
+        "java_type": "LocalDateTime",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -4922,19 +4846,14 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "present": false
       }
     },
-    "m_loan.LAST_MODIFIED_DATE_DB_FIELD": {
+    "m_loan.last_modified_on_utc": {
       "archetype": "자명",
       "schema": {
         "table": "m_loan",
-        "name": "LAST_MODIFIED_DATE_DB_FIELD",
+        "name": "last_modified_on_utc",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4955,19 +4874,14 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "present": false
       }
     },
-    "m_deposit_account_on_hold_transaction.LAST_MODIFIED_DATE_DB_FIELD": {
+    "m_client_identifier.created_by": {
       "archetype": "자명",
       "schema": {
-        "table": "m_deposit_account_on_hold_transaction",
-        "name": "LAST_MODIFIED_DATE_DB_FIELD",
+        "table": "m_client_identifier",
+        "name": "created_by",
         "type": "TEXT",
         "nullable": true,
         "pk": false,
@@ -4975,8 +4889,8 @@ window.SIGNAL_STORE = {
       },
       "orm": {
         "present": true,
-        "field": "lastModifiedDate",
-        "java_type": "OffsetDateTime",
+        "field": "createdBy",
+        "java_type": "Long",
         "is_id": false,
         "enum": null,
         "annotations": [],
@@ -4988,12 +4902,7 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
-        "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "present": false
       }
     },
     "m_loan_transaction_relation.relation_type_enum": {

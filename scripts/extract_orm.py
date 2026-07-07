@@ -9,7 +9,7 @@ tree-sitter-java 기반 JPA Entity 파서 (v2).
   - @Transient 필드 제외
   - typed enum 접미사(Enum)까지 정확한 타입 인식
 """
-import argparse, json, subprocess, sys
+import argparse, json, re, subprocess, sys
 from collections import defaultdict
 from pathlib import Path
 from tree_sitter import Language, Parser
@@ -220,6 +220,46 @@ def get_table_name(cls_node, src: bytes, index=None) -> str:
     return text_of(name_node, src).lower() if name_node else "?"
 
 
+# ── String 상수 해석 ────────────────────────────────────────────────
+# Fineract는 `@Column(name = CREATED_BY_DB_FIELD)` 이렇게 상수 참조를 사용.
+# 실제 상수 정의: `public static final String CREATED_BY_DB_FIELD = "created_by";`
+# tree-sitter는 identifier를 그대로 저장하므로, corpus의 모든 String 상수를
+# pre-scan해서 lookup dict를 만들고, 필드 처리 후 name이 상수면 값으로 대체.
+
+_CONST_RE = re.compile(r'public\s+static\s+final\s+String\s+(\w+)\s*=\s*"([^"]+)"')
+
+
+def collect_string_constants(corpus: Path) -> dict:
+    """corpus의 모든 java 파일에서 public static final String 상수 수집.
+       return: {constant_name: string_value}
+       이름 충돌 시 first-win (Fineract 특성상 우리 audit 상수는 unique)."""
+    constants = {}
+    for f in corpus.rglob("*.java"):
+        try:
+            text = f.read_text(encoding="utf-8", errors="replace")
+        except Exception:
+            continue
+        for m in _CONST_RE.finditer(text):
+            name, value = m.group(1), m.group(2)
+            if name not in constants:
+                constants[name] = value
+    return constants
+
+
+def resolve_constants_in_entities(entities: list, constants: dict) -> int:
+    """entity의 fields에서 column.name / join_column.name이 상수 참조면 실제 값으로 대체.
+       return: 대체된 필드 수."""
+    replaced = 0
+    for ent in entities:
+        for f in ent["fields"]:
+            for slot in ("column", "join_column"):
+                col = f.get(slot)
+                if col and col.get("name") in constants:
+                    col["name"] = constants[col["name"]]
+                    replaced += 1
+    return replaced
+
+
 def get_package(root_node, src: bytes) -> str:
     for c in root_node.children:
         if c.type == "package_declaration":
@@ -254,6 +294,13 @@ def main():
             "field_count": len(fields), "fields": fields,
         })
     entities.sort(key=lambda e: e["fqn"])
+
+    # 상수 참조 해석 (Fineract audit 필드 등)
+    constants = collect_string_constants(corpus)
+    print(f"[i] String 상수 수집: {len(constants)}", file=sys.stderr, flush=True)
+    replaced = resolve_constants_in_entities(entities, constants)
+    print(f"[i] 상수 참조 해석: {replaced} 필드", file=sys.stderr, flush=True)
+
     field_count = sum(e["field_count"] for e in entities)
 
     commit = None
