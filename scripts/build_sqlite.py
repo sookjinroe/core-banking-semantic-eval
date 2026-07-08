@@ -885,6 +885,230 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
                 "frequency_number": random.choice([1, 2, 3]),
             })
 
+    # ─── (13) audit 필드 백필 — Fineract는 SecurityContext로 자동 채우지만
+    # 우리 시드는 명시적으로 채워야. 이미 데이터 있는 테이블의 audit 4 컬럼 후처리 UPDATE.
+    print(f"      audit backfill...", flush=True)
+    now = str(datetime.now())
+    audit_tables = ["m_client", "m_client_identifier", "m_loan", "m_loan_charge",
+                    "m_loan_transaction", "m_loan_reschedule_request",
+                    "m_savings_account", "m_savings_account_charge",
+                    "m_deposit_account_on_hold_transaction",
+                    "m_loan_amortization_allocation_mapping"]
+    for tbl in audit_tables:
+        for col, val in [("created_by", 1), ("last_modified_by", 1),
+                          ("created_on_utc", now), ("last_modified_on_utc", now)]:
+            try:
+                cols = [r[1] for r in cur.execute(f'PRAGMA table_info("{tbl}")')]
+                if col in cols:
+                    cur.execute(f'UPDATE "{tbl}" SET "{col}" = ? WHERE "{col}" IS NULL', (val,))
+            except Exception:
+                pass
+
+    # ─── (14) m_client 미시드 컬럼 확장 ───
+    # savings_product / savings 목록을 sqlite에서 재조회 (다양성 함수와 별개 스코프)
+    _sp_ids = [r[0] for r in cur.execute("SELECT id FROM m_savings_product")]
+
+    # cv_id 계열은 새 CodeValue 시드 필요
+    print(f"      m_client 미시드 컬럼 확장...", flush=True)
+    # 새 code_id 확장 (client 관련 CodeValue)
+    #   code_id=15 ClientClosureReason, code_id=16 LoanPurpose, code_id=17 ClientClassification (기존)
+    # 우선 필요한 code_value 시드
+    closure_reasons = {}
+    for n in ("Deceased", "Migration", "Other"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 15, "code_value": n, "code_description": n,
+            "order_position": len(closure_reasons)+1, "is_active": 1,
+        })
+        closure_reasons[n] = rid
+    reject_reasons = {}
+    for n in ("KYC failed", "Duplicate applicant", "Blacklist"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 21, "code_value": n, "code_description": n,
+            "order_position": len(reject_reasons)+1, "is_active": 1,
+        })
+        reject_reasons[n] = rid
+    withdraw_reasons = {}
+    for n in ("Applicant request", "Documentation lost"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 22, "code_value": n, "code_description": n,
+            "order_position": len(withdraw_reasons)+1, "is_active": 1,
+        })
+        withdraw_reasons[n] = rid
+    client_types = {}
+    for n in ("Regular", "VIP", "Corporate"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 20, "code_value": n, "code_description": n,
+            "order_position": len(client_types)+1, "is_active": 1,
+        })
+        client_types[n] = rid
+
+    # m_client의 각 상태별 컬럼 후처리 (활성 없이도 값 있어야 profile 잡힘)
+    # status 300 (ACTIVE): activatedon_userid, sub_status, legal_form_enum, client_type_cv_id, fullname
+    # status 500 (REJECTED): reject_reason_cv_id
+    # status 600 (CLOSED): closedon_date, closedon_userid, closure_reason_cv_id
+    # status 800 (WITHDRAWN): withdraw_reason_cv_id
+    cur.execute("SELECT id, status_enum FROM m_client")
+    for cid, status in cur.fetchall():
+        updates = {}
+        # 모든 client (sub_status, legal_form_enum, client_type_cv_id는 어느 상태나 가능)
+        updates["sub_status"] = random.choices([0, 100, 200, 300], weights=[0.6, 0.15, 0.15, 0.1])[0]
+        updates["legal_form_enum"] = random.choices([1, 2], weights=[0.85, 0.15])[0]  # 1=PERSON, 2=ENTITY
+        updates["client_type_cv_id"] = random.choices(list(client_types.values()), weights=[0.7, 0.2, 0.1])[0]
+        if updates["legal_form_enum"] == 2:
+            updates["fullname"] = f"주식회사 {['한강','대한','동방','서울','새마을'][random.randint(0,4)]}"
+        # image_id: 30%만
+        if random.random() < 0.3:
+            updates["image_id"] = random.randint(1, 999)
+        if status == 300:
+            updates["activatedon_userid"] = random.randint(1, 3)
+        elif status == 500:
+            updates["reject_reason_cv_id"] = random.choice(list(reject_reasons.values()))
+        elif status == 600:
+            updates["closedon_date"] = str(_random_date(date.today() - timedelta(days=365), date.today()))
+            updates["closedon_userid"] = random.randint(1, 3)
+            updates["closure_reason_cv_id"] = random.choice(list(closure_reasons.values()))
+        elif status == 800:
+            updates["withdraw_reason_cv_id"] = random.choice(list(withdraw_reasons.values()))
+        # default_savings_* (30%의 client에 배정, 실제 savings_account 참조)
+        if random.random() < 0.3 and savings_ids_active:
+            updates["default_savings_account"] = random.choice(savings_ids_active)
+            updates["default_savings_product"] = random.choice(_sp_ids)
+        # UPDATE 실행
+        for col, val in updates.items():
+            try:
+                cur.execute(f'UPDATE m_client SET "{col}" = ? WHERE id = ?', (val, cid))
+            except Exception:
+                pass
+
+    # ─── (15) m_loan 미시드 컬럼 확장 ───
+    print(f"      m_loan 미시드 컬럼 확장...", flush=True)
+    loan_purposes = {}
+    for n in ("Business expansion", "Home renovation", "Education", "Medical", "Debt consolidation"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 25, "code_value": n, "code_description": n,
+            "order_position": len(loan_purposes)+1, "is_active": 1,
+        })
+        loan_purposes[n] = rid
+    charge_off_reasons = {}
+    for n in ("Bankruptcy", "Default > 180 days", "Fraud"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 26, "code_value": n, "code_description": n,
+            "order_position": len(charge_off_reasons)+1, "is_active": 1,
+        })
+        charge_off_reasons[n] = rid
+    writeoff_reasons = {}
+    for n in ("Uncollectible", "Legal writeoff"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 27, "code_value": n, "code_description": n,
+            "order_position": len(writeoff_reasons)+1, "is_active": 1,
+        })
+        writeoff_reasons[n] = rid
+
+    # m_loan 상태별 후처리
+    cur.execute("SELECT id, loan_status_id, disbursedon_date FROM m_loan")
+    for lid, status, disburse in cur.fetchall():
+        updates = {}
+        # 모든 loan: loanpurpose_cv_id (60%에), repayment_start_date_type_enum, loan_sub_status_id
+        if random.random() < 0.6:
+            updates["loanpurpose_cv_id"] = random.choice(list(loan_purposes.values()))
+        updates["repayment_start_date_type_enum"] = random.choices([1, 2, 3], weights=[0.7, 0.2, 0.1])[0]
+        updates["loan_sub_status_id"] = random.choices([0, 100, 200], weights=[0.85, 0.10, 0.05])[0]
+        # 승인·활성 loan: approvedon_userid
+        if status >= 200:
+            updates["approvedon_userid"] = random.randint(1, 3)
+        # 활성 대출: expected_disbursedon_date, expected_firstrepaymenton_date
+        if status == 300 and disburse:
+            try:
+                d = date.fromisoformat(disburse)
+                updates["expected_disbursedon_date"] = disburse
+                updates["expected_firstrepaymenton_date"] = str(d + timedelta(days=30))
+                # accrued_till: 활성 loan의 절반
+                if random.random() < 0.5:
+                    updates["accrued_till"] = str(date.today())
+            except Exception:
+                pass
+        # WRITE_OFF (601): writeoff_reason_cv_id
+        if status == 601:
+            updates["writeoff_reason_cv_id"] = random.choice(list(writeoff_reasons.values()))
+        # OVERPAID/CLOSED loan 중 일부: charge_off (5%)
+        if status in (600, 700) and random.random() < 0.05:
+            updates["charge_off_reason_cv_id"] = random.choice(list(charge_off_reasons.values()))
+            updates["charged_off_by_userid"] = random.randint(1, 3)
+            updates["charged_off_on_date"] = str(_random_date(date.today() - timedelta(days=180), date.today()))
+        # 종료 loan의 closedon_userid
+        if status in (600, 601):
+            updates["closedon_userid"] = random.randint(1, 3)
+        for col, val in updates.items():
+            try:
+                cur.execute(f'UPDATE m_loan SET "{col}" = ? WHERE id = ?', (val, lid))
+            except Exception:
+                pass
+
+    # ─── (16) m_savings_account 미시드 컬럼 확장 ───
+    print(f"      m_savings_account 미시드 컬럼 확장...", flush=True)
+    _sv_rows = list(cur.execute("SELECT id, status_enum FROM m_savings_account"))
+    for sid, status in _sv_rows:
+        updates = {}
+        updates["lockin_period_frequency_enum"] = random.choices([1, 2, 3], weights=[0.2, 0.6, 0.2])[0]
+        # 활성 계좌: lockedin_until_date_derived, on_hold_funds_derived
+        if status in (300, 700, 800) and random.random() < 0.4:
+            updates["lockedin_until_date_derived"] = str(date.today() + timedelta(days=random.randint(30, 730)))
+        if status == 300 and random.random() < 0.15:
+            updates["on_hold_funds_derived"] = round(random.uniform(1000, 50000), 2)
+        # accrued_till_date: 활성 계좌의 절반
+        if status in (300, 700) and random.random() < 0.5:
+            updates["accrued_till_date"] = str(date.today())
+        for col, val in updates.items():
+            try:
+                cur.execute(f'UPDATE m_savings_account SET "{col}" = ? WHERE id = ?', (val, sid))
+            except Exception:
+                pass
+
+    # ─── (17) m_savings_product의 lockin_period_frequency_enum ───
+    cur.execute('UPDATE m_savings_product SET lockin_period_frequency_enum = ? WHERE lockin_period_frequency_enum IS NULL', (2,))
+
+    # ─── (18) m_deposit_account_term_and_preclosure.expected_firstdepositon_date ───
+    cur.execute('UPDATE m_deposit_account_term_and_preclosure SET expected_firstdepositon_date = date(?, "+" || (abs(random()) % 30) || " days")', (str(date.today()),))
+
+    # ─── (19) m_loan_reschedule_request.reschedule_reason_cv_id ───
+    resch_reasons = {}
+    for n in ("Customer request", "Financial hardship"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 28, "code_value": n, "code_description": n,
+            "order_position": len(resch_reasons)+1, "is_active": 1,
+        })
+        resch_reasons[n] = rid
+    resch_reason_ids = list(resch_reasons.values())
+    cur.execute("SELECT id FROM m_loan_reschedule_request")
+    for (rid,) in cur.fetchall():
+        cur.execute("UPDATE m_loan_reschedule_request SET reschedule_reason_cv_id = ? WHERE id = ?",
+                    (random.choice(resch_reason_ids), rid))
+
+    # ─── (20) m_loan_recalculation_details의 nth_day/weekday_enum 비율 증가 ───
+    cur.execute("SELECT id FROM m_loan_recalculation_details")
+    for (rid,) in cur.fetchall():
+        if random.random() < 0.5:
+            cur.execute("UPDATE m_loan_recalculation_details SET rest_frequency_nth_day_enum = ? WHERE id = ?",
+                        (random.choice([1, 2, 3, 4]), rid))
+        if random.random() < 0.5:
+            cur.execute("UPDATE m_loan_recalculation_details SET rest_frequency_weekday_enum = ? WHERE id = ?",
+                        (random.choice([1, 2, 3, 4, 5, 6, 7]), rid))
+
+    # ─── (21) m_loan_transaction.classification_cv_id (있으면) ───
+    tx_class = {}
+    for n in ("Regular", "Adjustment", "Correction"):
+        rid = smart_insert(conn, "m_code_value", {
+            "code_id": 29, "code_value": n, "code_description": n,
+            "order_position": len(tx_class)+1, "is_active": 1,
+        })
+        tx_class[n] = rid
+    # classification_cv_id 컬럼이 실제 있는지 확인 후 update
+    tx_cols = [r[1] for r in cur.execute("PRAGMA table_info(m_loan_transaction)")]
+    if "classification_cv_id" in tx_cols:
+        for tid in tx_ids[:5000]:
+            cur.execute("UPDATE m_loan_transaction SET classification_cv_id = ? WHERE id = ?",
+                        (random.choice(list(tx_class.values())), tid))
+
     conn.commit()
 
 INDEXES = [

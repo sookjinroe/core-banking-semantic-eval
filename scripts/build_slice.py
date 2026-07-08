@@ -119,18 +119,41 @@ def nl_category(field, arch):
     return "general-fact"
 
 
+def load_db_schema(sqlite_path: Path) -> dict:
+    """sqlite에서 실제 존재하는 컬럼 인덱스 로드.
+       return: {table_name: set(column_names)}
+       DB에 없는 테이블·컬럼은 슬라이스 대상에서 제외 (실제 시맨틱 레이어 소비자
+       기준 = DB 컬럼)."""
+    import sqlite3
+    conn = sqlite3.connect(str(sqlite_path))
+    schema = {}
+    for (tname,) in conn.execute("SELECT name FROM sqlite_master WHERE type='table'"):
+        schema[tname] = {r[1] for r in conn.execute(f'PRAGMA table_info("{tname}")')}
+    conn.close()
+    return schema
+
+
 def main():
     repo = Path(__file__).resolve().parents[1]
     orm = json.loads((repo / "signals/peek_orm.json").read_text())
 
+    # DB 스키마 로드 (실제 시맨틱 레이어 대상 필터)
+    db_schema = load_db_schema(repo / "data/fineract_3domain.sqlite")
+    print(f"[i] DB 스키마: {len(db_schema)} 테이블 로드")
+
     # ─── 모집단: 3도메인 ─────────────────────────────────────────────
     candidates = []
+    drift_count = 0
     for e in orm["entities"]:
         dom = package_domain(e["fqn"])
         if dom not in TARGET_DOMAINS: continue
         for f in e["fields"]:
             arch, reason = classify(f)
             col_name = (f.get("column") or {}).get("name") or (f.get("join_column") or {}).get("name") or ""
+            # DB 기준 필터: 실제 DB에 컬럼이 없으면 드리프트로 표시하되 후보에서 제외
+            if col_name and (e["table_name"] not in db_schema or col_name not in db_schema.get(e["table_name"], set())):
+                drift_count += 1
+                continue
             candidates.append({
                 "id": f"{e['table_name']}.{col_name or f['java_field']}",
                 "table": e["table_name"],
@@ -150,6 +173,7 @@ def main():
                 "selected": False,
                 "selection_strategy": None,
             })
+    print(f"[i] ORM-DB 드리프트로 제외된 필드: {drift_count}")
 
     # 모집단 통계
     arch_counter = Counter(c["archetype"] for c in candidates)

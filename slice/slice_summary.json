@@ -1,30 +1,37 @@
 {
   "target_domains": [
+    "portfolio.savings",
     "portfolio.loanaccount",
-    "portfolio.client",
-    "portfolio.savings"
+    "portfolio.client"
   ],
-  "population_total": 766,
-  "population_evaluable": 688,
+  "population_total": 651,
+  "population_evaluable": 574,
   "population_archetype_distribution": {
-    "trivial": 409,
+    "trivial": 351,
     "collision-crux": 51,
-    "reftable-link": 15,
-    "exclude": 78,
-    "technical": 122,
-    "enum-clean": 17,
-    "lineage": 73,
+    "reftable-link": 12,
+    "exclude": 77,
+    "technical": 87,
+    "enum-clean": 7,
+    "lineage": 65,
     "unclassified": 1
   },
   "population_domain_archetype_matrix": {
+    "portfolio.savings": {
+      "exclude": 34,
+      "technical": 31,
+      "trivial": 157,
+      "collision-crux": 34,
+      "lineage": 14
+    },
     "portfolio.loanaccount": {
-      "trivial": 201,
+      "trivial": 156,
       "exclude": 40,
       "collision-crux": 15,
-      "technical": 77,
-      "enum-clean": 17,
-      "reftable-link": 7,
-      "lineage": 58,
+      "technical": 50,
+      "enum-clean": 7,
+      "reftable-link": 4,
+      "lineage": 51,
       "unclassified": 1
     },
     "portfolio.client": {
@@ -32,34 +39,27 @@
       "collision-crux": 2,
       "reftable-link": 8,
       "exclude": 3,
-      "technical": 8
-    },
-    "portfolio.savings": {
-      "trivial": 170,
-      "exclude": 35,
-      "technical": 37,
-      "collision-crux": 34,
-      "lineage": 15
+      "technical": 6
     }
   },
   "slice_size": 151,
   "slice_archetype_distribution": {
     "collision-crux": 51,
-    "enum-clean": 17,
-    "reftable-link": 15,
-    "trivial": 45,
-    "lineage": 8,
+    "enum-clean": 7,
+    "reftable-link": 12,
+    "trivial": 56,
+    "lineage": 10,
     "technical": 14,
     "unclassified": 1
   },
   "slice_domain_distribution": {
-    "portfolio.loanaccount": 64,
-    "portfolio.client": 30,
-    "portfolio.savings": 57
+    "portfolio.loanaccount": 56,
+    "portfolio.client": 32,
+    "portfolio.savings": 63
   },
   "selection_strategy_counts": {
-    "critical-include": 83,
-    "stratified": 68
+    "critical-include": 70,
+    "stratified": 81
   },
   "note": "결정 archetype (collision-crux / enum-clean / reftable-link)은 전수 포함. 비결정 (trivial / lineage / technical)은 모집단 비율로 stratified sampling."
 }
