@@ -59,8 +59,27 @@
     },
     "m_client.transfer_to_office_id": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 985,
+      "null_rate": 0.985,
+      "distinct_count": 4,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 6
+        },
+        {
+          "value": 4,
+          "count": 5
+        },
+        {
+          "value": 5,
+          "count": 2
+        },
+        {
+          "value": 3,
+          "count": 2
+        }
+      ]
     },
     "m_client.image_id": {
       "row_count": 1000,
@@ -169,8 +188,33 @@
     },
     "m_client.office_joining_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 245,
+      "null_rate": 0.245,
+      "distinct_count": 446,
+      "min": "2023-09-07",
+      "max": "2026-08-05",
+      "top_values": [
+        {
+          "value": "2026-05-23",
+          "count": 7
+        },
+        {
+          "value": "2026-07-21",
+          "count": 6
+        },
+        {
+          "value": "2026-07-03",
+          "count": 6
+        },
+        {
+          "value": "2026-04-18",
+          "count": 6
+        },
+        {
+          "value": "2026-07-26",
+          "count": 5
+        }
+      ]
     },
     "m_client.firstname": {
       "row_count": 1000,
@@ -204,8 +248,33 @@
     },
     "m_client.middlename": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 954,
+      "null_rate": 0.954,
+      "distinct_count": 39,
+      "min": "경수",
+      "max": "현지",
+      "top_values": [
+        {
+          "value": "중수",
+          "count": 2
+        },
+        {
+          "value": "정식",
+          "count": 2
+        },
+        {
+          "value": "영자",
+          "count": 2
+        },
+        {
+          "value": "상호",
+          "count": 2
+        },
+        {
+          "value": "민재",
+          "count": 2
+        }
+      ]
     },
     "m_client.lastname": {
       "row_count": 1000,
@@ -297,13 +366,63 @@
     },
     "m_client.mobile_no": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 52,
+      "null_rate": 0.052,
+      "distinct_count": 948,
+      "min": "010-1000-7254",
+      "max": "010-9992-6944",
+      "top_values": [
+        {
+          "value": "010-1000-7254",
+          "count": 1
+        },
+        {
+          "value": "010-1005-6122",
+          "count": 1
+        },
+        {
+          "value": "010-1022-6894",
+          "count": 1
+        },
+        {
+          "value": "010-1034-1703",
+          "count": 1
+        },
+        {
+          "value": "010-1057-6834",
+          "count": 1
+        }
+      ]
     },
     "m_client.email_address": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 146,
+      "null_rate": 0.146,
+      "distinct_count": 851,
+      "min": "강1054@daum.net",
+      "max": "황9881@daum.net",
+      "top_values": [
+        {
+          "value": "김9113@naver.com",
+          "count": 2
+        },
+        {
+          "value": "김3878@naver.com",
+          "count": 2
+        },
+        {
+          "value": "권5227@naver.com",
+          "count": 2
+        },
+        {
+          "value": "황9881@daum.net",
+          "count": 1
+        },
+        {
+          "value": "황9665@daum.net",
+          "count": 1
+        }
+      ]
     },
     "m_client.is_staff": {
       "row_count": 1000,
@@ -319,8 +438,33 @@
     },
     "m_client.external_id": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 184,
+      "null_rate": 0.184,
+      "distinct_count": 816,
+      "min": "CIF10045767",
+      "max": "CIF99914220",
+      "top_values": [
+        {
+          "value": "CIF10045767",
+          "count": 1
+        },
+        {
+          "value": "CIF10118565",
+          "count": 1
+        },
+        {
+          "value": "CIF10123261",
+          "count": 1
+        },
+        {
+          "value": "CIF10508807",
+          "count": 1
+        },
+        {
+          "value": "CIF10570496",
+          "count": 1
+        }
+      ]
     },
     "m_client.date_of_birth": {
       "row_count": 1000,
@@ -480,13 +624,53 @@
     },
     "m_client.rejectedon_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 967,
+      "null_rate": 0.967,
+      "distinct_count": 32,
+      "min": "2024-08-12",
+      "max": "2026-06-05",
+      "top_values": [
+        {
+          "value": "2025-08-23",
+          "count": 2
+        },
+        {
+          "value": "2026-06-05",
+          "count": 1
+        },
+        {
+          "value": "2026-03-31",
+          "count": 1
+        },
+        {
+          "value": "2026-02-03",
+          "count": 1
+        },
+        {
+          "value": "2026-01-28",
+          "count": 1
+        }
+      ]
     },
     "m_client.rejectedon_userid": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 967,
+      "null_rate": 0.967,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 12
+        },
+        {
+          "value": 3,
+          "count": 11
+        },
+        {
+          "value": 1,
+          "count": 10
+        }
+      ]
     },
     "m_client.withdraw_reason_cv_id": {
       "row_count": 1000,
@@ -506,23 +690,133 @@
     },
     "m_client.withdrawn_on_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 969,
+      "null_rate": 0.969,
+      "distinct_count": 31,
+      "min": "2024-07-18",
+      "max": "2026-04-25",
+      "top_values": [
+        {
+          "value": "2026-04-25",
+          "count": 1
+        },
+        {
+          "value": "2026-02-16",
+          "count": 1
+        },
+        {
+          "value": "2026-01-27",
+          "count": 1
+        },
+        {
+          "value": "2026-01-19",
+          "count": 1
+        },
+        {
+          "value": "2026-01-10",
+          "count": 1
+        }
+      ]
     },
     "m_client.withdraw_on_userid": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 969,
+      "null_rate": 0.969,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 11
+        },
+        {
+          "value": 3,
+          "count": 10
+        },
+        {
+          "value": 2,
+          "count": 10
+        }
+      ]
     },
     "m_client.reactivated_on_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 987,
+      "null_rate": 0.987,
+      "distinct_count": 13,
+      "distinct_values": [
+        {
+          "value": "2026-05-24",
+          "count": 1
+        },
+        {
+          "value": "2026-04-02",
+          "count": 1
+        },
+        {
+          "value": "2026-03-02",
+          "count": 1
+        },
+        {
+          "value": "2026-02-03",
+          "count": 1
+        },
+        {
+          "value": "2026-01-11",
+          "count": 1
+        },
+        {
+          "value": "2025-12-16",
+          "count": 1
+        },
+        {
+          "value": "2025-12-13",
+          "count": 1
+        },
+        {
+          "value": "2025-12-05",
+          "count": 1
+        },
+        {
+          "value": "2025-11-26",
+          "count": 1
+        },
+        {
+          "value": "2025-11-23",
+          "count": 1
+        },
+        {
+          "value": "2025-10-11",
+          "count": 1
+        },
+        {
+          "value": "2025-09-28",
+          "count": 1
+        },
+        {
+          "value": "2025-09-07",
+          "count": 1
+        }
+      ]
     },
     "m_client.reactivated_on_userid": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 987,
+      "null_rate": 0.987,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 6
+        },
+        {
+          "value": 3,
+          "count": 4
+        },
+        {
+          "value": 1,
+          "count": 3
+        }
+      ]
     },
     "m_client.closedon_userid": {
       "row_count": 1000,
@@ -707,18 +1001,103 @@
     },
     "m_client.reopened_on_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 998,
+      "null_rate": 0.998,
+      "distinct_count": 2,
+      "distinct_values": [
+        {
+          "value": "2026-06-01",
+          "count": 1
+        },
+        {
+          "value": "2026-03-05",
+          "count": 1
+        }
+      ]
     },
     "m_client.reopened_by_userid": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 998,
+      "null_rate": 0.998,
+      "distinct_count": 2,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        }
+      ]
     },
     "m_client.proposed_transfer_date": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 985,
+      "null_rate": 0.985,
+      "distinct_count": 15,
+      "distinct_values": [
+        {
+          "value": "2026-06-24",
+          "count": 1
+        },
+        {
+          "value": "2026-06-17",
+          "count": 1
+        },
+        {
+          "value": "2026-06-14",
+          "count": 1
+        },
+        {
+          "value": "2026-06-09",
+          "count": 1
+        },
+        {
+          "value": "2026-04-28",
+          "count": 1
+        },
+        {
+          "value": "2026-04-18",
+          "count": 1
+        },
+        {
+          "value": "2026-04-10",
+          "count": 1
+        },
+        {
+          "value": "2026-04-03",
+          "count": 1
+        },
+        {
+          "value": "2026-04-01",
+          "count": 1
+        },
+        {
+          "value": "2026-02-17",
+          "count": 1
+        },
+        {
+          "value": "2026-02-14",
+          "count": 1
+        },
+        {
+          "value": "2026-02-12",
+          "count": 1
+        },
+        {
+          "value": "2026-02-02",
+          "count": 1
+        },
+        {
+          "value": "2026-01-31",
+          "count": 1
+        },
+        {
+          "value": "2026-01-17",
+          "count": 1
+        }
+      ]
     },
     "m_client.created_by": {
       "row_count": 1000,
@@ -739,7 +1118,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 1000
         }
       ]
@@ -763,7 +1142,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 1000
         }
       ]
@@ -863,8 +1242,31 @@
     },
     "m_client_identifier.description": {
       "row_count": 1000,
-      "null_count": 1000,
-      "null_rate": 1.0
+      "null_count": 661,
+      "null_rate": 0.661,
+      "distinct_count": 5,
+      "distinct_values": [
+        {
+          "value": "지점 확인 완료",
+          "count": 74
+        },
+        {
+          "value": "주 신분증",
+          "count": 74
+        },
+        {
+          "value": "발급 갱신 요망",
+          "count": 66
+        },
+        {
+          "value": "본점 발급",
+          "count": 63
+        },
+        {
+          "value": "본인 확인용",
+          "count": 62
+        }
+      ]
     },
     "m_client_identifier.active": {
       "row_count": 1000,
@@ -882,11 +1284,29 @@
       "row_count": 1000,
       "null_count": 0,
       "null_rate": 0.0,
-      "distinct_count": 1,
-      "distinct_values": [
+      "distinct_count": 627,
+      "min": "2023-10-12 09:00:00",
+      "max": "2026-06-08 09:00:00",
+      "top_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
-          "count": 1000
+          "value": "2026-02-26 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2024-11-24 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2024-04-03 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2026-04-12 09:00:00",
+          "count": 4
+        },
+        {
+          "value": "2026-03-22 09:00:00",
+          "count": 4
         }
       ]
     },
@@ -894,11 +1314,29 @@
       "row_count": 1000,
       "null_count": 0,
       "null_rate": 0.0,
-      "distinct_count": 1,
-      "distinct_values": [
+      "distinct_count": 627,
+      "min": "2023-10-12 09:00:00",
+      "max": "2026-06-08 09:00:00",
+      "top_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
-          "count": 1000
+          "value": "2026-02-26 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2024-11-24 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2024-04-03 09:00:00",
+          "count": 5
+        },
+        {
+          "value": "2026-04-12 09:00:00",
+          "count": 4
+        },
+        {
+          "value": "2026-03-22 09:00:00",
+          "count": 4
         }
       ]
     },
@@ -1070,8 +1508,33 @@
     },
     "m_loan.external_id": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 581,
+      "null_rate": 0.1937,
+      "distinct_count": 2419,
+      "min": "LN1009288",
+      "max": "LN9998831",
+      "top_values": [
+        {
+          "value": "LN1009288",
+          "count": 1
+        },
+        {
+          "value": "LN1020265",
+          "count": 1
+        },
+        {
+          "value": "LN1024463",
+          "count": 1
+        },
+        {
+          "value": "LN1026741",
+          "count": 1
+        },
+        {
+          "value": "LN1035021",
+          "count": 1
+        }
+      ]
     },
     "m_loan.client_id": {
       "row_count": 3000,
@@ -1502,8 +1965,23 @@
     },
     "m_loan.disbursedon_userid": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 523,
+      "null_rate": 0.1743,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 846
+        },
+        {
+          "value": 3,
+          "count": 836
+        },
+        {
+          "value": 1,
+          "count": 795
+        }
+      ]
     },
     "m_loan.closedon_date": {
       "row_count": 3000,
@@ -1557,8 +2035,33 @@
     },
     "m_loan.writtenoffon_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 2887,
+      "null_rate": 0.9623,
+      "distinct_count": 92,
+      "min": "2025-05-28",
+      "max": "2027-01-04",
+      "top_values": [
+        {
+          "value": "2027-01-01",
+          "count": 4
+        },
+        {
+          "value": "2026-12-18",
+          "count": 3
+        },
+        {
+          "value": "2027-01-02",
+          "count": 2
+        },
+        {
+          "value": "2026-12-30",
+          "count": 2
+        },
+        {
+          "value": "2026-12-27",
+          "count": 2
+        }
+      ]
     },
     "m_loan.rescheduledon_date": {
       "row_count": 3000,
@@ -1572,13 +2075,63 @@
     },
     "m_loan.expected_maturedon_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 523,
+      "null_rate": 0.1743,
+      "distinct_count": 890,
+      "min": "2023-11-30",
+      "max": "2028-12-24",
+      "top_values": [
+        {
+          "value": "2026-08-07",
+          "count": 28
+        },
+        {
+          "value": "2026-07-31",
+          "count": 19
+        },
+        {
+          "value": "2026-10-03",
+          "count": 18
+        },
+        {
+          "value": "2026-08-04",
+          "count": 18
+        },
+        {
+          "value": "2026-10-06",
+          "count": 15
+        }
+      ]
     },
     "m_loan.maturedon_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 2737,
+      "null_rate": 0.9123,
+      "distinct_count": 191,
+      "min": "2024-06-14",
+      "max": "2026-07-19",
+      "top_values": [
+        {
+          "value": "2026-06-14",
+          "count": 4
+        },
+        {
+          "value": "2026-02-12",
+          "count": 4
+        },
+        {
+          "value": "2026-06-20",
+          "count": 3
+        },
+        {
+          "value": "2026-06-12",
+          "count": 3
+        },
+        {
+          "value": "2026-06-06",
+          "count": 3
+        }
+      ]
     },
     "m_loan.expected_firstrepaymenton_date": {
       "row_count": 3000,
@@ -1612,8 +2165,33 @@
     },
     "m_loan.interest_calculated_from_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 523,
+      "null_rate": 0.1743,
+      "distinct_count": 514,
+      "min": "2023-09-01",
+      "max": "2026-07-08",
+      "top_values": [
+        {
+          "value": "2026-07-08",
+          "count": 55
+        },
+        {
+          "value": "2026-07-06",
+          "count": 36
+        },
+        {
+          "value": "2026-07-05",
+          "count": 36
+        },
+        {
+          "value": "2026-07-07",
+          "count": 35
+        },
+        {
+          "value": "2026-07-04",
+          "count": 30
+        }
+      ]
     },
     "m_loan.total_overpaid_derived": {
       "row_count": 3000,
@@ -1622,18 +2200,125 @@
     },
     "m_loan.overpaidon_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 2973,
+      "null_rate": 0.991,
+      "distinct_count": 23,
+      "min": "2026-04-10",
+      "max": "2026-07-03",
+      "top_values": [
+        {
+          "value": "2026-04-20",
+          "count": 3
+        },
+        {
+          "value": "2026-05-24",
+          "count": 2
+        },
+        {
+          "value": "2026-05-06",
+          "count": 2
+        },
+        {
+          "value": "2026-07-03",
+          "count": 1
+        },
+        {
+          "value": "2026-07-01",
+          "count": 1
+        }
+      ]
     },
     "m_loan.loan_counter": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 12,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 735
+        },
+        {
+          "value": 2,
+          "count": 683
+        },
+        {
+          "value": 3,
+          "count": 570
+        },
+        {
+          "value": 4,
+          "count": 431
+        },
+        {
+          "value": 5,
+          "count": 283
+        },
+        {
+          "value": 6,
+          "count": 155
+        },
+        {
+          "value": 7,
+          "count": 82
+        },
+        {
+          "value": 8,
+          "count": 41
+        },
+        {
+          "value": 9,
+          "count": 11
+        },
+        {
+          "value": 10,
+          "count": 5
+        },
+        {
+          "value": 11,
+          "count": 3
+        },
+        {
+          "value": 12,
+          "count": 1
+        }
+      ]
     },
     "m_loan.loan_product_counter": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 7,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 1769
+        },
+        {
+          "value": 2,
+          "count": 796
+        },
+        {
+          "value": 3,
+          "count": 307
+        },
+        {
+          "value": 4,
+          "count": 92
+        },
+        {
+          "value": 5,
+          "count": 30
+        },
+        {
+          "value": 6,
+          "count": 5
+        },
+        {
+          "value": 7,
+          "count": 1
+        }
+      ]
     },
     "m_loan.principal_amount_proposed": {
       "row_count": 3000,
@@ -1769,8 +2454,19 @@
     },
     "m_loan.create_standing_instruction_at_disbursement": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 523,
+      "null_rate": 0.1743,
+      "distinct_count": 2,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 1984
+        },
+        {
+          "value": 1,
+          "count": 493
+        }
+      ]
     },
     "m_loan.guarantee_amount_derived": {
       "row_count": 3000,
@@ -1873,8 +2569,33 @@
     },
     "m_loan.last_closed_business_date": {
       "row_count": 3000,
-      "null_count": 3000,
-      "null_rate": 1.0
+      "null_count": 1186,
+      "null_rate": 0.3953,
+      "distinct_count": 45,
+      "min": "2026-05-24",
+      "max": "2026-07-07",
+      "top_values": [
+        {
+          "value": "2026-06-03",
+          "count": 56
+        },
+        {
+          "value": "2026-06-07",
+          "count": 53
+        },
+        {
+          "value": "2026-06-15",
+          "count": 51
+        },
+        {
+          "value": "2026-06-10",
+          "count": 50
+        },
+        {
+          "value": "2026-07-03",
+          "count": 49
+        }
+      ]
     },
     "m_loan.is_charged_off": {
       "row_count": 3000,
@@ -2017,7 +2738,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 3000
         }
       ]
@@ -2041,7 +2762,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 3000
         }
       ]
@@ -2239,7 +2960,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 150
         }
       ]
@@ -2263,7 +2984,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 150
         }
       ]
@@ -2345,13 +3066,63 @@
     },
     "m_loan_charge.submitted_on_date": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 419,
+      "min": "2023-09-25",
+      "max": "2026-08-07",
+      "top_values": [
+        {
+          "value": "2026-06-29",
+          "count": 15
+        },
+        {
+          "value": "2026-07-08",
+          "count": 12
+        },
+        {
+          "value": "2026-07-06",
+          "count": 12
+        },
+        {
+          "value": "2026-06-19",
+          "count": 11
+        },
+        {
+          "value": "2026-06-13",
+          "count": 11
+        }
+      ]
     },
     "m_loan_charge.due_for_collection_as_of_date": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 432,
+      "min": "2023-12-22",
+      "max": "2026-10-27",
+      "top_values": [
+        {
+          "value": "2026-08-20",
+          "count": 12
+        },
+        {
+          "value": "2026-08-04",
+          "count": 11
+        },
+        {
+          "value": "2026-09-04",
+          "count": 10
+        },
+        {
+          "value": "2026-08-30",
+          "count": 8
+        },
+        {
+          "value": "2026-08-28",
+          "count": 8
+        }
+      ]
     },
     "m_loan_charge.charge_calculation_enum": {
       "row_count": 1127,
@@ -2395,18 +3166,96 @@
     },
     "m_loan_charge.calculation_percentage": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 543,
+      "null_rate": 0.4818,
+      "distinct_count": 326,
+      "min": 0.51,
+      "max": 5,
+      "avg": 2.7055,
+      "top_values": [
+        {
+          "value": 3.72,
+          "count": 6
+        },
+        {
+          "value": 0.7,
+          "count": 6
+        },
+        {
+          "value": 4.38,
+          "count": 5
+        },
+        {
+          "value": 4.01,
+          "count": 5
+        },
+        {
+          "value": 1.6,
+          "count": 5
+        }
+      ]
     },
     "m_loan_charge.calculation_on_amount": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 543,
+      "null_rate": 0.4818,
+      "distinct_count": 584,
+      "min": 20954.2,
+      "max": 997864.6,
+      "avg": 519274.6284,
+      "top_values": [
+        {
+          "value": 997864.6,
+          "count": 1
+        },
+        {
+          "value": 989675.2,
+          "count": 1
+        },
+        {
+          "value": 985060.2,
+          "count": 1
+        },
+        {
+          "value": 984350.6,
+          "count": 1
+        },
+        {
+          "value": 984293.8,
+          "count": 1
+        }
+      ]
     },
     "m_loan_charge.charge_amount_or_percentage": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 869,
+      "min": 0.51,
+      "max": 49988.1,
+      "avg": 12392.6628,
+      "top_values": [
+        {
+          "value": 3.72,
+          "count": 6
+        },
+        {
+          "value": 0.7,
+          "count": 6
+        },
+        {
+          "value": 4.38,
+          "count": 5
+        },
+        {
+          "value": 4.01,
+          "count": 5
+        },
+        {
+          "value": 1.6,
+          "count": 5
+        }
+      ]
     },
     "m_loan_charge.amount": {
       "row_count": 1127,
@@ -2527,13 +3376,46 @@
     },
     "m_loan_charge.min_cap": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 1013,
+      "null_rate": 0.8988,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1000,
+          "count": 114
+        }
+      ]
     },
     "m_loan_charge.max_cap": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 1013,
+      "null_rate": 0.8988,
+      "distinct_count": 114,
+      "min": 37529.1,
+      "max": 1476440.7,
+      "avg": 784294.5079,
+      "top_values": [
+        {
+          "value": 1476440.7,
+          "count": 1
+        },
+        {
+          "value": 1475475.6,
+          "count": 1
+        },
+        {
+          "value": 1473914.4,
+          "count": 1
+        },
+        {
+          "value": 1457437.8,
+          "count": 1
+        },
+        {
+          "value": 1456859.7,
+          "count": 1
+        }
+      ]
     },
     "m_loan_charge.is_active": {
       "row_count": 1127,
@@ -2549,133 +3431,647 @@
     },
     "m_loan_charge.external_id": {
       "row_count": 1127,
-      "null_count": 1127,
-      "null_rate": 1.0
+      "null_count": 216,
+      "null_rate": 0.1917,
+      "distinct_count": 911,
+      "min": "CHG0000002",
+      "max": "CHG0001127",
+      "top_values": [
+        {
+          "value": "CHG0000002",
+          "count": 1
+        },
+        {
+          "value": "CHG0000003",
+          "count": 1
+        },
+        {
+          "value": "CHG0000004",
+          "count": 1
+        },
+        {
+          "value": "CHG0000005",
+          "count": 1
+        },
+        {
+          "value": "CHG0000006",
+          "count": 1
+        }
+      ]
     },
     "m_loan_charge_paid_by.loan_transaction_id": {
-      "row_count": 0,
+      "row_count": 450,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 382,
+      "min": 7,
+      "max": 19958,
+      "avg": 2764.6222,
+      "top_values": [
+        {
+          "value": 13907,
+          "count": 2
+        },
+        {
+          "value": 10736,
+          "count": 2
+        },
+        {
+          "value": 9622,
+          "count": 2
+        },
+        {
+          "value": 9132,
+          "count": 2
+        },
+        {
+          "value": 8880,
+          "count": 2
+        }
+      ]
     },
     "m_loan_charge_paid_by.loan_charge_id": {
-      "row_count": 0,
+      "row_count": 450,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 450,
+      "min": 1,
+      "max": 1127,
+      "avg": 546.7978,
+      "top_values": [
+        {
+          "value": 1127,
+          "count": 1
+        },
+        {
+          "value": 1125,
+          "count": 1
+        },
+        {
+          "value": 1121,
+          "count": 1
+        },
+        {
+          "value": 1120,
+          "count": 1
+        },
+        {
+          "value": 1118,
+          "count": 1
+        }
+      ]
     },
     "m_loan_charge_paid_by.amount": {
-      "row_count": 0,
+      "row_count": 450,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 450,
+      "min": 1099.47,
+      "max": 29963.27,
+      "avg": 15934.868,
+      "top_values": [
+        {
+          "value": 29963.27,
+          "count": 1
+        },
+        {
+          "value": 29910.52,
+          "count": 1
+        },
+        {
+          "value": 29871.5,
+          "count": 1
+        },
+        {
+          "value": 29429.99,
+          "count": 1
+        },
+        {
+          "value": 29393.25,
+          "count": 1
+        }
+      ]
     },
     "m_loan_charge_paid_by.installment_number": {
-      "row_count": 0,
+      "row_count": 450,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 12,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 47
+        },
+        {
+          "value": 4,
+          "count": 43
+        },
+        {
+          "value": 6,
+          "count": 42
+        },
+        {
+          "value": 5,
+          "count": 39
+        },
+        {
+          "value": 1,
+          "count": 38
+        },
+        {
+          "value": 10,
+          "count": 37
+        },
+        {
+          "value": 11,
+          "count": 36
+        },
+        {
+          "value": 8,
+          "count": 35
+        },
+        {
+          "value": 7,
+          "count": 35
+        },
+        {
+          "value": 2,
+          "count": 35
+        },
+        {
+          "value": 12,
+          "count": 33
+        },
+        {
+          "value": 9,
+          "count": 30
+        }
+      ]
     },
     "m_loan_collateral_management.quantity": {
-      "row_count": 0,
+      "row_count": 123,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 45
+        },
+        {
+          "value": 1,
+          "count": 41
+        },
+        {
+          "value": 2,
+          "count": 37
+        }
+      ]
     },
     "m_loan_collateral_management.transaction_id": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 123,
+      "null_count": 84,
+      "null_rate": 0.6829,
+      "distinct_count": 39,
+      "min": 69,
+      "max": 19021,
+      "avg": 8522.1026,
+      "top_values": [
+        {
+          "value": 19021,
+          "count": 1
+        },
+        {
+          "value": 18367,
+          "count": 1
+        },
+        {
+          "value": 18352,
+          "count": 1
+        },
+        {
+          "value": 17240,
+          "count": 1
+        },
+        {
+          "value": 16705,
+          "count": 1
+        }
+      ]
     },
     "m_loan_collateral_management.loan_id": {
-      "row_count": 0,
+      "row_count": 123,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 123,
+      "min": 13,
+      "max": 2950,
+      "avg": 1541.8862,
+      "top_values": [
+        {
+          "value": 2950,
+          "count": 1
+        },
+        {
+          "value": 2939,
+          "count": 1
+        },
+        {
+          "value": 2895,
+          "count": 1
+        },
+        {
+          "value": 2887,
+          "count": 1
+        },
+        {
+          "value": 2878,
+          "count": 1
+        }
+      ]
     },
     "m_loan_collateral_management.is_released": {
-      "row_count": 0,
+      "row_count": 123,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 123
+        }
+      ]
     },
     "m_loan_collateral_management.client_collateral_id": {
-      "row_count": 0,
+      "row_count": 123,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 73,
+      "min": 2,
+      "max": 100,
+      "avg": 52.8211,
+      "top_values": [
+        {
+          "value": 21,
+          "count": 5
+        },
+        {
+          "value": 82,
+          "count": 4
+        },
+        {
+          "value": 17,
+          "count": 4
+        },
+        {
+          "value": 96,
+          "count": 3
+        },
+        {
+          "value": 94,
+          "count": 3
+        }
+      ]
     },
     "m_loan_disbursement_detail.loan_id": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 1,
+      "max": 3000,
+      "avg": 1506.9677,
+      "top_values": [
+        {
+          "value": 3000,
+          "count": 1
+        },
+        {
+          "value": 2999,
+          "count": 1
+        },
+        {
+          "value": 2998,
+          "count": 1
+        },
+        {
+          "value": 2997,
+          "count": 1
+        },
+        {
+          "value": 2996,
+          "count": 1
+        }
+      ]
     },
     "m_loan_disbursement_detail.expected_disburse_date": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 514,
+      "min": "2023-09-01",
+      "max": "2026-07-08",
+      "top_values": [
+        {
+          "value": "2026-07-08",
+          "count": 55
+        },
+        {
+          "value": "2026-07-06",
+          "count": 36
+        },
+        {
+          "value": "2026-07-05",
+          "count": 36
+        },
+        {
+          "value": "2026-07-07",
+          "count": 35
+        },
+        {
+          "value": "2026-07-04",
+          "count": 30
+        }
+      ]
     },
     "m_loan_disbursement_detail.disbursedon_date": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 514,
+      "min": "2023-09-01",
+      "max": "2026-07-08",
+      "top_values": [
+        {
+          "value": "2026-07-08",
+          "count": 55
+        },
+        {
+          "value": "2026-07-06",
+          "count": 36
+        },
+        {
+          "value": "2026-07-05",
+          "count": 36
+        },
+        {
+          "value": "2026-07-07",
+          "count": 35
+        },
+        {
+          "value": "2026-07-04",
+          "count": 30
+        }
+      ]
     },
     "m_loan_disbursement_detail.principal": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 302542.62,
+      "max": 199352340.33,
+      "avg": 24485135.6735,
+      "top_values": [
+        {
+          "value": 199352340.33,
+          "count": 1
+        },
+        {
+          "value": 199250976.01,
+          "count": 1
+        },
+        {
+          "value": 198925628.68,
+          "count": 1
+        },
+        {
+          "value": 198815588.32,
+          "count": 1
+        },
+        {
+          "value": 198553573.24,
+          "count": 1
+        }
+      ]
     },
     "m_loan_disbursement_detail.net_disbursal_amount": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 291165.81,
+      "max": 198927674.58,
+      "avg": 23899058.909,
+      "top_values": [
+        {
+          "value": 198927674.58,
+          "count": 1
+        },
+        {
+          "value": 198422603.81,
+          "count": 1
+        },
+        {
+          "value": 196944929.04,
+          "count": 1
+        },
+        {
+          "value": 194879764.34,
+          "count": 1
+        },
+        {
+          "value": 194804904.64,
+          "count": 1
+        }
+      ]
     },
     "m_loan_disbursement_detail.is_reversed": {
-      "row_count": 0,
+      "row_count": 2477,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 2477
+        }
+      ]
     },
     "m_loan_installment_charge.loan_charge_id": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1127,
+      "min": 1,
+      "max": 1127,
+      "avg": 564.0,
+      "top_values": [
+        {
+          "value": 1127,
+          "count": 3
+        },
+        {
+          "value": 1126,
+          "count": 3
+        },
+        {
+          "value": 1125,
+          "count": 3
+        },
+        {
+          "value": 1124,
+          "count": 3
+        },
+        {
+          "value": 1123,
+          "count": 3
+        }
+      ]
     },
     "m_loan_installment_charge.loan_schedule_id": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2229,
+      "min": 208,
+      "max": 63816,
+      "avg": 31994.7507,
+      "top_values": [
+        {
+          "value": 63672,
+          "count": 2
+        },
+        {
+          "value": 63671,
+          "count": 2
+        },
+        {
+          "value": 63670,
+          "count": 2
+        },
+        {
+          "value": 63213,
+          "count": 2
+        },
+        {
+          "value": 63212,
+          "count": 2
+        }
+      ]
     },
     "m_loan_installment_charge.amount": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 3380,
+      "min": 1011.79,
+      "max": 9999.8,
+      "avg": 5528.1833,
+      "top_values": [
+        {
+          "value": 6009.46,
+          "count": 2
+        },
+        {
+          "value": 9999.8,
+          "count": 1
+        },
+        {
+          "value": 9997.72,
+          "count": 1
+        },
+        {
+          "value": 9993.31,
+          "count": 1
+        },
+        {
+          "value": 9992.03,
+          "count": 1
+        }
+      ]
     },
     "m_loan_installment_charge.amount_paid_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 3381,
+      "null_count": 3381,
+      "null_rate": 1.0
     },
     "m_loan_installment_charge.amount_waived_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 3381,
+      "null_count": 3381,
+      "null_rate": 1.0
     },
     "m_loan_installment_charge.amount_writtenoff_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 3381,
+      "null_count": 3381,
+      "null_rate": 1.0
     },
     "m_loan_installment_charge.amount_outstanding_derived": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 3381
+        }
+      ]
     },
     "m_loan_installment_charge.amount_through_charge_payment": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 3381,
+      "null_count": 1377,
+      "null_rate": 0.4073,
+      "distinct_count": 2003,
+      "min": 0.1,
+      "max": 9774.34,
+      "avg": 2781.4987,
+      "top_values": [
+        {
+          "value": 707,
+          "count": 2
+        },
+        {
+          "value": 9774.34,
+          "count": 1
+        },
+        {
+          "value": 9649.56,
+          "count": 1
+        },
+        {
+          "value": 9528.19,
+          "count": 1
+        },
+        {
+          "value": 9518.88,
+          "count": 1
+        }
+      ]
     },
     "m_loan_installment_charge.is_paid_derived": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 3381
+        }
+      ]
     },
     "m_loan_installment_charge.waived": {
-      "row_count": 0,
+      "row_count": 3381,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 3381
+        }
+      ]
     },
     "m_loan_recalculation_details.loan_id": {
       "row_count": 990,
@@ -3011,229 +4407,791 @@
       ]
     },
     "m_loan_officer_assignment_history.loan_id": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 123,
+      "min": 71,
+      "max": 3000,
+      "avg": 1461.7805,
+      "top_values": [
+        {
+          "value": 3000,
+          "count": 2
+        },
+        {
+          "value": 2979,
+          "count": 2
+        },
+        {
+          "value": 2919,
+          "count": 2
+        },
+        {
+          "value": 2850,
+          "count": 2
+        },
+        {
+          "value": 2822,
+          "count": 2
+        }
+      ]
     },
     "m_loan_officer_assignment_history.loan_officer_id": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 8,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 36
+        },
+        {
+          "value": 1,
+          "count": 36
+        },
+        {
+          "value": 8,
+          "count": 33
+        },
+        {
+          "value": 7,
+          "count": 32
+        },
+        {
+          "value": 2,
+          "count": 31
+        },
+        {
+          "value": 6,
+          "count": 30
+        },
+        {
+          "value": 5,
+          "count": 30
+        },
+        {
+          "value": 4,
+          "count": 18
+        }
+      ]
     },
     "m_loan_officer_assignment_history.start_date": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 203,
+      "min": "2024-07-10",
+      "max": "2026-06-08",
+      "top_values": [
+        {
+          "value": "2026-03-07",
+          "count": 3
+        },
+        {
+          "value": "2025-11-28",
+          "count": 3
+        },
+        {
+          "value": "2025-10-13",
+          "count": 3
+        },
+        {
+          "value": "2025-05-16",
+          "count": 3
+        },
+        {
+          "value": "2025-04-16",
+          "count": 3
+        }
+      ]
     },
     "m_loan_officer_assignment_history.end_date": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 246,
+      "null_count": 123,
+      "null_rate": 0.5,
+      "distinct_count": 103,
+      "min": "2024-10-04",
+      "max": "2026-06-07",
+      "top_values": [
+        {
+          "value": "2026-03-06",
+          "count": 3
+        },
+        {
+          "value": "2025-11-27",
+          "count": 3
+        },
+        {
+          "value": "2026-06-04",
+          "count": 2
+        },
+        {
+          "value": "2026-05-17",
+          "count": 2
+        },
+        {
+          "value": "2026-05-16",
+          "count": 2
+        }
+      ]
     },
     "m_loan_officer_assignment_history.createdby_id": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 86
+        },
+        {
+          "value": 3,
+          "count": 84
+        },
+        {
+          "value": 1,
+          "count": 76
+        }
+      ]
     },
     "m_loan_officer_assignment_history.created_date": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 201,
+      "min": "2024-07-08",
+      "max": "2026-06-05",
+      "top_values": [
+        {
+          "value": "2026-04-24",
+          "count": 3
+        },
+        {
+          "value": "2026-02-06",
+          "count": 3
+        },
+        {
+          "value": "2026-02-04",
+          "count": 3
+        },
+        {
+          "value": "2025-06-08",
+          "count": 3
+        },
+        {
+          "value": "2025-03-19",
+          "count": 3
+        }
+      ]
     },
     "m_loan_officer_assignment_history.lastmodifiedby_id": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 2,
+          "count": 88
+        },
+        {
+          "value": 3,
+          "count": 79
+        },
+        {
+          "value": 1,
+          "count": 79
+        }
+      ]
     },
     "m_loan_officer_assignment_history.lastmodified_date": {
-      "row_count": 0,
+      "row_count": 246,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 201,
+      "min": "2024-07-08",
+      "max": "2026-06-05",
+      "top_values": [
+        {
+          "value": "2026-04-24",
+          "count": 3
+        },
+        {
+          "value": "2026-02-06",
+          "count": 3
+        },
+        {
+          "value": "2026-02-04",
+          "count": 3
+        },
+        {
+          "value": "2025-06-08",
+          "count": 3
+        },
+        {
+          "value": "2025-03-19",
+          "count": 3
+        }
+      ]
     },
     "m_loan_overdue_installment_charge.loan_charge_id": {
-      "row_count": 0,
+      "row_count": 82,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 82,
+      "min": 1,
+      "max": 1126,
+      "avg": 567.4268,
+      "top_values": [
+        {
+          "value": 1126,
+          "count": 1
+        },
+        {
+          "value": 1108,
+          "count": 1
+        },
+        {
+          "value": 1075,
+          "count": 1
+        },
+        {
+          "value": 1073,
+          "count": 1
+        },
+        {
+          "value": 1056,
+          "count": 1
+        }
+      ]
     },
     "m_loan_overdue_installment_charge.loan_schedule_id": {
-      "row_count": 0,
+      "row_count": 82,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 82
+        }
+      ]
     },
     "m_loan_overdue_installment_charge.frequency_number": {
-      "row_count": 0,
+      "row_count": 82,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 5,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 19
+        },
+        {
+          "value": 3,
+          "count": 19
+        },
+        {
+          "value": 1,
+          "count": 16
+        },
+        {
+          "value": 5,
+          "count": 14
+        },
+        {
+          "value": 2,
+          "count": 14
+        }
+      ]
     },
     "m_loan_repayment_schedule.loan_id": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 1,
+      "max": 3000,
+      "avg": 1519.6623,
+      "top_values": [
+        {
+          "value": 2994,
+          "count": 120
+        },
+        {
+          "value": 2987,
+          "count": 120
+        },
+        {
+          "value": 2937,
+          "count": 120
+        },
+        {
+          "value": 2933,
+          "count": 120
+        },
+        {
+          "value": 2927,
+          "count": 120
+        }
+      ]
     },
     "m_loan_repayment_schedule.installment": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 120,
+      "min": 1,
+      "max": 120,
+      "avg": 33.0808,
+      "top_values": [
+        {
+          "value": 3,
+          "count": 2477
+        },
+        {
+          "value": 2,
+          "count": 2477
+        },
+        {
+          "value": 1,
+          "count": 2477
+        },
+        {
+          "value": 6,
+          "count": 2182
+        },
+        {
+          "value": 5,
+          "count": 2182
+        }
+      ]
     },
     "m_loan_repayment_schedule.fromdate": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 4296,
+      "min": "2023-09-01",
+      "max": "2036-04-16",
+      "top_values": [
+        {
+          "value": "2026-07-08",
+          "count": 115
+        },
+        {
+          "value": "2026-08-07",
+          "count": 112
+        },
+        {
+          "value": "2026-09-06",
+          "count": 108
+        },
+        {
+          "value": "2026-10-06",
+          "count": 99
+        },
+        {
+          "value": "2026-07-05",
+          "count": 95
+        }
+      ]
     },
     "m_loan_repayment_schedule.duedate": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 4296,
+      "min": "2023-10-01",
+      "max": "2036-05-16",
+      "top_values": [
+        {
+          "value": "2026-08-07",
+          "count": 115
+        },
+        {
+          "value": "2026-09-06",
+          "count": 112
+        },
+        {
+          "value": "2026-10-06",
+          "count": 108
+        },
+        {
+          "value": "2026-11-05",
+          "count": 99
+        },
+        {
+          "value": "2026-08-04",
+          "count": 95
+        }
+      ]
     },
     "m_loan_repayment_schedule.principal_amount": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 25211.88,
+      "max": 3315427.14,
+      "avg": 950070.9786,
+      "top_values": [
+        {
+          "value": 1654613.11,
+          "count": 120
+        },
+        {
+          "value": 1654314.52,
+          "count": 120
+        },
+        {
+          "value": 1644859.7,
+          "count": 120
+        },
+        {
+          "value": 1627481.76,
+          "count": 120
+        },
+        {
+          "value": 1607809.74,
+          "count": 120
+        }
+      ]
     },
     "m_loan_repayment_schedule.principal_completed_derived": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1707,
+      "min": 0,
+      "max": 3315427.14,
+      "avg": 69223.3351,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 55660
+        },
+        {
+          "value": 681352.76,
+          "count": 28
+        },
+        {
+          "value": 1727523.77,
+          "count": 27
+        },
+        {
+          "value": 1066113.63,
+          "count": 26
+        },
+        {
+          "value": 387176.43,
+          "count": 24
+        }
+      ]
     },
     "m_loan_repayment_schedule.principal_writtenoff_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.interest_amount": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2477,
+      "min": 3127.16,
+      "max": 963487.72,
+      "avg": 329565.596,
+      "top_values": [
+        {
+          "value": 912490.8,
+          "count": 120
+        },
+        {
+          "value": 906727.98,
+          "count": 120
+        },
+        {
+          "value": 888366.9,
+          "count": 120
+        },
+        {
+          "value": 876488.4,
+          "count": 120
+        },
+        {
+          "value": 872370.41,
+          "count": 120
+        }
+      ]
     },
     "m_loan_repayment_schedule.interest_completed_derived": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1707,
+      "min": 0,
+      "max": 963487.72,
+      "avg": 17386.2703,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 55660
+        },
+        {
+          "value": 247535.46,
+          "count": 28
+        },
+        {
+          "value": 488025.46,
+          "count": 27
+        },
+        {
+          "value": 426871.9,
+          "count": 26
+        },
+        {
+          "value": 160368.48,
+          "count": 24
+        }
+      ]
     },
     "m_loan_repayment_schedule.interest_waived_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.interest_writtenoff_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.accrual_interest_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.reschedule_interest_portion": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.fee_charges_amount": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 61608,
+      "null_rate": 0.9651,
+      "distinct_count": 2226,
+      "min": 500.25,
+      "max": 4999.22,
+      "avg": 2728.3284,
+      "top_values": [
+        {
+          "value": 3080.46,
+          "count": 2
+        },
+        {
+          "value": 1972.08,
+          "count": 2
+        },
+        {
+          "value": 1528.23,
+          "count": 2
+        },
+        {
+          "value": 4999.22,
+          "count": 1
+        },
+        {
+          "value": 4997.58,
+          "count": 1
+        }
+      ]
     },
     "m_loan_repayment_schedule.fee_charges_completed_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.fee_charges_writtenoff_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.fee_charges_waived_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.accrual_fee_charges_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.penalty_charges_amount": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 61608,
+      "null_rate": 0.9651,
+      "distinct_count": 429,
+      "min": 0,
+      "max": 1996.78,
+      "avg": 205.9103,
+      "top_values": [
+        {
+          "value": 0,
+          "count": 1801
+        },
+        {
+          "value": 1996.78,
+          "count": 1
+        },
+        {
+          "value": 1996.35,
+          "count": 1
+        },
+        {
+          "value": 1985.28,
+          "count": 1
+        },
+        {
+          "value": 1982.05,
+          "count": 1
+        }
+      ]
     },
     "m_loan_repayment_schedule.penalty_charges_completed_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.penalty_charges_writtenoff_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.penalty_charges_waived_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.accrual_penalty_charges_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.total_paid_in_advance_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.total_paid_late_derived": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.completed_derived": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 55660
+        },
+        {
+          "value": 1,
+          "count": 8177
+        }
+      ]
     },
     "m_loan_repayment_schedule.obligations_met_on_date": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 55660,
+      "null_rate": 0.8719,
+      "distinct_count": 712,
+      "min": "2023-10-06",
+      "max": "2026-07-18",
+      "top_values": [
+        {
+          "value": "2026-06-13",
+          "count": 56
+        },
+        {
+          "value": "2026-07-02",
+          "count": 55
+        },
+        {
+          "value": "2026-07-01",
+          "count": 51
+        },
+        {
+          "value": "2026-06-10",
+          "count": 50
+        },
+        {
+          "value": "2026-06-09",
+          "count": 50
+        }
+      ]
     },
     "m_loan_repayment_schedule.recalculated_interest_component": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 63837
+        }
+      ]
     },
     "m_loan_repayment_schedule.is_additional": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 63837
+        }
+      ]
     },
     "m_loan_repayment_schedule.credits_amount": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.credited_interest": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.is_down_payment": {
-      "row_count": 0,
+      "row_count": 63837,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 0,
+          "count": 63837
+        }
+      ]
     },
     "m_loan_repayment_schedule.created_on_utc": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_repayment_schedule.last_modified_on_utc": {
-      "row_count": 0,
-      "null_count": 0,
-      "null_rate": null
+      "row_count": 63837,
+      "null_count": 63837,
+      "null_rate": 1.0
     },
     "m_loan_term_variations.loan_id": {
       "row_count": 247,
@@ -3710,8 +5668,33 @@
     },
     "m_loan_transaction.external_id": {
       "row_count": 20000,
-      "null_count": 20000,
-      "null_rate": 1.0
+      "null_count": 3120,
+      "null_rate": 0.156,
+      "distinct_count": 16880,
+      "min": "TXL00000001",
+      "max": "TXL00020000",
+      "top_values": [
+        {
+          "value": "TXL00000001",
+          "count": 1
+        },
+        {
+          "value": "TXL00000002",
+          "count": 1
+        },
+        {
+          "value": "TXL00000003",
+          "count": 1
+        },
+        {
+          "value": "TXL00000004",
+          "count": 1
+        },
+        {
+          "value": "TXL00000005",
+          "count": 1
+        }
+      ]
     },
     "m_loan_transaction.reversal_external_id": {
       "row_count": 20000,
@@ -3720,8 +5703,33 @@
     },
     "m_loan_transaction.reversed_on_date": {
       "row_count": 20000,
-      "null_count": 20000,
-      "null_rate": 1.0
+      "null_count": 19815,
+      "null_rate": 0.9908,
+      "distinct_count": 138,
+      "min": "2025-07-11",
+      "max": "2026-07-08",
+      "top_values": [
+        {
+          "value": "2026-02-23",
+          "count": 4
+        },
+        {
+          "value": "2026-05-07",
+          "count": 3
+        },
+        {
+          "value": "2026-04-08",
+          "count": 3
+        },
+        {
+          "value": "2026-03-29",
+          "count": 3
+        },
+        {
+          "value": "2026-03-25",
+          "count": 3
+        }
+      ]
     },
     "m_loan_transaction.outstanding_loan_balance_derived": {
       "row_count": 20000,
@@ -3752,7 +5760,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 20000
         }
       ]
@@ -3764,7 +5772,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 20000
         }
       ]
@@ -4054,27 +6062,27 @@
       "null_count": 0,
       "null_rate": 0.0,
       "distinct_count": 60,
-      "min": "2026-07-08 02:28:32.798588",
-      "max": "2026-07-08 02:28:32.800711",
+      "min": "2026-07-08 07:10:47.827705",
+      "max": "2026-07-08 07:10:47.830842",
       "top_values": [
         {
-          "value": "2026-07-08 02:28:32.800711",
+          "value": "2026-07-08 07:10:47.830842",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800679",
+          "value": "2026-07-08 07:10:47.830793",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800638",
+          "value": "2026-07-08 07:10:47.830751",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800607",
+          "value": "2026-07-08 07:10:47.830707",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800576",
+          "value": "2026-07-08 07:10:47.830665",
           "count": 1
         }
       ]
@@ -4096,27 +6104,27 @@
       "null_count": 0,
       "null_rate": 0.0,
       "distinct_count": 60,
-      "min": "2026-07-08 02:28:32.798593",
-      "max": "2026-07-08 02:28:32.800712",
+      "min": "2026-07-08 07:10:47.827711",
+      "max": "2026-07-08 07:10:47.830844",
       "top_values": [
         {
-          "value": "2026-07-08 02:28:32.800712",
+          "value": "2026-07-08 07:10:47.830844",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800680",
+          "value": "2026-07-08 07:10:47.830795",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800639",
+          "value": "2026-07-08 07:10:47.830752",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800608",
+          "value": "2026-07-08 07:10:47.830709",
           "count": 1
         },
         {
-          "value": "2026-07-08 02:28:32.800577",
+          "value": "2026-07-08 07:10:47.830666",
           "count": 1
         }
       ]
@@ -4489,7 +6497,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 50
         }
       ]
@@ -4513,7 +6521,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 50
         }
       ]
@@ -4594,23 +6602,23 @@
       "max": "2026-08-06",
       "top_values": [
         {
-          "value": "2026-07-12",
-          "count": 25
-        },
-        {
-          "value": "2026-07-28",
-          "count": 24
-        },
-        {
-          "value": "2026-07-10",
-          "count": 24
+          "value": "2026-07-17",
+          "count": 29
         },
         {
           "value": "2026-07-11",
-          "count": 22
+          "count": 27
         },
         {
-          "value": "2026-07-26",
+          "value": "2026-07-28",
+          "count": 25
+        },
+        {
+          "value": "2026-07-19",
+          "count": 23
+        },
+        {
+          "value": "2026-07-18",
           "count": 21
         }
       ]
@@ -4728,14 +6736,32 @@
       "null_rate": 1.0
     },
     "m_deposit_product_recurring_detail.savings_product_id": {
-      "row_count": 0,
+      "row_count": 1,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 1,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 1
+        }
+      ]
     },
     "m_deposit_product_term_and_preclosure.savings_product_id": {
-      "row_count": 0,
+      "row_count": 2,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 2,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 1
+        },
+        {
+          "value": 2,
+          "count": 1
+        }
+      ]
     },
     "m_savings_product.name": {
       "row_count": 3,
@@ -5181,8 +7207,33 @@
     },
     "m_savings_account.external_id": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 283,
+      "null_rate": 0.1887,
+      "distinct_count": 1217,
+      "min": "SAV0000001",
+      "max": "SAV0001500",
+      "top_values": [
+        {
+          "value": "SAV0000001",
+          "count": 1
+        },
+        {
+          "value": "SAV0000002",
+          "count": 1
+        },
+        {
+          "value": "SAV0000003",
+          "count": 1
+        },
+        {
+          "value": "SAV0000004",
+          "count": 1
+        },
+        {
+          "value": "SAV0000005",
+          "count": 1
+        }
+      ]
     },
     "m_savings_account.client_id": {
       "row_count": 1500,
@@ -5247,8 +7298,43 @@
     },
     "m_savings_account.field_officer_id": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 425,
+      "null_rate": 0.2833,
+      "distinct_count": 8,
+      "distinct_values": [
+        {
+          "value": 4,
+          "count": 149
+        },
+        {
+          "value": 6,
+          "count": 140
+        },
+        {
+          "value": 2,
+          "count": 139
+        },
+        {
+          "value": 1,
+          "count": 138
+        },
+        {
+          "value": 7,
+          "count": 130
+        },
+        {
+          "value": 8,
+          "count": 127
+        },
+        {
+          "value": 3,
+          "count": 127
+        },
+        {
+          "value": 5,
+          "count": 125
+        }
+      ]
     },
     "m_savings_account.status_enum": {
       "row_count": 1500,
@@ -5342,8 +7428,23 @@
     },
     "m_savings_account.submittedon_userid": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 520
+        },
+        {
+          "value": 2,
+          "count": 492
+        },
+        {
+          "value": 3,
+          "count": 488
+        }
+      ]
     },
     "m_savings_account.rejectedon_date": {
       "row_count": 1500,
@@ -5397,8 +7498,23 @@
     },
     "m_savings_account.approvedon_userid": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 61,
+      "null_rate": 0.0407,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 498
+        },
+        {
+          "value": 2,
+          "count": 484
+        },
+        {
+          "value": 1,
+          "count": 457
+        }
+      ]
     },
     "m_savings_account.activatedon_date": {
       "row_count": 1500,
@@ -5432,18 +7548,73 @@
     },
     "m_savings_account.activatedon_userid": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 140,
+      "null_rate": 0.0933,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 1,
+          "count": 510
+        },
+        {
+          "value": 3,
+          "count": 435
+        },
+        {
+          "value": 2,
+          "count": 415
+        }
+      ]
     },
     "m_savings_account.closedon_date": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 1352,
+      "null_rate": 0.9013,
+      "distinct_count": 122,
+      "min": "2025-07-10",
+      "max": "2026-07-06",
+      "top_values": [
+        {
+          "value": "2026-06-29",
+          "count": 2
+        },
+        {
+          "value": "2026-06-19",
+          "count": 2
+        },
+        {
+          "value": "2026-06-18",
+          "count": 2
+        },
+        {
+          "value": "2026-06-13",
+          "count": 2
+        },
+        {
+          "value": "2026-06-10",
+          "count": 2
+        }
+      ]
     },
     "m_savings_account.closedon_userid": {
       "row_count": 1500,
-      "null_count": 1500,
-      "null_rate": 1.0
+      "null_count": 1352,
+      "null_rate": 0.9013,
+      "distinct_count": 3,
+      "distinct_values": [
+        {
+          "value": 3,
+          "count": 54
+        },
+        {
+          "value": 2,
+          "count": 48
+        },
+        {
+          "value": 1,
+          "count": 46
+        }
+      ]
     },
     "m_savings_account.reason_for_block": {
       "row_count": 1500,
@@ -5774,7 +7945,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 1500
         }
       ]
@@ -5798,7 +7969,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 1500
         }
       ]
@@ -6090,7 +8261,7 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 272
         }
       ]
@@ -6114,25 +8285,103 @@
       "distinct_count": 1,
       "distinct_values": [
         {
-          "value": "2026-07-08 02:28:32.800749",
+          "value": "2026-07-08 07:10:47.830903",
           "count": 272
         }
       ]
     },
     "m_savings_account_charge_paid_by.savings_account_transaction_id": {
-      "row_count": 0,
+      "row_count": 81,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 81,
+      "min": 7,
+      "max": 6412,
+      "avg": 1201.8642,
+      "top_values": [
+        {
+          "value": 6412,
+          "count": 1
+        },
+        {
+          "value": 5167,
+          "count": 1
+        },
+        {
+          "value": 3463,
+          "count": 1
+        },
+        {
+          "value": 3420,
+          "count": 1
+        },
+        {
+          "value": 2713,
+          "count": 1
+        }
+      ]
     },
     "m_savings_account_charge_paid_by.savings_account_charge_id": {
-      "row_count": 0,
+      "row_count": 81,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 81,
+      "min": 1,
+      "max": 271,
+      "avg": 144.5062,
+      "top_values": [
+        {
+          "value": 271,
+          "count": 1
+        },
+        {
+          "value": 265,
+          "count": 1
+        },
+        {
+          "value": 261,
+          "count": 1
+        },
+        {
+          "value": 256,
+          "count": 1
+        },
+        {
+          "value": 252,
+          "count": 1
+        }
+      ]
     },
     "m_savings_account_charge_paid_by.amount": {
-      "row_count": 0,
+      "row_count": 81,
       "null_count": 0,
-      "null_rate": null
+      "null_rate": 0.0,
+      "distinct_count": 81,
+      "min": 617.25,
+      "max": 4885.28,
+      "avg": 2550.0672,
+      "top_values": [
+        {
+          "value": 4885.28,
+          "count": 1
+        },
+        {
+          "value": 4879.77,
+          "count": 1
+        },
+        {
+          "value": 4867.69,
+          "count": 1
+        },
+        {
+          "value": 4567.02,
+          "count": 1
+        },
+        {
+          "value": 4551.63,
+          "count": 1
+        }
+      ]
     },
     "m_savings_account_transaction.savings_account_id": {
       "row_count": 10000,
@@ -6457,8 +8706,33 @@
     },
     "m_savings_account_transaction.ref_no": {
       "row_count": 10000,
-      "null_count": 10000,
-      "null_rate": 1.0
+      "null_count": 0,
+      "null_rate": 0.0,
+      "distinct_count": 10000,
+      "min": "TXR1000839726",
+      "max": "TXR9999944598",
+      "top_values": [
+        {
+          "value": "TXR1000839726",
+          "count": 1
+        },
+        {
+          "value": "TXR1001227959",
+          "count": 1
+        },
+        {
+          "value": "TXR1002028850",
+          "count": 1
+        },
+        {
+          "value": "TXR1002502517",
+          "count": 1
+        },
+        {
+          "value": "TXR1002609244",
+          "count": 1
+        }
+      ]
     },
     "m_savings_account_transaction.created_on_utc": {
       "row_count": 10000,

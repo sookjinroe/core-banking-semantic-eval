@@ -113,11 +113,21 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 4,
+        "distinct_sample": [
+          2,
+          4,
+          5,
+          3
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.985,
+        "top_values": {
+          "2": 0.006,
+          "4": 0.005,
+          "5": 0.002,
+          "3": 0.002
+        }
       }
     },
     "m_client.image_id": {
@@ -310,11 +320,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 446,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.245,
+        "top_values": {
+          "2026-05-23": 0.007,
+          "2026-07-21": 0.006,
+          "2026-07-03": 0.006,
+          "2026-04-18": 0.006,
+          "2026-07-26": 0.005
+        }
       }
     },
     "m_client.firstname": {
@@ -382,11 +398,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 39,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.954,
+        "top_values": {
+          "중수": 0.002,
+          "정식": 0.002,
+          "영자": 0.002,
+          "상호": 0.002,
+          "민재": 0.002
+        }
       }
     },
     "m_client.lastname": {
@@ -538,11 +560,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 948,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.052,
+        "top_values": {
+          "010-1000-7254": 0.001,
+          "010-1005-6122": 0.001,
+          "010-1022-6894": 0.001,
+          "010-1034-1703": 0.001,
+          "010-1057-6834": 0.001
+        }
       }
     },
     "m_client.email_address": {
@@ -571,11 +599,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 851,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.146,
+        "top_values": {
+          "김9113@naver.com": 0.002,
+          "김3878@naver.com": 0.002,
+          "권5227@naver.com": 0.002,
+          "황9881@daum.net": 0.001,
+          "황9665@daum.net": 0.001
+        }
       }
     },
     "m_client.is_staff": {
@@ -641,11 +675,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 816,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.184,
+        "top_values": {
+          "CIF10045767": 0.001,
+          "CIF10118565": 0.001,
+          "CIF10123261": 0.001,
+          "CIF10508807": 0.001,
+          "CIF10570496": 0.001
+        }
       }
     },
     "m_client.date_of_birth": {
@@ -932,11 +972,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 32,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.967,
+        "top_values": {
+          "2025-08-23": 0.002,
+          "2026-06-05": 0.001,
+          "2026-03-31": 0.001,
+          "2026-02-03": 0.001,
+          "2026-01-28": 0.001
+        }
       }
     },
     "m_client.rejectedon_userid": {
@@ -967,11 +1013,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          3,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.967,
+        "top_values": {
+          "2": 0.012,
+          "3": 0.011,
+          "1": 0.01
+        }
       }
     },
     "m_client.withdraw_reason_cv_id": {
@@ -1041,11 +1095,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 31,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.969,
+        "top_values": {
+          "2026-04-25": 0.001,
+          "2026-02-16": 0.001,
+          "2026-01-27": 0.001,
+          "2026-01-19": 0.001,
+          "2026-01-10": 0.001
+        }
       }
     },
     "m_client.withdraw_on_userid": {
@@ -1076,11 +1136,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          1,
+          3,
+          2
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.969,
+        "top_values": {
+          "1": 0.011,
+          "3": 0.01,
+          "2": 0.01
+        }
       }
     },
     "m_client.reactivated_on_date": {
@@ -1109,11 +1177,36 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 13,
+        "distinct_sample": [
+          "2026-05-24",
+          "2026-04-02",
+          "2026-03-02",
+          "2026-02-03",
+          "2026-01-11",
+          "2025-12-16",
+          "2025-12-13",
+          "2025-12-05",
+          "2025-11-26",
+          "2025-11-23",
+          "2025-10-11",
+          "2025-09-28",
+          "2025-09-07"
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.987,
+        "top_values": {
+          "2026-05-24": 0.001,
+          "2026-04-02": 0.001,
+          "2026-03-02": 0.001,
+          "2026-02-03": 0.001,
+          "2026-01-11": 0.001,
+          "2025-12-16": 0.001,
+          "2025-12-13": 0.001,
+          "2025-12-05": 0.001,
+          "2025-11-26": 0.001,
+          "2025-11-23": 0.001
+        }
       }
     },
     "m_client.reactivated_on_userid": {
@@ -1144,11 +1237,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          3,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.987,
+        "top_values": {
+          "2": 0.006,
+          "3": 0.004,
+          "1": 0.003
+        }
       }
     },
     "m_client.closedon_userid": {
@@ -1509,11 +1610,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 2,
+        "distinct_sample": [
+          "2026-06-01",
+          "2026-03-05"
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.998,
+        "top_values": {
+          "2026-06-01": 0.001,
+          "2026-03-05": 0.001
+        }
       }
     },
     "m_client.reopened_by_userid": {
@@ -1544,11 +1651,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 2,
+        "distinct_sample": [
+          3,
+          2
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.998,
+        "top_values": {
+          "3": 0.001,
+          "2": 0.001
+        }
       }
     },
     "m_client.proposed_transfer_date": {
@@ -1577,11 +1690,38 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 15,
+        "distinct_sample": [
+          "2026-06-24",
+          "2026-06-17",
+          "2026-06-14",
+          "2026-06-09",
+          "2026-04-28",
+          "2026-04-18",
+          "2026-04-10",
+          "2026-04-03",
+          "2026-04-01",
+          "2026-02-17",
+          "2026-02-14",
+          "2026-02-12",
+          "2026-02-02",
+          "2026-01-31",
+          "2026-01-17"
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.985,
+        "top_values": {
+          "2026-06-24": 0.001,
+          "2026-06-17": 0.001,
+          "2026-06-14": 0.001,
+          "2026-06-09": 0.001,
+          "2026-04-28": 0.001,
+          "2026-04-18": 0.001,
+          "2026-04-10": 0.001,
+          "2026-04-03": 0.001,
+          "2026-04-01": 0.001,
+          "2026-02-17": 0.001
+        }
       }
     },
     "m_client.created_by": {
@@ -1649,12 +1789,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -1723,12 +1863,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -1918,11 +2058,23 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 5,
+        "distinct_sample": [
+          "지점 확인 완료",
+          "주 신분증",
+          "발급 갱신 요망",
+          "본점 발급",
+          "본인 확인용"
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.661,
+        "top_values": {
+          "지점 확인 완료": 0.074,
+          "주 신분증": 0.074,
+          "발급 갱신 요망": 0.066,
+          "본점 발급": 0.063,
+          "본인 확인용": 0.062
+        }
       }
     },
     "m_client_identifier.active": {
@@ -1988,14 +2140,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 1,
-        "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
-        ],
+        "cardinality": 627,
+        "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-02-26 09:00:00": 0.005,
+          "2024-11-24 09:00:00": 0.005,
+          "2024-04-03 09:00:00": 0.005,
+          "2026-04-12 09:00:00": 0.004,
+          "2026-03-22 09:00:00": 0.004
         }
       }
     },
@@ -2025,14 +2179,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 1,
-        "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
-        ],
+        "cardinality": 627,
+        "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-02-26 09:00:00": 0.005,
+          "2024-11-24 09:00:00": 0.005,
+          "2024-04-03 09:00:00": 0.005,
+          "2026-04-12 09:00:00": 0.004,
+          "2026-03-22 09:00:00": 0.004
         }
       }
     },
@@ -2388,11 +2544,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2419,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1937,
+        "top_values": {
+          "LN1009288": 0.0003,
+          "LN1020265": 0.0003,
+          "LN1024463": 0.0003,
+          "LN1026741": 0.0003,
+          "LN1035021": 0.0003
+        }
       }
     },
     "m_loan.client_id": {
@@ -3332,11 +3494,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          3,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1743,
+        "top_values": {
+          "2": 0.282,
+          "3": 0.2787,
+          "1": 0.265
+        }
       }
     },
     "m_loan.closedon_date": {
@@ -3447,11 +3617,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 92,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9623,
+        "top_values": {
+          "2027-01-01": 0.0013,
+          "2026-12-18": 0.001,
+          "2027-01-02": 0.0007,
+          "2026-12-30": 0.0007,
+          "2026-12-27": 0.0007
+        }
       }
     },
     "m_loan.rescheduledon_date": {
@@ -3548,11 +3724,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 890,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1743,
+        "top_values": {
+          "2026-08-07": 0.0093,
+          "2026-07-31": 0.0063,
+          "2026-10-03": 0.006,
+          "2026-08-04": 0.006,
+          "2026-10-06": 0.005
+        }
       }
     },
     "m_loan.maturedon_date": {
@@ -3581,11 +3763,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 191,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9123,
+        "top_values": {
+          "2026-06-14": 0.0013,
+          "2026-02-12": 0.0013,
+          "2026-06-20": 0.001,
+          "2026-06-12": 0.001,
+          "2026-06-06": 0.001
+        }
       }
     },
     "m_loan.expected_firstrepaymenton_date": {
@@ -3653,11 +3841,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 514,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1743,
+        "top_values": {
+          "2026-07-08": 0.0183,
+          "2026-07-06": 0.012,
+          "2026-07-05": 0.012,
+          "2026-07-07": 0.0117,
+          "2026-07-04": 0.01
+        }
       }
     },
     "m_loan.total_overpaid_derived": {
@@ -3719,11 +3913,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 23,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.991,
+        "top_values": {
+          "2026-04-20": 0.001,
+          "2026-05-24": 0.0007,
+          "2026-05-06": 0.0007,
+          "2026-07-03": 0.0003,
+          "2026-07-01": 0.0003
+        }
       }
     },
     "m_loan.loan_counter": {
@@ -3752,11 +3952,35 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 12,
+        "distinct_sample": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "1": 0.245,
+          "2": 0.2277,
+          "3": 0.19,
+          "4": 0.1437,
+          "5": 0.0943,
+          "6": 0.0517,
+          "7": 0.0273,
+          "8": 0.0137,
+          "9": 0.0037,
+          "10": 0.0017
+        }
       }
     },
     "m_loan.loan_product_counter": {
@@ -3785,11 +4009,27 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 7,
+        "distinct_sample": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "1": 0.5897,
+          "2": 0.2653,
+          "3": 0.1023,
+          "4": 0.0307,
+          "5": 0.01,
+          "6": 0.0017,
+          "7": 0.0003
+        }
       }
     },
     "m_loan.principal_amount_proposed": {
@@ -4108,11 +4348,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 2,
+        "distinct_sample": [
+          0,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1743,
+        "top_values": {
+          "0": 0.6613,
+          "1": 0.1643
+        }
       }
     },
     "m_loan.guarantee_amount_derived": {
@@ -4470,11 +4716,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 45,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.3953,
+        "top_values": {
+          "2026-06-03": 0.0187,
+          "2026-06-07": 0.0177,
+          "2026-06-15": 0.017,
+          "2026-06-10": 0.0167,
+          "2026-07-03": 0.0163
+        }
       }
     },
     "m_loan.is_charged_off": {
@@ -4817,12 +5069,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -4891,12 +5143,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -5203,12 +5455,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -5277,12 +5529,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -5439,11 +5691,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 419,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-06-29": 0.0133,
+          "2026-07-08": 0.0106,
+          "2026-07-06": 0.0106,
+          "2026-06-19": 0.0098,
+          "2026-06-13": 0.0098
+        }
       }
     },
     "m_loan_charge.due_for_collection_as_of_date": {
@@ -5472,11 +5730,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 432,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-08-20": 0.0106,
+          "2026-08-04": 0.0098,
+          "2026-09-04": 0.0089,
+          "2026-08-30": 0.0071,
+          "2026-08-28": 0.0071
+        }
       }
     },
     "m_loan_charge.charge_calculation_enum": {
@@ -5587,11 +5851,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 326,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.4818,
+        "top_values": {
+          "3.72": 0.0053,
+          "0.7": 0.0053,
+          "4.38": 0.0044,
+          "4.01": 0.0044,
+          "1.6": 0.0044
+        }
       }
     },
     "m_loan_charge.calculation_on_amount": {
@@ -5620,11 +5890,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 584,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.4818,
+        "top_values": {
+          "997864.6": 0.0009,
+          "989675.2": 0.0009,
+          "985060.2": 0.0009,
+          "984350.6": 0.0009,
+          "984293.8": 0.0009
+        }
       }
     },
     "m_loan_charge.charge_amount_or_percentage": {
@@ -5653,11 +5929,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 869,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "3.72": 0.0053,
+          "0.7": 0.0053,
+          "4.38": 0.0044,
+          "4.01": 0.0044,
+          "1.6": 0.0044
+        }
       }
     },
     "m_loan_charge.amount": {
@@ -5976,11 +6258,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          1000
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.8988,
+        "top_values": {
+          "1000": 0.1012
+        }
       }
     },
     "m_loan_charge.max_cap": {
@@ -6009,11 +6295,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 114,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.8988,
+        "top_values": {
+          "1476440.7": 0.0009,
+          "1475475.6": 0.0009,
+          "1473914.4": 0.0009,
+          "1457437.8": 0.0009,
+          "1456859.7": 0.0009
+        }
       }
     },
     "m_loan_charge.is_active": {
@@ -6079,11 +6371,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 911,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1917,
+        "top_values": {
+          "CHG0000002": 0.0009,
+          "CHG0000003": 0.0009,
+          "CHG0000004": 0.0009,
+          "CHG0000005": 0.0009,
+          "CHG0000006": 0.0009
+        }
       }
     },
     "m_loan_charge_paid_by.loan_transaction_id": {
@@ -6114,11 +6412,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 382,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "13907": 0.0044,
+          "10736": 0.0044,
+          "9622": 0.0044,
+          "9132": 0.0044,
+          "8880": 0.0044
+        }
       }
     },
     "m_loan_charge_paid_by.loan_charge_id": {
@@ -6149,11 +6453,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 450,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "1127": 0.0022,
+          "1125": 0.0022,
+          "1121": 0.0022,
+          "1120": 0.0022,
+          "1118": 0.0022
+        }
       }
     },
     "m_loan_charge_paid_by.amount": {
@@ -6182,11 +6492,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 450,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "29963.27": 0.0022,
+          "29910.52": 0.0022,
+          "29871.5": 0.0022,
+          "29429.99": 0.0022,
+          "29393.25": 0.0022
+        }
       }
     },
     "m_loan_charge_paid_by.installment_number": {
@@ -6215,11 +6531,35 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 12,
+        "distinct_sample": [
+          3,
+          4,
+          6,
+          5,
+          1,
+          10,
+          11,
+          8,
+          7,
+          2,
+          12,
+          9
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 0.1044,
+          "4": 0.0956,
+          "6": 0.0933,
+          "5": 0.0867,
+          "1": 0.0844,
+          "10": 0.0822,
+          "11": 0.08,
+          "8": 0.0778,
+          "7": 0.0778,
+          "2": 0.0778
+        }
       }
     },
     "m_loan_collateral_management.quantity": {
@@ -6248,11 +6588,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          3,
+          1,
+          2
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 0.3659,
+          "1": 0.3333,
+          "2": 0.3008
+        }
       }
     },
     "m_loan_collateral_management.transaction_id": {
@@ -6283,11 +6631,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 39,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.6829,
+        "top_values": {
+          "19021": 0.0081,
+          "18367": 0.0081,
+          "18352": 0.0081,
+          "17240": 0.0081,
+          "16705": 0.0081
+        }
       }
     },
     "m_loan_collateral_management.loan_id": {
@@ -6318,11 +6672,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 123,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2950": 0.0081,
+          "2939": 0.0081,
+          "2895": 0.0081,
+          "2887": 0.0081,
+          "2878": 0.0081
+        }
       }
     },
     "m_loan_collateral_management.is_released": {
@@ -6351,11 +6711,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_collateral_management.client_collateral_id": {
@@ -6386,11 +6750,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 73,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "21": 0.0407,
+          "82": 0.0325,
+          "17": 0.0325,
+          "96": 0.0244,
+          "94": 0.0244
+        }
       }
     },
     "m_loan_disbursement_detail.loan_id": {
@@ -6421,11 +6791,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3000": 0.0004,
+          "2999": 0.0004,
+          "2998": 0.0004,
+          "2997": 0.0004,
+          "2996": 0.0004
+        }
       }
     },
     "m_loan_disbursement_detail.expected_disburse_date": {
@@ -6454,11 +6830,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 514,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-07-08": 0.0222,
+          "2026-07-06": 0.0145,
+          "2026-07-05": 0.0145,
+          "2026-07-07": 0.0141,
+          "2026-07-04": 0.0121
+        }
       }
     },
     "m_loan_disbursement_detail.disbursedon_date": {
@@ -6487,11 +6869,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 514,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-07-08": 0.0222,
+          "2026-07-06": 0.0145,
+          "2026-07-05": 0.0145,
+          "2026-07-07": 0.0141,
+          "2026-07-04": 0.0121
+        }
       }
     },
     "m_loan_disbursement_detail.principal": {
@@ -6520,11 +6908,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "199352340.33": 0.0004,
+          "199250976.01": 0.0004,
+          "198925628.68": 0.0004,
+          "198815588.32": 0.0004,
+          "198553573.24": 0.0004
+        }
       }
     },
     "m_loan_disbursement_detail.net_disbursal_amount": {
@@ -6553,11 +6947,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "198927674.58": 0.0004,
+          "198422603.81": 0.0004,
+          "196944929.04": 0.0004,
+          "194879764.34": 0.0004,
+          "194804904.64": 0.0004
+        }
       }
     },
     "m_loan_disbursement_detail.is_reversed": {
@@ -6586,11 +6986,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_installment_charge.loan_charge_id": {
@@ -6621,11 +7025,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 1127,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "1127": 0.0009,
+          "1126": 0.0009,
+          "1125": 0.0009,
+          "1124": 0.0009,
+          "1123": 0.0009
+        }
       }
     },
     "m_loan_installment_charge.loan_schedule_id": {
@@ -6656,11 +7066,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2229,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "63672": 0.0006,
+          "63671": 0.0006,
+          "63670": 0.0006,
+          "63213": 0.0006,
+          "63212": 0.0006
+        }
       }
     },
     "m_loan_installment_charge.amount": {
@@ -6689,11 +7105,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 3380,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "6009.46": 0.0006,
+          "9999.8": 0.0003,
+          "9997.72": 0.0003,
+          "9993.31": 0.0003,
+          "9992.03": 0.0003
+        }
       }
     },
     "m_loan_installment_charge.amount_paid_derived": {
@@ -6725,7 +7147,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -6758,7 +7180,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -6791,7 +7213,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -6821,11 +7243,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_installment_charge.amount_through_charge_payment": {
@@ -6854,11 +7280,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2003,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.4073,
+        "top_values": {
+          "707": 0.0006,
+          "9774.34": 0.0003,
+          "9649.56": 0.0003,
+          "9528.19": 0.0003,
+          "9518.88": 0.0003
+        }
       }
     },
     "m_loan_installment_charge.is_paid_derived": {
@@ -6887,11 +7319,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_installment_charge.waived": {
@@ -6920,11 +7356,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_recalculation_details.loan_id": {
@@ -7611,11 +8051,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 123,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3000": 0.0081,
+          "2979": 0.0081,
+          "2919": 0.0081,
+          "2850": 0.0081,
+          "2822": 0.0081
+        }
       }
     },
     "m_loan_officer_assignment_history.loan_officer_id": {
@@ -7646,11 +8092,29 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 8,
+        "distinct_sample": [
+          3,
+          1,
+          8,
+          7,
+          2,
+          6,
+          5,
+          4
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 0.1463,
+          "1": 0.1463,
+          "8": 0.1341,
+          "7": 0.1301,
+          "2": 0.126,
+          "6": 0.122,
+          "5": 0.122,
+          "4": 0.0732
+        }
       }
     },
     "m_loan_officer_assignment_history.start_date": {
@@ -7679,11 +8143,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 203,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-03-07": 0.0122,
+          "2025-11-28": 0.0122,
+          "2025-10-13": 0.0122,
+          "2025-05-16": 0.0122,
+          "2025-04-16": 0.0122
+        }
       }
     },
     "m_loan_officer_assignment_history.end_date": {
@@ -7712,11 +8182,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 103,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.5,
+        "top_values": {
+          "2026-03-06": 0.0122,
+          "2025-11-27": 0.0122,
+          "2026-06-04": 0.0081,
+          "2026-05-17": 0.0081,
+          "2026-05-16": 0.0081
+        }
       }
     },
     "m_loan_officer_assignment_history.createdby_id": {
@@ -7745,11 +8221,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          3,
+          1
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2": 0.3496,
+          "3": 0.3415,
+          "1": 0.3089
+        }
       }
     },
     "m_loan_officer_assignment_history.created_date": {
@@ -7778,11 +8262,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 201,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-04-24": 0.0122,
+          "2026-02-06": 0.0122,
+          "2026-02-04": 0.0122,
+          "2025-06-08": 0.0122,
+          "2025-03-19": 0.0122
+        }
       }
     },
     "m_loan_officer_assignment_history.lastmodifiedby_id": {
@@ -7811,11 +8301,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          3,
+          1
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2": 0.3577,
+          "3": 0.3211,
+          "1": 0.3211
+        }
       }
     },
     "m_loan_officer_assignment_history.lastmodified_date": {
@@ -7844,11 +8342,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 201,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-04-24": 0.0122,
+          "2026-02-06": 0.0122,
+          "2026-02-04": 0.0122,
+          "2025-06-08": 0.0122,
+          "2025-03-19": 0.0122
+        }
       }
     },
     "m_loan_overdue_installment_charge.loan_charge_id": {
@@ -7879,11 +8383,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 82,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "1126": 0.0122,
+          "1108": 0.0122,
+          "1075": 0.0122,
+          "1073": 0.0122,
+          "1056": 0.0122
+        }
       }
     },
     "m_loan_overdue_installment_charge.loan_schedule_id": {
@@ -7914,11 +8424,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          1
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "1": 1.0
+        }
       }
     },
     "m_loan_overdue_installment_charge.frequency_number": {
@@ -7947,11 +8461,23 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 5,
+        "distinct_sample": [
+          4,
+          3,
+          1,
+          5,
+          2
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "4": 0.2317,
+          "3": 0.2317,
+          "1": 0.1951,
+          "5": 0.1707,
+          "2": 0.1707
+        }
       }
     },
     "m_loan_repayment_schedule.loan_id": {
@@ -7982,11 +8508,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2994": 0.0019,
+          "2987": 0.0019,
+          "2937": 0.0019,
+          "2933": 0.0019,
+          "2927": 0.0019
+        }
       }
     },
     "m_loan_repayment_schedule.installment": {
@@ -8015,11 +8547,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 120,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 0.0388,
+          "2": 0.0388,
+          "1": 0.0388,
+          "6": 0.0342,
+          "5": 0.0342
+        }
       }
     },
     "m_loan_repayment_schedule.fromdate": {
@@ -8048,11 +8586,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 4296,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-07-08": 0.0018,
+          "2026-08-07": 0.0018,
+          "2026-09-06": 0.0017,
+          "2026-10-06": 0.0016,
+          "2026-07-05": 0.0015
+        }
       }
     },
     "m_loan_repayment_schedule.duedate": {
@@ -8081,11 +8625,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 4296,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "2026-08-07": 0.0018,
+          "2026-09-06": 0.0018,
+          "2026-10-06": 0.0017,
+          "2026-11-05": 0.0016,
+          "2026-08-04": 0.0015
+        }
       }
     },
     "m_loan_repayment_schedule.principal_amount": {
@@ -8114,11 +8664,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "1654613.11": 0.0019,
+          "1654314.52": 0.0019,
+          "1644859.7": 0.0019,
+          "1627481.76": 0.0019,
+          "1607809.74": 0.0019
+        }
       }
     },
     "m_loan_repayment_schedule.principal_completed_derived": {
@@ -8147,11 +8703,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 1707,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 0.8719,
+          "681352.76": 0.0004,
+          "1727523.77": 0.0004,
+          "1066113.63": 0.0004,
+          "387176.43": 0.0004
+        }
       }
     },
     "m_loan_repayment_schedule.principal_writtenoff_derived": {
@@ -8183,7 +8745,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8213,11 +8775,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2477,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "912490.8": 0.0019,
+          "906727.98": 0.0019,
+          "888366.9": 0.0019,
+          "876488.4": 0.0019,
+          "872370.41": 0.0019
+        }
       }
     },
     "m_loan_repayment_schedule.interest_completed_derived": {
@@ -8246,11 +8814,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 1707,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 0.8719,
+          "247535.46": 0.0004,
+          "488025.46": 0.0004,
+          "426871.9": 0.0004,
+          "160368.48": 0.0004
+        }
       }
     },
     "m_loan_repayment_schedule.interest_waived_derived": {
@@ -8282,7 +8856,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8315,7 +8889,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8348,7 +8922,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8381,7 +8955,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8411,11 +8985,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 2226,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.9651,
+        "top_values": {
+          "3080.46": 0.0,
+          "1972.08": 0.0,
+          "1528.23": 0.0,
+          "4999.22": 0.0,
+          "4997.58": 0.0
+        }
       }
     },
     "m_loan_repayment_schedule.fee_charges_completed_derived": {
@@ -8447,7 +9027,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8480,7 +9060,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8513,7 +9093,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8546,7 +9126,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8576,11 +9156,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 429,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.9651,
+        "top_values": {
+          "0": 0.0282,
+          "1996.78": 0.0,
+          "1996.35": 0.0,
+          "1985.28": 0.0,
+          "1982.05": 0.0
+        }
       }
     },
     "m_loan_repayment_schedule.penalty_charges_completed_derived": {
@@ -8612,7 +9198,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8645,7 +9231,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8678,7 +9264,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8711,7 +9297,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8744,7 +9330,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8777,7 +9363,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8807,11 +9393,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 2,
+        "distinct_sample": [
+          0,
+          1
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 0.8719,
+          "1": 0.1281
+        }
       }
     },
     "m_loan_repayment_schedule.obligations_met_on_date": {
@@ -8840,11 +9432,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 712,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
-        "top_values": {}
+        "null_rate": 0.8719,
+        "top_values": {
+          "2026-06-13": 0.0009,
+          "2026-07-02": 0.0009,
+          "2026-07-01": 0.0008,
+          "2026-06-10": 0.0008,
+          "2026-06-09": 0.0008
+        }
       }
     },
     "m_loan_repayment_schedule.recalculated_interest_component": {
@@ -8873,11 +9471,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_repayment_schedule.is_additional": {
@@ -8906,11 +9508,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_repayment_schedule.credits_amount": {
@@ -8942,7 +9548,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -8975,7 +9581,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -9005,11 +9611,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          0
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "0": 1.0
+        }
       }
     },
     "m_loan_repayment_schedule.created_on_utc": {
@@ -9041,7 +9651,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -9074,7 +9684,7 @@ window.SIGNAL_STORE = {
         "cardinality": 0,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0,
+        "null_rate": 1.0,
         "top_values": {}
       }
     },
@@ -10117,11 +10727,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 16880,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.156,
+        "top_values": {
+          "TXL00000001": 0.0001,
+          "TXL00000002": 0.0001,
+          "TXL00000003": 0.0001,
+          "TXL00000004": 0.0001,
+          "TXL00000005": 0.0001
+        }
       }
     },
     "m_loan_transaction.reversal_external_id": {
@@ -10183,11 +10799,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 138,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9908,
+        "top_values": {
+          "2026-02-23": 0.0002,
+          "2026-05-07": 0.0001,
+          "2026-04-08": 0.0001,
+          "2026-03-29": 0.0001,
+          "2026-03-25": 0.0001
+        }
       }
     },
     "m_loan_transaction.outstanding_loan_balance_derived": {
@@ -10321,12 +10943,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -10358,12 +10980,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -10921,11 +11543,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800711": 0.0167,
-          "2026-07-08 02:28:32.800679": 0.0167,
-          "2026-07-08 02:28:32.800638": 0.0167,
-          "2026-07-08 02:28:32.800607": 0.0167,
-          "2026-07-08 02:28:32.800576": 0.0167
+          "2026-07-08 07:10:47.830842": 0.0167,
+          "2026-07-08 07:10:47.830793": 0.0167,
+          "2026-07-08 07:10:47.830751": 0.0167,
+          "2026-07-08 07:10:47.830707": 0.0167,
+          "2026-07-08 07:10:47.830665": 0.0167
         }
       }
     },
@@ -10997,11 +11619,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800712": 0.0167,
-          "2026-07-08 02:28:32.800680": 0.0167,
-          "2026-07-08 02:28:32.800639": 0.0167,
-          "2026-07-08 02:28:32.800608": 0.0167,
-          "2026-07-08 02:28:32.800577": 0.0167
+          "2026-07-08 07:10:47.830844": 0.0167,
+          "2026-07-08 07:10:47.830795": 0.0167,
+          "2026-07-08 07:10:47.830752": 0.0167,
+          "2026-07-08 07:10:47.830709": 0.0167,
+          "2026-07-08 07:10:47.830666": 0.0167
         }
       }
     },
@@ -11799,12 +12421,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -11873,12 +12495,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -12024,11 +12646,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-12": 0.0452,
-          "2026-07-28": 0.0434,
-          "2026-07-10": 0.0434,
-          "2026-07-11": 0.0398,
-          "2026-07-26": 0.038
+          "2026-07-17": 0.0524,
+          "2026-07-11": 0.0488,
+          "2026-07-28": 0.0452,
+          "2026-07-19": 0.0416,
+          "2026-07-18": 0.038
         }
       }
     },
@@ -12296,11 +12918,15 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 1,
+        "distinct_sample": [
+          3
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 1.0
+        }
       }
     },
     "m_deposit_product_term_and_preclosure.savings_product_id": {
@@ -12331,11 +12957,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 2,
+        "distinct_sample": [
+          3,
+          2
+        ],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "3": 0.5,
+          "2": 0.5
+        }
       }
     },
     "m_savings_product.name": {
@@ -13692,11 +14324,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 1217,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.1887,
+        "top_values": {
+          "SAV0000001": 0.0007,
+          "SAV0000002": 0.0007,
+          "SAV0000003": 0.0007,
+          "SAV0000004": 0.0007,
+          "SAV0000005": 0.0007
+        }
       }
     },
     "m_savings_account.client_id": {
@@ -13881,11 +14519,29 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 8,
+        "distinct_sample": [
+          4,
+          6,
+          2,
+          1,
+          7,
+          8,
+          3,
+          5
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.2833,
+        "top_values": {
+          "4": 0.0993,
+          "6": 0.0933,
+          "2": 0.0927,
+          "1": 0.092,
+          "7": 0.0867,
+          "8": 0.0847,
+          "3": 0.0847,
+          "5": 0.0833
+        }
       }
     },
     "m_savings_account.status_enum": {
@@ -14078,11 +14734,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          1,
+          2,
+          3
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "1": 0.3467,
+          "2": 0.328,
+          "3": 0.3253
+        }
       }
     },
     "m_savings_account.rejectedon_date": {
@@ -14288,11 +14952,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          3,
+          2,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.0407,
+        "top_values": {
+          "3": 0.332,
+          "2": 0.3227,
+          "1": 0.3047
+        }
       }
     },
     "m_savings_account.activatedon_date": {
@@ -14362,11 +15034,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          1,
+          3,
+          2
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.0933,
+        "top_values": {
+          "1": 0.34,
+          "3": 0.29,
+          "2": 0.2767
+        }
       }
     },
     "m_savings_account.closedon_date": {
@@ -14395,11 +15075,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 122,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9013,
+        "top_values": {
+          "2026-06-29": 0.0013,
+          "2026-06-19": 0.0013,
+          "2026-06-18": 0.0013,
+          "2026-06-13": 0.0013,
+          "2026-06-10": 0.0013
+        }
       }
     },
     "m_savings_account.closedon_userid": {
@@ -14430,11 +15116,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          3,
+          2,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9013,
+        "top_values": {
+          "3": 0.036,
+          "2": 0.032,
+          "1": 0.0307
+        }
       }
     },
     "m_savings_account.reason_for_block": {
@@ -15446,12 +16140,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -15520,12 +16214,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -16386,12 +17080,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -16460,12 +17154,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:28:32.800749"
+          "2026-07-08 07:10:47.830903"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:28:32.800749": 1.0
+          "2026-07-08 07:10:47.830903": 1.0
         }
       }
     },
@@ -16497,11 +17191,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 81,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "6412": 0.0123,
+          "5167": 0.0123,
+          "3463": 0.0123,
+          "3420": 0.0123,
+          "2713": 0.0123
+        }
       }
     },
     "m_savings_account_charge_paid_by.savings_account_charge_id": {
@@ -16532,11 +17232,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 81,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "271": 0.0123,
+          "265": 0.0123,
+          "261": 0.0123,
+          "256": 0.0123,
+          "252": 0.0123
+        }
       }
     },
     "m_savings_account_charge_paid_by.amount": {
@@ -16565,11 +17271,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 81,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0,
-        "top_values": {}
+        "top_values": {
+          "4885.28": 0.0123,
+          "4879.77": 0.0123,
+          "4867.69": 0.0123,
+          "4567.02": 0.0123,
+          "4551.63": 0.0123
+        }
       }
     },
     "m_savings_account_transaction.savings_account_id": {
@@ -17377,11 +18089,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 10000,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "TXR1000839726": 0.0001,
+          "TXR1001227959": 0.0001,
+          "TXR1002028850": 0.0001,
+          "TXR1002502517": 0.0001,
+          "TXR1002609244": 0.0001
+        }
       }
     },
     "m_savings_account_transaction.created_on_utc": {
