@@ -1,0 +1,391 @@
+{
+ "source": "grain_auto_v2 + 한국어 문구 저작",
+ "count": 55,
+ "grains": [
+  {
+   "table": "glim_accounts",
+   "grain": "그룹대출 개별모니터링 계정 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 5
+  },
+  {
+   "table": "gsim_accounts",
+   "grain": "그룹저축 개별모니터링 계정 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 5
+  },
+  {
+   "table": "m_appuser",
+   "grain": "시스템 사용자 1명",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 3
+  },
+  {
+   "table": "m_calendar",
+   "grain": "캘린더 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_calendar_instance",
+   "grain": "캘린더 연결 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_charge",
+   "grain": "수수료 정의 1개",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_client",
+   "grain": "고객 1명",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 1000
+  },
+  {
+   "table": "m_client_charge",
+   "grain": "고객 수수료 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_client_identifier",
+   "grain": "고객 신분증명 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 1000
+  },
+  {
+   "table": "m_client_non_person",
+   "grain": "법인고객 상세 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_client_transaction",
+   "grain": "고객 거래 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_code",
+   "grain": "코드그룹 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 42
+  },
+  {
+   "table": "m_code_value",
+   "grain": "코드값 1개",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 46
+  },
+  {
+   "table": "m_currency",
+   "grain": "통화 1종",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 164
+  },
+  {
+   "table": "m_delinquency_bucket",
+   "grain": "연체버킷 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_delinquency_bucket_mappings",
+   "grain": "연체버킷-범위 매핑 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_delinquency_range",
+   "grain": "연체범위 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_deposit_account_on_hold_transaction",
+   "grain": "예금 보류거래 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 50
+  },
+  {
+   "table": "m_deposit_account_term_and_preclosure",
+   "grain": "예금계좌 1좌당 약정조건 1건 (m_savings_account 1:1)",
+   "rule": "R1_1to1",
+   "auto_candidate": "savings_account_id당 1건",
+   "verified_rows": 553
+  },
+  {
+   "table": "m_deposit_product_recurring_detail",
+   "grain": "적금상품 1개당 정기납입조건 1건 (1:1)",
+   "rule": "R1_1to1",
+   "auto_candidate": "savings_product_id당 1건",
+   "verified_rows": 1
+  },
+  {
+   "table": "m_deposit_product_term_and_preclosure",
+   "grain": "예금상품 1개당 약정조건 1건 (1:1)",
+   "rule": "R1_1to1",
+   "auto_candidate": "savings_product_id당 1건",
+   "verified_rows": 2
+  },
+  {
+   "table": "m_fund",
+   "grain": "펀드 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_group",
+   "grain": "그룹 1개",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_group_client",
+   "grain": "그룹-고객 소속 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_loan",
+   "grain": "대출 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 3000
+  },
+  {
+   "table": "m_loan_amortization_allocation_mapping",
+   "grain": "상각 배분 매핑 1건",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 150
+  },
+  {
+   "table": "m_loan_arrears_aging",
+   "grain": "대출 1건당 연체에이징 1건 (1:1)",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_loan_charge",
+   "grain": "대출 부과수수료 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 1127
+  },
+  {
+   "table": "m_loan_charge_paid_by",
+   "grain": "수수료 납부 배분 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건 (순번 후보 기각)",
+   "verified_rows": 450
+  },
+  {
+   "table": "m_loan_collateral_management",
+   "grain": "대출 담보 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 123
+  },
+  {
+   "table": "m_loan_delinquency_tag_history",
+   "grain": "연체태그 이력 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 0
+  },
+  {
+   "table": "m_loan_disbursement_detail",
+   "grain": "대출 실행(트랜치) 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 2477
+  },
+  {
+   "table": "m_loan_installment_charge",
+   "grain": "회차별 수수료 배분 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 3381
+  },
+  {
+   "table": "m_loan_officer_assignment_history",
+   "grain": "담당자 배정 이력 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 246
+  },
+  {
+   "table": "m_loan_overdue_installment_charge",
+   "grain": "연체회차 수수료 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 82
+  },
+  {
+   "table": "m_loan_reage_parameter",
+   "grain": "재만기(reage) 파라미터 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건 (선언은 1:1이나 데이터 반증)",
+   "verified_rows": 60
+  },
+  {
+   "table": "m_loan_recalculation_details",
+   "grain": "대출 1건당 이자재계산 설정 1건 (1:1)",
+   "rule": "R1_1to1",
+   "auto_candidate": "loan_id당 1건",
+   "verified_rows": 990
+  },
+  {
+   "table": "m_loan_repayment_schedule",
+   "grain": "대출 × 상환회차 1건",
+   "rule": "R2_parent_x_seq",
+   "auto_candidate": "loan_id × installment",
+   "verified_rows": 63837
+  },
+  {
+   "table": "m_loan_reschedule_request",
+   "grain": "재조정 요청 1건",
+   "rule": "R2_low_data",
+   "auto_candidate": "loan_id × reschedule_from_installment (데이터 부족, 사람 확인)",
+   "verified_rows": 123
+  },
+  {
+   "table": "m_loan_term_variations",
+   "grain": "대출조건 변경 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건 (선언은 1:1이나 데이터 반증)",
+   "verified_rows": 247
+  },
+  {
+   "table": "m_loan_transaction",
+   "grain": "대출 거래 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 20000
+  },
+  {
+   "table": "m_loan_transaction_relation",
+   "grain": "거래 간 관계 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 300
+  },
+  {
+   "table": "m_note",
+   "grain": "메모 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_office",
+   "grain": "지점(오피스) 1개",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 5
+  },
+  {
+   "table": "m_organisation_currency",
+   "grain": "기관 통화 설정 1건",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 1
+  },
+  {
+   "table": "m_payment_type",
+   "grain": "결제수단 1종",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  },
+  {
+   "table": "m_product_loan",
+   "grain": "대출상품 1개",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 4
+  },
+  {
+   "table": "m_role",
+   "grain": "권한 역할 1개",
+   "rule": "R4_standalone",
+   "auto_candidate": "독립 1건",
+   "verified_rows": 2
+  },
+  {
+   "table": "m_savings_account",
+   "grain": "저축계좌 1좌",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 1500
+  },
+  {
+   "table": "m_savings_account_charge",
+   "grain": "저축계좌 수수료 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 272
+  },
+  {
+   "table": "m_savings_account_charge_paid_by",
+   "grain": "저축 수수료 납부 배분 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 81
+  },
+  {
+   "table": "m_savings_account_transaction",
+   "grain": "저축 거래 1건",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 10000
+  },
+  {
+   "table": "m_savings_product",
+   "grain": "저축상품 1개",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 3
+  },
+  {
+   "table": "m_staff",
+   "grain": "직원 1명",
+   "rule": "R3_own",
+   "auto_candidate": "자기 1건",
+   "verified_rows": 8
+  },
+  {
+   "table": "r_enum_value",
+   "grain": "enum 값 정의 1건",
+   "rule": "manual_blindspot",
+   "auto_candidate": null,
+   "verified_rows": null
+  }
+ ]
+}

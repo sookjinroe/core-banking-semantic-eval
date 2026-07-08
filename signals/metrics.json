@@ -1,0 +1,129 @@
+{
+ "source": "저작 + sqlite 실측 검증 v2 (실제 값 있는 컬럼만 사용)",
+ "count": 10,
+ "metrics": [
+  {
+   "id": "M_LOAN_DLNQ_RATE",
+   "name": "대출연체율",
+   "grain": "m_loan (대출 1건)",
+   "expr": "연체 회차 보유 대출 수 / 실행 대출 수",
+   "sql_full": "SELECT ROUND(COUNT(DISTINCT s.loan_id)*1.0/(SELECT COUNT(*) FROM m_loan WHERE loan_status_id IN (300,600,601,700)),4) AS rate\nFROM (SELECT DISTINCT loan_id FROM m_loan_repayment_schedule WHERE duedate < date('now') AND completed_derived = 0) s\nJOIN m_loan l ON l.id = s.loan_id AND l.loan_status_id IN (300,600,601,700)",
+   "base_filters": [
+    "분모: 실행된 대출 (loan_status_id IN 300,600,601,700)"
+   ],
+   "note": "연체 = 만기 경과(duedate < 오늘) 미납(completed_derived=0) 회차 보유. 분모를 ACTIVE만으로 잡으면 상각 이관된 연체가 빠져 과소평가.",
+   "verified_value": 0.0319
+  },
+  {
+   "id": "M_LOAN_REMAINING_PRINCIPAL",
+   "name": "대출미상환원금총액",
+   "grain": "m_loan_repayment_schedule (대출 × 회차)",
+   "expr": "SUM(principal_amount) WHERE completed_derived = 0",
+   "sql_full": "SELECT ROUND(SUM(s.principal_amount),0) AS total FROM m_loan_repayment_schedule s JOIN m_loan l ON l.id = s.loan_id AND l.loan_status_id = 300 WHERE s.completed_derived = 0",
+   "base_filters": [
+    "미완료 회차 (completed_derived = 0)",
+    "ACTIVE 대출 (loan_status_id = 300)"
+   ],
+   "note": "잔액 파생 컬럼(principal_outstanding_derived)이 채워지지 않는 환경에서 상환 스케줄의 미완료 회차 원금 합으로 산출. 회차 grain이므로 대출별 합산 시 팬아웃 주의 불필요(이미 합산식).",
+   "verified_value": 45478181455.0
+  },
+  {
+   "id": "M_AVG_INT_RATE",
+   "name": "평균금리",
+   "grain": "m_loan",
+   "expr": "AVG(annual_nominal_interest_rate)",
+   "sql_full": "SELECT ROUND(AVG(annual_nominal_interest_rate),3) AS avg_rate FROM m_loan WHERE loan_status_id = 300",
+   "base_filters": [
+    "loan_status_id = 300 (ACTIVE만)"
+   ],
+   "note": "연 명목금리 기준. nominal_interest_rate_per_period는 기간당(월) 금리이므로 혼동 주의.",
+   "verified_value": 11.054
+  },
+  {
+   "id": "M_LOAN_APRV_RATE",
+   "name": "대출승인율",
+   "grain": "m_loan",
+   "expr": "승인 계열 / 심사 완료",
+   "sql_full": "SELECT ROUND(COUNT(CASE WHEN loan_status_id NOT IN (100,500) THEN 1 END)*1.0/COUNT(CASE WHEN loan_status_id <> 100 THEN 1 END),4) AS rate FROM m_loan",
+   "base_filters": [
+    "분모: 심사 완료 건 (loan_status_id <> 100)"
+   ],
+   "note": "분자 = 승인 계열(제출중 100·거절 500 제외), 분모 = 심사 완료(제출중 제외). 분모를 전체 신청으로 잡으면 과소평가.",
+   "verified_value": 0.934
+  },
+  {
+   "id": "M_TOTAL_RECOVERED",
+   "name": "회수총액",
+   "grain": "m_loan_transaction",
+   "expr": "SUM(amount) WHERE transaction_type_enum = 8 AND is_reversed = 0",
+   "sql_full": "SELECT ROUND(SUM(amount),0) AS total FROM m_loan_transaction WHERE transaction_type_enum = 8 AND is_reversed = 0",
+   "base_filters": [
+    "transaction_type_enum = 8 (RECOVERY_REPAYMENT)",
+    "is_reversed = 0 (취소 제외)"
+   ],
+   "note": "Fineract LoanBalanceService.calculateTotalRecoveredPayments와 동일 정의: 취소되지 않은 회수 거래 합.",
+   "verified_value": 478173878.0
+  },
+  {
+   "id": "M_WRITEOFF_RATE",
+   "name": "상각률",
+   "grain": "m_loan",
+   "expr": "상각 / 실행 대출",
+   "sql_full": "SELECT ROUND(COUNT(CASE WHEN loan_status_id = 601 THEN 1 END)*1.0/COUNT(CASE WHEN loan_status_id IN (300,600,601,700) THEN 1 END),4) AS rate FROM m_loan",
+   "base_filters": [
+    "분모: 실행된 대출 (300,600,601,700)"
+   ],
+   "note": "실행 대출 중 상각(WRITTEN_OFF 601) 비율. 미실행(제출·승인·거절) 제외.",
+   "verified_value": 0.0456
+  },
+  {
+   "id": "M_SAVINGS_DEPOSIT_TOTAL",
+   "name": "예치총액",
+   "grain": "m_savings_account_transaction",
+   "expr": "SUM(amount) WHERE transaction_type_enum = 1 AND is_reversed = 0",
+   "sql_full": "SELECT ROUND(SUM(amount),0) AS total FROM m_savings_account_transaction WHERE transaction_type_enum = 1 AND is_reversed = 0",
+   "base_filters": [
+    "transaction_type_enum = 1 (DEPOSIT)",
+    "is_reversed = 0"
+   ],
+   "note": "잔액 파생 컬럼이 채워지지 않는 환경. 예치(입금) 거래 총액으로 산출. 출금 차감 잔액이 아님에 주의.",
+   "verified_value": 595242253.0
+  },
+  {
+   "id": "M_ACTIVE_CLIENT_CNT",
+   "name": "활성고객수",
+   "grain": "m_client",
+   "expr": "COUNT(*) WHERE status_enum = 300",
+   "sql_full": "SELECT COUNT(*) AS cnt FROM m_client WHERE status_enum = 300",
+   "base_filters": [
+    "status_enum = 300 (ACTIVE)"
+   ],
+   "note": "활성 상태 고객 수.",
+   "verified_value": 755.0
+  },
+  {
+   "id": "M_AVG_LOAN_SIZE",
+   "name": "평균대출금액",
+   "grain": "m_loan",
+   "expr": "AVG(principal_amount)",
+   "sql_full": "SELECT ROUND(AVG(principal_amount),0) AS avg_amt FROM m_loan WHERE loan_status_id IN (300,600,601,700)",
+   "base_filters": [
+    "실행된 대출 (300,600,601,700)"
+   ],
+   "note": "약정 원금(principal_amount) 기준. 실행 파생 컬럼이 채워지지 않는 환경이므로 약정 원금으로 산출.",
+   "verified_value": 24485136.0
+  },
+  {
+   "id": "M_TOTAL_LOAN_CHARGES",
+   "name": "대출수수료부과총액",
+   "grain": "m_loan_charge",
+   "expr": "SUM(amount) WHERE is_active = 1",
+   "sql_full": "SELECT ROUND(SUM(amount),0) AS total FROM m_loan_charge WHERE is_active = 1",
+   "base_filters": [
+    "is_active = 1"
+   ],
+   "note": "활성 부과 수수료 총액.",
+   "verified_value": 29127770.0
+  }
+ ]
+}
