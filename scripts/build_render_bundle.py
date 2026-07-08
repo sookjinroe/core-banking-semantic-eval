@@ -420,19 +420,26 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo-root", default=".")
     ap.add_argument("--output-dir", default="data/render-bundle")
+    ap.add_argument("--slice-file", default="slice/columns.jsonl",
+                    help="slice/columns.jsonl (151) 또는 slice/columns_candidates.jsonl (651)")
+    ap.add_argument("--profile-file", default="signals/peek_profile.json",
+                    help="peek_profile 파일 (651이면 확장본 필요)")
+    ap.add_argument("--output-suffix", default="",
+                    help='산출 파일명 접미사. --full이면 "-full" 권장')
     args = ap.parse_args()
 
     root = Path(args.repo_root)
     out_dir = Path(args.output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
+    suffix = args.output_suffix
 
     # 재료 로드
     print("[1/5] 재료 로드...")
-    slice_columns = [json.loads(l) for l in (root / "slice/columns.jsonl").open()]
+    slice_columns = [json.loads(l) for l in (root / args.slice_file).open()]
     peek_orm = json.load((root / "signals/peek_orm.json").open())
     peek_reftable = json.load((root / "signals/peek_reftable.json").open())
-    peek_profile = json.load((root / "signals/peek_profile.json").open())
-    print(f"  slice: {len(slice_columns)} 컬럼")
+    peek_profile = json.load((root / args.profile_file).open())
+    print(f"  slice: {len(slice_columns)} 컬럼 ({args.slice_file})")
     print(f"  peek_orm: {peek_orm['entity_count']} entity / {peek_orm['field_count']} 필드")
     print(f"  peek_reftable: {len(peek_reftable.get('groups', {}))} 그룹")
     print(f"  peek_profile: {len(peek_profile.get('profiles', {}))} 프로파일")
@@ -465,8 +472,8 @@ def main():
     print("\n[5/5] JS 파일 출력...")
     write_js_bundle(
         signal_store, "SIGNAL_STORE",
-        out_dir / "signal-store-fineract.js",
-        "생성됨: scripts/build_render_bundle.py — 직접 수정 금지. Fineract SIGNAL_STORE."
+        out_dir / f"signal-store-fineract{suffix}.js",
+        f"생성됨: scripts/build_render_bundle.py — 직접 수정 금지. Fineract SIGNAL_STORE ({len(signal_store['columns'])} 컬럼)."
     )
     write_js_bundle(
         corpus, "CORPUS",
@@ -475,7 +482,7 @@ def main():
     )
     # render-meta 오버라이드 (TABLE_ORDER 확장)
     tables_in_slice = {col["schema"]["table"] for col in signal_store["columns"].values()}
-    (out_dir / "render-meta-fineract.js").write_text(
+    (out_dir / f"render-meta-fineract{suffix}.js").write_text(
         build_render_meta_override(tables_in_slice), encoding="utf-8"
     )
     write_readme(out_dir / "README.md", {
@@ -486,7 +493,7 @@ def main():
     })
 
     # 크기 확인
-    sig_size = (out_dir / "signal-store-fineract.js").stat().st_size
+    sig_size = (out_dir / f"signal-store-fineract{suffix}.js").stat().st_size
     cor_size = (out_dir / "corpus-index-fineract.js").stat().st_size
     meta_size = (out_dir / "render-meta-fineract.js").stat().st_size
     print(f"\n[ok] 산출:")
