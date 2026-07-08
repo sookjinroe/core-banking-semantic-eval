@@ -908,36 +908,51 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     # savings_product / savings 목록을 sqlite에서 재조회 (다양성 함수와 별개 스코프)
     _sp_ids = [r[0] for r in cur.execute("SELECT id FROM m_savings_product")]
 
-    # cv_id 계열은 새 CodeValue 시드 필요
+    # cv_id 계열은 새 CodeValue 시드 필요.
+    # 주의: Fineract 초기 데이터가 code_id 15, 20~22 등을 이미 다른 이름으로 점유하고
+    # 있으므로, 우리는 반드시 m_code에 새 항목을 INSERT해서 새 code_id를 받아야 한다.
     print(f"      m_client 미시드 컬럼 확장...", flush=True)
-    # 새 code_id 확장 (client 관련 CodeValue)
-    #   code_id=15 ClientClosureReason, code_id=16 LoanPurpose, code_id=17 ClientClassification (기존)
-    # 우선 필요한 code_value 시드
+    def _ensure_code(name: str) -> int:
+        """m_code에 name 있으면 id 반환, 없으면 INSERT 후 id 반환."""
+        r = cur.execute("SELECT id FROM m_code WHERE code_name = ?", (name,)).fetchone()
+        if r: return r[0]
+        return smart_insert(conn, "m_code", {"code_name": name, "is_system_defined": 0})
+
+    closure_code_id = _ensure_code("ClientClosureReason")
+    reject_code_id  = _ensure_code("ClientRejectReason")
+    withdraw_code_id = _ensure_code("ClientWithdrawReason")
+    client_type_code_id = _ensure_code("ClientTypeCategory")
+    loan_purpose_code_id = _ensure_code("LoanPurpose")
+    charge_off_code_id = _ensure_code("LoanChargeOffReason")
+    writeoff_code_id = _ensure_code("LoanWriteOffReason")
+    reschedule_code_id = _ensure_code("LoanRescheduleReason")
+    tx_class_code_id = _ensure_code("LoanTransactionClassification")
+
     closure_reasons = {}
     for n in ("Deceased", "Migration", "Other"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 15, "code_value": n, "code_description": n,
+            "code_id": closure_code_id, "code_value": n, "code_description": n,
             "order_position": len(closure_reasons)+1, "is_active": 1,
         })
         closure_reasons[n] = rid
     reject_reasons = {}
     for n in ("KYC failed", "Duplicate applicant", "Blacklist"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 21, "code_value": n, "code_description": n,
+            "code_id": reject_code_id, "code_value": n, "code_description": n,
             "order_position": len(reject_reasons)+1, "is_active": 1,
         })
         reject_reasons[n] = rid
     withdraw_reasons = {}
     for n in ("Applicant request", "Documentation lost"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 22, "code_value": n, "code_description": n,
+            "code_id": withdraw_code_id, "code_value": n, "code_description": n,
             "order_position": len(withdraw_reasons)+1, "is_active": 1,
         })
         withdraw_reasons[n] = rid
     client_types = {}
     for n in ("Regular", "VIP", "Corporate"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 20, "code_value": n, "code_description": n,
+            "code_id": client_type_code_id, "code_value": n, "code_description": n,
             "order_position": len(client_types)+1, "is_active": 1,
         })
         client_types[n] = rid
@@ -950,8 +965,8 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     cur.execute("SELECT id, status_enum FROM m_client")
     for cid, status in cur.fetchall():
         updates = {}
-        # 모든 client (sub_status, legal_form_enum, client_type_cv_id는 어느 상태나 가능)
-        updates["sub_status"] = random.choices([0, 100, 200, 300], weights=[0.6, 0.15, 0.15, 0.1])[0]
+        # 모든 client (sub_status는 ClientSubStatusEnum 정의 부족으로 0=NONE만 유지)
+        updates["sub_status"] = 0
         updates["legal_form_enum"] = random.choices([1, 2], weights=[0.85, 0.15])[0]  # 1=PERSON, 2=ENTITY
         updates["client_type_cv_id"] = random.choices(list(client_types.values()), weights=[0.7, 0.2, 0.1])[0]
         if updates["legal_form_enum"] == 2:
@@ -985,21 +1000,21 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     loan_purposes = {}
     for n in ("Business expansion", "Home renovation", "Education", "Medical", "Debt consolidation"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 25, "code_value": n, "code_description": n,
+            "code_id": loan_purpose_code_id, "code_value": n, "code_description": n,
             "order_position": len(loan_purposes)+1, "is_active": 1,
         })
         loan_purposes[n] = rid
     charge_off_reasons = {}
     for n in ("Bankruptcy", "Default > 180 days", "Fraud"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 26, "code_value": n, "code_description": n,
+            "code_id": charge_off_code_id, "code_value": n, "code_description": n,
             "order_position": len(charge_off_reasons)+1, "is_active": 1,
         })
         charge_off_reasons[n] = rid
     writeoff_reasons = {}
     for n in ("Uncollectible", "Legal writeoff"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 27, "code_value": n, "code_description": n,
+            "code_id": writeoff_code_id, "code_value": n, "code_description": n,
             "order_position": len(writeoff_reasons)+1, "is_active": 1,
         })
         writeoff_reasons[n] = rid
@@ -1011,7 +1026,7 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
         # 모든 loan: loanpurpose_cv_id (60%에), repayment_start_date_type_enum, loan_sub_status_id
         if random.random() < 0.6:
             updates["loanpurpose_cv_id"] = random.choice(list(loan_purposes.values()))
-        updates["repayment_start_date_type_enum"] = random.choices([1, 2, 3], weights=[0.7, 0.2, 0.1])[0]
+        updates["repayment_start_date_type_enum"] = random.choices([1, 2], weights=[0.75, 0.25])[0]
         updates["loan_sub_status_id"] = random.choices([0, 100, 200], weights=[0.85, 0.10, 0.05])[0]
         # 승인·활성 loan: approvedon_userid
         if status >= 200:
@@ -1074,7 +1089,7 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     resch_reasons = {}
     for n in ("Customer request", "Financial hardship"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 28, "code_value": n, "code_description": n,
+            "code_id": reschedule_code_id, "code_value": n, "code_description": n,
             "order_position": len(resch_reasons)+1, "is_active": 1,
         })
         resch_reasons[n] = rid
@@ -1098,7 +1113,7 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     tx_class = {}
     for n in ("Regular", "Adjustment", "Correction"):
         rid = smart_insert(conn, "m_code_value", {
-            "code_id": 29, "code_value": n, "code_description": n,
+            "code_id": tx_class_code_id, "code_value": n, "code_description": n,
             "order_position": len(tx_class)+1, "is_active": 1,
         })
         tx_class[n] = rid

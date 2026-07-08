@@ -451,8 +451,8 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "1": 0.835,
-          "2": 0.165
+          "1": 0.838,
+          "2": 0.162
         }
       }
     },
@@ -916,18 +916,18 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 4,
         "distinct_sample": [
-          4,
           3,
-          1,
-          2
+          2,
+          4,
+          1
         ],
         "inferred_format": null,
-        "null_rate": 0.4727,
+        "null_rate": 0.5091,
         "top_values": {
-          "4": 0.1465,
-          "3": 0.1434,
-          "1": 0.1232,
-          "2": 0.1141
+          "3": 0.1444,
+          "2": 0.1182,
+          "4": 0.1172,
+          "1": 0.1111
         }
       }
     },
@@ -1000,24 +1000,24 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 7,
         "distinct_sample": [
+          6,
           3,
           7,
-          2,
-          6,
-          1,
           4,
+          1,
+          2,
           5
         ],
         "inferred_format": null,
-        "null_rate": 0.5212,
+        "null_rate": 0.4929,
         "top_values": {
-          "3": 0.0788,
-          "7": 0.0737,
-          "2": 0.0737,
-          "6": 0.0707,
-          "1": 0.0667,
-          "4": 0.0586,
-          "5": 0.0566
+          "6": 0.0828,
+          "3": 0.0798,
+          "7": 0.0747,
+          "4": 0.0707,
+          "1": 0.0707,
+          "2": 0.0657,
+          "5": 0.0626
         }
       }
     },
@@ -1284,15 +1284,15 @@ window.SIGNAL_STORE = {
         "cardinality": 3,
         "distinct_sample": [
           2,
-          3,
-          1
+          1,
+          3
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2": 0.6027,
-          "3": 0.2013,
-          "1": 0.196
+          "2": 0.606,
+          "1": 0.1993,
+          "3": 0.1947
         }
       }
     },
@@ -1690,9 +1690,9 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "0": 0.8503,
-          "100": 0.1017,
-          "200": 0.048
+          "0": 0.8477,
+          "100": 0.101,
+          "200": 0.0513
         }
       }
     },
@@ -1806,18 +1806,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 3,
+        "cardinality": 2,
         "distinct_sample": [
           1,
-          2,
-          3
+          2
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "1": 0.7097,
-          "2": 0.1943,
-          "3": 0.096
+          "1": 0.76,
+          "2": 0.24
         }
       }
     },
@@ -1983,9 +1981,9 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "29": 0.689,
-          "30": 0.21,
-          "31": 0.101
+          "29": 0.698,
+          "30": 0.194,
+          "31": 0.108
         }
       }
     },
@@ -2019,16 +2017,16 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 3,
         "distinct_sample": [
-          21,
+          22,
           23,
-          22
+          21
         ],
         "inferred_format": null,
         "null_rate": 0.944,
         "top_values": {
-          "21": 0.022,
-          "23": 0.019,
-          "22": 0.015
+          "22": 0.029,
+          "23": 0.015,
+          "21": 0.012
         }
       }
     },
@@ -2110,9 +2108,9 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0.967,
         "top_values": {
-          "24": 0.013,
+          "24": 0.014,
           "25": 0.011,
-          "26": 0.009
+          "26": 0.008
         }
       }
     },
@@ -2144,20 +2142,14 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 4,
+        "cardinality": 1,
         "distinct_sample": [
-          0,
-          100,
-          200,
-          300
+          0
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "0": 0.586,
-          "100": 0.163,
-          "200": 0.151,
-          "300": 0.1
+          "0": 1.0
         }
       }
     },
@@ -2191,14 +2183,14 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 2,
         "distinct_sample": [
-          27,
-          28
+          28,
+          27
         ],
         "inferred_format": null,
         "null_rate": 0.969,
         "top_values": {
-          "27": 0.02,
-          "28": 0.011
+          "28": 0.019,
+          "27": 0.012
         }
       }
     },
@@ -2276,15 +2268,15 @@ window.SIGNAL_STORE = {
         "cardinality": 3,
         "distinct_sample": [
           38,
-          39,
-          37
+          37,
+          39
         ],
         "inferred_format": null,
-        "null_rate": 0.9857,
+        "null_rate": 0.989,
         "top_values": {
-          "38": 0.006,
-          "39": 0.0047,
-          "37": 0.0037
+          "38": 0.005,
+          "37": 0.0033,
+          "39": 0.0027
         }
       }
     },
@@ -2318,20 +2310,20 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 5,
         "distinct_sample": [
-          35,
-          36,
-          34,
           33,
+          36,
+          35,
+          34,
           32
         ],
         "inferred_format": null,
-        "null_rate": 0.4073,
+        "null_rate": 0.4033,
         "top_values": {
-          "35": 0.129,
-          "36": 0.1267,
-          "34": 0.119,
-          "33": 0.11,
-          "32": 0.108
+          "33": 0.1223,
+          "36": 0.1217,
+          "35": 0.1207,
+          "34": 0.1183,
+          "32": 0.1137
         }
       }
     },
@@ -2371,8 +2363,8 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0.9623,
         "top_values": {
-          "40": 0.0203,
-          "41": 0.0173
+          "40": 0.021,
+          "41": 0.0167
         }
       }
     },
@@ -2406,14 +2398,14 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 2,
         "distinct_sample": [
-          42,
-          43
+          43,
+          42
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "42": 0.5122,
-          "43": 0.4878
+          "43": 0.5122,
+          "42": 0.4878
         }
       }
     },
@@ -2654,16 +2646,16 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 3,
         "distinct_sample": [
-          1,
           3,
+          1,
           2
         ],
         "inferred_format": null,
         "null_rate": 0.245,
         "top_values": {
-          "1": 0.263,
-          "3": 0.258,
-          "2": 0.234
+          "3": 0.27,
+          "1": 0.246,
+          "2": 0.239
         }
       }
     },
@@ -2888,16 +2880,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 52,
+        "cardinality": 54,
         "distinct_sample": [],
         "inferred_format": null,
         "null_rate": 0.944,
         "top_values": {
-          "2026-01-28": 0.002,
-          "2025-11-19": 0.002,
-          "2025-08-06": 0.002,
-          "2025-07-18": 0.002,
-          "2026-07-08": 0.001
+          "2026-02-21": 0.002,
+          "2025-08-31": 0.002,
+          "2026-07-07": 0.001,
+          "2026-07-05": 0.001,
+          "2026-07-03": 0.001
         }
       }
     },
@@ -3010,15 +3002,15 @@ window.SIGNAL_STORE = {
         "cardinality": 3,
         "distinct_sample": [
           3,
-          1,
-          2
+          2,
+          1
         ],
         "inferred_format": null,
         "null_rate": 0.944,
         "top_values": {
-          "3": 0.023,
-          "1": 0.02,
-          "2": 0.013
+          "3": 0.02,
+          "2": 0.018,
+          "1": 0.018
         }
       }
     },
@@ -3140,12 +3132,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:04:26.608738"
+          "2026-07-08 02:28:32.800749"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:04:26.608738": 1.0
+          "2026-07-08 02:28:32.800749": 1.0
         }
       }
     },
@@ -3294,12 +3286,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:04:26.608738"
+          "2026-07-08 02:28:32.800749"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:04:26.608738": 1.0
+          "2026-07-08 02:28:32.800749": 1.0
         }
       }
     },
@@ -3366,16 +3358,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 254,
+        "cardinality": 262,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.72,
+        "null_rate": 0.706,
         "top_values": {
-          "223": 0.003,
-          "1498": 0.002,
-          "1433": 0.002,
-          "1430": 0.002,
-          "1420": 0.002
+          "637": 0.003,
+          "1442": 0.002,
+          "1408": 0.002,
+          "1403": 0.002,
+          "1373": 0.002
         }
       }
     },
@@ -3488,11 +3480,11 @@ window.SIGNAL_STORE = {
           1
         ],
         "inferred_format": null,
-        "null_rate": 0.72,
+        "null_rate": 0.706,
         "top_values": {
-          "3": 0.105,
-          "2": 0.09,
-          "1": 0.085
+          "3": 0.1,
+          "2": 0.099,
+          "1": 0.095
         }
       }
     },
@@ -3691,9 +3683,9 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0.05,
         "top_values": {
-          "2": 0.327,
-          "1": 0.3243,
-          "3": 0.2987
+          "2": 0.323,
+          "1": 0.3217,
+          "3": 0.3053
         }
       }
     },
@@ -3799,16 +3791,16 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 3,
         "distinct_sample": [
+          2,
           1,
-          3,
-          2
+          3
         ],
         "inferred_format": null,
-        "null_rate": 0.9857,
+        "null_rate": 0.989,
         "top_values": {
-          "1": 0.0067,
-          "3": 0.0043,
-          "2": 0.0033
+          "2": 0.004,
+          "1": 0.004,
+          "3": 0.003
         }
       }
     },
@@ -3965,18 +3957,18 @@ window.SIGNAL_STORE = {
         "distinct_sample": [
           "주식회사 서울",
           "주식회사 한강",
-          "주식회사 새마을",
           "주식회사 동방",
+          "주식회사 새마을",
           "주식회사 대한"
         ],
         "inferred_format": null,
-        "null_rate": 0.835,
+        "null_rate": 0.838,
         "top_values": {
-          "주식회사 서울": 0.036,
+          "주식회사 서울": 0.035,
           "주식회사 한강": 0.033,
-          "주식회사 새마을": 0.033,
-          "주식회사 동방": 0.033,
-          "주식회사 대한": 0.03
+          "주식회사 동방": 0.032,
+          "주식회사 새마을": 0.031,
+          "주식회사 대한": 0.031
         }
       }
     },
@@ -4084,16 +4076,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 237,
+        "cardinality": 246,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.729,
+        "null_rate": 0.711,
         "top_values": {
-          "520": 0.004,
-          "105": 0.004,
-          "711": 0.003,
-          "661": 0.003,
-          "647": 0.003
+          "984": 0.003,
+          "750": 0.003,
+          "527": 0.003,
+          "471": 0.003,
+          "441": 0.003
         }
       }
     },
@@ -4160,16 +4152,16 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 3,
         "distinct_sample": [
-          1,
           2,
+          1,
           3
         ],
         "inferred_format": null,
         "null_rate": 0.779,
         "top_values": {
+          "2": 0.0763,
           "1": 0.0743,
-          "2": 0.074,
-          "3": 0.0727
+          "3": 0.0703
         }
       }
     },
@@ -4388,12 +4380,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:04:26.608738"
+          "2026-07-08 02:28:32.800749"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:04:26.608738": 1.0
+          "2026-07-08 02:28:32.800749": 1.0
         }
       }
     },
@@ -4597,7 +4589,12 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 0,
+        "distinct_sample": [],
+        "inferred_format": null,
+        "null_rate": 1.0,
+        "top_values": {}
       }
     },
     "m_deposit_account_term_and_preclosure.expected_firstdepositon_date": {
@@ -4631,11 +4628,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-31": 0.0452,
-          "2026-07-28": 0.0452,
-          "2026-07-22": 0.0434,
-          "2026-07-20": 0.0434,
-          "2026-07-15": 0.0434
+          "2026-07-12": 0.0452,
+          "2026-07-28": 0.0434,
+          "2026-07-10": 0.0434,
+          "2026-07-11": 0.0398,
+          "2026-07-26": 0.038
         }
       }
     },
@@ -4670,9 +4667,9 @@ window.SIGNAL_STORE = {
           "2026-07-08"
         ],
         "inferred_format": null,
-        "null_rate": 0.7353,
+        "null_rate": 0.7307,
         "top_values": {
-          "2026-07-08": 0.2647
+          "2026-07-08": 0.2693
         }
       }
     },
@@ -4702,16 +4699,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 362,
+        "cardinality": 378,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.6573,
+        "null_rate": 0.6547,
         "top_values": {
-          "2028-04-20": 0.0027,
-          "2027-11-13": 0.0027,
-          "2027-04-17": 0.0027,
-          "2026-08-07": 0.0027,
-          "2028-05-13": 0.002
+          "2028-06-15": 0.0033,
+          "2028-04-22": 0.0027,
+          "2027-09-07": 0.0027,
+          "2026-10-09": 0.0027,
+          "2028-06-14": 0.002
         }
       }
     },
@@ -4741,16 +4738,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 39,
+        "cardinality": 32,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.9857,
+        "null_rate": 0.989,
         "top_values": {
-          "2026-06-13": 0.0007,
-          "2026-05-29": 0.0007,
-          "2026-05-08": 0.0007,
-          "2026-03-02": 0.0007,
-          "2026-07-03": 0.0003
+          "2026-07-08": 0.0007,
+          "2026-07-07": 0.0003,
+          "2026-06-26": 0.0003,
+          "2026-06-24": 0.0003,
+          "2026-06-13": 0.0003
         }
       }
     },
@@ -4780,16 +4777,16 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 148,
+        "cardinality": 157,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 0.9013,
+        "null_rate": 0.8953,
         "top_values": {
-          "49559.73": 0.0007,
+          "49860.29": 0.0007,
           "49472.06": 0.0007,
-          "49320.69": 0.0007,
-          "48545.44": 0.0007,
-          "48528.8": 0.0007
+          "49255.09": 0.0007,
+          "48523.59": 0.0007,
+          "48513.2": 0.0007
         }
       }
     },
@@ -5226,12 +5223,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 02:04:26.608738"
+          "2026-07-08 02:28:32.800749"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 02:04:26.608738": 1.0
+          "2026-07-08 02:28:32.800749": 1.0
         }
       }
     },
@@ -5260,7 +5257,16 @@ window.SIGNAL_STORE = {
         "present": false
       },
       "profile": {
-        "present": false
+        "present": true,
+        "cardinality": 1,
+        "distinct_sample": [
+          "2026-07-08 02:28:32.800749"
+        ],
+        "inferred_format": null,
+        "null_rate": 0,
+        "top_values": {
+          "2026-07-08 02:28:32.800749": 1.0
+        }
       }
     },
     "m_loan_transaction_relation.relation_type_enum": {
@@ -5552,6 +5558,84 @@ window.SIGNAL_STORE = {
       "41": "Buy Down Fee Adjustment",
       "42": "Buy Down Fee Amortization",
       "43": "Buy Down Fee Amortization Adjustment"
+    },
+    "Customer Identifier": {
+      "1": "Passport",
+      "2": "Id",
+      "3": "Drivers License",
+      "4": "Any Other Id Type"
+    },
+    "GuarantorRelationship": {
+      "5": "Spouse",
+      "6": "Parent",
+      "7": "Sibling",
+      "8": "Business Associate",
+      "9": "Other"
+    },
+    "Entity to Entity Access Types": {
+      "10": "Office Access to Loan Products",
+      "11": "Office Access to Savings Products",
+      "12": "Office Access to Fees/Charges"
+    },
+    "GROUPROLE": {
+      "13": "Leader"
+    },
+    "PaymentType": {
+      "14": "Money Transfer"
+    },
+    "Gender": {
+      "15": "남성",
+      "16": "여성"
+    },
+    "ClientClassification": {
+      "17": "Salaried",
+      "18": "Self-Employed",
+      "19": "Student",
+      "20": "Retired"
+    },
+    "ClientClosureReason": {
+      "21": "Deceased",
+      "22": "Migration",
+      "23": "Other"
+    },
+    "ClientRejectReason": {
+      "24": "KYC failed",
+      "25": "Duplicate applicant",
+      "26": "Blacklist"
+    },
+    "ClientWithdrawReason": {
+      "27": "Applicant request",
+      "28": "Documentation lost"
+    },
+    "ClientTypeCategory": {
+      "29": "Regular",
+      "30": "VIP",
+      "31": "Corporate"
+    },
+    "LoanPurpose": {
+      "32": "Business expansion",
+      "33": "Home renovation",
+      "34": "Education",
+      "35": "Medical",
+      "36": "Debt consolidation"
+    },
+    "LoanChargeOffReason": {
+      "37": "Bankruptcy",
+      "38": "Default > 180 days",
+      "39": "Fraud"
+    },
+    "LoanWriteOffReason": {
+      "40": "Uncollectible",
+      "41": "Legal writeoff"
+    },
+    "LoanRescheduleReason": {
+      "42": "Customer request",
+      "43": "Financial hardship"
+    },
+    "LoanTransactionClassification": {
+      "44": "Regular",
+      "45": "Adjustment",
+      "46": "Correction"
     }
   }
 };

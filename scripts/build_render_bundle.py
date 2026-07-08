@@ -121,6 +121,31 @@ def build_reftable_dump(peek_reftable: dict) -> dict:
     return dump
 
 
+def augment_dump_with_code_value(dump: dict, sqlite_path: str) -> dict:
+    """sqlite의 m_code + m_code_value를 reftable_dump에 통합.
+       Fineract의 r_enum_value(정적 XML)와 별개로, m_code_value는 우리 시드 및
+       Fineract 초기 데이터가 담기는 DB reference. Render가 CodeValue FK
+       (client_type_cv_id 등)의 라벨을 조회할 수 있게 노출.
+       그룹명: m_code.code_name, 키: m_code_value.id, 값: m_code_value.code_value"""
+    import sqlite3
+    conn = sqlite3.connect(sqlite_path)
+    try:
+        q = ("SELECT c.code_name, cv.id, cv.code_value "
+             "FROM m_code_value cv JOIN m_code c ON cv.code_id = c.id "
+             "WHERE cv.is_active = 1")
+        added = 0
+        for code_name, cv_id, cv_value in conn.execute(q):
+            if not code_name or not cv_value: continue
+            dump.setdefault(code_name, {})[str(cv_id)] = cv_value
+            added += 1
+        print(f"  [i] m_code_value 통합: {added}개 라벨을 reftable_dump에 추가")
+    except sqlite3.OperationalError as e:
+        print(f"  [!] m_code_value 조회 실패: {e}")
+    finally:
+        conn.close()
+    return dump
+
+
 # ── column ID 조립 ────────────────────────────────────────────────────
 def build_signal_store(slice_columns, peek_orm, peek_profile, peek_reftable,
                        sqlite_schema) -> dict:
@@ -192,6 +217,9 @@ def build_signal_store(slice_columns, peek_orm, peek_profile, peek_reftable,
         }
 
     reftable_dump = build_reftable_dump(peek_reftable) if peek_reftable else {}
+    # sqlite m_code_value로 dump 증강 (CodeValue FK 라벨 조회 가능하게)
+    sqlite_path = str(Path(__file__).resolve().parents[1] / "data/fineract_3domain.sqlite")
+    augment_dump_with_code_value(reftable_dump, sqlite_path)
 
     return {"columns": columns, "reftable_dump": reftable_dump}
 

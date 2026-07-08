@@ -4,7 +4,7 @@ Render 앱(sookjinroe/semantic-layer-enrich-demo-v1)에서 Fineract 데이터로
 
 ## 파일
 
-- `signal-store-fineract.js` — `window.SIGNAL_STORE` (133개 컬럼, 19개 테이블, 27개 reftable 그룹)
+- `signal-store-fineract.js` — `window.SIGNAL_STORE` (133개 컬럼, 19개 테이블, 43개 reftable 그룹)
 - `corpus-index-fineract.js` — `window.CORPUS` (2063개 파일)
 - `render-meta-fineract.js` — Fineract용 TABLE_LABEL·TABLE_ORDER 오버라이드 (Render 앱의 mock 6개 테이블 하드코딩을 Fineract 24개 테이블로 교체)
 
