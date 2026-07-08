@@ -1228,9 +1228,10 @@ def main():
         print("      세부 서브 테이블 stub 시드...")
         seed_child_tables(conn, seed=args.seed)
         print("      자연 발생 필드 확장 시드...")
-        from scripts.seed_enrichment import seed_enrichment, seed_enrichment_v2
+        from scripts.seed_enrichment import seed_enrichment, seed_enrichment_v2, seed_enrichment_v3
         seed_enrichment(conn, seed=args.seed)
         seed_enrichment_v2(conn, seed=args.seed)
+        seed_enrichment_v3(conn, seed=args.seed)
     except Exception as e:
         import traceback
         print(f"  [!] 시드 오류: {e}")

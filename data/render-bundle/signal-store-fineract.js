@@ -1789,12 +1789,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -1863,12 +1863,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -3196,11 +3196,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 169,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9373,
+        "top_values": {
+          "2025-05-30": 0.001,
+          "2026-06-27": 0.0007,
+          "2026-05-14": 0.0007,
+          "2026-04-17": 0.0007,
+          "2026-02-17": 0.0007
+        }
       }
     },
     "m_loan.rejectedon_userid": {
@@ -3231,11 +3237,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          1,
+          2,
+          3
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0.9373,
+        "top_values": {
+          "1": 0.022,
+          "2": 0.0207,
+          "3": 0.02
+        }
       }
     },
     "m_loan.withdrawnon_date": {
@@ -4356,8 +4370,8 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0.1743,
         "top_values": {
-          "0": 0.6613,
-          "1": 0.1643
+          "0": 0.6603,
+          "1": 0.1653
         }
       }
     },
@@ -5069,12 +5083,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -5143,12 +5157,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -5455,12 +5469,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -5529,12 +5543,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -9648,11 +9662,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 514,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-07-08 09:00:00": 0.0179,
+          "2026-07-06 09:00:00": 0.016,
+          "2026-07-07 09:00:00": 0.0148,
+          "2026-07-04 09:00:00": 0.014,
+          "2026-07-05 09:00:00": 0.0134
+        }
       }
     },
     "m_loan_repayment_schedule.last_modified_on_utc": {
@@ -9681,11 +9701,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 725,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-07-08 09:00:00": 0.0185,
+          "2026-07-06 09:00:00": 0.0168,
+          "2026-07-07 09:00:00": 0.0156,
+          "2026-07-04 09:00:00": 0.0148,
+          "2026-07-05 09:00:00": 0.0141
+        }
       }
     },
     "m_loan_term_variations.loan_id": {
@@ -10061,11 +10087,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          2,
+          1,
+          3
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2": 0.3441,
+          "1": 0.3441,
+          "3": 0.3117
+        }
       }
     },
     "m_loan_term_variations.created_on_utc": {
@@ -10094,11 +10128,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 207,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-04-28 09:00:00": 0.0121,
+          "2026-03-01 09:00:00": 0.0121,
+          "2026-01-28 09:00:00": 0.0121,
+          "2025-11-16 09:00:00": 0.0121,
+          "2025-07-14 09:00:00": 0.0121
+        }
       }
     },
     "m_loan_term_variations.last_modified_by": {
@@ -10127,11 +10167,19 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
-        "distinct_sample": [],
+        "cardinality": 3,
+        "distinct_sample": [
+          3,
+          2,
+          1
+        ],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "3": 0.3482,
+          "2": 0.3401,
+          "1": 0.3117
+        }
       }
     },
     "m_loan_term_variations.last_modified_on_utc": {
@@ -10160,11 +10208,17 @@ window.SIGNAL_STORE = {
       },
       "profile": {
         "present": true,
-        "cardinality": 0,
+        "cardinality": 207,
         "distinct_sample": [],
         "inferred_format": null,
-        "null_rate": 1.0,
-        "top_values": {}
+        "null_rate": 0,
+        "top_values": {
+          "2026-04-28 09:00:00": 0.0121,
+          "2026-03-01 09:00:00": 0.0121,
+          "2026-01-28 09:00:00": 0.0121,
+          "2025-11-16 09:00:00": 0.0121,
+          "2025-07-14 09:00:00": 0.0121
+        }
       }
     },
     "m_loan_transaction.loan_id": {
@@ -10943,12 +10997,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -10980,12 +11034,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -11543,11 +11597,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830842": 0.0167,
-          "2026-07-08 07:10:47.830793": 0.0167,
-          "2026-07-08 07:10:47.830751": 0.0167,
-          "2026-07-08 07:10:47.830707": 0.0167,
-          "2026-07-08 07:10:47.830665": 0.0167
+          "2026-07-08 09:35:28.439771": 0.0167,
+          "2026-07-08 09:35:28.439737": 0.0167,
+          "2026-07-08 09:35:28.439701": 0.0167,
+          "2026-07-08 09:35:28.439660": 0.0167,
+          "2026-07-08 09:35:28.439626": 0.0167
         }
       }
     },
@@ -11619,11 +11673,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830844": 0.0167,
-          "2026-07-08 07:10:47.830795": 0.0167,
-          "2026-07-08 07:10:47.830752": 0.0167,
-          "2026-07-08 07:10:47.830709": 0.0167,
-          "2026-07-08 07:10:47.830666": 0.0167
+          "2026-07-08 09:35:28.439772": 0.0167,
+          "2026-07-08 09:35:28.439738": 0.0167,
+          "2026-07-08 09:35:28.439702": 0.0167,
+          "2026-07-08 09:35:28.439662": 0.0167,
+          "2026-07-08 09:35:28.439628": 0.0167
         }
       }
     },
@@ -12421,12 +12475,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -12495,12 +12549,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -12646,11 +12700,11 @@ window.SIGNAL_STORE = {
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-17": 0.0524,
-          "2026-07-11": 0.0488,
-          "2026-07-28": 0.0452,
-          "2026-07-19": 0.0416,
-          "2026-07-18": 0.038
+          "2026-08-04": 0.0524,
+          "2026-07-14": 0.047,
+          "2026-07-10": 0.0452,
+          "2026-08-01": 0.0434,
+          "2026-08-02": 0.0416
         }
       }
     },
@@ -16140,12 +16194,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -16214,12 +16268,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -17080,12 +17134,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },
@@ -17154,12 +17208,12 @@ window.SIGNAL_STORE = {
         "present": true,
         "cardinality": 1,
         "distinct_sample": [
-          "2026-07-08 07:10:47.830903"
+          "2026-07-08 09:35:28.439822"
         ],
         "inferred_format": null,
         "null_rate": 0,
         "top_values": {
-          "2026-07-08 07:10:47.830903": 1.0
+          "2026-07-08 09:35:28.439822": 1.0
         }
       }
     },

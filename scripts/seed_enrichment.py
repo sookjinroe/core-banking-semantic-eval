@@ -683,3 +683,59 @@ def seed_enrichment_v2(conn, seed: int = 42):
 
     conn.commit()
     print(f"        v2 백필 완료", flush=True)
+
+
+def seed_enrichment_v3(conn, seed: int = 42):
+    """3차 확장 - v1/v2 놓친 시드 누락 3건."""
+    random.seed(seed + 4)
+    cur = conn.cursor()
+    today = date.today()
+
+    print(f"      [enrichment v3] 시드 누락 3건 보강...", flush=True)
+
+    # (A) m_loan.rejectedon_date / rejectedon_userid (loan_status_id=500, REJECTED)
+    rejected = list(cur.execute("SELECT id, submittedon_date FROM m_loan WHERE loan_status_id=500"))
+    for lid, sub_date in rejected:
+        try:
+            if sub_date:
+                sd = date.fromisoformat(sub_date) if isinstance(sub_date, str) else sub_date
+                # 신청 후 1~60일 사이 거절
+                rej_date = _random_date(sd, sd + timedelta(days=60))
+                cur.execute("UPDATE m_loan SET rejectedon_date=?, rejectedon_userid=? WHERE id=?",
+                           (str(rej_date), random.randint(1, 3), lid))
+        except Exception:
+            pass
+    print(f"        m_loan rejected: {len(rejected)}건 시드", flush=True)
+
+    # (B) m_loan_term_variations audit
+    tv_rows = list(cur.execute("SELECT id FROM m_loan_term_variations"))
+    for (id_,) in tv_rows:
+        created = today - timedelta(days=random.randint(30, 730))
+        cur.execute("""UPDATE m_loan_term_variations SET
+            created_by=?, last_modified_by=?, created_on_utc=?, last_modified_on_utc=?
+            WHERE id=?""",
+            (random.randint(1, 3), random.randint(1, 3),
+             f"{created} 09:00:00", f"{created} 09:00:00", id_))
+    print(f"        m_loan_term_variations audit: {len(tv_rows)}건", flush=True)
+
+    conn.commit()  # (A)(B) 반영
+
+    # (C) m_loan_repayment_schedule audit (bulk)
+    # 컬럼명: createdby_id · lastmodifiedby_id · created_on_utc · last_modified_on_utc
+    cur.execute("""UPDATE m_loan_repayment_schedule SET
+        created_on_utc = COALESCE(
+            (SELECT ml.disbursedon_date || ' 09:00:00' FROM m_loan ml WHERE ml.id = m_loan_repayment_schedule.loan_id),
+            '2024-01-01 09:00:00'
+        ),
+        last_modified_on_utc = COALESCE(
+            obligations_met_on_date || ' 09:00:00',
+            (SELECT ml.disbursedon_date || ' 09:00:00' FROM m_loan ml WHERE ml.id = m_loan_repayment_schedule.loan_id),
+            '2024-01-01 09:00:00'
+        ),
+        createdby_id = (ABS(RANDOM()) % 3) + 1,
+        lastmodifiedby_id = (ABS(RANDOM()) % 3) + 1
+    """)
+    r = cur.execute("SELECT COUNT(last_modified_on_utc) FROM m_loan_repayment_schedule").fetchone()
+    print(f"        m_loan_repayment_schedule audit: {r[0]}건 bulk 갱신", flush=True)
+
+    conn.commit()
