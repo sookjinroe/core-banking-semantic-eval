@@ -177,7 +177,7 @@ JOIN_GRAIN_Q = [
         "cp_watch": "이력 grain을 대출 단위 grain으로 오해하는지",
     },
     {
-        "id": "JG06", "cat": "join_grain", "text": "대출 1건당 평균 회차 수는?",
+        "id": "JG06", "cat": "join_grain", "text": "상환 스케줄이 있는 대출 1건당 평균 회차 수는?",
         "tags": ["grain"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_table"],
         "sql": "SELECT ROUND(AVG(cnt), 1) AS avg_installments FROM (SELECT loan_id, COUNT(*) AS cnt FROM m_loan_repayment_schedule GROUP BY loan_id) t",
@@ -193,11 +193,12 @@ JOIN_GRAIN_Q = [
         "cp_watch": "grain이 '대출 실행(트랜치) 1건'이라 팬아웃 관리 필요",
     },
     {
-        "id": "JG08", "cat": "join_grain", "text": "고객별 저축 계좌 수의 분포는?",
-        "tags": [], "mode": "sql",
+        "id": "JG08", "cat": "join_grain", "text": "저축 계좌를 2개 이상 보유한 고객은 몇 명이야?",
+        "tags": ["grain"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_join_path"],
-        "sql": "SELECT account_cnt, COUNT(*) AS client_cnt FROM (SELECT client_id, COUNT(*) AS account_cnt FROM m_savings_account WHERE client_id IS NOT NULL GROUP BY client_id) t GROUP BY account_cnt ORDER BY account_cnt",
-        "cp_must": "고객당 저축 계좌 수 집계 후 분포",
+        "sql": "SELECT COUNT(*) AS cnt FROM (SELECT client_id FROM m_savings_account WHERE client_id IS NOT NULL GROUP BY client_id HAVING COUNT(*) >= 2) t",
+        "cp_must": "계좌 grain을 고객 grain으로 접기 - GROUP BY client_id HAVING",
+        "cp_watch": "HAVING >= 2 조건과 고객 단위 카운트",
     },
 ]
 
@@ -381,15 +382,15 @@ CONCEPTUAL_Q = [
         "cp_trap": "F6 패밀리와 동형 — 두 도메인 반드시 clarify",
     },
     {
-        "id": "CC04", "cat": "conceptual", "text": "종료된 대출이 몇 건이야?",
-        "tags": ["ambiguous", "status"], "mode": "clarify",
-        "expected_ops": ["resolve_terms", "get_term", "resolve_code"],
+        "id": "CC04", "cat": "conceptual", "text": "계좌가 총 몇 개야?",
+        "tags": ["ambiguous", "domain"], "mode": "clarify",
+        "expected_ops": ["resolve_terms", "get_term"],
         "interpretations": [
-            {"label": "정상 종결(CLOSED_OBLIGATIONS_MET, 600)", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE loan_status_id = 600"},
-            {"label": "종결 계열 전체 (600·601·700)", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE loan_status_id IN (600,601,700)"},
+            {"label": "대출 계좌", "sql": "SELECT COUNT(*) AS cnt FROM m_loan"},
+            {"label": "저축 계좌", "sql": "SELECT COUNT(*) AS cnt FROM m_savings_account"},
         ],
-        "cp_must": "'종료'가 좁게 CLOSED(600)인지 넓게 종결 계열인지 확인 필요",
-        "cp_watch": "codedict의 세분 상태값 반영",
+        "cp_must": "'계좌'가 대출(3000)인지 저축(1500)인지 도메인이 갈림 — 확인 필요",
+        "cp_trap": "제3 해석 여지가 적은 도메인 이분 — 무가정 단일 답은 오답",
     },
     {
         "id": "CC05", "cat": "conceptual", "text": "신규 대출이 몇 건이야?",
