@@ -20,6 +20,13 @@ LAYER = {
 """
 import json, sqlite3, sys
 
+def infer_domain(tbl):
+    if tbl.startswith(("m_client", "m_group", "m_staff", "m_office")): return "CLIENT"
+    if tbl.startswith("m_loan") or tbl == "glim_accounts" or tbl == "m_product_loan": return "LOAN"
+    if tbl.startswith("m_savings") or tbl == "gsim_accounts": return "SAVINGS"
+    if tbl.startswith("m_deposit"): return "DEPOSIT"
+    return "COMMON"
+
 SNAP = sys.argv[1] if len(sys.argv) > 1 else "/tmp/render_merged.json"
 
 snap = json.load(open(SNAP))["results"]
@@ -67,7 +74,7 @@ for cid, res in sorted(snap.items()):
     fk_target = fk_map.get((tbl, col))
     cd = a.get("codedict")
     entry = {
-        "id": cid, "table": tbl,
+        "id": cid, "table": tbl, "domain": infer_domain(tbl),
         "type": meta["type"], "nullable": meta["nullable"], "pk": meta["pk"],
         "fk": f"{fk_target}.id" if fk_target else None,
         "description": {
@@ -94,7 +101,7 @@ tables = []
 for tbl in sorted(set(list(tables_cols.keys()) + db_tables)):
     all_cols = [r[1] for r in cur.execute(f'PRAGMA table_info("{tbl}")').fetchall()] if tbl in db_tables else tables_cols.get(tbl, [])
     tables.append({
-        "name": tbl,
+        "name": tbl, "domain": infer_domain(tbl),
         "grain": grain.get(tbl, ""),
         "columns": all_cols,
         "fk_edges": fk_edges_by_tbl.get(tbl, []),
@@ -105,7 +112,13 @@ metrics_out = [{"id": m["id"], "name": m["name"], "grain": m["grain"],
                 "expr": m["expr"], "base_filters": m["base_filters"], "note": m["note"]}
                for m in metrics]
 
-layer = {"terms": terms, "columns": columns, "tables": tables,
+# 하위호환: Term에 links 필드 부여 (assets을 role 없는 링크로) - explorer 필터가 링크 유무를 봄
+terms_out = []
+for t in terms:
+    tc = dict(t)
+    tc["links"] = [{"asset": a, "role": None} for a in t.get("assets", [])]  # role 미노출
+    terms_out.append(tc)
+layer = {"terms": terms_out, "columns": columns, "tables": tables,
          "metrics": metrics_out, "codedict": codedict_global,
          "meta": {"dataset": "fineract", "source": "Render v3 산출 + 추출 소유 메타 + 저작(terms/metrics/grain)"}}
 
