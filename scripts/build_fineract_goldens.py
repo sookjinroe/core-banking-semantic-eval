@@ -204,7 +204,7 @@ JOIN_GRAIN_Q = [
 # ═══════════════════════ codedict (코드값 사전 소비) ═══════════════════════
 CODEDICT_Q = [
     {
-        "id": "CD01", "cat": "codedict", "text": "실행된 대출 상태별 건수 분포",
+        "id": "CD01", "cat": "codedict", "text": "대출 상태별 건수 분포를 보여줘",
         "tags": ["codedict"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "resolve_code"],
         "sql": "SELECT loan_status_id, COUNT(*) AS cnt FROM m_loan GROUP BY loan_status_id ORDER BY loan_status_id",
@@ -297,9 +297,9 @@ TIME_FORMAT_Q = [
         "id": "TF06", "cat": "time_format", "text": "만기가 2026년 하반기인 대출은 몇 건이야?",
         "tags": ["dated_by"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_column"],
-        "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE expected_maturedon_date BETWEEN '2026-07-01' AND '2026-12-31' AND loan_status_id IN (200,300)",
+        "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE expected_maturedon_date BETWEEN '2026-07-01' AND '2026-12-31'",
         "cp_must": "get_term(만기예정일) → expected_maturedon_date",
-        "cp_watch": "종결된 대출(600,601,700)까지 포함하는지 - 만기 도래 대상은 활성/승인 계열",
+        "cp_watch": "expected_maturedon_date 기간 필터의 형식·경계 정확성",
     },
 ]
 
@@ -317,7 +317,7 @@ REVIEW_Q = [
         "id": "RV02", "cat": "review", "text": "수수료 납부 방식별 대출 수는?",
         "tags": ["needs_review"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_column"],
-        "sql": "SELECT charge_payment_mode_enum, COUNT(*) AS cnt FROM m_loan_charge WHERE is_active=1 GROUP BY charge_payment_mode_enum",
+        "sql": "SELECT charge_payment_mode_enum, COUNT(DISTINCT loan_id) AS loan_cnt FROM m_loan_charge WHERE is_active=1 GROUP BY charge_payment_mode_enum",
         "cp_must": "get_column(charge_payment_mode_enum) → needs_review=true → 라벨 부재 명시",
     },
     {
