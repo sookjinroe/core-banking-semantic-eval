@@ -9,6 +9,7 @@
   review        : needs_review 컬럼에 기대 - 신뢰도 하향 관찰
   conceptual    : 개념 응축·다중 자산 후보 중 선택
   boundary      : 재료 결손·부재 - 폴백·거부 관찰
+  analytic      : 복합 분석 - 리포트 작성자 관점 (다중 측정·시계열·랭킹·교차·구성비)
 
 원칙:
 - 재료에 실제 있는 개념/값/컬럼만 사용
@@ -464,7 +465,59 @@ BOUNDARY_Q = [
     },
 ]
 
-ALL_Q = METRIC_Q + JOIN_GRAIN_Q + CODEDICT_Q + TIME_FORMAT_Q + REVIEW_Q + CONCEPTUAL_Q + BOUNDARY_Q
+# ═══════════════════════ analytic (복합 분석 - 리포트 작성자 관점) ═══════════════════════
+ANALYTIC_Q = [
+    {
+        "id": "AN01", "cat": "analytic", "text": "지점별로 활성 대출 건수와 평균 금리를 함께 보여줘",
+        "tags": ["multi_measure", "join"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_join_path", "try_sql"],
+        "sql": "SELECT o.name AS office, COUNT(l.id) AS active_loans, ROUND(AVG(l.annual_nominal_interest_rate),2) AS avg_rate FROM m_loan l JOIN m_client cl ON l.client_id=cl.id JOIN m_office o ON cl.office_id=o.id WHERE l.loan_status_id=300 GROUP BY o.name ORDER BY o.name",
+        "cp_must": "두 측정값(건수·평균금리)을 한 쿼리에 결합 + 3테이블 조인 경로",
+        "cp_watch": "metric M_AVG_INT_RATE의 컬럼(annual_nominal_interest_rate) 사용 여부",
+    },
+    {
+        "id": "AN02", "cat": "analytic", "text": "상품별 대출 건수, 총 약정액, 상각률을 한 번에 정리해줘",
+        "tags": ["multi_measure", "metric_trap", "join"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_join_path", "try_sql"],
+        "sql": "SELECT p.name AS product, COUNT(l.id) AS loans, ROUND(SUM(l.principal_amount),0) AS total_principal, ROUND(COUNT(CASE WHEN l.loan_status_id=601 THEN 1 END)*1.0/COUNT(CASE WHEN l.loan_status_id IN (300,600,601,700) THEN 1 END),4) AS writeoff_rate FROM m_loan l JOIN m_product_loan p ON l.product_id=p.id WHERE l.loan_status_id IN (300,600,601,700) GROUP BY p.name ORDER BY p.name",
+        "cp_must": "세 측정값 결합, 상각률은 M_WRITEOFF_RATE 정의(분모=실행 대출) 유지",
+        "cp_trap": "상각률 분모를 전체 대출로 잡으면 왜곡 — metric 정의가 그룹 내에서도 유지되는가",
+    },
+    {
+        "id": "AN03", "cat": "analytic", "text": "2026년 상반기 월별 대출 실행 추이를 건수와 금액으로 보여줘",
+        "tags": ["timeseries"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_column", "try_sql"],
+        "sql": "SELECT strftime('%Y-%m', disbursedon_date) AS ym, COUNT(*) AS cnt, ROUND(SUM(principal_amount),0) AS amt FROM m_loan WHERE disbursedon_date BETWEEN '2026-01-01' AND '2026-06-30' GROUP BY ym ORDER BY ym",
+        "cp_must": "월 단위 시계열 집계 (strftime) + 두 측정값",
+        "cp_watch": "기간 경계(1/1~6/30)와 월 버킷 형식",
+    },
+    {
+        "id": "AN04", "cat": "analytic", "text": "연체율이 가장 높은 지점 3곳과 그 연체율은?",
+        "tags": ["ranking", "metric_trap", "join"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_metric", "get_join_path", "try_sql"],
+        "sql": "SELECT o.name AS office, ROUND(COUNT(DISTINCT s.loan_id)*1.0/COUNT(DISTINCT l.id),4) AS dlnq_rate FROM m_loan l JOIN m_client c2 ON l.client_id=c2.id JOIN m_office o ON c2.office_id=o.id LEFT JOIN (SELECT DISTINCT loan_id FROM m_loan_repayment_schedule WHERE duedate < date('now') AND completed_derived=0) s ON s.loan_id=l.id WHERE l.loan_status_id IN (300,600,601,700) GROUP BY o.name ORDER BY dlnq_rate DESC, o.name LIMIT 3",
+        "cp_must": "M_LOAN_DLNQ_RATE 정의를 지점 분해 + 랭킹으로 확장",
+        "cp_trap": "연체 정의를 status로 오해하면 값 왜곡 — 스케줄 유도 유지 여부",
+    },
+    {
+        "id": "AN05", "cat": "analytic", "text": "지점별·성별 활성 고객 수 교차 분포를 보여줘",
+        "tags": ["cross_dim", "join", "codedict"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_join_path", "resolve_code", "try_sql"],
+        "sql": "SELECT o.name AS office, c.gender_cv_id, COUNT(*) AS cnt FROM m_client c JOIN m_office o ON c.office_id=o.id WHERE c.status_enum=300 GROUP BY o.name, c.gender_cv_id ORDER BY o.name, c.gender_cv_id",
+        "cp_must": "2차원 그룹핑 (지점 × 성별) + 활성 필터(status_enum=300)",
+        "cp_watch": "성별 코드/라벨 어느 쪽이든 codedict 동치로 채점",
+    },
+    {
+        "id": "AN06", "cat": "analytic", "text": "이번 분기에 실행된 대출의 상품별 구성비는?",
+        "tags": ["composition", "relative_time", "join"], "mode": "sql",
+        "expected_ops": ["resolve_terms", "get_term", "get_join_path", "try_sql"],
+        "sql": "SELECT p.name AS product, COUNT(*) AS cnt, ROUND(COUNT(*)*100.0/(SELECT COUNT(*) FROM m_loan WHERE disbursedon_date >= '2026-07-01'),1) AS pct FROM m_loan l JOIN m_product_loan p ON l.product_id=p.id WHERE l.disbursedon_date >= '2026-07-01' GROUP BY p.name ORDER BY cnt DESC, p.name",
+        "cp_must": "'이번 분기'(2026 Q3 = 7/1~) 상대 시간 + 구성비(전체 대비 %) 계산",
+        "cp_watch": "분기 시작을 7/1로 잡는가, 구성비 분모가 동일 기간 전체인가",
+    },
+]
+
+ALL_Q = METRIC_Q + JOIN_GRAIN_Q + CODEDICT_Q + TIME_FORMAT_Q + REVIEW_Q + CONCEPTUAL_Q + BOUNDARY_Q + ANALYTIC_Q
 
 # ═══════════════════════ SQL 실행 검증 후 answer 저장 ═══════════════════════
 final = []
