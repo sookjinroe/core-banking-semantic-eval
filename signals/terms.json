@@ -1,6 +1,6 @@
 {
  "source": "게이트 G 99 후보 응축 저작 (미니멀 구조: role 없음)",
- "count": 65,
+ "count": 68,
  "terms": [
   {
    "name": "고객",
@@ -21,14 +21,17 @@
   {
    "name": "고객상태",
    "domain": "CLIENT",
-   "definition": "고객 계정의 라이프사이클 상태 (등록대기~활성~해지)",
+   "definition": "고객 계정의 라이프사이클 상태 (등록대기~활성~해지). 부가 상태는 sub_status",
    "synonyms": [
     "고객 상태",
     "회원상태",
-    "계정상태"
+    "계정상태",
+    "활성고객"
    ],
    "assets": [
-    "m_client.status_enum"
+    "m_client.status_enum",
+    "m_client.sub_status",
+    "M_ACTIVE_CLIENT_CNT"
    ]
   },
   {
@@ -117,7 +120,8 @@
    ],
    "assets": [
     "m_client_identifier.document_type_id",
-    "m_client_identifier.document_key"
+    "m_client_identifier.document_key",
+    "m_client_identifier.status"
    ]
   },
   {
@@ -231,13 +235,15 @@
   {
    "name": "대출거절일",
    "domain": "LOAN",
-   "definition": "대출 신청이 거절된 날짜",
+   "definition": "대출 신청이 거절된 날짜 (고객 등록 거절은 m_client, 저축계좌 거절은 m_savings_account의 동명 컬럼)",
    "synonyms": [
     "거절일",
     "부결일"
    ],
    "assets": [
-    "m_loan.rejectedon_date"
+    "m_loan.rejectedon_date",
+    "m_client.rejectedon_date",
+    "m_savings_account.rejectedon_date"
    ]
   },
   {
@@ -423,7 +429,8 @@
     "m_loan_charge.charge_calculation_enum",
     "m_savings_account_charge.amount",
     "m_savings_account_charge.charge_time_enum",
-    "m_savings_account_charge.charge_calculation_enum"
+    "m_savings_account_charge.charge_calculation_enum",
+    "M_TOTAL_LOAN_CHARGES"
    ]
   },
   {
@@ -450,7 +457,8 @@
    "assets": [
     "m_loan_charge.charge_calculation_enum",
     "m_savings_account_charge.charge_calculation_enum",
-    "m_loan_charge.calculation_on_amount"
+    "m_loan_charge.calculation_on_amount",
+    "m_savings_account_charge.calculation_on_amount"
    ]
   },
   {
@@ -463,6 +471,52 @@
    ],
    "assets": [
     "m_loan_charge.due_for_collection_as_of_date"
+   ]
+  },
+  {
+   "name": "미상환원금",
+   "domain": "LOAN",
+   "definition": "아직 상환되지 않은 대출 원금. 파생 컬럼이 채워지지 않는 환경에서는 상환 스케줄의 미완료 회차 원금 합으로 산출",
+   "synonyms": [
+    "미상환 잔액",
+    "대출잔액",
+    "잔여원금",
+    "outstanding"
+   ],
+   "assets": [
+    "m_loan_repayment_schedule.principal_amount",
+    "m_loan_repayment_schedule.completed_derived",
+    "M_LOAN_REMAINING_PRINCIPAL"
+   ]
+  },
+  {
+   "name": "이자복리주기",
+   "domain": "SAVINGS",
+   "definition": "저축계좌 이자의 복리 계산 주기 (일·월·분기 등)",
+   "synonyms": [
+    "복리주기",
+    "이자 복리 계산 주기",
+    "복리계산"
+   ],
+   "assets": [
+    "m_savings_account.interest_compounding_period_enum",
+    "m_savings_product.interest_compounding_period_enum"
+   ]
+  },
+  {
+   "name": "고객사유",
+   "domain": "CLIENT",
+   "definition": "고객 라이프사이클 전환(종료·거절·철회)의 사유 코드",
+   "synonyms": [
+    "종료사유",
+    "거절사유",
+    "철회사유",
+    "해지사유"
+   ],
+   "assets": [
+    "m_client.closure_reason_cv_id",
+    "m_client.reject_reason_cv_id",
+    "m_client.withdraw_reason_cv_id"
    ]
   },
   {
@@ -666,7 +720,8 @@
     "출금제한기간"
    ],
    "assets": [
-    "m_savings_account.lockin_period_frequency_enum"
+    "m_savings_account.lockin_period_frequency_enum",
+    "m_savings_product.lockin_period_frequency_enum"
    ]
   },
   {
@@ -690,7 +745,8 @@
     "예치원금"
    ],
    "assets": [
-    "m_deposit_account_term_and_preclosure.deposit_amount"
+    "m_deposit_account_term_and_preclosure.deposit_amount",
+    "M_SAVINGS_DEPOSIT_TOTAL"
    ]
   },
   {
@@ -782,7 +838,9 @@
    ],
    "assets": [
     "m_loan.loan_status_id",
-    "M_WRITEOFF_RATE"
+    "M_WRITEOFF_RATE",
+    "m_loan.writeoff_reason_cv_id",
+    "m_loan.charge_off_reason_cv_id"
    ]
   },
   {
