@@ -466,19 +466,20 @@
    ]
   },
   {
-   "name": "담당자배정",
+   "name": "담당자",
    "domain": "LOAN",
-   "definition": "대출에 담당 직원(loan officer)이 배정된 이력",
+   "definition": "대출의 담당 직원(loan officer). 현재 담당자는 m_loan.loan_officer_id, 배정 변경 이력은 assignment_history",
    "synonyms": [
-    "담당자 이력",
+    "담당자배정",
+    "대출담당자",
     "직원배정",
-    "담당변경"
+    "담당변경",
+    "담당자 이력"
    ],
    "assets": [
-    "m_loan_officer_assignment_history.start_date",
+    "m_loan.loan_officer_id",
     "m_loan_officer_assignment_history.loan_officer_id",
-    "m_loan_officer_assignment_history.created_date",
-    "m_loan_officer_assignment_history.lastmodified_date"
+    "m_loan_officer_assignment_history.start_date"
    ]
   },
   {
