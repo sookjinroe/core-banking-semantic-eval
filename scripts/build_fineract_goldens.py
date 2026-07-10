@@ -177,6 +177,9 @@ JOIN_GRAIN_Q = [
         "tags": [], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_join_path"],
         "sql": "SELECT loan_officer_id, COUNT(DISTINCT id) AS loan_cnt FROM m_loan WHERE loan_status_id = 300 AND loan_officer_id IS NOT NULL GROUP BY loan_officer_id ORDER BY loan_cnt DESC, loan_officer_id",
+        "alternatives": [
+            {"label": "담당자 이름 표기", "sql": "SELECT st.display_name, COUNT(DISTINCT l.id) AS loan_cnt FROM m_loan l JOIN m_staff st ON l.loan_officer_id = st.id WHERE l.loan_status_id = 300 GROUP BY st.display_name ORDER BY loan_cnt DESC, st.display_name"},
+        ],
         "cp_must": "get_term(담당자배정) → loan_officer_id 자산 확인 → m_staff 조인",
         "cp_watch": "m_client에서 담당자 컬럼 찾으려 시도하는지 (담당자는 대출 도메인)",
     },
@@ -607,6 +610,9 @@ TARGETED_Q = [
      "tags": ["variance", "timeseries"], "mode": "sql",
      "expected_ops": ["try_sql"],
      "sql": "SELECT strftime('%Y-%m', disbursedon_date) AS ym, COUNT(*) AS cnt FROM m_loan WHERE disbursedon_date >= '2026-05-01' AND disbursedon_date < '2026-07-01' GROUP BY ym ORDER BY ym",
+     "alternatives": [
+         {"label": "월 라벨 %m 표기", "sql": "SELECT strftime('%m', disbursedon_date) AS m, COUNT(*) AS cnt FROM m_loan WHERE disbursedon_date >= '2026-05-01' AND disbursedon_date < '2026-07-01' GROUP BY m ORDER BY m"},
+     ],
      "cp_must": "두 기간을 한 결과로 - 월 버킷 비교",
      "cp_watch": "각 월을 별도 쿼리로 쪼개지 않고 GROUP BY로 처리하는가"},
 ]
@@ -632,6 +638,16 @@ for q in ALL_Q:
         if "error" in ans:
             print(f"  ✗ {q['id']}: {ans['error']}")
             continue
+        # alternatives: 동치 표현 변형 (식별자 id↔이름, 라벨 표기 등) — 전량 실측 검증 후 통과
+        alts = []
+        for alt in q.get("alternatives", []):
+            a_ans = run_sql(alt["sql"])
+            if "error" in a_ans:
+                print(f"  ✗ {q['id']} alt '{alt['label']}': {a_ans['error']}")
+                continue
+            alts.append({"label": alt["label"], "sql": alt["sql"]})
+        if alts:
+            golden["alternatives"] = alts
         entry["golden"] = golden
 
     elif q["mode"] == "clarify":
