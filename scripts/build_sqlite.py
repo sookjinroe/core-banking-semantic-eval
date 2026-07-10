@@ -563,8 +563,13 @@ def seed_operational_data(conn: sqlite3.Connection, config: dict, seed: int = 42
         status_val = random.choices([s[0] for s in status_dist_n],
                                     weights=[s[2] for s in status_dist_n])[0]
         submit = _random_date(date_min, today - timedelta(days=30))
-        approve = _random_date(submit, today) if status_val >= 200 else None
-        disburse = _random_date(approve, today) if (approve and status_val >= 300) else None
+        # 거절(500) 대출은 승인·실행일이 없어야 한다 (거절 = 승인 전 종료).
+        # 랜덤 스트림 소비는 기존과 동일하게 유지(_random_date 호출 패턴 보존)해
+        # 다른 대출들의 시드값이 바뀌지 않게 한다 — 값만 500에서 버림.
+        approve_roll = _random_date(submit, today) if status_val >= 200 else None
+        approve = approve_roll if status_val != 500 else None
+        disburse_roll = _random_date(approve_roll, today) if (approve_roll and status_val >= 300) else None
+        disburse = disburse_roll if status_val in (300, 600, 601, 700) else None
         principal = round(random.uniform(*prng), 2)
         rate = round(random.uniform(*rrng), 2)
         term = random.choice(terms)

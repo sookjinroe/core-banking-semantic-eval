@@ -176,7 +176,7 @@ JOIN_GRAIN_Q = [
         "id": "JG04", "cat": "join_grain", "text": "담당자별 관리 중인 활성 대출 계좌 수는?",
         "tags": [], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_join_path"],
-        "sql": "SELECT s.display_name, COUNT(l.id) AS loan_cnt FROM m_staff s JOIN m_loan l ON l.loan_officer_id = s.id WHERE l.loan_status_id = 300 GROUP BY s.id, s.display_name ORDER BY loan_cnt DESC",
+        "sql": "SELECT loan_officer_id, COUNT(DISTINCT id) AS loan_cnt FROM m_loan WHERE loan_status_id = 300 AND loan_officer_id IS NOT NULL GROUP BY loan_officer_id ORDER BY loan_cnt DESC, loan_officer_id",
         "cp_must": "get_term(담당자배정) → loan_officer_id 자산 확인 → m_staff 조인",
         "cp_watch": "m_client에서 담당자 컬럼 찾으려 시도하는지 (담당자는 대출 도메인)",
     },
@@ -529,7 +529,95 @@ ANALYTIC_Q = [
     },
 ]
 
-ALL_Q = METRIC_Q + JOIN_GRAIN_Q + CODEDICT_Q + TIME_FORMAT_Q + REVIEW_Q + CONCEPTUAL_Q + BOUNDARY_Q + ANALYTIC_Q
+# ═══════════════ targeted (실패 클래스 표적 - 2026-07-10 재구성) ═══════════════
+TARGETED_Q = [
+    # ── 사건 질문 (base_filter 이식 유혹): 사건 발생 = 해당 날짜 컬럼, 지표 기준 이식 금지 ──
+    {"id": "EV01", "cat": "targeted", "text": "승인된 대출은 총 몇 건이야?",
+     "tags": ["event", "filter_trap"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE approvedon_date IS NOT NULL",
+     "cp_must": "승인 사건 = approvedon_date 존재. 지표의 상태 기준 이식하면 오답",
+     "cp_trap": "'실행 대출(300,600,601,700)' 기준을 승인에 이식하는 과잉 일반화"},
+    {"id": "EV02", "cat": "targeted", "text": "거절된 대출 신청은 몇 건이야?",
+     "tags": ["event", "filter_trap"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE rejectedon_date IS NOT NULL",
+     "cp_must": "거절 사건 = rejectedon_date (상태 500과 동치)",
+     "cp_watch": "거절일 Term의 다중 실현(대출·고객·저축) 중 대출 선택"},
+    {"id": "EV03", "cat": "targeted", "text": "올해 종결된 대출은 몇 건이야?",
+     "tags": ["event", "relative_time"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE closedon_date >= '2026-01-01' AND closedon_date < '2027-01-01'",
+     "cp_must": "종결 사건 = closedon_date + 올해 경계",
+     "cp_watch": "상태(600,601)를 추가로 걸어도 동치인지는 데이터에 따름 - 날짜 기준이 정본"},
+    # ── 0-답 · 소수답 (JG07 클래스) ──
+    {"id": "Z01", "cat": "targeted", "text": "연 금리가 30%를 넘는 대출이 몇 건이야?",
+     "tags": ["zero_answer"], "mode": "sql",
+     "expected_ops": ["search", "get_column", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE annual_nominal_interest_rate > 30",
+     "cp_must": "조회 결과 0을 유효한 답(0건)으로 제출 - cannot_answer 금지",
+     "cp_trap": "0행/0값을 '데이터 없음'으로 오판하는 도피"},
+    {"id": "Z02", "cat": "targeted", "text": "만기가 2028년인 대출은 몇 건이야?",
+     "tags": ["small_answer", "time"], "mode": "sql",
+     "expected_ops": ["search", "get_column", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE strftime('%Y', expected_maturedon_date) = '2028'",
+     "cp_must": "만기 = expected_maturedon_date 연도 추출",
+     "cp_watch": "상태 필터 무근거 추가 여부"},
+    # ── 정의 정확 인용 (BD05 클래스): 지표 base_filters를 그대로 ──
+    {"id": "DF01", "cat": "targeted", "text": "활성 대출의 미상환 원금 총액은 얼마야?",
+     "tags": ["metric_quote"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT SUM(s.principal_amount) AS total FROM m_loan_repayment_schedule s JOIN m_loan l ON s.loan_id = l.id WHERE s.completed_derived = 0 AND l.loan_status_id = 300",
+     "cp_must": "M_LOAN_REMAINING_PRINCIPAL의 base_filter(ACTIVE=300)를 그대로 - 타 지표의 (300,600,601,700) 혼입 금지",
+     "cp_trap": "지표 간 기준 혼합 (BD05에서 4연속 관찰된 왜곡)"},
+    {"id": "DF02", "cat": "targeted", "text": "저축 예치 총액은 얼마야?",
+     "tags": ["metric_quote"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT SUM(deposit_amount) AS total FROM m_deposit_account_term_and_preclosure",
+     "cp_must": "M_SAVINGS_DEPOSIT_TOTAL 정의식 그대로",
+     "cp_watch": "불필요한 상태·기간 필터 추가 여부"},
+    # ── 상대시간 변형 (AN06 클래스): 날짜 주입 후 검증 ──
+    {"id": "RT01", "cat": "targeted", "text": "지난 분기에 실행된 대출은 몇 건이야?",
+     "tags": ["relative_time"], "mode": "sql",
+     "expected_ops": ["try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE disbursedon_date >= '2026-04-01' AND disbursedon_date < '2026-07-01'",
+     "cp_must": "오늘(7/10) 기준 지난 분기 = Q2(4/1~6/30) 경계 정확 계산",
+     "cp_trap": "이번/지난 분기 혼동 (AN06에서 Q3 인지 후 Q2 해석 착오 관찰)"},
+    {"id": "RT02", "cat": "targeted", "text": "지난달에 등록 신청된 고객은 몇 명이야?",
+     "tags": ["relative_time"], "mode": "sql",
+     "expected_ops": ["search", "get_column", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_client WHERE submittedon_date >= '2026-06-01' AND submittedon_date < '2026-07-01'",
+     "cp_must": "지난달 = 6월 경계 + 등록 신청 = submittedon_date",
+     "cp_watch": "활성화일(activation_date)과의 혼동"},
+    # ── 고유명사 실측 (M12 클래스): 차원 테이블 name 조회 강제 ──
+    {"id": "PN01", "cat": "targeted", "text": "긴급대출의 평균 금리는 얼마야?",
+     "tags": ["proper_noun"], "mode": "sql",
+     "expected_ops": ["search", "try_sql"],
+     "sql": "SELECT ROUND(AVG(l.annual_nominal_interest_rate), 2) AS avg_rate FROM m_loan l JOIN m_product_loan p ON l.product_id = p.id WHERE p.name = '긴급대출'",
+     "cp_must": "상품 고유명사 → m_product_loan.name 실측 확정 (codedict 아님)",
+     "cp_trap": "clarify 도피 또는 용도코드 끼워맞춤 (M12에서 2양상 관찰)"},
+    {"id": "PN02", "cat": "targeted", "text": "부산지점의 활성 고객은 몇 명이야?",
+     "tags": ["proper_noun", "join"], "mode": "sql",
+     "expected_ops": ["search", "get_join_path", "try_sql"],
+     "sql": "SELECT COUNT(*) AS cnt FROM m_client c JOIN m_office o ON c.office_id = o.id WHERE o.name = '부산지점' AND c.status_enum = 300",
+     "cp_must": "지점 고유명사 → m_office.name 실측 + 활성 필터(질문에 명시됨)",
+     "cp_watch": "office 조인 경로"},
+    # ── 변동 비교 (분석 에이전트 예고) ──
+    {"id": "VA01", "cat": "targeted", "text": "5월과 6월의 대출 실행 건수를 비교해줘",
+     "tags": ["variance", "timeseries"], "mode": "sql",
+     "expected_ops": ["try_sql"],
+     "sql": "SELECT strftime('%Y-%m', disbursedon_date) AS ym, COUNT(*) AS cnt FROM m_loan WHERE disbursedon_date >= '2026-05-01' AND disbursedon_date < '2026-07-01' GROUP BY ym ORDER BY ym",
+     "cp_must": "두 기간을 한 결과로 - 월 버킷 비교",
+     "cp_watch": "각 월을 별도 쿼리로 쪼개지 않고 GROUP BY로 처리하는가"},
+]
+
+# ═══════════════ 재구성 (2026-07-10): 안정 코어 12 + 실패 표적 8 + 신규 12 = 32 ═══════════════
+# 목적: 잘하는 문항의 포화 신호를 줄이고 실패 클래스 밀도를 높여 집중 진단.
+# 제외된 22문항의 정의는 위에 보존 - 회귀 전수 검사가 필요하면 FULL_Q로 복원 가능.
+CORE_IDS = {"M01", "M08", "M11", "CD04", "CD06", "TF01", "TF06", "JG06", "JG08", "BD01", "BD04", "CC03"}
+KEEP_FAIL_IDS = {"AN03", "TF04", "AN06", "BD05", "JG07", "M12", "JG04", "CC01"}
+FULL_Q = METRIC_Q + JOIN_GRAIN_Q + CODEDICT_Q + TIME_FORMAT_Q + REVIEW_Q + CONCEPTUAL_Q + BOUNDARY_Q + ANALYTIC_Q
+ALL_Q = [q for q in FULL_Q if q["id"] in (CORE_IDS | KEEP_FAIL_IDS)] + TARGETED_Q
 
 # ═══════════════════════ SQL 실행 검증 후 answer 저장 ═══════════════════════
 final = []
