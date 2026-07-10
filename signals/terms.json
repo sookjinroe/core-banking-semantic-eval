@@ -1,6 +1,6 @@
 {
  "source": "게이트 G 99 후보 응축 저작 (미니멀 구조: role 없음)",
- "count": 68,
+ "count": 71,
  "terms": [
   {
    "name": "고객",
@@ -520,6 +520,54 @@
    ]
   },
   {
+   "name": "대출상품",
+   "domain": "LOAN",
+   "definition": "대출 상품의 종류 (일반·주택·소액·긴급 등 고유명사). 상품명 리터럴은 m_product_loan.name의 실제 값을 실측 조회로 확정할 것",
+   "synonyms": [
+    "상품",
+    "대출 상품",
+    "상품명",
+    "상품종류"
+   ],
+   "assets": [
+    "m_product_loan.name",
+    "m_product_loan.id",
+    "m_loan.product_id"
+   ]
+  },
+  {
+   "name": "지점",
+   "domain": "COMMON",
+   "definition": "영업 조직 단위 (Head Office와 지점들). 지점명 리터럴은 m_office.name의 실제 값을 실측 조회로 확정할 것. 고객이 지점에 소속되고 계좌는 고객 경유로 지점과 연결",
+   "synonyms": [
+    "영업점",
+    "사무소",
+    "지사",
+    "브랜치",
+    "오피스"
+   ],
+   "assets": [
+    "m_office.name",
+    "m_office.id",
+    "m_client.office_id"
+   ]
+  },
+  {
+   "name": "저축상품",
+   "domain": "SAVINGS",
+   "definition": "저축·예금 상품의 종류. 상품명 리터럴은 m_savings_product.name의 실제 값을 실측 조회로 확정할 것",
+   "synonyms": [
+    "예금상품",
+    "저축 상품",
+    "수신상품"
+   ],
+   "assets": [
+    "m_savings_product.name",
+    "m_savings_product.id",
+    "m_savings_account.product_id"
+   ]
+  },
+  {
    "name": "담당자",
    "domain": "LOAN",
    "definition": "대출의 담당 직원(loan officer). 현재 담당자는 m_loan.loan_officer_id, 배정 변경 이력은 assignment_history",
@@ -533,7 +581,8 @@
    "assets": [
     "m_loan.loan_officer_id",
     "m_loan_officer_assignment_history.loan_officer_id",
-    "m_loan_officer_assignment_history.start_date"
+    "m_loan_officer_assignment_history.start_date",
+    "m_staff.display_name"
    ]
   },
   {

@@ -28,6 +28,8 @@ def infer_domain(tbl):
     return "COMMON"
 
 SNAP = sys.argv[1] if len(sys.argv) > 1 else "/tmp/render_merged.json"
+# 주의: /tmp는 컨테이너 리셋 시 소실. 스냅샷 부재 시 기존 레이어 파일의 columns를
+# 보존한 채 terms/metrics/grain만 갱신하려면 scripts 내 인라인 증분 주입 사용.
 
 snap = json.load(open(SNAP))["results"]
 conn = sqlite3.connect("data/fineract_3domain.sqlite")

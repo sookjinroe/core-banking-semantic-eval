@@ -183,12 +183,25 @@ TERMS = [
      "assets": ["m_client.closure_reason_cv_id",
                 "m_client.reject_reason_cv_id",
                 "m_client.withdraw_reason_cv_id"]},
+    {"name": "대출상품", "domain": "LOAN",
+     "definition": "대출 상품의 종류 (일반·주택·소액·긴급 등 고유명사). 상품명 리터럴은 m_product_loan.name의 실제 값을 실측 조회로 확정할 것",
+     "synonyms": ["상품", "대출 상품", "상품명", "상품종류"],
+     "assets": ["m_product_loan.name", "m_product_loan.id", "m_loan.product_id"]},
+    {"name": "지점", "domain": "COMMON",
+     "definition": "영업 조직 단위 (Head Office와 지점들). 지점명 리터럴은 m_office.name의 실제 값을 실측 조회로 확정할 것. 고객이 지점에 소속되고 계좌는 고객 경유로 지점과 연결",
+     "synonyms": ["영업점", "사무소", "지사", "브랜치", "오피스"],
+     "assets": ["m_office.name", "m_office.id", "m_client.office_id"]},
+    {"name": "저축상품", "domain": "SAVINGS",
+     "definition": "저축·예금 상품의 종류. 상품명 리터럴은 m_savings_product.name의 실제 값을 실측 조회로 확정할 것",
+     "synonyms": ["예금상품", "저축 상품", "수신상품"],
+     "assets": ["m_savings_product.name", "m_savings_product.id", "m_savings_account.product_id"]},
     {"name": "담당자", "domain": "LOAN",
      "definition": "대출의 담당 직원(loan officer). 현재 담당자는 m_loan.loan_officer_id, 배정 변경 이력은 assignment_history",
      "synonyms": ["담당자배정", "대출담당자", "직원배정", "담당변경", "담당자 이력"],
      "assets": ["m_loan.loan_officer_id",
                 "m_loan_officer_assignment_history.loan_officer_id",
-                "m_loan_officer_assignment_history.start_date"]},
+                "m_loan_officer_assignment_history.start_date",
+                "m_staff.display_name"]},
     {"name": "대출조건변경", "domain": "LOAN",
      "definition": "실행 후 대출 조건(만기·금리·회차 등)이 변경된 건",
      "synonyms": ["조건변경", "약정변경", "term variation"],
@@ -338,7 +351,13 @@ TERMS = [
 
 if __name__ == "__main__":
     # 커버리지 검증: 게이트 G 99 컬럼 중 몇 개가 assets에 등장하는지
-    gate = set(l.strip() for l in open("/tmp/term_candidates_gate_g.txt") if l.strip())
+    import os
+    _gate_path = "/tmp/term_candidates_gate_g.txt"
+    if not os.path.exists(_gate_path):
+        print("[skip] 게이트 파일 없음 - 커버리지 검증 생략")
+        gate = set()
+    else:
+        gate = set(l.strip() for l in open(_gate_path) if l.strip())
     covered = set()
     for t in TERMS:
         for a in t["assets"]:
