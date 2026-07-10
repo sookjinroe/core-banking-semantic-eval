@@ -522,7 +522,7 @@
   {
    "name": "대출상품",
    "domain": "LOAN",
-   "definition": "대출 상품의 종류 (일반·주택·소액·긴급 등 고유명사). 상품명 리터럴은 m_product_loan.name의 실제 값을 실측 조회로 확정할 것",
+   "definition": "대출 상품의 종류. 상품명 리터럴은 m_product_loan.name의 실제 값을 실측 조회로 확정할 것 (정의에 상품명을 나열하지 않음 - 세계 리터럴은 낡는다)",
    "synonyms": [
     "상품",
     "대출 상품",
@@ -538,7 +538,7 @@
   {
    "name": "지점",
    "domain": "COMMON",
-   "definition": "영업 조직 단위 (Head Office와 지점들). 지점명 리터럴은 m_office.name의 실제 값을 실측 조회로 확정할 것. 고객이 지점에 소속되고 계좌는 고객 경유로 지점과 연결",
+   "definition": "영업 조직 단위. 지점명 리터럴은 m_office.name의 실제 값을 실측 조회로 확정할 것. 고객이 지점에 소속되고 계좌는 고객 경유로 지점과 연결",
    "synonyms": [
     "영업점",
     "사무소",
