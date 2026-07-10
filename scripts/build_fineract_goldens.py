@@ -11,6 +11,11 @@
   boundary      : 재료 결손·부재 - 폴백·거부 관찰
   analytic      : 복합 분석 - 리포트 작성자 관점 (다중 측정·시계열·랭킹·교차·구성비)
 
+골든 저작 원칙 (목록형): 목록을 묻는 질문의 골든 SQL은
+(안정 식별자, 질문이 묻는 측정값)만 담는다. 부가 표시 컬럼은 에이전트의
+자유이며, 부분집합 매칭 채점에서 골든에 넣는 순간 강요가 된다.
+(근거: __15_ JG01 - 행 집합·값 완전 동일인데 표시 컬럼 차이로 wrong)
+
 원칙:
 - 재료에 실제 있는 개념/값/컬럼만 사용
 - 리터럴은 실측된 값으로 (지점명·상품명·상태값)
@@ -141,7 +146,7 @@ JOIN_GRAIN_Q = [
         "id": "JG01", "cat": "join_grain", "text": "회차 3회 이상 연체된 대출 계좌 목록을 보여줘",
         "tags": ["grain"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_table", "get_join_path"],
-        "sql": "SELECT l.id, l.account_no, l.client_id, COUNT(*) AS overdue_installments FROM m_loan l JOIN m_loan_repayment_schedule s ON l.id = s.loan_id WHERE s.duedate < date('now') AND s.completed_derived = 0 GROUP BY l.id, l.account_no, l.client_id HAVING COUNT(*) >= 3 ORDER BY l.id",
+        "sql": "SELECT l.id, COUNT(*) AS overdue_installments FROM m_loan l JOIN m_loan_repayment_schedule s ON l.id = s.loan_id WHERE s.duedate < date('now') AND s.completed_derived = 0 GROUP BY l.id HAVING COUNT(*) >= 3 ORDER BY l.id",
         "cp_must": "get_table(m_loan_repayment_schedule) grain='대출 × 상환회차 1건' 확인 → HAVING 판정",
         "cp_watch": "회차 grain에서 HAVING COUNT(*) 없이 대출 단위 필터로 표현하지 못하면 오답",
     },
@@ -162,7 +167,7 @@ JOIN_GRAIN_Q = [
         "cp_watch": "대출 테이블에 지점 컬럼 있을 것으로 발명하는가",
     },
     {
-        "id": "JG04", "cat": "join_grain", "text": "담당자별 관리 중인 대출 계좌 수는?",
+        "id": "JG04", "cat": "join_grain", "text": "담당자별 관리 중인 활성 대출 계좌 수는?",
         "tags": [], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_join_path"],
         "sql": "SELECT s.display_name, COUNT(l.id) AS loan_cnt FROM m_staff s JOIN m_loan l ON l.loan_officer_id = s.id WHERE l.loan_status_id = 300 GROUP BY s.id, s.display_name ORDER BY loan_cnt DESC",
@@ -326,7 +331,7 @@ REVIEW_Q = [
         "id": "RV03", "cat": "review", "text": "그룹대출 계좌 목록을 보여줘",
         "tags": ["needs_review", "empty"], "mode": "sql",
         "expected_ops": ["resolve_terms", "get_term", "get_column"],
-        "sql": "SELECT id, account_number, principal_amount, loan_status_id FROM glim_accounts ORDER BY id LIMIT 10",
+        "sql": "SELECT account_number FROM glim_accounts ORDER BY account_number",
         "cp_must": "get_column(glim_accounts.group_id) → 모든 행 값 0으로 고정, needs_review 확인",
         "cp_watch": "결과 나오지만 값이 대부분 0/기본값인 걸 caveat로 알리는지",
     },
@@ -401,6 +406,7 @@ CONCEPTUAL_Q = [
             {"label": "최근 30일 실행", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE disbursedon_date >= date('now','-30 days')"},
             {"label": "최근 30일 신청", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE submittedon_date >= date('now','-30 days')"},
             {"label": "이번 달 실행", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE strftime('%Y-%m', disbursedon_date) = strftime('%Y-%m', date('now'))"},
+            {"label": "미승인 신청 상태(100)", "sql": "SELECT COUNT(*) AS cnt FROM m_loan WHERE loan_status_id = 100"},
         ],
         "cp_must": "'신규' 시간 창과 라이프사이클 단계 모호 — 신청·승인·실행 중 어느 단계",
     },
