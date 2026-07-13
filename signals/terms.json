@@ -337,7 +337,9 @@
    "assets": [
     "m_savings_account.nominal_annual_interest_rate",
     "m_savings_product.nominal_annual_interest_rate",
-    "M_AVG_INT_RATE"
+    "M_AVG_INT_RATE",
+    "m_loan.annual_nominal_interest_rate",
+    "m_loan.nominal_interest_rate_per_period"
    ]
   },
   {
