@@ -289,13 +289,15 @@ SAVINGS_STATUS_DIST = [
 ]
 
 # ClientStatus enum 값
+# ClientStatus.java 원본 체계: 0 INVALID / 100 PENDING / 300 ACTIVE / 303·304 TRANSFER /
+# 600 CLOSED / 700 REJECTED / 800 WITHDRAWN. 500은 이 체계에 존재하지 않음.
+# (구 시드가 대출 상태 체계의 500=REJECTED를 잘못 이식했던 결함 수정, 2026-07-13)
 CLIENT_STATUS_DIST = [
-    (100, "pending",       0.10),  # PENDING
-    (300, "active",        0.75),  # ACTIVE
-    (500, "rejected",      0.03),  # ★ 500 not 700 for client — REJECTED
-    (600, "closed",        0.07),
-    (700, "rejected_v2",   0.02),  # ★ 700=REJECTED for Client (collision with Loan.OVERPAID)
-    (800, "withdrawn",     0.03),  # ★ 800=WITHDRAWN for Client
+    (100, "pending",   0.10),  # PENDING
+    (300, "active",    0.75),  # ACTIVE
+    (600, "closed",    0.07),  # CLOSED
+    (700, "rejected",  0.05),  # REJECTED (구 500의 0.03 + 구 700의 0.02 통합)
+    (800, "withdrawn", 0.03),  # WITHDRAWN
 ]
 
 
