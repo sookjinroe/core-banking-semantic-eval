@@ -97,6 +97,7 @@ def extract_field(field_node, src: bytes) -> dict:
         "column": None, "converter": None, "enumerated": None,
         "join_column": None, "relationship": None,
         "is_id": "Id" in ann_by_name or "EmbeddedId" in ann_by_name,
+        "embedded": "Embedded" in ann_by_name,
     }
     col = ann_by_name.get("Column")
     if col: field["column"] = col["args"]
@@ -194,7 +195,25 @@ def collect_all_fields(cls_name: str, index: ClassIndex, visited=None):
                 for f in inherited:
                     if f["java_field"] not in seen:
                         my_fields.append(f); seen.add(f["java_field"])
-    return my_fields
+    # @Embedded 전개: 임베디드 객체(예: Loan의 LoanProductRelatedDetail·LoanSummary)의
+    # 필드는 소유 엔터티 테이블의 컬럼이다. 미전개 시 principal_amount·
+    # annual_nominal_interest_rate 등 도메인 핵심 컬럼이 후보에서 통째로 누락
+    # (2026-07-13 실측: DB에 있고 ORM 시야 밖인 컬럼 140개의 주 원인).
+    # Fineract 코퍼스에 @AttributeOverrides 사용 없음을 확인 - @Column name 그대로 유효.
+    expanded = []
+    for f in my_fields:
+        if f.get("embedded"):
+            emb = collect_all_fields(f["java_type"], index, visited=set(visited))
+            for ef in emb:
+                if ef.get("embedded"):  # 중첩 임베디드는 재귀에서 이미 전개됨
+                    continue
+                if ef.get("column") or ef.get("join_column") or ef.get("converter") or ef.get("enumerated"):
+                    ef2 = dict(ef)
+                    ef2["embedded_from"] = f["java_type"]
+                    expanded.append(ef2)
+        else:
+            expanded.append(f)
+    return expanded
 
 
 def get_table_name(cls_node, src: bytes, index=None) -> str:

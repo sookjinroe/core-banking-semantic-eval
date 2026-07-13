@@ -312,3 +312,42 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ── 재발 방지 검사 (2026-07-13 신설) ─────────────────────────────
+# ① 역방향 정합: DB에 실존하는데 ORM 시야 밖인 컬럼 보고
+#    (한 방향(ORM→DB)만 검사해 @Embedded 미전개 140컬럼이 조용히 샜던 결함의 상시 감시)
+# ② 지표 참조 컬럼은 후보에 반드시 존재해야 함
+import sqlite3 as _sq, re as _re
+_conn = _sq.connect("data/fineract_3domain.sqlite")
+_cand = set()
+_tbls = set()
+for _line in open("slice/columns_candidates.jsonl"):
+    _r = json.loads(_line)
+    _cand.add((_r["table"], _r["column"])); _tbls.add(_r["table"])
+_audit = _re.compile(r"(createdby|created_date|created_on|lastmodified|updatedby|updated_on|updated_by|appuser_id|version|submittedon_userid)")
+_blind_dom, _blind_audit = [], []
+for _t in sorted(_tbls):
+    for _row in _conn.execute(f'PRAGMA table_info("{_t}")').fetchall():
+        _c = _row[1]
+        if (_t, _c) in _cand or _c == "id": continue
+        (_blind_audit if _audit.search(_c) else _blind_dom).append(f"{_t}.{_c}")
+print(f"\n[역방향 정합] DB에 있고 후보에 없는 컬럼: 도메인 {len(_blind_dom)} · 감사/기술 {len(_blind_audit)}")
+if _blind_dom:
+    print("  도메인 잔여 (검토 필요):", _blind_dom[:10], "..." if len(_blind_dom) > 10 else "")
+try:
+    _metrics = json.load(open("signals/metrics.json"))["metrics"]
+    _cand_names = {c for _, c in _cand}
+    _viol = []
+    for _m in _metrics:
+        _txt = _m["expr"] + " " + " ".join(_m.get("base_filters", []))
+        _g = _m["grain"].split(" ")[0]
+        _gcols = [r[1] for r in _conn.execute(f'PRAGMA table_info("{_g}")').fetchall()]
+        for _tok in set(_re.findall(r"[a-z_]{4,}", _txt)):
+            if _tok in _gcols and _tok not in _cand_names:
+                _viol.append(f"{_m['id']}:{_tok}")
+    print(f"[지표 참조 검사] 카탈로그 밖 참조: {_viol or '없음 ✓'}")
+    if _viol:
+        raise SystemExit(f"지표가 참조하는 컬럼이 후보에 없음: {_viol}")
+except FileNotFoundError:
+    pass
