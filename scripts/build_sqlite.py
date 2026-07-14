@@ -860,7 +860,9 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
     if tx_ids and len(tx_ids) >= 20:
         n_map = min(200, len(tx_ids) // 20)
         print(f"      loan_amortization_allocation_mapping ({n_map})...", flush=True)
-        # amortization_type: PRINCIPAL / INTEREST / FEE (TEXT!)
+        # amortization_type: AM / AM_ADJ — 원본 LoanAmortizationAllocationMapping의
+        # @Enumerated(STRING) AmortizationType 정의 준수 (구 시드가 컬럼명만 보고
+        # PRINCIPAL/INTEREST/FEE를 임의 주입했던 결함 수정, 2026-07-14)
         for _ in range(n_map):
             base_tx, amort_tx = random.sample(tx_ids, 2)
             loan_id = cur.execute("SELECT loan_id FROM m_loan_transaction WHERE id=?", (base_tx,)).fetchone()
@@ -870,7 +872,7 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
                 "base_loan_transaction_id": base_tx,
                 "amortization_loan_transaction_id": amort_tx,
                 "date": str(_random_date(date.today() - timedelta(days=180), date.today())),
-                "amortization_type": random.choices(["PRINCIPAL", "INTEREST", "FEE"], weights=[0.6, 0.3, 0.1])[0],
+                "amortization_type": random.choices(["AM", "AM_ADJ"], weights=[0.8, 0.2])[0],
                 "amount": round(random.uniform(1000, 50000), 2),
             })
 
@@ -966,14 +968,15 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
 
     # m_client의 각 상태별 컬럼 후처리 (활성 없이도 값 있어야 profile 잡힘)
     # status 300 (ACTIVE): activatedon_userid, sub_status, legal_form_enum, client_type_cv_id, fullname
-    # status 500 (REJECTED): reject_reason_cv_id
+    # status 700 (REJECTED): reject_reason_cv_id
     # status 600 (CLOSED): closedon_date, closedon_userid, closure_reason_cv_id
     # status 800 (WITHDRAWN): withdraw_reason_cv_id
     cur.execute("SELECT id, status_enum FROM m_client")
     for cid, status in cur.fetchall():
         updates = {}
-        # 모든 client (sub_status는 ClientSubStatusEnum 정의 부족으로 0=NONE만 유지)
-        updates["sub_status"] = 0
+        # sub_status는 CodeValue FK — 미보유 시 NULL이 맞음 (구 시드의 0은 존재하지
+        # 않는 code_value id라 무결성 위반이었음 — 수정, 2026-07-14)
+        updates["sub_status"] = None
         updates["legal_form_enum"] = random.choices([1, 2], weights=[0.85, 0.15])[0]  # 1=PERSON, 2=ENTITY
         updates["client_type_cv_id"] = random.choices(list(client_types.values()), weights=[0.7, 0.2, 0.1])[0]
         if updates["legal_form_enum"] == 2:
@@ -983,7 +986,7 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
             updates["image_id"] = random.randint(1, 999)
         if status == 300:
             updates["activatedon_userid"] = random.randint(1, 3)
-        elif status == 500:
+        elif status == 700:
             updates["reject_reason_cv_id"] = random.choice(list(reject_reasons.values()))
         elif status == 600:
             updates["closedon_date"] = str(_random_date(date.today() - timedelta(days=365), date.today()))
@@ -1034,7 +1037,9 @@ def seed_child_tables(conn: sqlite3.Connection, seed: int = 42):
         if random.random() < 0.6:
             updates["loanpurpose_cv_id"] = random.choice(list(loan_purposes.values()))
         updates["repayment_start_date_type_enum"] = random.choices([1, 2], weights=[0.75, 0.25])[0]
-        updates["loan_sub_status_id"] = random.choices([0, 100, 200], weights=[0.85, 0.10, 0.05])[0]
+        # LoanSubStatus 정의: 0=INVALID, 100=FORECLOSED, 900=CONTRACT_TERMINATION.
+        # (구 시드의 200은 LoanStatus 체계 혼입 결함 — 수정, 2026-07-14)
+        updates["loan_sub_status_id"] = random.choices([0, 100, 900], weights=[0.85, 0.10, 0.05])[0]
         # 승인·활성 loan: approvedon_userid
         if status >= 200:
             updates["approvedon_userid"] = random.randint(1, 3)
