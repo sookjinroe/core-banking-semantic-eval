@@ -55,8 +55,13 @@ def main():
             "entries": e["entries"],
         })
 
+    # 엔티티 실존 테이블명 (클래스명 → @Table) — 기계 사실. 테이블명 교정 후처리용.
+    orm = json.load(open(Path(args.catalog).parent / "peek_orm.json"))
+    entity_tables = {e["class_name"]: e["table_name"] for e in orm["entities"] if e.get("table_name")}
+
     out = {
         "store_scope": scope,
+        "entity_tables": entity_tables,
         "scope_stats": {"tables": len(scope), "columns": sum(len(v) for v in scope.values())},
         "seed_count": len(seeds),
         "seeds": seeds,
