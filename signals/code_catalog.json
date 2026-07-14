@@ -1,12 +1,13 @@
 {
  "source": "tree-sitter-java enum_declaration 전수 (top-level·중첩·가시성 무관)",
  "file_count": 1800,
- "enum_count": 158,
+ "enum_count": 174,
  "kind_counts": {
   "string_code": 45,
   "no_code": 23,
   "int_code": 80,
-  "mixed": 10
+  "mixed": 10,
+  "reftable": 16
  },
  "catalog": {
   "GLClosureJsonInputParams": {
@@ -8659,6 +8660,380 @@
      "extra": []
     }
    ]
+  },
+  "ClientClassification": {
+   "name": "ClientClassification",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 17,
+     "name": "Salaried",
+     "extra": []
+    },
+    {
+     "code": 18,
+     "name": "Self-Employed",
+     "extra": []
+    },
+    {
+     "code": 19,
+     "name": "Student",
+     "extra": []
+    },
+    {
+     "code": 20,
+     "name": "Retired",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "ClientClosureReason": {
+   "name": "ClientClosureReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 21,
+     "name": "Deceased",
+     "extra": []
+    },
+    {
+     "code": 22,
+     "name": "Migration",
+     "extra": []
+    },
+    {
+     "code": 23,
+     "name": "Other",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "ClientRejectReason": {
+   "name": "ClientRejectReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 24,
+     "name": "KYC failed",
+     "extra": []
+    },
+    {
+     "code": 25,
+     "name": "Duplicate applicant",
+     "extra": []
+    },
+    {
+     "code": 26,
+     "name": "Blacklist",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "ClientTypeCategory": {
+   "name": "ClientTypeCategory",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 29,
+     "name": "Regular",
+     "extra": []
+    },
+    {
+     "code": 30,
+     "name": "VIP",
+     "extra": []
+    },
+    {
+     "code": 31,
+     "name": "Corporate",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "ClientWithdrawReason": {
+   "name": "ClientWithdrawReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 27,
+     "name": "Applicant request",
+     "extra": []
+    },
+    {
+     "code": 28,
+     "name": "Documentation lost",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "Customer Identifier": {
+   "name": "Customer Identifier",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "Passport",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "Id",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "Drivers License",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "Any Other Id Type",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "Entity to Entity Access Types": {
+   "name": "Entity to Entity Access Types",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 10,
+     "name": "Office Access to Loan Products",
+     "extra": []
+    },
+    {
+     "code": 11,
+     "name": "Office Access to Savings Products",
+     "extra": []
+    },
+    {
+     "code": 12,
+     "name": "Office Access to Fees/Charges",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "GROUPROLE": {
+   "name": "GROUPROLE",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 13,
+     "name": "Leader",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "Gender": {
+   "name": "Gender",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 15,
+     "name": "남성",
+     "extra": []
+    },
+    {
+     "code": 16,
+     "name": "여성",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "GuarantorRelationship": {
+   "name": "GuarantorRelationship",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 5,
+     "name": "Spouse",
+     "extra": []
+    },
+    {
+     "code": 6,
+     "name": "Parent",
+     "extra": []
+    },
+    {
+     "code": 7,
+     "name": "Sibling",
+     "extra": []
+    },
+    {
+     "code": 8,
+     "name": "Business Associate",
+     "extra": []
+    },
+    {
+     "code": 9,
+     "name": "Other",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "LoanChargeOffReason": {
+   "name": "LoanChargeOffReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 37,
+     "name": "Bankruptcy",
+     "extra": []
+    },
+    {
+     "code": 38,
+     "name": "Default > 180 days",
+     "extra": []
+    },
+    {
+     "code": 39,
+     "name": "Fraud",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "LoanPurpose": {
+   "name": "LoanPurpose",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 32,
+     "name": "Business expansion",
+     "extra": []
+    },
+    {
+     "code": 33,
+     "name": "Home renovation",
+     "extra": []
+    },
+    {
+     "code": 34,
+     "name": "Education",
+     "extra": []
+    },
+    {
+     "code": 35,
+     "name": "Medical",
+     "extra": []
+    },
+    {
+     "code": 36,
+     "name": "Debt consolidation",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "LoanRescheduleReason": {
+   "name": "LoanRescheduleReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 42,
+     "name": "Customer request",
+     "extra": []
+    },
+    {
+     "code": 43,
+     "name": "Financial hardship",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "LoanTransactionClassification": {
+   "name": "LoanTransactionClassification",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 44,
+     "name": "Regular",
+     "extra": []
+    },
+    {
+     "code": 45,
+     "name": "Adjustment",
+     "extra": []
+    },
+    {
+     "code": 46,
+     "name": "Correction",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "LoanWriteOffReason": {
+   "name": "LoanWriteOffReason",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 40,
+     "name": "Uncollectible",
+     "extra": []
+    },
+    {
+     "code": 41,
+     "name": "Legal writeoff",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
+  },
+  "PaymentType": {
+   "name": "PaymentType",
+   "kind": "reftable",
+   "file": null,
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 14,
+     "name": "Money Transfer",
+     "extra": []
+    }
+   ],
+   "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."
   }
  }
 }

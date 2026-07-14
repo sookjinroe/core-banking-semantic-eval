@@ -160,6 +160,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("corpus_root")
     ap.add_argument("out_json")
+    ap.add_argument("--db", help="sqlite 경로 — m_code/m_code_value의 공통코드 그룹을 kind=reftable로 카탈로그에 편입")
     args = ap.parse_args()
     root = Path(args.corpus_root)
     files = sorted(root.rglob("*.java"))
@@ -179,6 +180,22 @@ def main():
             catalog[key] = e
     for k, files_ in dup.items():
         catalog[k]["duplicate_names"] = sorted(set(files_) - {catalog[k]["file"]})
+
+    # 공통코드(m_code) 그룹 편입 — DB 실물이 정본 (운영 중 가변이므로 DB 리프레시 시 재추출 필요)
+    if args.db:
+        import sqlite3
+        con = sqlite3.connect(args.db)
+        rows = con.execute(
+            "SELECT c.code_name, v.id, v.code_value FROM m_code c "
+            "JOIN m_code_value v ON v.code_id = c.id ORDER BY c.code_name, v.id").fetchall()
+        groups = {}
+        for gname, vid, label in rows:
+            groups.setdefault(gname, []).append({"code": vid, "name": label, "extra": []})
+        for gname, entries in groups.items():
+            key = gname if gname not in catalog else "reftable:" + gname
+            catalog[key] = {"name": gname, "kind": "reftable", "file": None, "nested_in": None,
+                            "entries": entries,
+                            "note": "m_code_value 실물 덤프 — 값은 code_value 행 id, 라벨은 code_value. 운영 가변."}
 
     kinds = {}
     for e in catalog.values():
