@@ -161,12 +161,15 @@ def main():
                 codevalue_fk.append({"table": table, "column": col, "java_field": jf, "group": None})
                 continue
 
+            STORAGE_RANK = {"converter": 4, "name": 3, "ordinal": 3, "code": 2, "ordinal_default": 1, None: 0}
+
             def claim(code_table, basis, storage):
                 claims[(code_table, table, col)].add(basis)
-                prev = meta.get((code_table, table, col))
+                prev = meta.get((code_table, table, col)) or {}
+                prev_st = prev.get("storage")
+                best = storage if STORAGE_RANK.get(storage, 0) >= STORAGE_RANK.get(prev_st, 0) else prev_st
                 meta[(code_table, table, col)] = {"java_field": jf, "entity_file": ent["source_file"],
-                                                  "kind": catalog[code_table]["kind"],
-                                                  "storage": storage or (prev or {}).get("storage")}
+                                                  "kind": catalog[code_table]["kind"], "storage": best}
 
             enum_st = str(f.get("enumerated") or "")
             conv = f.get("converter")

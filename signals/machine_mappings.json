@@ -794,7 +794,7 @@
     "convert",
     "typed"
    ],
-   "storage": "ordinal_default",
+   "storage": "converter",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
