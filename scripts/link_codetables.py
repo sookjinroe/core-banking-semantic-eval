@@ -45,10 +45,11 @@ def walk(node, *types):
         yield from walk(c, *types)
 
 
-def resolve_converters(corpus_root: Path, catalog: dict) -> dict:
-    """AttributeConverter 구현 클래스명 → 타깃 enum명 (카탈로그에 있는 것만)."""
-    out = {}
+def resolve_converters(corpus_root: Path, catalog: dict):
+    """AttributeConverter 구현: 클래스명 → 타깃 enum명. autoApply=true인 것은 별도 집합으로."""
+    out, auto = {}, {}
     for f in corpus_root.rglob("*Converter.java"):
+        src_t = f.read_text(errors="replace")
         src = f.read_bytes()
         tree = PARSER.parse(src)
         for cls in walk(tree.root_node, "class_declaration"):
@@ -57,7 +58,6 @@ def resolve_converters(corpus_root: Path, catalog: dict) -> dict:
                 if c.type == "identifier":
                     cname = text_of(c, src)
                     break
-            # implements AttributeConverter<E, ?>
             target = None
             for si in walk(cls, "super_interfaces"):
                 t = text_of(si, src)
@@ -68,7 +68,10 @@ def resolve_converters(corpus_root: Path, catalog: dict) -> dict:
                     break
             if cname and target and target in catalog:
                 out[cname] = target
-    return out
+                import re as _re
+                if _re.search(r"autoApply\s*=\s*true", src_t):
+                    auto[target] = cname  # enum명 → 컨버터명 (전역 적용)
+    return out, auto
 
 
 def field_javadoc_link(field_node, src: bytes, catalog: dict):
@@ -108,8 +111,8 @@ def main():
     orm = json.load(open(args.orm))
     corpus_root = Path(args.corpus)
 
-    converters = resolve_converters(corpus_root, catalog)
-    print(f"[link] 컨버터 해석: {len(converters)}", file=sys.stderr)
+    converters, auto_converters = resolve_converters(corpus_root, catalog)
+    print(f"[link] 컨버터 해석: {len(converters)} (autoApply: {list(auto_converters)})", file=sys.stderr)
 
     # (code_table, table, column) → set(bases)
     claims = defaultdict(set)
@@ -158,22 +161,35 @@ def main():
                 codevalue_fk.append({"table": table, "column": col, "java_field": jf, "group": None})
                 continue
 
-            def claim(code_table, basis):
+            def claim(code_table, basis, storage):
                 claims[(code_table, table, col)].add(basis)
+                prev = meta.get((code_table, table, col))
                 meta[(code_table, table, col)] = {"java_field": jf, "entity_file": ent["source_file"],
-                                                  "kind": catalog[code_table]["kind"]}
+                                                  "kind": catalog[code_table]["kind"],
+                                                  "storage": storage or (prev or {}).get("storage")}
 
+            enum_st = str(f.get("enumerated") or "")
             conv = f.get("converter")
             if conv and conv in converters:
-                claim(converters[conv], "convert")
+                claim(converters[conv], "convert", "converter")
             jt = f.get("java_type")
             if jt in catalog:
-                claim(jt, "typed")
+                # 저장 방식: 명시 @Enumerated > autoApply 컨버터 > JPA 기본(ORDINAL)
+                if enum_st == "STRING":
+                    st = "name"
+                elif enum_st == "ORDINAL":
+                    st = "ordinal"
+                elif jt in auto_converters:
+                    claim(jt, "convert", "converter")
+                    st = "converter"
+                else:
+                    st = "ordinal_default"  # @Enumerated 미지정 enum 타입의 JPA 기본
+                claim(jt, "typed", st)
             if jf in jdoc:
-                claim(jdoc[jf], "javadoc")
+                claim(jdoc[jf], "javadoc", "code")  # Integer 필드 + fromInt 관례 → 코드값 저장
             if jf in usage:
                 for e in usage[jf]:
-                    claim(e, "usage")
+                    claim(e, "usage", "code")
 
     # 병합·충돌 검출
     mappings = []
@@ -181,7 +197,8 @@ def main():
     for (ct, table, col), bases in sorted(claims.items()):
         m = meta[(ct, table, col)]
         rec = {"code_table": ct, "kind": m["kind"], "table": table, "column": col,
-               "java_field": m["java_field"], "bases": sorted(bases), "entity_file": m["entity_file"]}
+               "java_field": m["java_field"], "bases": sorted(bases), "storage": m.get("storage"),
+               "entity_file": m["entity_file"]}
         mappings.append(rec)
         by_col[(table, col)].append(rec)
 

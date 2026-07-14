@@ -9,6 +9,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal_default",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -20,6 +21,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -29,8 +31,10 @@
    "column": "accounting_type",
    "java_field": "accountingRule",
    "bases": [
+    "convert",
     "typed"
    ],
+   "storage": "converter",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -42,6 +46,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   },
   {
@@ -53,6 +58,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -64,6 +70,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -75,6 +82,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanAmortizationAllocationMapping.java"
   },
   {
@@ -86,6 +94,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/businessdate/domain/BusinessDate.java"
   },
   {
@@ -97,6 +106,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/cache/domain/PlatformCache.java"
   },
   {
@@ -108,6 +118,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/Calendar.java"
   },
   {
@@ -119,6 +130,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCharge.java"
   },
   {
@@ -130,6 +142,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountCharge.java"
   },
   {
@@ -141,6 +154,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/ClientIdentifier.java"
   },
   {
@@ -152,6 +166,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/Client.java"
   },
   {
@@ -163,6 +178,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/commands/domain/CommandSource.java"
   },
   {
@@ -174,6 +190,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCreditAllocationRule.java"
   },
   {
@@ -185,6 +202,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductCreditAllocationRule.java"
   },
   {
@@ -196,6 +214,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -207,6 +226,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -218,6 +238,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/delinquency/domain/LoanDelinquencyAction.java"
   },
   {
@@ -229,6 +250,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyBucket.java"
   },
   {
@@ -240,6 +262,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyMinimumPaymentPeriodAndRule.java"
   },
   {
@@ -251,6 +274,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyMinimumPaymentPeriodAndRule.java"
   },
   {
@@ -262,6 +286,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountTermAndPreClosure.java"
   },
   {
@@ -273,6 +298,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountOnHoldTransaction.java"
   },
   {
@@ -284,6 +310,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/accountnumberformat/domain/AccountNumberFormat.java"
   },
   {
@@ -295,6 +322,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/event/external/repository/domain/ExternalEvent.java"
   },
   {
@@ -306,6 +334,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanPaymentAllocationRule.java"
   },
   {
@@ -317,6 +346,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductPaymentAllocationRule.java"
   },
   {
@@ -329,6 +359,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/group/domain/Group.java"
   },
   {
@@ -340,6 +371,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/Holiday.java"
   },
   {
@@ -351,6 +383,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -362,6 +395,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -373,6 +407,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -384,6 +419,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -396,6 +432,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
   },
   {
@@ -407,6 +444,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
   },
   {
@@ -418,6 +456,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropIdentifier.java"
   },
   {
@@ -429,6 +468,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/Client.java"
   },
   {
@@ -440,6 +480,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -451,6 +492,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -462,6 +504,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -473,6 +516,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -484,6 +528,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -495,6 +540,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -506,6 +552,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -517,6 +564,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -528,6 +576,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -539,6 +588,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -550,6 +600,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -561,6 +612,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -572,6 +624,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -583,6 +636,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -594,6 +648,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
   },
   {
@@ -605,6 +660,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
   },
   {
@@ -616,6 +672,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductBorrowerCycleVariations.java"
   },
   {
@@ -627,6 +684,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductBorrowerCycleVariations.java"
   },
   {
@@ -638,6 +696,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reaging/LoanReAgeParameter.java"
   },
   {
@@ -649,6 +708,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reamortization/LoanReAmortizationParameter.java"
   },
   {
@@ -661,6 +721,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
   },
   {
@@ -672,6 +733,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
   },
   {
@@ -683,6 +745,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -694,6 +757,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -705,6 +769,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -716,6 +781,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -728,6 +794,7 @@
     "convert",
     "typed"
    ],
+   "storage": "ordinal_default",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -739,6 +806,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanStatusChangeHistory.java"
   },
   {
@@ -748,8 +816,10 @@
    "column": "loan_sub_status_id",
    "java_field": "loanSubStatus",
    "bases": [
+    "convert",
     "typed"
    ],
+   "storage": "converter",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -761,6 +831,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTermVariations.java"
   },
   {
@@ -772,6 +843,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransactionRelation.java"
   },
   {
@@ -781,8 +853,10 @@
    "column": "transaction_type_enum",
    "java_field": "typeOf",
    "bases": [
+    "convert",
     "typed"
    ],
+   "storage": "converter",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransaction.java"
   },
   {
@@ -794,6 +868,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanPaymentAllocationRule.java"
   },
   {
@@ -805,6 +880,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductPaymentAllocationRule.java"
   },
   {
@@ -816,6 +892,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -827,6 +904,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -838,6 +916,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal_default",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -849,6 +928,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reaging/LoanReAgeParameter.java"
   },
   {
@@ -860,6 +940,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -871,6 +952,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -882,6 +964,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -893,6 +976,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
   },
   {
@@ -904,6 +988,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
   },
   {
@@ -915,6 +1000,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
   },
   {
@@ -926,6 +1012,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
   },
   {
@@ -937,6 +1024,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal_default",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
   },
   {
@@ -948,6 +1036,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "ordinal_default",
    "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
   },
   {
@@ -959,6 +1048,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/Holiday.java"
   },
   {
@@ -970,6 +1060,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -981,6 +1072,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -992,6 +1084,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountTransaction.java"
   },
   {
@@ -1003,6 +1096,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -1015,6 +1109,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   },
   {
@@ -1026,6 +1121,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -1038,6 +1134,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   },
   {
@@ -1049,6 +1146,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -1061,6 +1159,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   },
   {
@@ -1072,6 +1171,7 @@
    "bases": [
     "typed"
    ],
+   "storage": "name",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/cob/savings/SavingsAccountLock.java"
   },
   {
@@ -1083,6 +1183,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountTermAndPreClosure.java"
   },
   {
@@ -1094,6 +1195,7 @@
    "bases": [
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   },
   {
@@ -1105,6 +1207,7 @@
    "bases": [
     "javadoc"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
   },
   {
@@ -1117,6 +1220,7 @@
     "javadoc",
     "usage"
    ],
+   "storage": "code",
    "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
   }
  ],
@@ -1274,8 +1378,8 @@
   "basis_counts": {
    "typed": 59,
    "usage": 35,
-   "javadoc": 14,
-   "convert": 1
+   "convert": 4,
+   "javadoc": 14
   },
   "codevalue_fk_count": 24,
   "conflict_count": 0,
