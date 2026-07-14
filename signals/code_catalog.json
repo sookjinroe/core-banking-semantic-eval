@@ -1,0 +1,8664 @@
+{
+ "source": "tree-sitter-java enum_declaration 전수 (top-level·중첩·가시성 무관)",
+ "file_count": 1800,
+ "enum_count": 158,
+ "kind_counts": {
+  "string_code": 45,
+  "no_code": 23,
+  "int_code": 80,
+  "mixed": 10
+ },
+ "catalog": {
+  "GLClosureJsonInputParams": {
+   "name": "GLClosureJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/closure/api/GLClosureJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "id",
+     "name": "ID",
+     "extra": []
+    },
+    {
+     "code": "officeId",
+     "name": "OFFICE_ID",
+     "extra": []
+    },
+    {
+     "code": "closingDate",
+     "name": "CLOSING_DATE",
+     "extra": []
+    },
+    {
+     "code": "comments",
+     "name": "COMMENTS",
+     "extra": []
+    },
+    {
+     "code": "locale",
+     "name": "LOCALE",
+     "extra": []
+    },
+    {
+     "code": "dateFormat",
+     "name": "DATE_FORMAT",
+     "extra": []
+    }
+   ]
+  },
+  "GlClosureInvalidReason": {
+   "name": "GlClosureInvalidReason",
+   "kind": "no_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/closure/exception/GLClosureInvalidException.java",
+   "nested_in": "GLClosureInvalidException",
+   "entries": [
+    {
+     "code": null,
+     "name": "FUTURE_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "ACCOUNTING_CLOSED",
+     "extra": []
+    }
+   ],
+   "duplicate_names": [
+    "fineract-accounting/src/main/java/org/apache/fineract/accounting/rule/exception/AccountingRuleInvalidException.java"
+   ]
+  },
+  "FinancialActivityAccountsJsonInputParams": {
+   "name": "FinancialActivityAccountsJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/financialactivityaccount/api/FinancialActivityAccountsJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "financialActivityId",
+     "name": "FINANCIAL_ACTIVITY_ID",
+     "extra": []
+    },
+    {
+     "code": "glAccountId",
+     "name": "GL_ACCOUNT_ID",
+     "extra": []
+    }
+   ]
+  },
+  "GlAccountInvalidDeleteReason": {
+   "name": "GlAccountInvalidDeleteReason",
+   "kind": "no_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/glaccount/exception/GLAccountInvalidDeleteException.java",
+   "nested_in": "GLAccountInvalidDeleteException",
+   "entries": [
+    {
+     "code": null,
+     "name": "TRANSACTIONS_LOGGED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "HAS_CHILDREN",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "PRODUCT_MAPPING",
+     "extra": []
+    }
+   ]
+  },
+  "GlAccountInvalidUpdateReason": {
+   "name": "GlAccountInvalidUpdateReason",
+   "kind": "no_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/glaccount/exception/GLAccountInvalidUpdateException.java",
+   "nested_in": "GLAccountInvalidUpdateException",
+   "entries": [
+    {
+     "code": null,
+     "name": "TRANSANCTIONS_LOGGED",
+     "extra": []
+    }
+   ]
+  },
+  "JournalEntryJsonInputParams": {
+   "name": "JournalEntryJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/journalentry/api/JournalEntryJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "officeId",
+     "name": "OFFICE_ID",
+     "extra": []
+    },
+    {
+     "code": "transactionDate",
+     "name": "TRANSACTION_DATE",
+     "extra": []
+    },
+    {
+     "code": "comments",
+     "name": "COMMENTS",
+     "extra": []
+    },
+    {
+     "code": "credits",
+     "name": "CREDITS",
+     "extra": []
+    },
+    {
+     "code": "debits",
+     "name": "DEBITS",
+     "extra": []
+    },
+    {
+     "code": "locale",
+     "name": "LOCALE",
+     "extra": []
+    },
+    {
+     "code": "dateFormat",
+     "name": "DATE_FORMAT",
+     "extra": []
+    },
+    {
+     "code": "referenceNumber",
+     "name": "REFERENCE_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "useAccountingRule",
+     "name": "USE_ACCOUNTING_RULE",
+     "extra": []
+    },
+    {
+     "code": "accountingRule",
+     "name": "ACCOUNTING_RULE",
+     "extra": []
+    },
+    {
+     "code": "amount",
+     "name": "AMOUNT",
+     "extra": []
+    },
+    {
+     "code": "currencyCode",
+     "name": "CURRENCY_CODE",
+     "extra": []
+    },
+    {
+     "code": "paymentTypeId",
+     "name": "PAYMENT_TYPE_ID",
+     "extra": []
+    },
+    {
+     "code": "accountNumber",
+     "name": "ACCOUNT_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "checkNumber",
+     "name": "CHECK_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "routingCode",
+     "name": "ROUTING_CODE",
+     "extra": []
+    },
+    {
+     "code": "receiptNumber",
+     "name": "RECEIPT_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "bankNumber",
+     "name": "BANK_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "externalAssetOwner",
+     "name": "EXTERNAL_ASSET_OWNER",
+     "extra": []
+    }
+   ]
+  },
+  "GlJournalEntryInvalidReason": {
+   "name": "GlJournalEntryInvalidReason",
+   "kind": "no_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/journalentry/exception/JournalEntryInvalidException.java",
+   "nested_in": "JournalEntryInvalidException",
+   "entries": [
+    {
+     "code": null,
+     "name": "FUTURE_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "ACCOUNTING_CLOSED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "NO_DEBITS_OR_CREDITS",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DEBIT_CREDIT_SUM_MISMATCH_WITH_AMOUNT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DEBIT_CREDIT_SUM_MISMATCH",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DEBIT_CREDIT_ACCOUNT_OR_AMOUNT_EMPTY",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "GL_ACCOUNT_DISABLED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "GL_ACCOUNT_MANUAL_ENTRIES_NOT_PERMITTED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "INVALID_DEBIT_OR_CREDIT_ACCOUNTS",
+     "extra": []
+    }
+   ]
+  },
+  "AccountingRuleJsonInputParams": {
+   "name": "AccountingRuleJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-accounting/src/main/java/org/apache/fineract/accounting/rule/api/AccountingRuleJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "id",
+     "name": "ID",
+     "extra": []
+    },
+    {
+     "code": "officeId",
+     "name": "OFFICE_ID",
+     "extra": []
+    },
+    {
+     "code": "accountToDebit",
+     "name": "ACCOUNT_TO_DEBIT",
+     "extra": []
+    },
+    {
+     "code": "accountToCredit",
+     "name": "ACCOUNT_TO_CREDIT",
+     "extra": []
+    },
+    {
+     "code": "name",
+     "name": "NAME",
+     "extra": []
+    },
+    {
+     "code": "description",
+     "name": "DESCRIPTION",
+     "extra": []
+    },
+    {
+     "code": "systemDefined",
+     "name": "SYSTEM_DEFINED",
+     "extra": []
+    },
+    {
+     "code": "debitTags",
+     "name": "DEBIT_ACCOUNT_TAGS",
+     "extra": []
+    },
+    {
+     "code": "creditTags",
+     "name": "CREDIT_ACCOUNT_TAGS",
+     "extra": []
+    },
+    {
+     "code": "allowMultipleCreditEntries",
+     "name": "ALLOW_MULTIPLE_CREDIT_ENTRIES",
+     "extra": []
+    },
+    {
+     "code": "allowMultipleDebitEntries",
+     "name": "ALLOW_MULTIPLE_DEBIT_ENTRIES",
+     "extra": []
+    }
+   ]
+  },
+  "CashAccountsForLoan": {
+   "name": "CashAccountsForLoan",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 1,
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "LOAN_PORTFOLIO",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_ON_LOANS",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": 5,
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": 6,
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": 10,
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": 11,
+     "name": "OVERPAYMENT",
+     "extra": []
+    },
+    {
+     "code": 12,
+     "name": "INCOME_FROM_RECOVERY",
+     "extra": []
+    },
+    {
+     "code": 13,
+     "name": "GOODWILL_CREDIT",
+     "extra": []
+    },
+    {
+     "code": 14,
+     "name": "INCOME_FROM_CHARGE_OFF_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 15,
+     "name": "INCOME_FROM_CHARGE_OFF_FEES",
+     "extra": []
+    },
+    {
+     "code": 16,
+     "name": "CHARGE_OFF_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": 17,
+     "name": "CHARGE_OFF_FRAUD_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": 18,
+     "name": "INCOME_FROM_CHARGE_OFF_PENALTY",
+     "extra": []
+    },
+    {
+     "code": 19,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 20,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_FEES",
+     "extra": []
+    },
+    {
+     "code": 21,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_PENALTY",
+     "extra": []
+    },
+    {
+     "code": 22,
+     "name": "CLASSIFICATION_INCOME",
+     "extra": []
+    },
+    {
+     "code": 23,
+     "name": "DEFERRED_INCOME_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": 24,
+     "name": "INCOME_FROM_DISCOUNT_FEE",
+     "extra": []
+    },
+    {
+     "code": 25,
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 26,
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    }
+   ]
+  },
+  "AccrualAccountsForLoan": {
+   "name": "AccrualAccountsForLoan",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 1,
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "LOAN_PORTFOLIO",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_ON_LOANS",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": 5,
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": 6,
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": 7,
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 8,
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 9,
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 10,
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": 11,
+     "name": "OVERPAYMENT",
+     "extra": []
+    },
+    {
+     "code": 12,
+     "name": "INCOME_FROM_RECOVERY",
+     "extra": []
+    },
+    {
+     "code": 13,
+     "name": "GOODWILL_CREDIT",
+     "extra": []
+    },
+    {
+     "code": 14,
+     "name": "INCOME_FROM_CHARGE_OFF_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 15,
+     "name": "INCOME_FROM_CHARGE_OFF_FEES",
+     "extra": []
+    },
+    {
+     "code": 16,
+     "name": "CHARGE_OFF_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": 17,
+     "name": "CHARGE_OFF_FRAUD_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": 18,
+     "name": "INCOME_FROM_CHARGE_OFF_PENALTY",
+     "extra": []
+    },
+    {
+     "code": 19,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 20,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_FEES",
+     "extra": []
+    },
+    {
+     "code": 21,
+     "name": "INCOME_FROM_GOODWILL_CREDIT_PENALTY",
+     "extra": []
+    },
+    {
+     "code": 22,
+     "name": "INCOME_FROM_CAPITALIZATION",
+     "extra": []
+    },
+    {
+     "code": 23,
+     "name": "DEFERRED_INCOME_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": 24,
+     "name": "BUY_DOWN_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": 25,
+     "name": "INCOME_FROM_BUY_DOWN",
+     "extra": []
+    }
+   ]
+  },
+  "LoanProductAccountingParams": {
+   "name": "LoanProductAccountingParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": "fundSourceAccountId",
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": "loanPortfolioAccountId",
+     "name": "LOAN_PORTFOLIO",
+     "extra": []
+    },
+    {
+     "code": "interestOnLoanAccountId",
+     "name": "INTEREST_ON_LOANS",
+     "extra": []
+    },
+    {
+     "code": "incomeFromFeeAccountId",
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromPenaltyAccountId",
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": "writeOffAccountId",
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": "goodwillCreditAccountId",
+     "name": "GOODWILL_CREDIT",
+     "extra": []
+    },
+    {
+     "code": "overpaymentLiabilityAccountId",
+     "name": "OVERPAYMENT",
+     "extra": []
+    },
+    {
+     "code": "receivableInterestAccountId",
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "receivableFeeAccountId",
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "receivablePenaltyAccountId",
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "transfersInSuspenseAccountId",
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "paymentChannelToFundSourceMappings",
+     "name": "PAYMENT_CHANNEL_FUND_SOURCE_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "paymentTypeId",
+     "name": "PAYMENT_TYPE",
+     "extra": []
+    },
+    {
+     "code": "feeToIncomeAccountMappings",
+     "name": "FEE_INCOME_ACCOUNT_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "penaltyToIncomeAccountMappings",
+     "name": "PENALTY_INCOME_ACCOUNT_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "chargeId",
+     "name": "CHARGE_ID",
+     "extra": []
+    },
+    {
+     "code": "incomeAccountId",
+     "name": "INCOME_ACCOUNT_ID",
+     "extra": []
+    },
+    {
+     "code": "incomeFromRecoveryAccountId",
+     "name": "INCOME_FROM_RECOVERY",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffInterestAccountId",
+     "name": "INCOME_FROM_CHARGE_OFF_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffFeesAccountId",
+     "name": "INCOME_FROM_CHARGE_OFF_FEES",
+     "extra": []
+    },
+    {
+     "code": "chargeOffExpenseAccountId",
+     "name": "CHARGE_OFF_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "chargeOffFraudExpenseAccountId",
+     "name": "CHARGE_OFF_FRAUD_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffPenaltyAccountId",
+     "name": "INCOME_FROM_CHARGE_OFF_PENALTY",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditInterestAccountId",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditFeesAccountId",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditPenaltyAccountId",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_PENALTY",
+     "extra": []
+    },
+    {
+     "code": "chargeOffReasonToExpenseAccountMappings",
+     "name": "CHARGE_OFF_REASON_TO_EXPENSE_ACCOUNT_MAPPINGS",
+     "extra": []
+    },
+    {
+     "code": "writeOffReasonsToExpenseMappings",
+     "name": "WRITE_OFF_REASON_TO_EXPENSE_ACCOUNT_MAPPINGS",
+     "extra": []
+    },
+    {
+     "code": "expenseAccountId",
+     "name": "EXPENSE_GL_ACCOUNT_ID",
+     "extra": []
+    },
+    {
+     "code": "chargeOffReasonCodeValueId",
+     "name": "CHARGE_OFF_REASON_CODE_VALUE_ID",
+     "extra": []
+    },
+    {
+     "code": "writeOffReasonCodeValueId",
+     "name": "WRITE_OFF_REASON_CODE_VALUE_ID",
+     "extra": []
+    },
+    {
+     "code": "deferredIncomeLiabilityAccountId",
+     "name": "DEFERRED_INCOME_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": "incomeFromCapitalizationAccountId",
+     "name": "INCOME_FROM_CAPITALIZATION",
+     "extra": []
+    },
+    {
+     "code": "buyDownExpenseAccountId",
+     "name": "BUY_DOWN_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromBuyDownAccountId",
+     "name": "INCOME_FROM_BUY_DOWN",
+     "extra": []
+    },
+    {
+     "code": "incomeFromDiscountFeeAccountId",
+     "name": "INCOME_FROM_DISCOUNT_FEE",
+     "extra": []
+    },
+    {
+     "code": "capitalizedIncomeClassificationToIncomeAccountMappings",
+     "name": "CAPITALIZED_INCOME_CLASSIFICATION_TO_INCOME_ACCOUNT_MAPPINGS",
+     "extra": []
+    },
+    {
+     "code": "buydownfeeClassificationToIncomeAccountMappings",
+     "name": "BUYDOWN_FEE_CLASSIFICATION_TO_INCOME_ACCOUNT_MAPPINGS",
+     "extra": []
+    },
+    {
+     "code": "classificationCodeValueId",
+     "name": "CLASSIFICATION_CODE_VALUE_ID",
+     "extra": []
+    }
+   ]
+  },
+  "LoanProductAccountingDataParams": {
+   "name": "LoanProductAccountingDataParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": "fundSourceAccount",
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": "loanPortfolioAccount",
+     "name": "LOAN_PORTFOLIO",
+     "extra": []
+    },
+    {
+     "code": "interestOnLoanAccount",
+     "name": "INTEREST_ON_LOANS",
+     "extra": []
+    },
+    {
+     "code": "incomeFromFeeAccount",
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromPenaltyAccount",
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": "writeOffAccount",
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": "goodwillCreditAccount",
+     "name": "GOODWILL_CREDIT",
+     "extra": []
+    },
+    {
+     "code": "overpaymentLiabilityAccount",
+     "name": "OVERPAYMENT",
+     "extra": []
+    },
+    {
+     "code": "receivableInterestAccount",
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "receivableFeeAccount",
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "receivablePenaltyAccount",
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "transfersInSuspenseAccount",
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeAccount",
+     "name": "INCOME_ACCOUNT_ID",
+     "extra": []
+    },
+    {
+     "code": "incomeFromRecoveryAccount",
+     "name": "INCOME_FROM_RECOVERY",
+     "extra": []
+    },
+    {
+     "code": "liabilityTransferInSuspenseAccount",
+     "name": "LIABILITY_TRANSFER_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffInterestAccount",
+     "name": "INCOME_FROM_CHARGE_OFF_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffFeesAccount",
+     "name": "INCOME_FROM_CHARGE_OFF_FEES",
+     "extra": []
+    },
+    {
+     "code": "chargeOffExpenseAccount",
+     "name": "CHARGE_OFF_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "chargeOffFraudExpenseAccount",
+     "name": "CHARGE_OFF_FRAUD_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromChargeOffPenaltyAccount",
+     "name": "INCOME_FROM_CHARGE_OFF_PENALTY",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditInterestAccount",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditFeesAccount",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromGoodwillCreditPenaltyAccount",
+     "name": "INCOME_FROM_GOODWILL_CREDIT_PENALTY",
+     "extra": []
+    },
+    {
+     "code": "deferredIncomeLiabilityAccount",
+     "name": "DEFERRED_INCOME_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": "incomeFromCapitalizationAccount",
+     "name": "INCOME_FROM_CAPITALIZATION",
+     "extra": []
+    },
+    {
+     "code": "buyDownExpenseAccount",
+     "name": "BUY_DOWN_EXPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromBuyDownAccount",
+     "name": "INCOME_FROM_BUY_DOWN",
+     "extra": []
+    },
+    {
+     "code": "incomeFromDiscountFeeAccount",
+     "name": "INCOME_FROM_DISCOUNT_FEE",
+     "extra": []
+    }
+   ]
+  },
+  "CashAccountsForSavings": {
+   "name": "CashAccountsForSavings",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 1,
+     "name": "SAVINGS_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "SAVINGS_CONTROL",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_ON_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": 5,
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": 10,
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": 11,
+     "name": "OVERDRAFT_PORTFOLIO_CONTROL",
+     "extra": []
+    },
+    {
+     "code": 12,
+     "name": "INCOME_FROM_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 13,
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": 14,
+     "name": "ESCHEAT_LIABILITY",
+     "extra": []
+    }
+   ]
+  },
+  "AccrualAccountsForSavings": {
+   "name": "AccrualAccountsForSavings",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 1,
+     "name": "SAVINGS_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "SAVINGS_CONTROL",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_ON_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": 5,
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": 10,
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": 11,
+     "name": "OVERDRAFT_PORTFOLIO_CONTROL",
+     "extra": []
+    },
+    {
+     "code": 12,
+     "name": "INCOME_FROM_INTEREST",
+     "extra": []
+    },
+    {
+     "code": 13,
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": 14,
+     "name": "ESCHEAT_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": 15,
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 16,
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": 17,
+     "name": "INTEREST_PAYABLE",
+     "extra": []
+    },
+    {
+     "code": 18,
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    }
+   ]
+  },
+  "SavingProductAccountingParams": {
+   "name": "SavingProductAccountingParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": "savingsReferenceAccountId",
+     "name": "SAVINGS_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": "savingsControlAccountId",
+     "name": "SAVINGS_CONTROL",
+     "extra": []
+    },
+    {
+     "code": "incomeFromFeeAccountId",
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromPenaltyAccountId",
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": "interestOnSavingsAccountId",
+     "name": "INTEREST_ON_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "paymentChannelToFundSourceMappings",
+     "name": "PAYMENT_CHANNEL_FUND_SOURCE_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "paymentTypeId",
+     "name": "PAYMENT_TYPE",
+     "extra": []
+    },
+    {
+     "code": "fundSourceAccountId",
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": "transfersInSuspenseAccountId",
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "feeToIncomeAccountMappings",
+     "name": "FEE_INCOME_ACCOUNT_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "penaltyToIncomeAccountMappings",
+     "name": "PENALTY_INCOME_ACCOUNT_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "chargeId",
+     "name": "CHARGE_ID",
+     "extra": []
+    },
+    {
+     "code": "incomeAccountId",
+     "name": "INCOME_ACCOUNT_ID",
+     "extra": []
+    },
+    {
+     "code": "overdraftPortfolioControlId",
+     "name": "OVERDRAFT_PORTFOLIO_CONTROL",
+     "extra": []
+    },
+    {
+     "code": "incomeFromInterestId",
+     "name": "INCOME_FROM_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "writeOffAccountId",
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": "escheatLiabilityId",
+     "name": "ESCHEAT_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": "penaltiesReceivableAccountId",
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "interestReceivableAccountId",
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "feesReceivableAccountId",
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "interestPayableAccountId",
+     "name": "INTEREST_PAYABLE",
+     "extra": []
+    }
+   ]
+  },
+  "SavingProductAccountingDataParams": {
+   "name": "SavingProductAccountingDataParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": "savingsReferenceAccount",
+     "name": "SAVINGS_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": "savingsControlAccount",
+     "name": "SAVINGS_CONTROL",
+     "extra": []
+    },
+    {
+     "code": "incomeFromFeeAccount",
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": "incomeFromPenaltyAccount",
+     "name": "INCOME_FROM_PENALTIES",
+     "extra": []
+    },
+    {
+     "code": "interestOnSavingsAccount",
+     "name": "INTEREST_ON_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "paymentType",
+     "name": "PAYMENT_TYPE",
+     "extra": []
+    },
+    {
+     "code": "fundSourceAccount",
+     "name": "FUND_SOURCE",
+     "extra": []
+    },
+    {
+     "code": "transfersInSuspenseAccount",
+     "name": "TRANSFERS_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "penaltyToIncomeAccountMappings",
+     "name": "PENALTY_INCOME_ACCOUNT_MAPPING",
+     "extra": []
+    },
+    {
+     "code": "charge",
+     "name": "CHARGE_ID",
+     "extra": []
+    },
+    {
+     "code": "incomeAccount",
+     "name": "INCOME_ACCOUNT_ID",
+     "extra": []
+    },
+    {
+     "code": "overdraftPortfolioControl",
+     "name": "OVERDRAFT_PORTFOLIO_CONTROL",
+     "extra": []
+    },
+    {
+     "code": "incomeFromInterest",
+     "name": "INCOME_FROM_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "writeOffAccount",
+     "name": "LOSSES_WRITTEN_OFF",
+     "extra": []
+    },
+    {
+     "code": "escheatLiabilityAccount",
+     "name": "ESCHEAT_LIABILITY",
+     "extra": []
+    },
+    {
+     "code": "feeReceivableAccount",
+     "name": "FEES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "penaltyReceivableAccount",
+     "name": "PENALTIES_RECEIVABLE",
+     "extra": []
+    },
+    {
+     "code": "interestPayableAccount",
+     "name": "INTEREST_PAYABLE",
+     "extra": []
+    },
+    {
+     "code": "interestReceivableAccount",
+     "name": "INTEREST_RECEIVABLE",
+     "extra": []
+    }
+   ]
+  },
+  "FinancialActivity": {
+   "name": "FinancialActivity",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 100,
+     "name": "ASSET_TRANSFER",
+     "extra": [
+      "\"assetTransfer\"",
+      "GLAccountType.ASSET"
+     ]
+    },
+    {
+     "code": 200,
+     "name": "LIABILITY_TRANSFER",
+     "extra": [
+      "\"liabilityTransfer\"",
+      "GLAccountType.LIABILITY"
+     ]
+    },
+    {
+     "code": 101,
+     "name": "CASH_AT_MAINVAULT",
+     "extra": [
+      "\"cashAtMainVault\"",
+      "GLAccountType.ASSET"
+     ]
+    },
+    {
+     "code": 102,
+     "name": "CASH_AT_TELLER",
+     "extra": [
+      "\"cashAtTeller\"",
+      "GLAccountType.ASSET"
+     ]
+    },
+    {
+     "code": 300,
+     "name": "OPENING_BALANCES_TRANSFER_CONTRA",
+     "extra": [
+      "\"openingBalancesTransferContra\"",
+      "GLAccountType.EQUITY"
+     ]
+    },
+    {
+     "code": 103,
+     "name": "ASSET_FUND_SOURCE",
+     "extra": [
+      "\"fundSource\"",
+      "GLAccountType.ASSET"
+     ]
+    },
+    {
+     "code": 201,
+     "name": "PAYABLE_DIVIDENDS",
+     "extra": [
+      "\"payableDividends\"",
+      "GLAccountType.LIABILITY"
+     ]
+    }
+   ]
+  },
+  "CashAccountsForShares": {
+   "name": "CashAccountsForShares",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": 1,
+     "name": "SHARES_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": 2,
+     "name": "SHARES_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": 3,
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": 4,
+     "name": "SHARES_EQUITY",
+     "extra": []
+    }
+   ]
+  },
+  "SharesProductAccountingParams": {
+   "name": "SharesProductAccountingParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingConstants.java",
+   "nested_in": "AccountingConstants",
+   "entries": [
+    {
+     "code": "shareReferenceId",
+     "name": "SHARES_REFERENCE",
+     "extra": []
+    },
+    {
+     "code": "shareSuspenseId",
+     "name": "SHARES_SUSPENSE",
+     "extra": []
+    },
+    {
+     "code": "incomeFromFeeAccountId",
+     "name": "INCOME_FROM_FEES",
+     "extra": []
+    },
+    {
+     "code": "shareEquityId",
+     "name": "SHARES_EQUITY",
+     "extra": []
+    }
+   ]
+  },
+  "AccountingRuleType": {
+   "name": "AccountingRuleType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/common/AccountingRuleType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "NONE",
+     "extra": [
+      "\"accountingRuleType.none\"",
+      "\"No accounting\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "CASH_BASED",
+     "extra": [
+      "\"accountingRuleType.cash\"",
+      "\"Cash based accounting\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "ACCRUAL_PERIODIC",
+     "extra": [
+      "\"accountingRuleType.accrual.periodic\"",
+      "\"Periodic accrual accounting\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "ACCRUAL_UPFRONT",
+     "extra": [
+      "\"accountingRuleType.accrual.upfront\"",
+      "\"Upfront accrual accounting\""
+     ]
+    }
+   ]
+  },
+  "GLAccountJsonInputParams": {
+   "name": "GLAccountJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/glaccount/api/GLAccountJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "id",
+     "name": "ID",
+     "extra": []
+    },
+    {
+     "code": "name",
+     "name": "NAME",
+     "extra": []
+    },
+    {
+     "code": "parentId",
+     "name": "PARENT_ID",
+     "extra": []
+    },
+    {
+     "code": "glCode",
+     "name": "GL_CODE",
+     "extra": []
+    },
+    {
+     "code": "disabled",
+     "name": "DISABLED",
+     "extra": []
+    },
+    {
+     "code": "manualEntriesAllowed",
+     "name": "MANUAL_ENTRIES_ALLOWED",
+     "extra": []
+    },
+    {
+     "code": "type",
+     "name": "TYPE",
+     "extra": []
+    },
+    {
+     "code": "usage",
+     "name": "USAGE",
+     "extra": []
+    },
+    {
+     "code": "description",
+     "name": "DESCRIPTION",
+     "extra": []
+    },
+    {
+     "code": "tagId",
+     "name": "TAGID",
+     "extra": []
+    }
+   ]
+  },
+  "GLAccountType": {
+   "name": "GLAccountType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/glaccount/domain/GLAccountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "ASSET",
+     "extra": [
+      "\"accountType.asset\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "LIABILITY",
+     "extra": [
+      "\"accountType.liability\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "EQUITY",
+     "extra": [
+      "\"accountType.equity\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "INCOME",
+     "extra": [
+      "\"accountType.income\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "EXPENSE",
+     "extra": [
+      "\"accountType.expense\""
+     ]
+    }
+   ]
+  },
+  "GLAccountUsage": {
+   "name": "GLAccountUsage",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/glaccount/domain/GLAccountUsage.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "DETAIL",
+     "extra": [
+      "\"accountUsage.detail\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "HEADER",
+     "extra": [
+      "\"accountUsage.header\""
+     ]
+    }
+   ]
+  },
+  "JournalEntryType": {
+   "name": "JournalEntryType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/accounting/journalentry/domain/JournalEntryType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "CREDIT",
+     "extra": [
+      "\"journalEntryType.credit\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "DEBIT",
+     "extra": [
+      "\"journalEntrytType.debit\""
+     ]
+    }
+   ]
+  },
+  "CommandProcessingResultType": {
+   "name": "CommandProcessingResultType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/commands/domain/CommandProcessingResultType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"commandProcessingResultType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "PROCESSED",
+     "extra": [
+      "\"commandProcessingResultType.processed\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "AWAITING_APPROVAL",
+     "extra": [
+      "\"commandProcessingResultType.awaiting.approval\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "REJECTED",
+     "extra": [
+      "\"commandProcessingResultType.rejected\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "UNDER_PROCESSING",
+     "extra": [
+      "\"commandProcessingResultType.underProcessing\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "ERROR",
+     "extra": [
+      "\"commandProcessingResultType.error\""
+     ]
+    }
+   ]
+  },
+  "AccountNumberPrefixType": {
+   "name": "AccountNumberPrefixType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/accountnumberformat/domain/AccountNumberFormatEnumerations.java",
+   "nested_in": "AccountNumberFormatEnumerations",
+   "entries": [
+    {
+     "code": 1,
+     "name": "OFFICE_NAME",
+     "extra": [
+      "\"accountNumberPrefixType.officeName\""
+     ]
+    },
+    {
+     "code": 101,
+     "name": "CLIENT_TYPE",
+     "extra": [
+      "\"accountNumberPrefixType.clientType\""
+     ]
+    },
+    {
+     "code": 201,
+     "name": "LOAN_PRODUCT_SHORT_NAME",
+     "extra": [
+      "\"accountNumberPrefixType.loanProductShortName\""
+     ]
+    },
+    {
+     "code": 301,
+     "name": "SAVINGS_PRODUCT_SHORT_NAME",
+     "extra": [
+      "\"accountNumberPrefixType.savingsProductShortName\""
+     ]
+    },
+    {
+     "code": 401,
+     "name": "PREFIX_SHORT_NAME",
+     "extra": [
+      "\"accountNumberPrefixType.prefixShortName\""
+     ]
+    }
+   ]
+  },
+  "EntityAccountType": {
+   "name": "EntityAccountType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/accountnumberformat/domain/EntityAccountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "CLIENT",
+     "extra": [
+      "\"accountType.client\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "LOAN",
+     "extra": [
+      "\"accountType.loan\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "SAVINGS",
+     "extra": [
+      "\"accountType.savings\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "CENTER",
+     "extra": [
+      "\"accountType.center\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "GROUP",
+     "extra": [
+      "\"accountType.group\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "SHARES",
+     "extra": [
+      "\"accountType.shares\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "WORKING_CAPITAL_LOAN",
+     "extra": [
+      "\"accountType.workingCapitalLoan\""
+     ]
+    }
+   ]
+  },
+  "GlobalEntityType": {
+   "name": "GlobalEntityType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/bulkimport/data/GlobalEntityType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "CLIENTS_PERSON",
+     "extra": [
+      "\"clients.person\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "CLIENTS_ENTITY",
+     "extra": [
+      "\"clients.entity\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "GROUPS",
+     "extra": [
+      "\"groups\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "CENTERS",
+     "extra": [
+      "\"centers\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "OFFICES",
+     "extra": [
+      "\"offices\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "STAFF",
+     "extra": [
+      "\"staff\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "USERS",
+     "extra": [
+      "\"users\""
+     ]
+    },
+    {
+     "code": 8,
+     "name": "SMS",
+     "extra": [
+      "\"sms\""
+     ]
+    },
+    {
+     "code": 9,
+     "name": "DOCUMENTS",
+     "extra": [
+      "\"documents\""
+     ]
+    },
+    {
+     "code": 10,
+     "name": "TEMPLATES",
+     "extra": [
+      "\"templates\""
+     ]
+    },
+    {
+     "code": 11,
+     "name": "NOTES",
+     "extra": [
+      "\"templates\""
+     ]
+    },
+    {
+     "code": 12,
+     "name": "CALENDAR",
+     "extra": [
+      "\"calendar\""
+     ]
+    },
+    {
+     "code": 13,
+     "name": "MEETINGS",
+     "extra": [
+      "\"meetings\""
+     ]
+    },
+    {
+     "code": 14,
+     "name": "HOLIDAYS",
+     "extra": [
+      "\"holidays\""
+     ]
+    },
+    {
+     "code": 15,
+     "name": "LOANS",
+     "extra": [
+      "\"loans\""
+     ]
+    },
+    {
+     "code": 16,
+     "name": "LOAN_PRODUCTS",
+     "extra": [
+      "\"loancharges\""
+     ]
+    },
+    {
+     "code": 18,
+     "name": "LOAN_TRANSACTIONS",
+     "extra": [
+      "\"loantransactions\""
+     ]
+    },
+    {
+     "code": 19,
+     "name": "GUARANTORS",
+     "extra": [
+      "\"guarantors\""
+     ]
+    },
+    {
+     "code": 20,
+     "name": "COLLATERALS",
+     "extra": [
+      "\"collaterals\""
+     ]
+    },
+    {
+     "code": 21,
+     "name": "FUNDS",
+     "extra": [
+      "\"funds\""
+     ]
+    },
+    {
+     "code": 22,
+     "name": "CURRENCY",
+     "extra": [
+      "\"currencies\""
+     ]
+    },
+    {
+     "code": 23,
+     "name": "SAVINGS_ACCOUNT",
+     "extra": [
+      "\"savingsaccount\""
+     ]
+    },
+    {
+     "code": 24,
+     "name": "SAVINGS_CHARGES",
+     "extra": [
+      "\"savingscharges\""
+     ]
+    },
+    {
+     "code": 25,
+     "name": "SAVINGS_TRANSACTIONS",
+     "extra": [
+      "\"savingstransactions\""
+     ]
+    },
+    {
+     "code": 26,
+     "name": "SAVINGS_PRODUCTS",
+     "extra": [
+      "\"savingsproducts\""
+     ]
+    },
+    {
+     "code": 27,
+     "name": "GL_JOURNAL_ENTRIES",
+     "extra": [
+      "\"gljournalentries\""
+     ]
+    },
+    {
+     "code": 28,
+     "name": "CODE_VALUE",
+     "extra": [
+      "\"codevalue\""
+     ]
+    },
+    {
+     "code": 29,
+     "name": "CODE",
+     "extra": [
+      "\"code\""
+     ]
+    },
+    {
+     "code": 30,
+     "name": "CHART_OF_ACCOUNTS",
+     "extra": [
+      "\"chartofaccounts\""
+     ]
+    },
+    {
+     "code": 31,
+     "name": "FIXED_DEPOSIT_ACCOUNTS",
+     "extra": [
+      "\"fixeddepositaccounts\""
+     ]
+    },
+    {
+     "code": 32,
+     "name": "FIXED_DEPOSIT_TRANSACTIONS",
+     "extra": [
+      "\"fixeddeposittransactions\""
+     ]
+    },
+    {
+     "code": 33,
+     "name": "SHARE_ACCOUNTS",
+     "extra": [
+      "\"shareaccounts\""
+     ]
+    },
+    {
+     "code": 34,
+     "name": "RECURRING_DEPOSIT_ACCOUNTS",
+     "extra": [
+      "\"recurringdeposits\""
+     ]
+    },
+    {
+     "code": 35,
+     "name": "RECURRING_DEPOSIT_ACCOUNTS_TRANSACTIONS",
+     "extra": [
+      "\"recurringdepositstransactions\""
+     ]
+    },
+    {
+     "code": 36,
+     "name": "CLIENT",
+     "extra": [
+      "\"client\""
+     ]
+    }
+   ]
+  },
+  "BusinessDateType": {
+   "name": "BusinessDateType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/businessdate/domain/BusinessDateType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "BUSINESS_DATE",
+     "extra": [
+      "\"Business Date\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "COB_DATE",
+     "extra": [
+      "\"Close of Business Date\""
+     ]
+    }
+   ]
+  },
+  "CacheType": {
+   "name": "CacheType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/cache/domain/CacheType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"cacheType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "NO_CACHE",
+     "extra": [
+      "\"cacheType.noCache\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "SINGLE_NODE",
+     "extra": [
+      "\"cacheType.singleNode\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "MULTI_NODE",
+     "extra": [
+      "\"cacheType.multiNode\""
+     ]
+    }
+   ]
+  },
+  "CodevalueJSONinputParams": {
+   "name": "CodevalueJSONinputParams",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/codes/CodeConstants.java",
+   "nested_in": "CodeConstants",
+   "entries": [
+    {
+     "code": "id",
+     "name": "CODEVALUE_ID",
+     "extra": []
+    },
+    {
+     "code": "name",
+     "name": "NAME",
+     "extra": []
+    },
+    {
+     "code": "position",
+     "name": "POSITION",
+     "extra": []
+    },
+    {
+     "code": "description",
+     "name": "DESCRIPTION",
+     "extra": []
+    },
+    {
+     "code": "isActive",
+     "name": "IS_ACTIVE",
+     "extra": []
+    },
+    {
+     "code": "isMandatory",
+     "name": "IS_MANDATORY",
+     "extra": []
+    }
+   ]
+  },
+  "IdType": {
+   "name": "IdType",
+   "kind": "no_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/api/IdTypeResolver.java",
+   "nested_in": "IdTypeResolver",
+   "entries": [
+    {
+     "code": null,
+     "name": "ID",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "EXTERNAL_ID",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SHORT_NAME",
+     "extra": []
+    }
+   ]
+  },
+  "ActionContext": {
+   "name": "ActionContext",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/domain/ActionContext.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "DEFAULT",
+     "extra": [
+      "\"Default context\"",
+      "BusinessDateType.BUSINESS_DATE"
+     ]
+    },
+    {
+     "code": 1,
+     "name": "COB",
+     "extra": [
+      "\"Close of Business context\"",
+      "BusinessDateType.COB_DATE"
+     ]
+    }
+   ]
+  },
+  "PessimisticLockingFailureCode": {
+   "name": "PessimisticLockingFailureCode",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/exception/ErrorHandler.java",
+   "nested_in": "ErrorHandler",
+   "entries": [
+    {
+     "code": "40",
+     "name": "ROLLBACK",
+     "extra": []
+    },
+    {
+     "code": "60",
+     "name": "DEADLOCK",
+     "extra": []
+    },
+    {
+     "code": "HY",
+     "name": "HY00",
+     "extra": [
+      "\"Lock wait timeout exceeded\"",
+      "\"Record has changed since last read\""
+     ]
+    }
+   ]
+  },
+  "DatabaseType": {
+   "name": "DatabaseType",
+   "kind": "no_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/service/database/DatabaseType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "MYSQL",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "POSTGRESQL",
+     "extra": []
+    }
+   ]
+  },
+  "JavaType": {
+   "name": "JavaType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/service/database/JavaType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "boolean.class",
+     "name": "BOOLEAN",
+     "extra": []
+    },
+    {
+     "code": "byte.class",
+     "name": "BYTE",
+     "extra": []
+    },
+    {
+     "code": "short.class",
+     "name": "SHORT",
+     "extra": []
+    },
+    {
+     "code": "int.class",
+     "name": "INT",
+     "extra": []
+    },
+    {
+     "code": "long.class",
+     "name": "LONG",
+     "extra": []
+    },
+    {
+     "code": "char.class",
+     "name": "CHAR",
+     "extra": []
+    },
+    {
+     "code": "float.class",
+     "name": "FLOAT",
+     "extra": []
+    },
+    {
+     "code": "double.class",
+     "name": "DOUBLE",
+     "extra": []
+    },
+    {
+     "code": "Boolean.class",
+     "name": "BOOLEAN_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Byte.class",
+     "name": "BYTE_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Short.class",
+     "name": "SHORT_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Integer.class",
+     "name": "INT_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Long.class",
+     "name": "LONG_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Character.class",
+     "name": "CHAR_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Float.class",
+     "name": "FLOAT_OBJ",
+     "extra": []
+    },
+    {
+     "code": "Double.class",
+     "name": "DOUBLE_OBJ",
+     "extra": []
+    },
+    {
+     "code": "BigDecimal.class",
+     "name": "BIGDECIMAL",
+     "extra": []
+    },
+    {
+     "code": "BigInteger.class",
+     "name": "BIGINTEGER",
+     "extra": []
+    },
+    {
+     "code": "Number.class",
+     "name": "NUMBER",
+     "extra": []
+    },
+    {
+     "code": "String.class",
+     "name": "STRING",
+     "extra": []
+    },
+    {
+     "code": "Timestamp.class",
+     "name": "DATETIME",
+     "extra": []
+    },
+    {
+     "code": "Time.class",
+     "name": "TIME",
+     "extra": []
+    },
+    {
+     "code": "Date.class",
+     "name": "DATE",
+     "extra": []
+    },
+    {
+     "code": "LocalDate.class",
+     "name": "LOCAL_DATE",
+     "extra": []
+    },
+    {
+     "code": "LocalTime.class",
+     "name": "LOCAL_TIME",
+     "extra": []
+    },
+    {
+     "code": "LocalDateTime.class",
+     "name": "LOCAL_DATETIME",
+     "extra": []
+    },
+    {
+     "code": "OffsetTime.class",
+     "name": "OFFSET_TIME",
+     "extra": []
+    },
+    {
+     "code": "OffsetDateTime.class",
+     "name": "OFFSET_DATETIME",
+     "extra": []
+    },
+    {
+     "code": "byte[].class",
+     "name": "BINARY",
+     "extra": []
+    },
+    {
+     "code": "null",
+     "name": "ARRAY",
+     "extra": []
+    },
+    {
+     "code": "Collection.class",
+     "name": "COLLECTION",
+     "extra": []
+    },
+    {
+     "code": "Map.class",
+     "name": "MAP",
+     "extra": []
+    },
+    {
+     "code": "null",
+     "name": "PC",
+     "extra": []
+    },
+    {
+     "code": "Locale.class",
+     "name": "LOCALE",
+     "extra": []
+    },
+    {
+     "code": "Persistable.class",
+     "name": "PC_UNTYPED",
+     "extra": []
+    },
+    {
+     "code": "Calendar.class",
+     "name": "CALENDAR",
+     "extra": []
+    },
+    {
+     "code": "null",
+     "name": "OID",
+     "extra": []
+    },
+    {
+     "code": "InputStream.class",
+     "name": "INPUT_STREAM",
+     "extra": []
+    },
+    {
+     "code": "Reader.class",
+     "name": "INPUT_READER",
+     "extra": []
+    },
+    {
+     "code": "Enum.class",
+     "name": "ENUM",
+     "extra": []
+    },
+    {
+     "code": "Object.class",
+     "name": "OBJECT",
+     "extra": []
+    }
+   ]
+  },
+  "JdbcJavaType": {
+   "name": "JdbcJavaType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/service/database/JdbcJavaType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "JavaType.BOOLEAN",
+     "name": "BIT",
+     "extra": [
+      "new DialectType(JDBCType.BIT)",
+      "new DialectType(JDBCType.BIT, true)"
+     ]
+    },
+    {
+     "code": "JavaType.BOOLEAN",
+     "name": "BOOLEAN",
+     "extra": [
+      "new DialectType(JDBCType.BIT, null, \"BOOL\", \"BOOLEAN\")",
+      "new DialectType(JDBCType.BOOLEAN, null, \"BOOL\")"
+     ]
+    },
+    {
+     "code": "JavaType.SHORT",
+     "name": "SMALLINT",
+     "extra": [
+      "new DialectType(JDBCType.SMALLINT, true)",
+      "new DialectType(JDBCType.SMALLINT, null, \"INT2\")"
+     ]
+    },
+    {
+     "code": "JavaType.SHORT",
+     "name": "TINYINT",
+     "extra": [
+      "new DialectType(JDBCType.TINYINT, true)",
+      "new DialectType(JDBCType.SMALLINT)"
+     ]
+    },
+    {
+     "code": "JavaType.INT",
+     "name": "INTEGER",
+     "extra": [
+      "new DialectType(JDBCType.INTEGER, null, true, \"INT\")",
+      "new DialectType(JDBCType.INTEGER, null, \"INT\", \"INT4\")"
+     ]
+    },
+    {
+     "code": "JavaType.INT",
+     "name": "MEDIUMINT",
+     "extra": [
+      "new DialectType(JDBCType.INTEGER, \"MEDIUMINT\", true)",
+      "new DialectType(JDBCType.INTEGER)"
+     ]
+    },
+    {
+     "code": "JavaType.LONG",
+     "name": "BIGINT",
+     "extra": [
+      "new DialectType(JDBCType.BIGINT, true)",
+      "new DialectType(JDBCType.BIGINT, null, \"INT8\")"
+     ]
+    },
+    {
+     "code": "JavaType.FLOAT",
+     "name": "REAL",
+     "extra": [
+      "new DialectType(JDBCType.FLOAT, true, true)",
+      "new DialectType(JDBCType.REAL)"
+     ]
+    },
+    {
+     "code": "JavaType.FLOAT",
+     "name": "FLOAT",
+     "extra": [
+      "new DialectType(JDBCType.FLOAT, true, true)",
+      "new DialectType(JDBCType.REAL, null, \"FLOAT4\")"
+     ]
+    },
+    {
+     "code": "JavaType.DOUBLE",
+     "name": "DOUBLE",
+     "extra": [
+      "new DialectType(JDBCType.DOUBLE, null, true, true, \"DOUBLE PRECISION\", \"REAL\")",
+      "new DialectType(JDBCType.DOUBLE, \"DOUBLE PRECISION\", \"FLOAT8\")"
+     ]
+    },
+    {
+     "code": "JavaType.BIGDECIMAL",
+     "name": "NUMERIC",
+     "extra": [
+      "new DialectType(JDBCType.NUMERIC, true, true)",
+      "new DialectType(JDBCType.NUMERIC, true, true)"
+     ]
+    },
+    {
+     "code": "JavaType.BIGDECIMAL",
+     "name": "DECIMAL",
+     "extra": [
+      "new DialectType(JDBCType.DECIMAL, null, true, true, \"DEC\", \"FIXED\")",
+      "new DialectType(JDBCType.DECIMAL, true, true)"
+     ]
+    },
+    {
+     "code": "JavaType.INT",
+     "name": "SERIAL",
+     "extra": [
+      "new DialectType(JDBCType.INTEGER, \"{type} AUTO_INCREMENT\", true, false)",
+      "new DialectType(JDBCType.INTEGER, \"SERIAL\", \"SERIAL4\")"
+     ]
+    },
+    {
+     "code": "JavaType.SHORT",
+     "name": "SMALLSERIAL",
+     "extra": [
+      "new DialectType(JDBCType.SMALLINT, \"{type} AUTO_INCREMENT\", true, false)",
+      "new DialectType(JDBCType.SMALLINT, \"SMALLSERIAL\")"
+     ]
+    },
+    {
+     "code": "JavaType.LONG",
+     "name": "BIGSERIAL",
+     "extra": [
+      "new DialectType(JDBCType.BIGINT, \"{type} AUTO_INCREMENT\", true)",
+      "new DialectType(JDBCType.BIGINT, \"BIGSERIAL\", \"SERIAL8\")"
+     ]
+    },
+    {
+     "code": "JavaType.BIGDECIMAL",
+     "name": "MONEY",
+     "extra": [
+      "new DialectType(JDBCType.DECIMAL, \"DECIMAL(19,2)\")",
+      "new DialectType(JDBCType.DECIMAL, \"MONEY\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "CHAR",
+     "extra": [
+      "new DialectType(JDBCType.CHAR, true)",
+      "new DialectType(JDBCType.CHAR, null, true, \"CHARACTER\", \"BPCHAR\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "VARCHAR",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, true)",
+      "new DialectType(JDBCType.VARCHAR, null, true, \"CHARACTER VARYING\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "LONGVARCHAR",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, true)",
+      "new DialectType(JDBCType.VARCHAR, true)"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "TEXT",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, \"TEXT\")",
+      "new DialectType(JDBCType.VARCHAR, \"TEXT\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "TINYTEXT",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, \"TINYTEXT\")",
+      "new DialectType(JDBCType.VARCHAR, \"TEXT\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "MEDIUMTEXT",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, \"MEDIUMTEXT\")",
+      "new DialectType(JDBCType.VARCHAR, \"TEXT\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "LONGTEXT",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, \"LONGTEXT\")",
+      "new DialectType(JDBCType.VARCHAR, \"TEXT\")"
+     ]
+    },
+    {
+     "code": "JavaType.STRING",
+     "name": "JSON",
+     "extra": [
+      "new DialectType(JDBCType.VARCHAR, \"JSON\")",
+      "new DialectType(JDBCType.VARCHAR, \"JSON\")"
+     ]
+    },
+    {
+     "code": "JavaType.LOCAL_DATE",
+     "name": "DATE",
+     "extra": [
+      "new DialectType(JDBCType.DATE)",
+      "new DialectType(JDBCType.DATE)"
+     ]
+    },
+    {
+     "code": "JavaType.LOCAL_TIME",
+     "name": "TIME",
+     "extra": [
+      "new DialectType(JDBCType.TIME, true)",
+      "new DialectType(JDBCType.TIME, null, \"TIME WITHOUT TIME ZONE\")"
+     ]
+    },
+    {
+     "code": "JavaType.OFFSET_TIME",
+     "name": "TIME_WITH_TIMEZONE",
+     "extra": [
+      "new DialectType(JDBCType.TIME_WITH_TIMEZONE, \"TIME\", true)",
+      "new DialectType(JDBCType.TIME_WITH_TIMEZONE, \"TIME WITH TIME ZONE\")"
+     ]
+    },
+    {
+     "code": "JavaType.LOCAL_DATETIME",
+     "name": "TIMESTAMP",
+     "extra": [
+      "new DialectType(JDBCType.TIMESTAMP, true)",
+      "new DialectType(JDBCType.TIMESTAMP, null, \"TIMESTAMP WITHOUT TIME ZONE\")"
+     ]
+    },
+    {
+     "code": "JavaType.LOCAL_DATETIME",
+     "name": "DATETIME",
+     "extra": [
+      "new DialectType(JDBCType.TIMESTAMP, \"DATETIME\", true)",
+      "new DialectType(JDBCType.TIMESTAMP)"
+     ]
+    },
+    {
+     "code": "JavaType.OFFSET_DATETIME",
+     "name": "TIMESTAMP_WITH_TIMEZONE",
+     "extra": [
+      "new DialectType(JDBCType.TIMESTAMP_WITH_TIMEZONE, \"DATETIME\", true)",
+      "new DialectType(JDBCType.TIMESTAMP_WITH_TIMEZONE, \"TIMESTAMP WITH TIME ZONE\", \"TIMESTAMPTZ\")"
+     ]
+    },
+    {
+     "code": "JavaType.TIME",
+     "name": "INTERVAL",
+     "extra": [
+      "new DialectType(JDBCType.TIME, true)",
+      "new DialectType(JDBCType.TIME, \"INTERVAL\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "BINARY",
+     "extra": [
+      "new DialectType(JDBCType.BINARY, true)",
+      "new DialectType(JDBCType.BINARY, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "VARBINARY",
+     "extra": [
+      "new DialectType(JDBCType.VARBINARY, true)",
+      "new DialectType(JDBCType.VARBINARY, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "LONGVARBINARY",
+     "extra": [
+      "new DialectType(JDBCType.VARBINARY, true)",
+      "new DialectType(JDBCType.VARBINARY, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "BYTEA",
+     "extra": [
+      "new DialectType(JDBCType.BLOB, \"LONGBLOB\")",
+      "new DialectType(JDBCType.BLOB, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "BLOB",
+     "extra": [
+      "new DialectType(JDBCType.BLOB, \"BLOB\")",
+      "new DialectType(JDBCType.BLOB, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "TINYBLOB",
+     "extra": [
+      "new DialectType(JDBCType.BLOB, \"TINYBLOB\")",
+      "new DialectType(JDBCType.BLOB, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "MEDIUMBLOB",
+     "extra": [
+      "new DialectType(JDBCType.BLOB, \"MEDIUMBLOB\")",
+      "new DialectType(JDBCType.BLOB, \"BYTEA\")"
+     ]
+    },
+    {
+     "code": "JavaType.BINARY",
+     "name": "LONGBLOB",
+     "extra": [
+      "new DialectType(JDBCType.BLOB, \"LONGBLOB\")",
+      "new DialectType(JDBCType.BLOB, \"BYTEA\")"
+     ]
+    }
+   ]
+  },
+  "SqlOperator": {
+   "name": "SqlOperator",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/core/service/database/SqlOperator.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "=",
+     "name": "EQ",
+     "extra": []
+    },
+    {
+     "code": "<>",
+     "name": "NEQ",
+     "extra": []
+    },
+    {
+     "code": ">=",
+     "name": "GTE",
+     "extra": []
+    },
+    {
+     "code": "<=",
+     "name": "LTE",
+     "extra": []
+    },
+    {
+     "code": ">",
+     "name": "GT",
+     "extra": []
+    },
+    {
+     "code": "<",
+     "name": "LT",
+     "extra": []
+    },
+    {
+     "code": "LIKE",
+     "name": "LIKE",
+     "extra": []
+    },
+    {
+     "code": "NOT LIKE",
+     "name": "NLIKE",
+     "extra": []
+    },
+    {
+     "code": "BETWEEN",
+     "name": "BTW",
+     "extra": [
+      "2"
+     ]
+    },
+    {
+     "code": "NOT BETWEEN",
+     "name": "NBTW",
+     "extra": [
+      "2"
+     ]
+    },
+    {
+     "code": "IN",
+     "name": "IN",
+     "extra": [
+      "-1"
+     ]
+    },
+    {
+     "code": "NOT IN",
+     "name": "NIN",
+     "extra": [
+      "-1"
+     ]
+    },
+    {
+     "code": "IS NULL",
+     "name": "NULL",
+     "extra": [
+      "0"
+     ]
+    },
+    {
+     "code": "IS NOT NULL",
+     "name": "NNULL",
+     "extra": [
+      "0"
+     ]
+    }
+   ]
+  },
+  "EntityTables": {
+   "name": "EntityTables",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/dataqueries/data/EntityTables.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "m_client",
+     "name": "CLIENT",
+     "extra": [
+      "\"client_id\"",
+      "\"id\"",
+      "CREATE",
+      "ACTIVATE",
+      "CLOSE"
+     ]
+    },
+    {
+     "code": "m_group",
+     "name": "GROUP",
+     "extra": [
+      "\"group_id\"",
+      "\"id\"",
+      "CREATE",
+      "ACTIVATE",
+      "CLOSE"
+     ]
+    },
+    {
+     "code": "m_center",
+     "name": "CENTER",
+     "extra": [
+      "\"m_group\"",
+      "\"center_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_office",
+     "name": "OFFICE",
+     "extra": [
+      "\"office_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_product_loan",
+     "name": "LOAN_PRODUCT",
+     "extra": [
+      "\"product_loan_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_loan",
+     "name": "LOAN",
+     "extra": [
+      "\"loan_id\"",
+      "\"id\"",
+      "CREATE",
+      "APPROVE",
+      "DISBURSE",
+      "WITHDRAWN",
+      "REJECTED",
+      "WRITE_OFF"
+     ]
+    },
+    {
+     "code": "m_savings_product",
+     "name": "SAVINGS_PRODUCT",
+     "extra": [
+      "\"savings_product_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_savings_account",
+     "name": "SAVINGS",
+     "extra": [
+      "\"savings_account_id\"",
+      "\"id\"",
+      "CREATE",
+      "APPROVE",
+      "ACTIVATE",
+      "WITHDRAWN",
+      "REJECTED",
+      "CLOSE"
+     ]
+    },
+    {
+     "code": "m_savings_account_transaction",
+     "name": "SAVINGS_TRANSACTION",
+     "extra": [
+      "\"savings_transaction_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_share_product",
+     "name": "SHARE_PRODUCT",
+     "extra": [
+      "\"share_product_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_wc_loan_product",
+     "name": "WC_LOAN_PRODUCT",
+     "extra": [
+      "\"wc_product_loan_id\"",
+      "\"id\""
+     ]
+    },
+    {
+     "code": "m_wc_loan",
+     "name": "WC_LOAN",
+     "extra": [
+      "\"wc_loan_id\"",
+      "\"id\""
+     ]
+    }
+   ]
+  },
+  "DisplayType": {
+   "name": "DisplayType",
+   "kind": "no_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/dataqueries/data/ResultsetColumnHeaderData.java",
+   "nested_in": "ResultsetColumnHeaderData",
+   "entries": [
+    {
+     "code": null,
+     "name": "TEXT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "STRING",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "INTEGER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "FLOAT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DECIMAL",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "TIME",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DATETIME",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "BOOLEAN",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "BINARY",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "CODELOOKUP",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "CODEVALUE",
+     "extra": []
+    }
+   ]
+  },
+  "StatusEnum": {
+   "name": "StatusEnum",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/dataqueries/data/StatusEnum.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "statusEnum.create",
+     "name": "CREATE",
+     "extra": [
+      "100"
+     ]
+    },
+    {
+     "code": "statusEnum.approve",
+     "name": "APPROVE",
+     "extra": [
+      "200"
+     ]
+    },
+    {
+     "code": "statusEnum.activate",
+     "name": "ACTIVATE",
+     "extra": [
+      "300"
+     ]
+    },
+    {
+     "code": "statusEnum.withdraw",
+     "name": "WITHDRAWN",
+     "extra": [
+      "400"
+     ]
+    },
+    {
+     "code": "statusEnum.reject",
+     "name": "REJECTED",
+     "extra": [
+      "500"
+     ]
+    },
+    {
+     "code": "statusEnum.close",
+     "name": "CLOSE",
+     "extra": [
+      "600"
+     ]
+    },
+    {
+     "code": "statusEnum.write off",
+     "name": "WRITE_OFF",
+     "extra": [
+      "601"
+     ]
+    },
+    {
+     "code": "statusEnum.reschedule",
+     "name": "RESCHEDULE",
+     "extra": [
+      "602"
+     ]
+    },
+    {
+     "code": "statusEnum.overpay",
+     "name": "OVERPAY",
+     "extra": [
+      "700"
+     ]
+    },
+    {
+     "code": "statusEnum.disburse",
+     "name": "DISBURSE",
+     "extra": [
+      "800"
+     ]
+    }
+   ]
+  },
+  "ReportType": {
+   "name": "ReportType",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/dataqueries/domain/ReportType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "report",
+     "name": "REPORT",
+     "extra": []
+    },
+    {
+     "code": "parameter",
+     "name": "PARAMETER",
+     "extra": []
+    }
+   ]
+  },
+  "ExternalEventStatus": {
+   "name": "ExternalEventStatus",
+   "kind": "no_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/event/external/repository/domain/ExternalEventStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "TO_BE_SENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SENT",
+     "extra": []
+    }
+   ]
+  },
+  "JobName": {
+   "name": "JobName",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/jobs/service/JobName.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "Update Loan Arrears Ageing",
+     "name": "UPDATE_LOAN_ARREARS_AGEING",
+     "extra": []
+    },
+    {
+     "code": "Apply Annual Fee For Savings",
+     "name": "APPLY_ANNUAL_FEE_FOR_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "Apply Holidays To Loans",
+     "name": "APPLY_HOLIDAYS_TO_LOANS",
+     "extra": []
+    },
+    {
+     "code": "Post Interest For Savings",
+     "name": "POST_INTEREST_FOR_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "Transfer Fee For Loans From Savings",
+     "name": "TRANSFER_FEE_CHARGE_FOR_LOANS",
+     "extra": []
+    },
+    {
+     "code": "Update Accounting Running Balances",
+     "name": "ACCOUNTING_RUNNING_BALANCE_UPDATE",
+     "extra": []
+    },
+    {
+     "code": "Pay Due Savings Charges",
+     "name": "PAY_DUE_SAVINGS_CHARGES",
+     "extra": []
+    },
+    {
+     "code": "Apply penalty to overdue loans",
+     "name": "APPLY_CHARGE_TO_OVERDUE_LOAN_INSTALLMENT",
+     "extra": []
+    },
+    {
+     "code": "Execute Standing Instruction",
+     "name": "EXECUTE_STANDING_INSTRUCTIONS",
+     "extra": []
+    },
+    {
+     "code": "Add Accrual Transactions",
+     "name": "ADD_ACCRUAL_ENTRIES",
+     "extra": []
+    },
+    {
+     "code": "Update Non Performing Assets",
+     "name": "UPDATE_NPA",
+     "extra": []
+    },
+    {
+     "code": "Update Deposit Accounts Maturity details",
+     "name": "UPDATE_DEPOSITS_ACCOUNT_MATURITY_DETAILS",
+     "extra": []
+    },
+    {
+     "code": "Transfer Interest To Savings",
+     "name": "TRANSFER_INTEREST_TO_SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "Add Periodic Accrual Transactions",
+     "name": "ADD_PERIODIC_ACCRUAL_ENTRIES",
+     "extra": []
+    },
+    {
+     "code": "Recalculate Interest For Loans",
+     "name": "RECALCULATE_INTEREST_FOR_LOAN",
+     "extra": []
+    },
+    {
+     "code": "Generate Mandatory Savings Schedule",
+     "name": "GENERATE_RD_SCEHDULE",
+     "extra": []
+    },
+    {
+     "code": "Generate Loan Loss Provisioning",
+     "name": "GENERATE_LOANLOSS_PROVISIONING",
+     "extra": []
+    },
+    {
+     "code": "Post Dividends For Shares",
+     "name": "POST_DIVIDENTS_FOR_SHARES",
+     "extra": []
+    },
+    {
+     "code": "Update Savings Dormant Accounts",
+     "name": "UPDATE_SAVINGS_DORMANT_ACCOUNTS",
+     "extra": []
+    },
+    {
+     "code": "Add Accrual Transactions For Loans With Income Posted As Transactions",
+     "name": "ADD_PERIODIC_ACCRUAL_ENTRIES_FOR_LOANS_WITH_INCOME_POSTED_AS_TRANSACTIONS",
+     "extra": []
+    },
+    {
+     "code": "Execute Report Mailing Jobs",
+     "name": "EXECUTE_REPORT_MAILING_JOBS",
+     "extra": []
+    },
+    {
+     "code": "Update SMS Outbound with Campaign Message",
+     "name": "UPDATE_SMS_OUTBOUND_WITH_CAMPAIGN_MESSAGE",
+     "extra": []
+    },
+    {
+     "code": "Send Messages to SMS Gateway",
+     "name": "SEND_MESSAGES_TO_SMS_GATEWAY",
+     "extra": []
+    },
+    {
+     "code": "Get Delivery Reports from SMS Gateway",
+     "name": "GET_DELIVERY_REPORTS_FROM_SMS_GATEWAY",
+     "extra": []
+    },
+    {
+     "code": "Generate AdhocClient Schedule",
+     "name": "GENERATE_ADHOC_CLIENT_SCHEDULE",
+     "extra": []
+    },
+    {
+     "code": "Update Email Outbound with campaign message",
+     "name": "UPDATE_EMAIL_OUTBOUND_WITH_CAMPAIGN_MESSAGE",
+     "extra": []
+    },
+    {
+     "code": "Execute Email",
+     "name": "EXECUTE_EMAIL",
+     "extra": []
+    },
+    {
+     "code": "Update Trial Balance Details",
+     "name": "UPDATE_TRIAL_BALANCE_DETAILS",
+     "extra": []
+    },
+    {
+     "code": "Execute All Dirty Jobs",
+     "name": "EXECUTE_DIRTY_JOBS",
+     "extra": []
+    },
+    {
+     "code": "Increase Business Date by 1 day",
+     "name": "INCREASE_BUSINESS_DATE_BY_1_DAY",
+     "extra": []
+    },
+    {
+     "code": "Increase COB Date by 1 day",
+     "name": "INCREASE_COB_DATE_BY_1_DAY",
+     "extra": []
+    },
+    {
+     "code": "Loan COB",
+     "name": "LOAN_COB",
+     "extra": []
+    },
+    {
+     "code": "Loan Delinquency Classification",
+     "name": "LOAN_DELINQUENCY_CLASSIFICATION",
+     "extra": []
+    },
+    {
+     "code": "Send Asynchronous Events",
+     "name": "SEND_ASYNCHRONOUS_EVENTS",
+     "extra": []
+    },
+    {
+     "code": "Purge External Events",
+     "name": "PURGE_EXTERNAL_EVENTS",
+     "extra": []
+    },
+    {
+     "code": "Purge Processed Commands",
+     "name": "PURGE_PROCESSED_COMMANDS",
+     "extra": []
+    },
+    {
+     "code": "Accrual Activity Posting",
+     "name": "ACCRUAL_ACTIVITY_POSTING",
+     "extra": []
+    },
+    {
+     "code": "Add Accrual Transactions For Savings",
+     "name": "ADD_PERIODIC_ACCRUAL_ENTRIES_FOR_SAVINGS_WITH_INCOME_POSTED_AS_TRANSACTIONS",
+     "extra": []
+    },
+    {
+     "code": "Journal Entry Aggregation",
+     "name": "JOURNAL_ENTRY_AGGREGATION",
+     "extra": []
+    },
+    {
+     "code": "Working Capital Loan COB",
+     "name": "WORKING_CAPITAL_LOAN_COB_JOB",
+     "extra": []
+    },
+    {
+     "code": "Retained Earning Job",
+     "name": "RETAINED_EARNING",
+     "extra": []
+    }
+   ]
+  },
+  "StepName": {
+   "name": "StepName",
+   "kind": "no_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/jobs/service/StepName.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "PURGE_PROCESSED_COMMANDS_STEP",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SEND_ASYNCHRONOUS_EVENTS_STEP",
+     "extra": []
+    }
+   ]
+  },
+  "OidcFederationType": {
+   "name": "OidcFederationType",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/security/domain/OidcFederationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "generic",
+     "name": "GENERIC",
+     "extra": [
+      "\"Generic (default)\""
+     ]
+    },
+    {
+     "code": "auth0",
+     "name": "AUTH0",
+     "extra": [
+      "\"Auth0\""
+     ]
+    },
+    {
+     "code": "azure_ad",
+     "name": "AZURE",
+     "extra": [
+      "\"Azure AD\""
+     ]
+    },
+    {
+     "code": "google",
+     "name": "GOOGLE",
+     "extra": [
+      "\"Google\""
+     ]
+    },
+    {
+     "code": "keycloak",
+     "name": "KEYCLOAK",
+     "extra": [
+      "\"Keycloak\""
+     ]
+    },
+    {
+     "code": "okta",
+     "name": "OKTA",
+     "extra": [
+      "\"Okta\""
+     ]
+    }
+   ]
+  },
+  "WhereLogicalOperator": {
+   "name": "WhereLogicalOperator",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/security/utils/SQLBuilder.java",
+   "nested_in": "SQLBuilder",
+   "entries": [
+    {
+     "code": "",
+     "name": "NONE",
+     "extra": []
+    },
+    {
+     "code": " AND ",
+     "name": "AND",
+     "extra": []
+    },
+    {
+     "code": " OR ",
+     "name": "OR",
+     "extra": []
+    }
+   ]
+  },
+  "InteropIdentifierType": {
+   "name": "InteropIdentifierType",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/interoperation/domain/InteropIdentifierType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "interopIdentifierType.msisdn",
+     "name": "MSISDN",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.email",
+     "name": "EMAIL",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.personalId",
+     "name": "PERSONAL_ID",
+     "extra": [
+      "\"PERSONALID\"",
+      "\"PERSONALID\""
+     ]
+    },
+    {
+     "code": "interopIdentifierType.business",
+     "name": "BUSINESS",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.device",
+     "name": "DEVICE",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.accountId",
+     "name": "ACCOUNT_ID",
+     "extra": [
+      "\"ACCOUNTID\"",
+      "\"ACCOUNTID\""
+     ]
+    },
+    {
+     "code": "interopIdentifierType.iban",
+     "name": "IBAN",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.alias",
+     "name": "ALIAS",
+     "extra": []
+    },
+    {
+     "code": "interopIdentifierType.bban",
+     "name": "BBAN",
+     "extra": []
+    }
+   ]
+  },
+  "HolidayStatusType": {
+   "name": "HolidayStatusType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/HolidayStatusType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"holidayStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "PENDING_FOR_ACTIVATION",
+     "extra": [
+      "\"holidayStatusType.pending.for.activation\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ACTIVE",
+     "extra": [
+      "\"holidayStatusType.active\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "DELETED",
+     "extra": [
+      "\"savingsAccountStatusType.transfer.in.progress\""
+     ]
+    }
+   ]
+  },
+  "RescheduleType": {
+   "name": "RescheduleType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/RescheduleType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"rescheduletype.invalid\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "RESCHEDULETOSPECIFICDATE",
+     "extra": [
+      "\"rescheduletype.rescheduletospecificdate\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "RESCHEDULETONEXTREPAYMENTDATE",
+     "extra": [
+      "\"rescheduletype.rescheduletonextrepaymentdate\""
+     ]
+    }
+   ]
+  },
+  "StaffOrganisationalRoleType": {
+   "name": "StaffOrganisationalRoleType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/organisation/staff/domain/StaffOrganisationalRoleType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"staffOrganisationalRoleType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "PROGRAM_DIRECTOR",
+     "extra": [
+      "\"staffOrganisationalRoleType.programDirector\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "BRANCH_MANAGER",
+     "extra": [
+      "\"staffOrganisationalRoleType.branchManager\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "FIELD_OFFICER_COORDINATOR",
+     "extra": [
+      "\"staffOrganisationalRoleType.coordinator\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "FIELD_OFFICER",
+     "extra": [
+      "\"staffOrganisationalRoleType.fieldAgent\""
+     ]
+    }
+   ]
+  },
+  "RepaymentRescheduleType": {
+   "name": "RepaymentRescheduleType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/organisation/workingdays/domain/RepaymentRescheduleType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"RepaymentRescheduleType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "SAME_DAY",
+     "extra": [
+      "\"RepaymentRescheduleType.same.day\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "MOVE_TO_NEXT_WORKING_DAY",
+     "extra": [
+      "\"RepaymentRescheduleType.move.to.next.working.day\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "MOVE_TO_NEXT_REPAYMENT_MEETING_DAY",
+     "extra": [
+      "\"RepaymentRescheduleType.move.to.next.repayment.meeting.day\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "MOVE_TO_PREVIOUS_WORKING_DAY",
+     "extra": [
+      "\"RepaymentRescheduleType.move.to.previous.working.day\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "MOVE_TO_NEXT_MEETING_DAY",
+     "extra": [
+      "\"RepaymentRescheduleType.move.to.next.meeting.day\""
+     ]
+    }
+   ]
+  },
+  "PortfolioProductType": {
+   "name": "PortfolioProductType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/PortfolioProductType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "LOAN",
+     "extra": [
+      "\"productType.loan\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "SAVING",
+     "extra": [
+      "\"productType.saving\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "CLIENT",
+     "extra": [
+      "\"productType.client\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "PROVISIONING",
+     "extra": [
+      "\"productType.provisioning\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "SHARES",
+     "extra": [
+      "\"productType.shares\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "WORKING_CAPITAL_LOAN",
+     "extra": [
+      "\"productType.workingCapitalLoan\""
+     ]
+    }
+   ]
+  },
+  "TransactionEntryType": {
+   "name": "TransactionEntryType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/TransactionEntryType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "CREDIT",
+     "extra": [
+      "\"transactionEntryType.credit\"",
+      "\"Credit transaction\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "DEBIT",
+     "extra": [
+      "\"transactionEntryType.debit\"",
+      "\"Debit transaction\""
+     ]
+    }
+   ]
+  },
+  "PortfolioAccountType": {
+   "name": "PortfolioAccountType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/account/PortfolioAccountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"accountType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "LOAN",
+     "extra": [
+      "\"accountType.loan\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "SAVINGS",
+     "extra": [
+      "\"accountType.savings\""
+     ]
+    }
+   ]
+  },
+  "AccountType": {
+   "name": "AccountType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/accountdetails/domain/AccountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"accountType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "INDIVIDUAL",
+     "extra": [
+      "\"accountType.individual\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "GROUP",
+     "extra": [
+      "\"accountType.group\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "JLG",
+     "extra": [
+      "\"accountType.jlg\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "GLIM",
+     "extra": [
+      "\"accountType.glim\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "GSIM",
+     "extra": [
+      "\"accountType.gsim\""
+     ]
+    }
+   ]
+  },
+  "CalendarSupportedParameters": {
+   "name": "CalendarSupportedParameters",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/CalendarConstants.java",
+   "nested_in": "CalendarConstants",
+   "entries": [
+    {
+     "code": "id",
+     "name": "CALENDAR_ID",
+     "extra": []
+    },
+    {
+     "code": "entityType",
+     "name": "ENTITY_TYPE",
+     "extra": []
+    },
+    {
+     "code": "entityId",
+     "name": "ENTITY_ID",
+     "extra": []
+    },
+    {
+     "code": "title",
+     "name": "TITLE",
+     "extra": []
+    },
+    {
+     "code": "description",
+     "name": "DESCRIPTION",
+     "extra": []
+    },
+    {
+     "code": "location",
+     "name": "LOCATION",
+     "extra": []
+    },
+    {
+     "code": "startDate",
+     "name": "START_DATE",
+     "extra": []
+    },
+    {
+     "code": "endDate",
+     "name": "END_DATE",
+     "extra": []
+    },
+    {
+     "code": "createdDate",
+     "name": "CREATED_DATE",
+     "extra": []
+    },
+    {
+     "code": "duration",
+     "name": "DURATION",
+     "extra": []
+    },
+    {
+     "code": "typeId",
+     "name": "TYPE_ID",
+     "extra": []
+    },
+    {
+     "code": "repeating",
+     "name": "REPEATING",
+     "extra": []
+    },
+    {
+     "code": "remindById",
+     "name": "REMIND_BY_ID",
+     "extra": []
+    },
+    {
+     "code": "firstReminder",
+     "name": "FIRST_REMINDER",
+     "extra": []
+    },
+    {
+     "code": "secondReminder",
+     "name": "SECOND_REMINDER",
+     "extra": []
+    },
+    {
+     "code": "locale",
+     "name": "LOCALE",
+     "extra": []
+    },
+    {
+     "code": "dateFormat",
+     "name": "DATE_FORMAT",
+     "extra": []
+    },
+    {
+     "code": "frequency",
+     "name": "FREQUENCY",
+     "extra": []
+    },
+    {
+     "code": "interval",
+     "name": "INTERVAL",
+     "extra": []
+    },
+    {
+     "code": "repeatsOnDay",
+     "name": "REPEATS_ON_DAY",
+     "extra": []
+    },
+    {
+     "code": "reschedulebasedOnMeetingDates",
+     "name": "RESCHEDULE_BASED_ON_MEETING_DATES",
+     "extra": []
+    },
+    {
+     "code": "presentMeetingDate",
+     "name": "PRESENT_MEETING_DATE",
+     "extra": []
+    },
+    {
+     "code": "newMeetingDate",
+     "name": "NEW_MEETING_DATE",
+     "extra": []
+    },
+    {
+     "code": "meetingtime",
+     "name": "MEETING_TIME",
+     "extra": []
+    },
+    {
+     "code": "timeFormat",
+     "name": "TIME_FORMAT",
+     "extra": []
+    },
+    {
+     "code": "repeatsOnNthDayOfMonth",
+     "name": "REPEATS_ON_NTH_DAY_OF_MONTH",
+     "extra": []
+    },
+    {
+     "code": "repeatsOnLastWeekdayOfMonth",
+     "name": "REPEATS_ON_LAST_WEEKDAY_OF_MONTH",
+     "extra": []
+    },
+    {
+     "code": "repeatsOnDayOfMonth",
+     "name": "REPEATS_ON_DAY_OF_MONTH",
+     "extra": []
+    }
+   ]
+  },
+  "CalendarEntityType": {
+   "name": "CalendarEntityType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/CalendarEntityType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"calendarEntityType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "CLIENTS",
+     "extra": [
+      "\"calendarEntityType.clients\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "GROUPS",
+     "extra": [
+      "\"calendarEntityType.groups\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "LOANS",
+     "extra": [
+      "\"calendarEntityType.loans\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "CENTERS",
+     "extra": [
+      "\"calendarEntityType.centers\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "SAVINGS",
+     "extra": [
+      "\"calendarEntityType.savings\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "LOAN_RECALCULATION_REST_DETAIL",
+     "extra": [
+      "\"calendarEntityType.loan.recalculation.rest.detail\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "LOAN_RECALCULATION_COMPOUNDING_DETAIL",
+     "extra": [
+      "\"calendarEntityType.loan.recalculation.compounding.detail\""
+     ]
+    }
+   ]
+  },
+  "CalendarFrequencyType": {
+   "name": "CalendarFrequencyType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/CalendarFrequencyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"calendarFrequencyType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DAILY",
+     "extra": [
+      "\"calendarFrequencyType.daily\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "WEEKLY",
+     "extra": [
+      "\"calendarFrequencyType.weekly\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "MONTHLY",
+     "extra": [
+      "\"calendarFrequencyType.monthly\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "YEARLY",
+     "extra": [
+      "\"calendarFrequencyType.yearly\""
+     ]
+    }
+   ]
+  },
+  "CalendarRemindBy": {
+   "name": "CalendarRemindBy",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/CalendarRemindBy.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "SMS",
+     "extra": [
+      "\"calendarRemindBy.sms\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "EMAIL",
+     "extra": [
+      "\"calendarRemindBy.email\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "SYSTEMALERT",
+     "extra": [
+      "\"calendarRemindBy.systemalert\""
+     ]
+    }
+   ]
+  },
+  "CalendarType": {
+   "name": "CalendarType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/CalendarType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "COLLECTION",
+     "extra": [
+      "\"calendarType.collection\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TRAINING",
+     "extra": [
+      "\"calendarType.training\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "AUDIT",
+     "extra": [
+      "\"calendarType.audit\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "GENERAL",
+     "extra": [
+      "\"calendarType.general\""
+     ]
+    }
+   ]
+  },
+  "CalendarWeekDaysType": {
+   "name": "CalendarWeekDaysType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/CalendarWeekDaysType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"calendarWeekDaysType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "MO",
+     "extra": [
+      "\"calendarWeekDaysType.monday\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TU",
+     "extra": [
+      "\"calendarWeekDaysType.tuesday\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "WE",
+     "extra": [
+      "\"calendarWeekDaysType.wednesday\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "TH",
+     "extra": [
+      "\"calendarWeekDaysType.thursday\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "FR",
+     "extra": [
+      "\"calendarWeekDaysType.friday\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "SA",
+     "extra": [
+      "\"calendarWeekDaysType.saturday\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "SU",
+     "extra": [
+      "\"calendarWeekDaysType.sunday\""
+     ]
+    }
+   ]
+  },
+  "DayNameEnum": {
+   "name": "DayNameEnum",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/service/CalendarUtils.java",
+   "nested_in": "CalendarUtils",
+   "entries": [
+    {
+     "code": 1,
+     "name": "MO",
+     "extra": [
+      "\"Monday\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TU",
+     "extra": [
+      "\"Tuesday\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "WE",
+     "extra": [
+      "\"Wednesday\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "TH",
+     "extra": [
+      "\"Thursday\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "FR",
+     "extra": [
+      "\"Friday\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "SA",
+     "extra": [
+      "\"Saturday\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "SU",
+     "extra": [
+      "\"Sunday\""
+     ]
+    }
+   ]
+  },
+  "NthDayNameEnum": {
+   "name": "NthDayNameEnum",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/service/CalendarUtils.java",
+   "nested_in": "CalendarUtils",
+   "entries": [
+    {
+     "code": 1,
+     "name": "ONE",
+     "extra": [
+      "\"First\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TWO",
+     "extra": [
+      "\"Second\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "THREE",
+     "extra": [
+      "\"Third\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "FOUR",
+     "extra": [
+      "\"Fourth\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "FIVE",
+     "extra": [
+      "\"Fifth\""
+     ]
+    },
+    {
+     "code": -1,
+     "name": "LAST",
+     "extra": [
+      "\"Last\""
+     ]
+    },
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"Invalid\""
+     ]
+    }
+   ]
+  },
+  "ChargeTimeType": {
+   "name": "ChargeTimeType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/charge/domain/ChargeTimeType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"chargeTimeType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DISBURSEMENT",
+     "extra": [
+      "\"chargeTimeType.disbursement\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "SPECIFIED_DUE_DATE",
+     "extra": [
+      "\"chargeTimeType.specifiedDueDate\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "SAVINGS_ACTIVATION",
+     "extra": [
+      "\"chargeTimeType.savingsActivation\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "SAVINGS_CLOSURE",
+     "extra": [
+      "\"chargeTimeType.savingsClosure\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "WITHDRAWAL_FEE",
+     "extra": [
+      "\"chargeTimeType.withdrawalFee\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "ANNUAL_FEE",
+     "extra": [
+      "\"chargeTimeType.annualFee\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "MONTHLY_FEE",
+     "extra": [
+      "\"chargeTimeType.monthlyFee\""
+     ]
+    },
+    {
+     "code": 8,
+     "name": "INSTALMENT_FEE",
+     "extra": [
+      "\"chargeTimeType.instalmentFee\""
+     ]
+    },
+    {
+     "code": 9,
+     "name": "OVERDUE_INSTALLMENT",
+     "extra": [
+      "\"chargeTimeType.overdueInstallment\""
+     ]
+    },
+    {
+     "code": 10,
+     "name": "OVERDRAFT_FEE",
+     "extra": [
+      "\"chargeTimeType.overdraftFee\""
+     ]
+    },
+    {
+     "code": 11,
+     "name": "WEEKLY_FEE",
+     "extra": [
+      "\"chargeTimeType.weeklyFee\""
+     ]
+    },
+    {
+     "code": 12,
+     "name": "TRANCHE_DISBURSEMENT",
+     "extra": [
+      "\"chargeTimeType.tranchedisbursement\""
+     ]
+    },
+    {
+     "code": 13,
+     "name": "SHAREACCOUNT_ACTIVATION",
+     "extra": [
+      "\"chargeTimeType.activation\""
+     ]
+    },
+    {
+     "code": 14,
+     "name": "SHARE_PURCHASE",
+     "extra": [
+      "\"chargeTimeType.sharespurchase\""
+     ]
+    },
+    {
+     "code": 15,
+     "name": "SHARE_REDEEM",
+     "extra": [
+      "\"chargeTimeType.sharesredeem\""
+     ]
+    },
+    {
+     "code": 16,
+     "name": "SAVINGS_NOACTIVITY_FEE",
+     "extra": [
+      "\"chargeTimeType.savingsNoActivityFee\""
+     ]
+    }
+   ]
+  },
+  "ClientIdentifierStatus": {
+   "name": "ClientIdentifierStatus",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/ClientIdentifierStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 100,
+     "name": "INACTIVE",
+     "extra": [
+      "\"clientIdentifierStatusType.inactive\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "ACTIVE",
+     "extra": [
+      "\"clientIdentifierStatusType.active\""
+     ]
+    },
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"clientIdentifierStatusType.invalid\""
+     ]
+    }
+   ]
+  },
+  "ClientStatus": {
+   "name": "ClientStatus",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/ClientStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"clientStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "PENDING",
+     "extra": [
+      "\"clientStatusType.pending\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ACTIVE",
+     "extra": [
+      "\"clientStatusType.active\""
+     ]
+    },
+    {
+     "code": 303,
+     "name": "TRANSFER_IN_PROGRESS",
+     "extra": [
+      "\"clientStatusType.transfer.in.progress\""
+     ]
+    },
+    {
+     "code": 304,
+     "name": "TRANSFER_ON_HOLD",
+     "extra": [
+      "\"clientStatusType.transfer.on.hold\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "CLOSED",
+     "extra": [
+      "\"clientStatusType.closed\""
+     ]
+    },
+    {
+     "code": 700,
+     "name": "REJECTED",
+     "extra": [
+      "\"clientStatusType.rejected\""
+     ]
+    },
+    {
+     "code": 800,
+     "name": "WITHDRAWN",
+     "extra": [
+      "\"clientStatusType.withdraw\""
+     ]
+    }
+   ]
+  },
+  "LegalForm": {
+   "name": "LegalForm",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/LegalForm.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "PERSON",
+     "extra": [
+      "\"legalFormType.person\"",
+      "\"Person\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "ENTITY",
+     "extra": [
+      "\"legalFormType.entity\"",
+      "\"Entity\""
+     ]
+    }
+   ]
+  },
+  "ConditionType": {
+   "name": "ConditionType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/ConditionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"ConditionType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "LESSTHAN",
+     "extra": [
+      "\"ConditionType.lessthan\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "EQUAL",
+     "extra": [
+      "\"ConditionType.equal\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "GREATERTHAN",
+     "extra": [
+      "\"ConditionType.greaterthan\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "NOT_EQUAL",
+     "extra": [
+      "\"ConditionType.notequal\""
+     ]
+    }
+   ]
+  },
+  "DayOfWeekType": {
+   "name": "DayOfWeekType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/DayOfWeekType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "DayOfWeek.MONDAY.getValue()",
+     "name": "MONDAY",
+     "extra": [
+      "\"weekDayType.monday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.TUESDAY.getValue()",
+     "name": "TUESDAY",
+     "extra": [
+      "\"weekDayType.tuesday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.WEDNESDAY.getValue()",
+     "name": "WEDNESDAY",
+     "extra": [
+      "\"weekDayType.wednesday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.THURSDAY.getValue()",
+     "name": "THURSDAY",
+     "extra": [
+      "\"weekDayType.thursday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.FRIDAY.getValue()",
+     "name": "FRIDAY",
+     "extra": [
+      "\"weekDayType.friday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.SATURDAY.getValue()",
+     "name": "SATURDAY",
+     "extra": [
+      "\"weekDayType.saturday\""
+     ]
+    },
+    {
+     "code": "DayOfWeek.SUNDAY.getValue()",
+     "name": "SUNDAY",
+     "extra": [
+      "\"weekDayType.sunday\""
+     ]
+    },
+    {
+     "code": "0",
+     "name": "INVALID",
+     "extra": [
+      "\"weekDayType.invalid\""
+     ]
+    }
+   ]
+  },
+  "DaysInMonthType": {
+   "name": "DaysInMonthType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/DaysInMonthType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"DaysInMonthType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "ACTUAL",
+     "extra": [
+      "\"DaysInMonthType.actual\""
+     ]
+    },
+    {
+     "code": 30,
+     "name": "DAYS_30",
+     "extra": [
+      "\"DaysInMonthType.days360\""
+     ]
+    }
+   ]
+  },
+  "DaysInYearCustomStrategyType": {
+   "name": "DaysInYearCustomStrategyType",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/DaysInYearCustomStrategyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "DaysInYearCustomStrategyType.fullLeapYear",
+     "name": "FULL_LEAP_YEAR",
+     "extra": [
+      "\"Full Leap Year\""
+     ]
+    },
+    {
+     "code": "DaysInYearCustomStrategyType.feb29PeriodOnly",
+     "name": "FEB_29_PERIOD_ONLY",
+     "extra": [
+      "\"Feb 29 Period Only\""
+     ]
+    }
+   ]
+  },
+  "DaysInYearType": {
+   "name": "DaysInYearType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/DaysInYearType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"DaysInYearType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "ACTUAL",
+     "extra": [
+      "\"DaysInYearType.actual\""
+     ]
+    },
+    {
+     "code": 360,
+     "name": "DAYS_360",
+     "extra": [
+      "\"DaysInYearType.days360\""
+     ]
+    },
+    {
+     "code": 364,
+     "name": "DAYS_364",
+     "extra": [
+      "\"DaysInYearType.days364\""
+     ]
+    },
+    {
+     "code": 365,
+     "name": "DAYS_365",
+     "extra": [
+      "\"DaysInYearType.days365\""
+     ]
+    }
+   ]
+  },
+  "NthDayType": {
+   "name": "NthDayType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/NthDayType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "ONE",
+     "extra": [
+      "\"nthDayType.one\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TWO",
+     "extra": [
+      "\"nthDayType.two\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "THREE",
+     "extra": [
+      "\"nthDayType.three\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "FOUR",
+     "extra": [
+      "\"nthDayType.four\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "FIVE",
+     "extra": [
+      "\"nthDayType.five\""
+     ]
+    },
+    {
+     "code": -1,
+     "name": "LAST",
+     "extra": [
+      "\"nthDayType.last\""
+     ]
+    },
+    {
+     "code": -2,
+     "name": "ONDAY",
+     "extra": [
+      "\"nthDayType.onday\""
+     ]
+    },
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"nthDayType.invalid\""
+     ]
+    }
+   ]
+  },
+  "PeriodFrequencyType": {
+   "name": "PeriodFrequencyType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/common/domain/PeriodFrequencyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "DAYS",
+     "extra": [
+      "\"periodFrequencyType.days\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "WEEKS",
+     "extra": [
+      "\"periodFrequencyType.weeks\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "MONTHS",
+     "extra": [
+      "\"periodFrequencyType.months\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "YEARS",
+     "extra": [
+      "\"periodFrequencyType.years\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "WHOLE_TERM",
+     "extra": [
+      "\"periodFrequencyType.whole_term\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "INVALID",
+     "extra": [
+      "\"periodFrequencyType.invalid\""
+     ]
+    }
+   ]
+  },
+  "DelinquencyBucketType": {
+   "name": "DelinquencyBucketType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyBucketType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "1L",
+     "name": "REGULAR",
+     "extra": [
+      "\"bucketType.regular\"",
+      "\"Reqular Loan Product\""
+     ]
+    },
+    {
+     "code": "2L",
+     "name": "WORKING_CAPITAL",
+     "extra": [
+      "\"bucketType.workingCapital\"",
+      "\"Working Capital Loan Product\""
+     ]
+    }
+   ]
+  },
+  "DelinquencyFrequencyType": {
+   "name": "DelinquencyFrequencyType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyFrequencyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "0L",
+     "name": "DAYS",
+     "extra": [
+      "\"delinquencyFrequencyType.days\"",
+      "\"Days frequency\""
+     ]
+    },
+    {
+     "code": "1L",
+     "name": "WEEKS",
+     "extra": [
+      "\"delinquencyFrequencyType.weeks\"",
+      "\"Week frequency\""
+     ]
+    },
+    {
+     "code": "2L",
+     "name": "MONTHS",
+     "extra": [
+      "\"delinquencyFrequencyType.months\"",
+      "\"Month frequency\""
+     ]
+    },
+    {
+     "code": "3L",
+     "name": "YEARS",
+     "extra": [
+      "\"delinquencyFrequencyType.years\"",
+      "\"Year frequency\""
+     ]
+    }
+   ]
+  },
+  "DelinquencyMinimumPaymentType": {
+   "name": "DelinquencyMinimumPaymentType",
+   "kind": "mixed",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyMinimumPaymentType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "1L",
+     "name": "PERCENTAGE",
+     "extra": [
+      "\"delinquencyMinimumPayment.percentage\"",
+      "\"Percentage payment type\""
+     ]
+    },
+    {
+     "code": "2L",
+     "name": "FLAT",
+     "extra": [
+      "\"delinquencyMinimumPayment.flat\"",
+      "\"Flat payment type\""
+     ]
+    }
+   ]
+  },
+  "GroupingTypeStatus": {
+   "name": "GroupingTypeStatus",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/group/domain/GroupingTypeStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"groupingStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "PENDING",
+     "extra": [
+      "\"groupingStatusType.pending\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ACTIVE",
+     "extra": [
+      "\"groupingStatusType.active\""
+     ]
+    },
+    {
+     "code": 303,
+     "name": "TRANSFER_IN_PROGRESS",
+     "extra": [
+      "\"clientStatusType.transfer.in.progress\""
+     ]
+    },
+    {
+     "code": 304,
+     "name": "TRANSFER_ON_HOLD",
+     "extra": [
+      "\"clientStatusType.transfer.on.hold\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "CLOSED",
+     "extra": [
+      "\"groupingStatusType.closed\""
+     ]
+    }
+   ]
+  },
+  "LoanStatus": {
+   "name": "LoanStatus",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "SUBMITTED_AND_PENDING_APPROVAL",
+     "extra": [
+      "\"loanStatusType.submitted.and.pending.approval\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "APPROVED",
+     "extra": [
+      "\"loanStatusType.approved\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ACTIVE",
+     "extra": [
+      "\"loanStatusType.active\""
+     ]
+    },
+    {
+     "code": 303,
+     "name": "TRANSFER_IN_PROGRESS",
+     "extra": [
+      "\"loanStatusType.transfer.in.progress\""
+     ]
+    },
+    {
+     "code": 304,
+     "name": "TRANSFER_ON_HOLD",
+     "extra": [
+      "\"loanStatusType.transfer.on.hold\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "WITHDRAWN_BY_CLIENT",
+     "extra": [
+      "\"loanStatusType.withdrawn.by.client\""
+     ]
+    },
+    {
+     "code": 500,
+     "name": "REJECTED",
+     "extra": [
+      "\"loanStatusType.rejected\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "CLOSED_OBLIGATIONS_MET",
+     "extra": [
+      "\"loanStatusType.closed.obligations.met\""
+     ]
+    },
+    {
+     "code": 601,
+     "name": "CLOSED_WRITTEN_OFF",
+     "extra": [
+      "\"loanStatusType.closed.written.off\""
+     ]
+    },
+    {
+     "code": 602,
+     "name": "CLOSED_RESCHEDULE_OUTSTANDING_AMOUNT",
+     "extra": [
+      "\"loanStatusType.closed.reschedule.outstanding.amount\""
+     ]
+    },
+    {
+     "code": 700,
+     "name": "OVERPAID",
+     "extra": [
+      "\"loanStatusType.overpaid\""
+     ]
+    }
+   ]
+  },
+  "NoteType": {
+   "name": "NoteType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/note/domain/NoteType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 100,
+     "name": "CLIENT",
+     "extra": [
+      "\"noteType.client\"",
+      "\"clients\"",
+      "\"Client note\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "LOAN",
+     "extra": [
+      "\"noteType.loan\"",
+      "\"loans\"",
+      "\"Loan note\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "LOAN_TRANSACTION",
+     "extra": [
+      "\"noteType.loan.transaction\"",
+      "\"loanTransactions\"",
+      "\"Loan transaction note\""
+     ]
+    },
+    {
+     "code": 500,
+     "name": "SAVING_ACCOUNT",
+     "extra": [
+      "\"noteType.saving\"",
+      "\"savings\"",
+      "\" account note\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "GROUP",
+     "extra": [
+      "\"noteType.group\"",
+      "\"groups\"",
+      "\"Group note\""
+     ]
+    },
+    {
+     "code": 700,
+     "name": "SHARE_ACCOUNT",
+     "extra": [
+      "\"noteType.shares\"",
+      "\"accounts/share\"",
+      "\"Share account note\""
+     ]
+    },
+    {
+     "code": 800,
+     "name": "SAVINGS_TRANSACTION",
+     "extra": [
+      "\"noteType.savings.transaction\"",
+      "\"savingsTransactions\"",
+      "\"Savings transaction note\""
+     ]
+    }
+   ]
+  },
+  "RateAppliesTo": {
+   "name": "RateAppliesTo",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/rate/domain/RateAppliesTo.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"rateAppliesTo.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "LOAN",
+     "extra": [
+      "\"rateAppliesTo.loan\""
+     ]
+    }
+   ]
+  },
+  "DepositAccountOnClosureType": {
+   "name": "DepositAccountOnClosureType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/DepositAccountOnClosureType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"depositAccountClosureType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "WITHDRAW_DEPOSIT",
+     "extra": [
+      "\"depositAccountClosureType.withdrawDeposit\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "TRANSFER_TO_SAVINGS",
+     "extra": [
+      "\"depositAccountClosureType.transferToSavings\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "REINVEST_PRINCIPAL_AND_INTEREST",
+     "extra": [
+      "\"depositAccountClosureType.reinvestPrincipalAndInterest\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "REINVEST_PRINCIPAL_ONLY",
+     "extra": [
+      "\"depositAccountClosureType.reinvestPrincipalOnly\""
+     ]
+    }
+   ]
+  },
+  "DepositAccountOnHoldTransactionType": {
+   "name": "DepositAccountOnHoldTransactionType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/DepositAccountOnHoldTransactionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"deposutAccountOnHoldTransactionType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "HOLD",
+     "extra": [
+      "\"deposutAccountOnHoldTransactionType.hold\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "RELEASE",
+     "extra": [
+      "\"deposutAccountOnHoldTransactionType.release\""
+     ]
+    }
+   ]
+  },
+  "DepositAccountType": {
+   "name": "DepositAccountType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/DepositAccountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"depositAccountType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "SAVINGS_DEPOSIT",
+     "extra": [
+      "\"depositAccountType.savingsDeposit\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "FIXED_DEPOSIT",
+     "extra": [
+      "\"depositAccountType.fixedDeposit\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "RECURRING_DEPOSIT",
+     "extra": [
+      "\"depositAccountType.recurringDeposit\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "CURRENT_DEPOSIT",
+     "extra": [
+      "\"depositAccountType.currentDeposit\""
+     ]
+    }
+   ]
+  },
+  "PreClosurePenalInterestOnType": {
+   "name": "PreClosurePenalInterestOnType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/PreClosurePenalInterestOnType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"preClosurePenalInterestOnType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "WHOLE_TERM",
+     "extra": [
+      "\"preClosurePenalInterestOnType.wholeTerm\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TILL_PREMATURE_WITHDRAWAL",
+     "extra": [
+      "\"preClosurePenalInterestOnType.tillPrematureWithdrawal\""
+     ]
+    }
+   ]
+  },
+  "RecurringDepositType": {
+   "name": "RecurringDepositType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/RecurringDepositType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"recurringDepositType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "VOLUNTARY",
+     "extra": [
+      "\"recurringDepositType.voluntary\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "MANDATORY",
+     "extra": [
+      "\"recurringDepositType.mandatory\""
+     ]
+    }
+   ]
+  },
+  "SavingsAccountTransactionType": {
+   "name": "SavingsAccountTransactionType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsAccountTransactionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsAccountTransactionType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DEPOSIT",
+     "extra": [
+      "\"savingsAccountTransactionType.deposit\"",
+      "TransactionEntryType.CREDIT"
+     ]
+    },
+    {
+     "code": 2,
+     "name": "WITHDRAWAL",
+     "extra": [
+      "\"savingsAccountTransactionType.withdrawal\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_POSTING",
+     "extra": [
+      "\"savingsAccountTransactionType.interestPosting\"",
+      "TransactionEntryType.CREDIT"
+     ]
+    },
+    {
+     "code": 4,
+     "name": "WITHDRAWAL_FEE",
+     "extra": [
+      "\"savingsAccountTransactionType.withdrawalFee\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 5,
+     "name": "ANNUAL_FEE",
+     "extra": [
+      "\"savingsAccountTransactionType.annualFee\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 6,
+     "name": "WAIVE_CHARGES",
+     "extra": [
+      "\"savingsAccountTransactionType.waiveCharge\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "PAY_CHARGE",
+     "extra": [
+      "\"savingsAccountTransactionType.payCharge\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 8,
+     "name": "DIVIDEND_PAYOUT",
+     "extra": [
+      "\"savingsAccountTransactionType.dividendPayout\"",
+      "TransactionEntryType.CREDIT"
+     ]
+    },
+    {
+     "code": 10,
+     "name": "ACCRUAL",
+     "extra": [
+      "\"savingsAccountTransactionType.accrual\""
+     ]
+    },
+    {
+     "code": 12,
+     "name": "INITIATE_TRANSFER",
+     "extra": [
+      "\"savingsAccountTransactionType.initiateTransfer\""
+     ]
+    },
+    {
+     "code": 13,
+     "name": "APPROVE_TRANSFER",
+     "extra": [
+      "\"savingsAccountTransactionType.approveTransfer\""
+     ]
+    },
+    {
+     "code": 14,
+     "name": "WITHDRAW_TRANSFER",
+     "extra": [
+      "\"savingsAccountTransactionType.withdrawTransfer\""
+     ]
+    },
+    {
+     "code": 15,
+     "name": "REJECT_TRANSFER",
+     "extra": [
+      "\"savingsAccountTransactionType.rejectTransfer\""
+     ]
+    },
+    {
+     "code": 16,
+     "name": "WRITTEN_OFF",
+     "extra": [
+      "\"savingsAccountTransactionType.writtenoff\""
+     ]
+    },
+    {
+     "code": 17,
+     "name": "OVERDRAFT_INTEREST",
+     "extra": [
+      "\"savingsAccountTransactionType.overdraftInterest\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 18,
+     "name": "WITHHOLD_TAX",
+     "extra": [
+      "\"savingsAccountTransactionType.withholdTax\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 19,
+     "name": "ESCHEAT",
+     "extra": [
+      "\"savingsAccountTransactionType.escheat\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 20,
+     "name": "AMOUNT_HOLD",
+     "extra": [
+      "\"savingsAccountTransactionType.onHold\"",
+      "TransactionEntryType.DEBIT"
+     ]
+    },
+    {
+     "code": 21,
+     "name": "AMOUNT_RELEASE",
+     "extra": [
+      "\"savingsAccountTransactionType.release\"",
+      "TransactionEntryType.CREDIT"
+     ]
+    }
+   ]
+  },
+  "SavingsCompoundingInterestPeriodType": {
+   "name": "SavingsCompoundingInterestPeriodType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsCompoundingInterestPeriodType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DAILY",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.daily\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "MONTHLY",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.monthly\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "QUATERLY",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.quarterly\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "BI_ANNUAL",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.biannual\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "ANNUAL",
+     "extra": [
+      "\"savingsCompoundingInterestPeriodType.annual\""
+     ]
+    }
+   ]
+  },
+  "SavingsInterestCalculationDaysInYearType": {
+   "name": "SavingsInterestCalculationDaysInYearType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsInterestCalculationDaysInYearType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsInterestCalculationDaysInYearType.invalid\""
+     ]
+    },
+    {
+     "code": 360,
+     "name": "DAYS_360",
+     "extra": [
+      "\"savingsInterestCalculationDaysInYearType.days360\""
+     ]
+    },
+    {
+     "code": 365,
+     "name": "DAYS_365",
+     "extra": [
+      "\"savingsInterestCalculationDaysInYearType.days365\""
+     ]
+    }
+   ]
+  },
+  "SavingsInterestCalculationType": {
+   "name": "SavingsInterestCalculationType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsInterestCalculationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsInterestCalculationType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DAILY_BALANCE",
+     "extra": [
+      "\"savingsInterestCalculationType.dailybalance\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "AVERAGE_DAILY_BALANCE",
+     "extra": [
+      "\"savingsInterestCalculationType.averagedailybalance\""
+     ]
+    }
+   ]
+  },
+  "SavingsPeriodFrequencyType": {
+   "name": "SavingsPeriodFrequencyType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsPeriodFrequencyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "DAYS",
+     "extra": [
+      "\"savingsPeriodFrequencyType.days\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "WEEKS",
+     "extra": [
+      "\"savingsPeriodFrequencyType.weeks\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "MONTHS",
+     "extra": [
+      "\"savingsPeriodFrequencyType.months\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "YEARS",
+     "extra": [
+      "\"savingsPeriodFrequencyType.years\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsPeriodFrequencyType.invalid\""
+     ]
+    }
+   ]
+  },
+  "SavingsPostingInterestPeriodType": {
+   "name": "SavingsPostingInterestPeriodType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsPostingInterestPeriodType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DAILY",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.daily\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "MONTHLY",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.monthly\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "QUATERLY",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.quarterly\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "BIANNUAL",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.biannual\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "ANNUAL",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.annual\""
+     ]
+    },
+    {
+     "code": 8,
+     "name": "ANNIVERSARY_MONTHLY",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.anniversaryMonthly\""
+     ]
+    },
+    {
+     "code": 9,
+     "name": "ANNIVERSARY_QUARTERLY",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.anniversaryQuarterly\""
+     ]
+    },
+    {
+     "code": 10,
+     "name": "ANNIVERSARY_BIANNUAL",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.anniversaryBiAnnual\""
+     ]
+    },
+    {
+     "code": 11,
+     "name": "ANNIVERSARY_ANNUAL",
+     "extra": [
+      "\"savingsPostingInterestPeriodType.anniversaryAnnual\""
+     ]
+    }
+   ]
+  },
+  "SavingsWithdrawalFeesType": {
+   "name": "SavingsWithdrawalFeesType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/SavingsWithdrawalFeesType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsWithdrawalFeesType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "FLAT",
+     "extra": [
+      "\"savingsWithdrawalFeesType.flat\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "PERCENT_OF_AMOUNT",
+     "extra": [
+      "\"savingsWithdrawalFeesType.percent.of.amount\""
+     ]
+    }
+   ]
+  },
+  "SavingsAccountStatusType": {
+   "name": "SavingsAccountStatusType",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountStatusType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"savingsAccountStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "SUBMITTED_AND_PENDING_APPROVAL",
+     "extra": [
+      "\"savingsAccountStatusType.submitted.and.pending.approval\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "APPROVED",
+     "extra": [
+      "\"savingsAccountStatusType.approved\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ACTIVE",
+     "extra": [
+      "\"savingsAccountStatusType.active\""
+     ]
+    },
+    {
+     "code": 303,
+     "name": "TRANSFER_IN_PROGRESS",
+     "extra": [
+      "\"savingsAccountStatusType.transfer.in.progress\""
+     ]
+    },
+    {
+     "code": 304,
+     "name": "TRANSFER_ON_HOLD",
+     "extra": [
+      "\"savingsAccountStatusType.transfer.on.hold\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "WITHDRAWN_BY_APPLICANT",
+     "extra": [
+      "\"savingsAccountStatusType.withdrawn.by.applicant\""
+     ]
+    },
+    {
+     "code": 500,
+     "name": "REJECTED",
+     "extra": [
+      "\"savingsAccountStatusType.rejected\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "CLOSED",
+     "extra": [
+      "\"savingsAccountStatusType.closed\""
+     ]
+    },
+    {
+     "code": 700,
+     "name": "PRE_MATURE_CLOSURE",
+     "extra": [
+      "\"savingsAccountStatusType.pre.mature.closure\""
+     ]
+    },
+    {
+     "code": 800,
+     "name": "MATURED",
+     "extra": [
+      "\"savingsAccountStatusType.matured\""
+     ]
+    }
+   ]
+  },
+  "SavingsAccountSubStatusEnum": {
+   "name": "SavingsAccountSubStatusEnum",
+   "kind": "int_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountSubStatusEnum.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "NONE",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.none\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "INACTIVE",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.inactive\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "DORMANT",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.dormant\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "ESCHEAT",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.escheat\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "BLOCK",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.block\""
+     ]
+    },
+    {
+     "code": 500,
+     "name": "BLOCK_CREDIT",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.blockCredit\""
+     ]
+    },
+    {
+     "code": 600,
+     "name": "BLOCK_DEBIT",
+     "extra": [
+      "\"SavingsAccountSubStatusEnum.blockDebit\""
+     ]
+    }
+   ]
+  },
+  "SearchResponseParameters": {
+   "name": "SearchResponseParameters",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/search/SearchConstants.java",
+   "nested_in": "SearchConstants",
+   "entries": [
+    {
+     "code": "entityId",
+     "name": "ENTITY_ID",
+     "extra": []
+    },
+    {
+     "code": "entityAccountNo",
+     "name": "ENTITY_ACCOUNT_NO",
+     "extra": []
+    },
+    {
+     "code": "entityExternalId",
+     "name": "ENTITY_EXTERNAL_ID",
+     "extra": []
+    },
+    {
+     "code": "entityName",
+     "name": "ENTITY_NAME",
+     "extra": []
+    },
+    {
+     "code": "entityType",
+     "name": "ENTITY_TYPE",
+     "extra": []
+    },
+    {
+     "code": "parentId",
+     "name": "PARENT_ID",
+     "extra": []
+    },
+    {
+     "code": "parentName",
+     "name": "PARENT_NAME",
+     "extra": []
+    },
+    {
+     "code": "entityMobileNo",
+     "name": "ENTITY_MOBILE_NO",
+     "extra": []
+    },
+    {
+     "code": "entityStatus",
+     "name": "ENTITY_STATUS",
+     "extra": []
+    }
+   ]
+  },
+  "SearchSupportedParameters": {
+   "name": "SearchSupportedParameters",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/search/SearchConstants.java",
+   "nested_in": "SearchConstants",
+   "entries": [
+    {
+     "code": "query",
+     "name": "QUERY",
+     "extra": []
+    },
+    {
+     "code": "resource",
+     "name": "RESOURCE",
+     "extra": []
+    },
+    {
+     "code": "exactMatch",
+     "name": "EXACTMATCH",
+     "extra": []
+    }
+   ]
+  },
+  "SearchSupportedResources": {
+   "name": "SearchSupportedResources",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/search/SearchConstants.java",
+   "nested_in": "SearchConstants",
+   "entries": [
+    {
+     "code": "clients",
+     "name": "CLIENTS",
+     "extra": []
+    },
+    {
+     "code": "groups",
+     "name": "GROUPS",
+     "extra": []
+    },
+    {
+     "code": "loans",
+     "name": "LOANS",
+     "extra": []
+    },
+    {
+     "code": "savings",
+     "name": "SAVINGS",
+     "extra": []
+    },
+    {
+     "code": "shares",
+     "name": "SHARES",
+     "extra": []
+    },
+    {
+     "code": "clientIdentifiers",
+     "name": "CLIENTIDENTIFIERS",
+     "extra": []
+    }
+   ]
+  },
+  "SearchLoanDate": {
+   "name": "SearchLoanDate",
+   "kind": "string_code",
+   "file": "fineract-core/src/main/java/org/apache/fineract/portfolio/search/SearchConstants.java",
+   "nested_in": "SearchConstants",
+   "entries": [
+    {
+     "code": "approvalDate",
+     "name": "APPROVAL_DATE",
+     "extra": []
+    },
+    {
+     "code": "createdDate",
+     "name": "CREATED_DATE",
+     "extra": []
+    },
+    {
+     "code": "disbursalDate",
+     "name": "DISBURSAL_DATE",
+     "extra": []
+    }
+   ]
+  },
+  "CollateralJSONinputParams": {
+   "name": "CollateralJSONinputParams",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/collateral/api/CollateralApiConstants.java",
+   "nested_in": "CollateralApiConstants",
+   "entries": [
+    {
+     "code": "loanId",
+     "name": "LOAN_ID",
+     "extra": []
+    },
+    {
+     "code": "collateralId",
+     "name": "COLLATERAL_ID",
+     "extra": []
+    },
+    {
+     "code": "collateralTypeId",
+     "name": "COLLATERAL_TYPE_ID",
+     "extra": []
+    },
+    {
+     "code": "value",
+     "name": "VALUE",
+     "extra": []
+    },
+    {
+     "code": "description",
+     "name": "DESCRIPTION",
+     "extra": []
+    }
+   ]
+  },
+  "CollateralManagementJsonInputParams": {
+   "name": "CollateralManagementJsonInputParams",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/collateralmanagement/api/CollateralManagementJsonInputParams.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "name",
+     "name": "NAME",
+     "extra": []
+    },
+    {
+     "code": "quality",
+     "name": "QUALITY",
+     "extra": []
+    },
+    {
+     "code": "basePrice",
+     "name": "BASE_PRICE",
+     "extra": []
+    },
+    {
+     "code": "unitType",
+     "name": "UNIT_TYPE",
+     "extra": []
+    },
+    {
+     "code": "pctToBase",
+     "name": "PCT_TO_BASE",
+     "extra": []
+    },
+    {
+     "code": "currency",
+     "name": "CURRENCY",
+     "extra": []
+    },
+    {
+     "code": "COLLATERAL_PRODUCT",
+     "name": "COLLATERAL_PRODUCT_READ_PERMISSION",
+     "extra": []
+    },
+    {
+     "code": "CLIENT_COLLATERAL_PRODUCT",
+     "name": "CLIENT_COLLATERAL_PRODUCT_READ_PERMISSION",
+     "extra": []
+    },
+    {
+     "code": "quantity",
+     "name": "QUANTITY",
+     "extra": []
+    },
+    {
+     "code": "totalCollateralValue",
+     "name": "TOTAL_COLLATERAL_VALUE",
+     "extra": []
+    }
+   ]
+  },
+  "DelinquencyAction": {
+   "name": "DelinquencyAction",
+   "kind": "no_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyAction.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "PAUSE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "RESUME",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "RESCHEDULE",
+     "extra": []
+    }
+   ]
+  },
+  "TransactionType": {
+   "name": "TransactionType",
+   "kind": "no_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/api/LoanTransactionApiConstants.java",
+   "nested_in": "LoanTransactionApiConstants",
+   "entries": [
+    {
+     "code": null,
+     "name": "disbursement",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "repayment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "waiver",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "repaymentAtDisbursement",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "writeOff",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "markedForRescheduling",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "recoveryRepayment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "waiveCharges",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "accrual",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "initiateTransfer",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "approveTransfer",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "withdrawTransfer",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "rejectTransfer",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "refund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "chargePayment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "incomePosting",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "creditBalanceRefund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "merchantIssuedRefund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "payoutRefund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "goodwillCredit",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "chargeRefund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "chargeback",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "chargeAdjustment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "chargeOff",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "downPayment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "reAge",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "reAmortize",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "interestPaymentWaiver",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "accrualActivity",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "interestRefund",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "accrualAdjustment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "capitalizedIncome",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "capitalizedIncomeAmortization",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "capitalizedIncomeAdjustment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "contractTermination",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "capitalizedIncomeAmortizationAdjustment",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "buyDownFeeAmortization",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "buyDownFeeAmortizationAdjustment",
+     "extra": []
+    }
+   ]
+  },
+  "AmortizationType": {
+   "name": "AmortizationType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/AmortizationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "amortizationTransaction.type.amortization",
+     "name": "AM",
+     "extra": [
+      "\"Amortization\""
+     ]
+    },
+    {
+     "code": "amortizationTransaction.type.amortizationAdjustment",
+     "name": "AM_ADJ",
+     "extra": [
+      "\"Amortization Adjustment\""
+     ]
+    }
+   ]
+  },
+  "LoanBuyDownFeeCalculationType": {
+   "name": "LoanBuyDownFeeCalculationType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanBuyDownFeeCalculationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "loanBuyDownFeeCalculationType.flat",
+     "name": "FLAT",
+     "extra": [
+      "\"Flat\""
+     ]
+    }
+   ]
+  },
+  "LoanBuyDownFeeIncomeType": {
+   "name": "LoanBuyDownFeeIncomeType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanBuyDownFeeIncomeType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "buyDownFee.incomeType.fee",
+     "name": "FEE",
+     "extra": [
+      "\"Fee\""
+     ]
+    },
+    {
+     "code": "buyDownFee.incomeType.interest",
+     "name": "INTEREST",
+     "extra": [
+      "\"Interest\""
+     ]
+    }
+   ]
+  },
+  "LoanBuyDownFeeStrategy": {
+   "name": "LoanBuyDownFeeStrategy",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanBuyDownFeeStrategy.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "buyDownFee.strategy.equalAmortization",
+     "name": "EQUAL_AMORTIZATION",
+     "extra": [
+      "\"Equal amortization\""
+     ]
+    }
+   ]
+  },
+  "LoanCapitalizedIncomeCalculationType": {
+   "name": "LoanCapitalizedIncomeCalculationType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCapitalizedIncomeCalculationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "loanCapitalizedIncomeCalculationType.flat",
+     "name": "FLAT",
+     "extra": [
+      "\"Flat\""
+     ]
+    }
+   ]
+  },
+  "LoanCapitalizedIncomeStrategy": {
+   "name": "LoanCapitalizedIncomeStrategy",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCapitalizedIncomeStrategy.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "capitalizedIncome.strategy.equalAmortization",
+     "name": "EQUAL_AMORTIZATION",
+     "extra": [
+      "\"Equal amortization\""
+     ]
+    }
+   ]
+  },
+  "LoanCapitalizedIncomeType": {
+   "name": "LoanCapitalizedIncomeType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCapitalizedIncomeType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "capitalizedIncome.incomeType.fee",
+     "name": "FEE",
+     "extra": [
+      "\"Fee\""
+     ]
+    },
+    {
+     "code": "capitalizedIncome.incomeType.interest",
+     "name": "INTEREST",
+     "extra": [
+      "\"Interest\""
+     ]
+    }
+   ]
+  },
+  "LoanChargeOffBehaviour": {
+   "name": "LoanChargeOffBehaviour",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanChargeOffBehaviour.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "chargeOffBehaviour.regular",
+     "name": "REGULAR",
+     "extra": [
+      "\"Regular\""
+     ]
+    },
+    {
+     "code": "chargeOffBehaviour.zeroInterest",
+     "name": "ZERO_INTEREST",
+     "extra": [
+      "\"Zero interest after charge-off\""
+     ]
+    },
+    {
+     "code": "chargeOffBehaviour.accelerateMaturity",
+     "name": "ACCELERATE_MATURITY",
+     "extra": [
+      "\"Accelerate maturity to charge-off date\""
+     ]
+    }
+   ]
+  },
+  "LoanEvent": {
+   "name": "LoanEvent",
+   "kind": "no_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanEvent.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "LOAN_CREATED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_REJECTED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_WITHDRAWN",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_APPROVED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_APPROVAL_UNDO",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_RECOVERY_PAYMENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_DISBURSED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_DISBURSAL_UNDO",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_DISBURSAL_UNDO_LAST",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_REPAYMENT_OR_WAIVER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "REPAID_IN_FULL",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "WRITE_OFF_OUTSTANDING",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "WRITE_OFF_OUTSTANDING_UNDO",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_RESCHEDULE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "INTERST_REBATE_OWED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_OVERPAYMENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CHARGE_PAYMENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CLOSED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_EDIT_MULTI_DISBURSE_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_REFUND",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_FORECLOSURE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_ADJUST_TRANSACTION",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_INITIATE_TRANSFER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_REJECT_TRANSFER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_WITHDRAW_TRANSFER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_COMPLETE_TRANSFER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CREDIT_BALANCE_REFUND",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CHARGEBACK",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CHARGE_ADDED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CHARGE_ADJUSTMENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LOAN_CONTRACT_TERMINATION",
+     "extra": []
+    }
+   ]
+  },
+  "LoanOverAppliedCalculationType": {
+   "name": "LoanOverAppliedCalculationType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanOverAppliedCalculationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "flat",
+     "name": "FLAT",
+     "extra": []
+    },
+    {
+     "code": "percentage",
+     "name": "PERCENTAGE",
+     "extra": []
+    }
+   ]
+  },
+  "PaymentAction": {
+   "name": "PaymentAction",
+   "kind": "no_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanRepaymentScheduleInstallment.java",
+   "nested_in": "LoanRepaymentScheduleInstallment",
+   "entries": [
+    {
+     "code": null,
+     "name": "PAY",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "UNPAY",
+     "extra": []
+    }
+   ]
+  },
+  "LoanSubStatus": {
+   "name": "LoanSubStatus",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanSubStatus.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanSubStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "FORECLOSED",
+     "extra": [
+      "\"loanSubStatusType.foreclosed\""
+     ]
+    },
+    {
+     "code": 900,
+     "name": "CONTRACT_TERMINATION",
+     "extra": [
+      "\"loanSubStatusType.contractTermination\""
+     ]
+    }
+   ]
+  },
+  "LoanTermVariationType": {
+   "name": "LoanTermVariationType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTermVariationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanTermType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "EMI_AMOUNT",
+     "extra": [
+      "\"loanTermType.emiAmount\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "INTEREST_RATE",
+     "extra": [
+      "\"loanTermType.interestRate\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "PRINCIPAL_AMOUNT",
+     "extra": [
+      "\"loanTermType.principalAmount\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "DUE_DATE",
+     "extra": [
+      "\"loanTermType.dueDate\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "INSERT_INSTALLMENT",
+     "extra": [
+      "\"loanTermType.insertInstallment\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "DELETE_INSTALLMENT",
+     "extra": [
+      "\"loanTermType.deleteInstallment\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "GRACE_ON_INTEREST",
+     "extra": [
+      "\"loanTermType.graceOnInterest\""
+     ]
+    },
+    {
+     "code": 8,
+     "name": "GRACE_ON_PRINCIPAL",
+     "extra": [
+      "\"loanTermType.graceOnPrincipal\""
+     ]
+    },
+    {
+     "code": 9,
+     "name": "EXTEND_REPAYMENT_PERIOD",
+     "extra": [
+      "\"loanTermType.extendRepaymentPeriod\""
+     ]
+    },
+    {
+     "code": 10,
+     "name": "INTEREST_RATE_FROM_INSTALLMENT",
+     "extra": [
+      "\"loanTermType.interestRateFromInstallment\""
+     ]
+    },
+    {
+     "code": 11,
+     "name": "INTEREST_PAUSE",
+     "extra": [
+      "\"loanTermType.interestPause\""
+     ]
+    }
+   ]
+  },
+  "LoanTransactionRelationTypeEnum": {
+   "name": "LoanTransactionRelationTypeEnum",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransactionRelationTypeEnum.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanTransactionType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "CHARGEBACK",
+     "extra": [
+      "\"loanTransactionRelationType.chargeback\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "CHARGE_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionRelationType.chargeAdjustment\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "REPLAYED",
+     "extra": [
+      "\"loanTransactionRelationType.replayed\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "RELATED",
+     "extra": [
+      "\"loanTransactionRelationType.related\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionRelationType.adjustment\""
+     ]
+    }
+   ]
+  },
+  "LoanTransactionType": {
+   "name": "LoanTransactionType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransactionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanTransactionType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DISBURSEMENT",
+     "extra": [
+      "\"loanTransactionType.disbursement\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "REPAYMENT",
+     "extra": [
+      "\"loanTransactionType.repayment\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "CONTRA",
+     "extra": [
+      "\"loanTransactionType.contra\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "WAIVE_INTEREST",
+     "extra": [
+      "\"loanTransactionType.waiver\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "REPAYMENT_AT_DISBURSEMENT",
+     "extra": [
+      "\"loanTransactionType.repaymentAtDisbursement\""
+     ]
+    },
+    {
+     "code": 6,
+     "name": "WRITEOFF",
+     "extra": [
+      "\"loanTransactionType.writeOff\""
+     ]
+    },
+    {
+     "code": 7,
+     "name": "MARKED_FOR_RESCHEDULING",
+     "extra": [
+      "\"loanTransactionType.marked.for.rescheduling\""
+     ]
+    },
+    {
+     "code": 8,
+     "name": "RECOVERY_REPAYMENT",
+     "extra": [
+      "\"loanTransactionType.recoveryRepayment\""
+     ]
+    },
+    {
+     "code": 9,
+     "name": "WAIVE_CHARGES",
+     "extra": [
+      "\"loanTransactionType.waiveCharges\""
+     ]
+    },
+    {
+     "code": 10,
+     "name": "ACCRUAL",
+     "extra": [
+      "\"loanTransactionType.accrual\""
+     ]
+    },
+    {
+     "code": 12,
+     "name": "INITIATE_TRANSFER",
+     "extra": [
+      "\"loanTransactionType.initiateTransfer\""
+     ]
+    },
+    {
+     "code": 13,
+     "name": "APPROVE_TRANSFER",
+     "extra": [
+      "\"loanTransactionType.approveTransfer\""
+     ]
+    },
+    {
+     "code": 14,
+     "name": "WITHDRAW_TRANSFER",
+     "extra": [
+      "\"loanTransactionType.withdrawTransfer\""
+     ]
+    },
+    {
+     "code": 15,
+     "name": "REJECT_TRANSFER",
+     "extra": [
+      "\"loanTransactionType.rejectTransfer\""
+     ]
+    },
+    {
+     "code": 16,
+     "name": "REFUND",
+     "extra": [
+      "\"loanTransactionType.refund\""
+     ]
+    },
+    {
+     "code": 17,
+     "name": "CHARGE_PAYMENT",
+     "extra": [
+      "\"loanTransactionType.chargePayment\""
+     ]
+    },
+    {
+     "code": 18,
+     "name": "REFUND_FOR_ACTIVE_LOAN",
+     "extra": [
+      "\"loanTransactionType.refund\""
+     ]
+    },
+    {
+     "code": 19,
+     "name": "INCOME_POSTING",
+     "extra": [
+      "\"loanTransactionType.incomePosting\""
+     ]
+    },
+    {
+     "code": 20,
+     "name": "CREDIT_BALANCE_REFUND",
+     "extra": [
+      "\"loanTransactionType.creditBalanceRefund\""
+     ]
+    },
+    {
+     "code": 21,
+     "name": "MERCHANT_ISSUED_REFUND",
+     "extra": [
+      "\"loanTransactionType.merchantIssuedRefund\""
+     ]
+    },
+    {
+     "code": 22,
+     "name": "PAYOUT_REFUND",
+     "extra": [
+      "\"loanTransactionType.payoutRefund\""
+     ]
+    },
+    {
+     "code": 23,
+     "name": "GOODWILL_CREDIT",
+     "extra": [
+      "\"loanTransactionType.goodwillCredit\""
+     ]
+    },
+    {
+     "code": 24,
+     "name": "CHARGE_REFUND",
+     "extra": [
+      "\"loanTransactionType.chargeRefund\""
+     ]
+    },
+    {
+     "code": 25,
+     "name": "CHARGEBACK",
+     "extra": [
+      "\"loanTransactionType.chargeback\""
+     ]
+    },
+    {
+     "code": 26,
+     "name": "CHARGE_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.chargeAdjustment\""
+     ]
+    },
+    {
+     "code": 27,
+     "name": "CHARGE_OFF",
+     "extra": [
+      "\"loanTransactionType.chargeOff\""
+     ]
+    },
+    {
+     "code": 28,
+     "name": "DOWN_PAYMENT",
+     "extra": [
+      "\"loanTransactionType.downPayment\""
+     ]
+    },
+    {
+     "code": 29,
+     "name": "REAGE",
+     "extra": [
+      "\"loanTransactionType.reAge\""
+     ]
+    },
+    {
+     "code": 30,
+     "name": "REAMORTIZE",
+     "extra": [
+      "\"loanTransactionType.reAmortize\""
+     ]
+    },
+    {
+     "code": 31,
+     "name": "INTEREST_PAYMENT_WAIVER",
+     "extra": [
+      "\"loanTransactionType.interestPaymentWaiver\""
+     ]
+    },
+    {
+     "code": 32,
+     "name": "ACCRUAL_ACTIVITY",
+     "extra": [
+      "\"loanTransactionType.accrualActivity\""
+     ]
+    },
+    {
+     "code": 33,
+     "name": "INTEREST_REFUND",
+     "extra": [
+      "\"loanTransactionType.interestRefund\""
+     ]
+    },
+    {
+     "code": 34,
+     "name": "ACCRUAL_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.accrualAdjustment\""
+     ]
+    },
+    {
+     "code": 35,
+     "name": "CAPITALIZED_INCOME",
+     "extra": [
+      "\"loanTransactionType.capitalizedIncome\""
+     ]
+    },
+    {
+     "code": 36,
+     "name": "CAPITALIZED_INCOME_AMORTIZATION",
+     "extra": [
+      "\"loanTransactionType.capitalizedIncomeAmortization\""
+     ]
+    },
+    {
+     "code": 37,
+     "name": "CAPITALIZED_INCOME_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.capitalizedIncomeAdjustment\""
+     ]
+    },
+    {
+     "code": 38,
+     "name": "CONTRACT_TERMINATION",
+     "extra": [
+      "\"loanTransactionType.contractTermination\""
+     ]
+    },
+    {
+     "code": 39,
+     "name": "CAPITALIZED_INCOME_AMORTIZATION_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.capitalizedIncomeAmortizationAdjustment\""
+     ]
+    },
+    {
+     "code": 40,
+     "name": "BUY_DOWN_FEE",
+     "extra": [
+      "\"loanTransactionType.buyDownFee\""
+     ]
+    },
+    {
+     "code": 41,
+     "name": "BUY_DOWN_FEE_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.buyDownFeeAdjustment\""
+     ]
+    },
+    {
+     "code": 42,
+     "name": "BUY_DOWN_FEE_AMORTIZATION",
+     "extra": [
+      "\"loanTransactionType.buyDownFeeAmortization\""
+     ]
+    },
+    {
+     "code": 43,
+     "name": "BUY_DOWN_FEE_AMORTIZATION_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.buyDownFeeAmortizationAdjustment\""
+     ]
+    },
+    {
+     "code": 44,
+     "name": "DISCOUNT_FEE",
+     "extra": [
+      "\"loanTransactionType.discountFee\""
+     ]
+    },
+    {
+     "code": 45,
+     "name": "DISCOUNT_FEE_AMORTIZATION",
+     "extra": [
+      "\"loanTransactionType.discountFeeAmortization\""
+     ]
+    },
+    {
+     "code": 46,
+     "name": "DISCOUNT_FEE_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.discountFeeAdjustment\""
+     ]
+    },
+    {
+     "code": 47,
+     "name": "DISCOUNT_FEE_AMORTIZATION_ADJUSTMENT",
+     "extra": [
+      "\"loanTransactionType.discountFeeAmortizationAdjustment\""
+     ]
+    }
+   ]
+  },
+  "LoanReAgeInterestHandlingType": {
+   "name": "LoanReAgeInterestHandlingType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reaging/LoanReAgeInterestHandlingType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "loanReAgeInterestHandlingType.default",
+     "name": "DEFAULT",
+     "extra": [
+      "\"Default\""
+     ]
+    },
+    {
+     "code": "loanReAgeInterestHandlingType.waiveInterest",
+     "name": "WAIVE_INTEREST",
+     "extra": [
+      "\"Waive Interest\""
+     ]
+    },
+    {
+     "code": "loanReAgeInterestHandlingType.equalAmortizationPayableInterest",
+     "name": "EQUAL_AMORTIZATION_PAYABLE_INTEREST",
+     "extra": [
+      "\"Equal Amortization of Outstanding payable Interest\""
+     ]
+    },
+    {
+     "code": "loanReAgeInterestHandlingType.equalAmortizationFullInterest",
+     "name": "EQUAL_AMORTIZATION_FULL_INTEREST",
+     "extra": [
+      "\"Equal Amortization of Outstanding full Interest\""
+     ]
+    }
+   ]
+  },
+  "LoanReAmortizationInterestHandlingType": {
+   "name": "LoanReAmortizationInterestHandlingType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reamortization/LoanReAmortizationInterestHandlingType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "loanReAmortizationInterestHandlingType.default",
+     "name": "DEFAULT",
+     "extra": [
+      "\"Default\""
+     ]
+    },
+    {
+     "code": "loanReAmortizationInterestHandlingType.waiveInterest",
+     "name": "WAIVE_INTEREST",
+     "extra": [
+      "\"Waive Interest\""
+     ]
+    },
+    {
+     "code": "loanReAmortizationInterestHandlingType.equalAmortizationInterestSplit",
+     "name": "EQUAL_AMORTIZATION_INTEREST_SPLIT",
+     "extra": [
+      "\"Equal Amortization Interest Split\""
+     ]
+    }
+   ]
+  },
+  "GuarantorJSONinputParams": {
+   "name": "GuarantorJSONinputParams",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/guarantor/GuarantorConstants.java",
+   "nested_in": "GuarantorConstants",
+   "entries": [
+    {
+     "code": "loanId",
+     "name": "LOAN_ID",
+     "extra": []
+    },
+    {
+     "code": "clientRelationshipTypeId",
+     "name": "CLIENT_RELATIONSHIP_TYPE_ID",
+     "extra": []
+    },
+    {
+     "code": "guarantorTypeId",
+     "name": "GUARANTOR_TYPE_ID",
+     "extra": []
+    },
+    {
+     "code": "entityId",
+     "name": "ENTITY_ID",
+     "extra": []
+    },
+    {
+     "code": "firstname",
+     "name": "FIRSTNAME",
+     "extra": []
+    },
+    {
+     "code": "lastname",
+     "name": "LASTNAME",
+     "extra": []
+    },
+    {
+     "code": "addressLine1",
+     "name": "ADDRESS_LINE_1",
+     "extra": []
+    },
+    {
+     "code": "addressLine2",
+     "name": "ADDRESS_LINE_2",
+     "extra": []
+    },
+    {
+     "code": "city",
+     "name": "CITY",
+     "extra": []
+    },
+    {
+     "code": "state",
+     "name": "STATE",
+     "extra": []
+    },
+    {
+     "code": "zip",
+     "name": "ZIP",
+     "extra": []
+    },
+    {
+     "code": "country",
+     "name": "COUNTRY",
+     "extra": []
+    },
+    {
+     "code": "mobileNumber",
+     "name": "MOBILE_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "housePhoneNumber",
+     "name": "PHONE_NUMBER",
+     "extra": []
+    },
+    {
+     "code": "comment",
+     "name": "COMMENT",
+     "extra": []
+    },
+    {
+     "code": "dob",
+     "name": "DATE_OF_BIRTH",
+     "extra": []
+    },
+    {
+     "code": "amount",
+     "name": "AMOUNT",
+     "extra": []
+    },
+    {
+     "code": "savingsId",
+     "name": "SAVINGS_ID",
+     "extra": []
+    }
+   ]
+  },
+  "GuarantorFundStatusType": {
+   "name": "GuarantorFundStatusType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/guarantor/domain/GuarantorFundStatusType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"guarantorFundStatusType.invalid\""
+     ]
+    },
+    {
+     "code": 100,
+     "name": "ACTIVE",
+     "extra": [
+      "\"guarantorFundStatusType.active\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "COMPLETED",
+     "extra": [
+      "\"guarantorFundStatusType.completed\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "WITHDRAWN",
+     "extra": [
+      "\"guarantorFundStatusType.withdrawn\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "DELETED",
+     "extra": [
+      "\"guarantorFundStatusType.deleted\""
+     ]
+    }
+   ]
+  },
+  "GuarantorType": {
+   "name": "GuarantorType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/guarantor/domain/GuarantorType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "CUSTOMER",
+     "extra": [
+      "\"guarantor.existing.customer\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "STAFF",
+     "extra": [
+      "\"guarantor.staff\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "EXTERNAL",
+     "extra": [
+      "\"guarantor.external\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "GROUP",
+     "extra": [
+      "\"guarantor.existing.group\""
+     ]
+    }
+   ]
+  },
+  "LoanScheduleProcessingType": {
+   "name": "LoanScheduleProcessingType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/loanschedule/domain/LoanScheduleProcessingType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "Horizontal",
+     "name": "HORIZONTAL",
+     "extra": []
+    },
+    {
+     "code": "Vertical",
+     "name": "VERTICAL",
+     "extra": []
+    }
+   ]
+  },
+  "LoanScheduleType": {
+   "name": "LoanScheduleType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/loanschedule/domain/LoanScheduleType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "Cumulative",
+     "name": "CUMULATIVE",
+     "extra": []
+    },
+    {
+     "code": "Progressive",
+     "name": "PROGRESSIVE",
+     "extra": []
+    }
+   ]
+  },
+  "AllocationType": {
+   "name": "AllocationType",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/AllocationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "Penalty",
+     "name": "PENALTY",
+     "extra": []
+    },
+    {
+     "code": "Fee",
+     "name": "FEE",
+     "extra": []
+    },
+    {
+     "code": "Principal",
+     "name": "PRINCIPAL",
+     "extra": []
+    },
+    {
+     "code": "Interest",
+     "name": "INTEREST",
+     "extra": []
+    }
+   ]
+  },
+  "AmortizationMethod": {
+   "name": "AmortizationMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/AmortizationMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "EQUAL_PRINCIPAL",
+     "extra": [
+      "\"amortizationType.equal.principal\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "EQUAL_INSTALLMENTS",
+     "extra": [
+      "\"amortizationType.equal.installments\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "INVALID",
+     "extra": [
+      "\"amortizationType.invalid\""
+     ]
+    }
+   ]
+  },
+  "CreditAllocationTransactionType": {
+   "name": "CreditAllocationTransactionType",
+   "kind": "mixed",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/CreditAllocationTransactionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "LoanTransactionType.CHARGEBACK",
+     "name": "CHARGEBACK",
+     "extra": [
+      "\"Chargeback\""
+     ]
+    }
+   ]
+  },
+  "DueType": {
+   "name": "DueType",
+   "kind": "no_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/DueType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "PAST_DUE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DUE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "IN_ADVANCE",
+     "extra": []
+    }
+   ]
+  },
+  "FutureInstallmentAllocationRule": {
+   "name": "FutureInstallmentAllocationRule",
+   "kind": "string_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/FutureInstallmentAllocationRule.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "Next installment",
+     "name": "NEXT_INSTALLMENT",
+     "extra": []
+    },
+    {
+     "code": "Last installment",
+     "name": "LAST_INSTALLMENT",
+     "extra": []
+    },
+    {
+     "code": "Next/Last installment",
+     "name": "NEXT_LAST_INSTALLMENT",
+     "extra": []
+    },
+    {
+     "code": "Reamortization",
+     "name": "REAMORTIZATION",
+     "extra": []
+    }
+   ]
+  },
+  "InterestCalculationPeriodMethod": {
+   "name": "InterestCalculationPeriodMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/InterestCalculationPeriodMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "DAILY",
+     "extra": [
+      "\"interestCalculationPeriodType.daily\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "SAME_AS_REPAYMENT_PERIOD",
+     "extra": [
+      "\"interestCalculationPeriodType.same.as.repayment.period\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "INVALID",
+     "extra": [
+      "\"interestCalculationPeriodType.invalid\""
+     ]
+    }
+   ]
+  },
+  "InterestMethod": {
+   "name": "InterestMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/InterestMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "DECLINING_BALANCE",
+     "extra": [
+      "\"interestType.declining.balance\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "FLAT",
+     "extra": [
+      "\"interestType.flat\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "INVALID",
+     "extra": [
+      "\"interestType.invalid\""
+     ]
+    }
+   ]
+  },
+  "InterestRecalculationCompoundingMethod": {
+   "name": "InterestRecalculationCompoundingMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/InterestRecalculationCompoundingMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "NONE",
+     "extra": [
+      "\"interestRecalculationCompoundingMethod.none\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "INTEREST",
+     "extra": [
+      "\"interestRecalculationCompoundingMethod.interest\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "FEE",
+     "extra": [
+      "\"interestRecalculationCompoundingMethod.fee\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "INTEREST_AND_FEE",
+     "extra": [
+      "\"interestRecalculationCompoundingMethod.interest.and.fee\""
+     ]
+    }
+   ]
+  },
+  "InterestRecalculationPeriodMethod": {
+   "name": "InterestRecalculationPeriodMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/InterestRecalculationPeriodMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DAILY",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.daily\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "WEEKLY",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.weekly\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "FORTNIGHTLY",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.fortnightly\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "MONTHLY",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.monthly\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "SAME_AS_REPAYMENT_PERIOD",
+     "extra": [
+      "\"interestRecalculationPeriodMethod.same.as.repayment.period\""
+     ]
+    }
+   ]
+  },
+  "LendingStrategy": {
+   "name": "LendingStrategy",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LendingStrategy.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 100,
+     "name": "INDIVIDUAL_LOAN",
+     "extra": [
+      "\"lendingStrategy.individualLoan\"",
+      "\"individualLoan\""
+     ]
+    },
+    {
+     "code": 200,
+     "name": "GROUP_LOAN",
+     "extra": [
+      "\"lendingStrategy.groupLoan\"",
+      "\"groupLoan\""
+     ]
+    },
+    {
+     "code": 300,
+     "name": "JOINT_LIABILITY_LOAN",
+     "extra": [
+      "\"lendingStrategy.joinLiabilityLoan\"",
+      "\"joinLiabilityLoan\""
+     ]
+    },
+    {
+     "code": 400,
+     "name": "LINKED_LOAN",
+     "extra": [
+      "\"lendingStrategy.linkedLoan\"",
+      "\"linkedLoan\""
+     ]
+    },
+    {
+     "code": 900,
+     "name": "INVALID",
+     "extra": [
+      "\"lendingStrategy.invalid\"",
+      "\"invalid\""
+     ]
+    }
+   ]
+  },
+  "LoanPreCloseInterestCalculationStrategy": {
+   "name": "LoanPreCloseInterestCalculationStrategy",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanPreCloseInterestCalculationStrategy.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "NONE",
+     "extra": [
+      "\"loanPreClosureInterestCalculationStrategy.none\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "TILL_PRE_CLOSURE_DATE",
+     "extra": [
+      "\"loanPreClosureInterestCalculationStrategy.tillPreClosureDate\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "TILL_REST_FREQUENCY_DATE",
+     "extra": [
+      "\"loanPreClosureInterestCalculationStrategy.tillRestFrequencyDate\""
+     ]
+    }
+   ]
+  },
+  "LoanProductParamType": {
+   "name": "LoanProductParamType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductParamType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"LoanProductParamType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "PRINCIPAL",
+     "extra": [
+      "\"LoanProductParamType.principal\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "INTERESTRATE",
+     "extra": [
+      "\"LoanProductParamType.interestrate\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "REPAYMENT",
+     "extra": [
+      "\"LoanProductParamType.repayment\""
+     ]
+    }
+   ]
+  },
+  "LoanProductValueConditionType": {
+   "name": "LoanProductValueConditionType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductValueConditionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"LoanProductParamType.invalid\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "EQUAL",
+     "extra": [
+      "\"LoanProductValueConditionType.equal\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "GREATERTHAN",
+     "extra": [
+      "\"LoanProductValueConditionType.greaterThan\""
+     ]
+    }
+   ]
+  },
+  "LoanRescheduleStrategyMethod": {
+   "name": "LoanRescheduleStrategyMethod",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanRescheduleStrategyMethod.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"loanRescheduleStrategyMethod.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "RESCHEDULE_NEXT_REPAYMENTS",
+     "extra": [
+      "\"loanRescheduleStrategyMethod.reschedule.next.repayments\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "REDUCE_NUMBER_OF_INSTALLMENTS",
+     "extra": [
+      "\"loanRescheduleStrategyMethod.reduce.number.of.installments\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "REDUCE_EMI_AMOUNT",
+     "extra": [
+      "\"loanRescheduleStrategyMethod.reduce.emi.amount\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "ADJUST_LAST_UNPAID_PERIOD",
+     "extra": [
+      "\"loanRescheduleStrategyMethod.adjust.last.unpaid.period\""
+     ]
+    }
+   ]
+  },
+  "LoanSupportedInterestRefundTypes": {
+   "name": "LoanSupportedInterestRefundTypes",
+   "kind": "mixed",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanSupportedInterestRefundTypes.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "LoanTransactionType.MERCHANT_ISSUED_REFUND",
+     "name": "MERCHANT_ISSUED_REFUND",
+     "extra": [
+      "\"loanRefundType.merchant_issued_refund\"",
+      "\"Merchant issued refund\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.PAYOUT_REFUND",
+     "name": "PAYOUT_REFUND",
+     "extra": [
+      "\"loanRefundType.payout_refund\"",
+      "\"Payout refund\""
+     ]
+    }
+   ]
+  },
+  "PaymentAllocationTransactionType": {
+   "name": "PaymentAllocationTransactionType",
+   "kind": "mixed",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/PaymentAllocationTransactionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "null",
+     "name": "DEFAULT",
+     "extra": [
+      "\"Default\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.REPAYMENT",
+     "name": "REPAYMENT",
+     "extra": [
+      "\"Repayment\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.DOWN_PAYMENT",
+     "name": "DOWN_PAYMENT",
+     "extra": [
+      "\"Down payment\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.MERCHANT_ISSUED_REFUND",
+     "name": "MERCHANT_ISSUED_REFUND",
+     "extra": [
+      "\"Merchant issued refund\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.PAYOUT_REFUND",
+     "name": "PAYOUT_REFUND",
+     "extra": [
+      "\"Payout refund\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.GOODWILL_CREDIT",
+     "name": "GOODWILL_CREDIT",
+     "extra": [
+      "\"Goodwill credit\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.CHARGE_REFUND",
+     "name": "CHARGE_REFUND",
+     "extra": [
+      "\"Charge refund\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.CHARGE_ADJUSTMENT",
+     "name": "CHARGE_ADJUSTMENT",
+     "extra": [
+      "\"Charge adjustment\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.WAIVE_INTEREST",
+     "name": "WAIVE_INTEREST",
+     "extra": [
+      "\"Waive interest\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.CHARGE_PAYMENT",
+     "name": "CHARGE_PAYMENT",
+     "extra": [
+      "\"Charge payment\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.REFUND_FOR_ACTIVE_LOAN",
+     "name": "REFUND_FOR_ACTIVE_LOAN",
+     "extra": [
+      "\"Refund for active loan\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.INTEREST_PAYMENT_WAIVER",
+     "name": "INTEREST_PAYMENT_WAIVER",
+     "extra": [
+      "\"Interest payment waiver\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.INTEREST_REFUND",
+     "name": "INTEREST_REFUND",
+     "extra": [
+      "\"Interest refund\""
+     ]
+    },
+    {
+     "code": "LoanTransactionType.CAPITALIZED_INCOME_ADJUSTMENT",
+     "name": "CAPITALIZED_INCOME_ADJUSTMENT",
+     "extra": [
+      "\"Capitalized income adjustment\""
+     ]
+    }
+   ]
+  },
+  "PaymentAllocationType": {
+   "name": "PaymentAllocationType",
+   "kind": "mixed",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/PaymentAllocationType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "PAST_DUE",
+     "name": "PAST_DUE_PENALTY",
+     "extra": [
+      "PENALTY",
+      "\"Past due penalty\""
+     ]
+    },
+    {
+     "code": "PAST_DUE",
+     "name": "PAST_DUE_FEE",
+     "extra": [
+      "FEE",
+      "\"Past due fee\""
+     ]
+    },
+    {
+     "code": "PAST_DUE",
+     "name": "PAST_DUE_PRINCIPAL",
+     "extra": [
+      "PRINCIPAL",
+      "\"Past due principal\""
+     ]
+    },
+    {
+     "code": "PAST_DUE",
+     "name": "PAST_DUE_INTEREST",
+     "extra": [
+      "INTEREST",
+      "\"Past due interest\""
+     ]
+    },
+    {
+     "code": "DUE",
+     "name": "DUE_PENALTY",
+     "extra": [
+      "PENALTY",
+      "\"Due penalty\""
+     ]
+    },
+    {
+     "code": "DUE",
+     "name": "DUE_FEE",
+     "extra": [
+      "FEE",
+      "\"Due fee\""
+     ]
+    },
+    {
+     "code": "DUE",
+     "name": "DUE_PRINCIPAL",
+     "extra": [
+      "PRINCIPAL",
+      "\"Due principal\""
+     ]
+    },
+    {
+     "code": "DUE",
+     "name": "DUE_INTEREST",
+     "extra": [
+      "INTEREST",
+      "\"Due interest\""
+     ]
+    },
+    {
+     "code": "IN_ADVANCE",
+     "name": "IN_ADVANCE_PENALTY",
+     "extra": [
+      "PENALTY",
+      "\"In advance penalty\""
+     ]
+    },
+    {
+     "code": "IN_ADVANCE",
+     "name": "IN_ADVANCE_FEE",
+     "extra": [
+      "FEE",
+      "\"In advance fee\""
+     ]
+    },
+    {
+     "code": "IN_ADVANCE",
+     "name": "IN_ADVANCE_PRINCIPAL",
+     "extra": [
+      "PRINCIPAL",
+      "\"In advance principal\""
+     ]
+    },
+    {
+     "code": "IN_ADVANCE",
+     "name": "IN_ADVANCE_INTEREST",
+     "extra": [
+      "INTEREST",
+      "\"In advanced interest\""
+     ]
+    }
+   ]
+  },
+  "RecalculationFrequencyType": {
+   "name": "RecalculationFrequencyType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/RecalculationFrequencyType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"interestRecalculationFrequencyType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "SAME_AS_REPAYMENT_PERIOD",
+     "extra": [
+      "\"interestRecalculationFrequencyType.same.as.repayment.period\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "DAILY",
+     "extra": [
+      "\"interestRecalculationFrequencyType.daily\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "WEEKLY",
+     "extra": [
+      "\"interestRecalculationFrequencyType.weekly\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "MONTHLY",
+     "extra": [
+      "\"interestRecalculationFrequencyType.monthly\""
+     ]
+    }
+   ]
+  },
+  "RepaymentStartDateType": {
+   "name": "RepaymentStartDateType",
+   "kind": "int_code",
+   "file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/RepaymentStartDateType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 0,
+     "name": "INVALID",
+     "extra": [
+      "\"repaymentStartDateType.invalid\""
+     ]
+    },
+    {
+     "code": 1,
+     "name": "DISBURSEMENT_DATE",
+     "extra": [
+      "\"repaymentStartDateType.disbursementDate\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "SUBMITTED_ON_DATE",
+     "extra": [
+      "\"repaymentStartDateType.submittedOnDate\""
+     ]
+    }
+   ]
+  },
+  "SavingsLockOwner": {
+   "name": "SavingsLockOwner",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/cob/savings/SavingsLockOwner.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "SAVINGS_COB_CHUNK_PROCESSING",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SAVINGS_INLINE_COB_PROCESSING",
+     "extra": []
+    }
+   ]
+  },
+  "InteropActionState": {
+   "name": "InteropActionState",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropActionState.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "ACCEPTED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "REJECTED",
+     "extra": []
+    }
+   ]
+  },
+  "InteropAmountType": {
+   "name": "InteropAmountType",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropAmountType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "SEND",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "RECEIVE",
+     "extra": []
+    }
+   ]
+  },
+  "InteropInitiatorType": {
+   "name": "InteropInitiatorType",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropInitiatorType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "CONSUMER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "AGENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "BUSINESS",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "DEVICE",
+     "extra": []
+    }
+   ]
+  },
+  "InteropTransactionRole": {
+   "name": "InteropTransactionRole",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropTransactionRole.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "PAYER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "PAYEE",
+     "extra": []
+    }
+   ]
+  },
+  "InteropTransactionScenario": {
+   "name": "InteropTransactionScenario",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropTransactionScenario.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "DEPOSIT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "WITHDRAWAL",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "TRANSFER",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "PAYMENT",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "REFUND",
+     "extra": []
+    }
+   ]
+  },
+  "InteropTransferActionType": {
+   "name": "InteropTransferActionType",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropTransferActionType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": null,
+     "name": "PREPARE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "CREATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "RELEASE",
+     "extra": []
+    }
+   ]
+  },
+  "SavingsAccountChargeCannotBeWaivedReason": {
+   "name": "SavingsAccountChargeCannotBeWaivedReason",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/charge/exception/SavingsAccountChargeCannotBeWaivedException.java",
+   "nested_in": "SavingsAccountChargeCannotBeWaivedException",
+   "entries": [
+    {
+     "code": null,
+     "name": "ALREADY_PAID",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "ALREADY_WAIVED",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SAVINGS_ACCOUNT_NOT_ACTIVE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "SAVINGS_ACCOUNT_CLOSED",
+     "extra": []
+    }
+   ]
+  },
+  "InterestIncentiveAttributeName": {
+   "name": "InterestIncentiveAttributeName",
+   "kind": "int_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/interestratechart/incentive/InterestIncentiveAttributeName.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "INVALID",
+     "extra": [
+      "\"InterestIncentiveAttributeName.invalid\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "GENDER",
+     "extra": [
+      "\"InterestIncentiveAttributeName.gender\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "AGE",
+     "extra": [
+      "\"InterestIncentiveAttributeName.age\""
+     ]
+    },
+    {
+     "code": 4,
+     "name": "CLIENT_TYPE",
+     "extra": [
+      "\"InterestIncentiveAttributeName.clientType\""
+     ]
+    },
+    {
+     "code": 5,
+     "name": "CLIENT_CLASSIFICATION",
+     "extra": [
+      "\"InterestIncentiveAttributeName.clientClassification\""
+     ]
+    }
+   ]
+  },
+  "InterestIncentiveEntityType": {
+   "name": "InterestIncentiveEntityType",
+   "kind": "int_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/interestratechart/incentive/InterestIncentiveEntityType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "INVALID",
+     "extra": [
+      "\"InterestIncentiveEntityType.invalid\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "CUSTOMER",
+     "extra": [
+      "\"InterestIncentiveEntityType.customer\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "ACCOUNT",
+     "extra": [
+      "\"InterestIncentiveEntityType.account\""
+     ]
+    }
+   ]
+  },
+  "InterestIncentiveType": {
+   "name": "InterestIncentiveType",
+   "kind": "int_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/interestratechart/incentive/InterestIncentiveType.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": 1,
+     "name": "INVALID",
+     "extra": [
+      "\"InterestIncentiveType.invalid\""
+     ]
+    },
+    {
+     "code": 2,
+     "name": "FIXED",
+     "extra": [
+      "\"InterestIncentiveType.fixed\""
+     ]
+    },
+    {
+     "code": 3,
+     "name": "INCENTIVE",
+     "extra": [
+      "\"InterestIncentiveType.incentive\""
+     ]
+    }
+   ]
+  },
+  "SavingsEvent": {
+   "name": "SavingsEvent",
+   "kind": "string_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsEvent.java",
+   "nested_in": null,
+   "entries": [
+    {
+     "code": "application.rejected",
+     "name": "SAVINGS_APPLICATION_REJECTED",
+     "extra": []
+    },
+    {
+     "code": "application.withdrawal",
+     "name": "SAVINGS_APPLICATION_WITHDRAWAL_BY_CUSTOMER",
+     "extra": []
+    },
+    {
+     "code": "application.approval",
+     "name": "SAVINGS_APPLICATION_APPROVED",
+     "extra": []
+    },
+    {
+     "code": "application.approval.undo",
+     "name": "SAVINGS_APPLICATION_APPROVAL_UNDO",
+     "extra": []
+    },
+    {
+     "code": "activate",
+     "name": "SAVINGS_ACTIVATE",
+     "extra": []
+    },
+    {
+     "code": "deposit",
+     "name": "SAVINGS_DEPOSIT",
+     "extra": []
+    },
+    {
+     "code": "withdraw",
+     "name": "SAVINGS_WITHDRAWAL",
+     "extra": []
+    },
+    {
+     "code": "interest.post",
+     "name": "SAVINGS_POST_INTEREST",
+     "extra": []
+    },
+    {
+     "code": "transaction.undo",
+     "name": "SAVINGS_UNDO_TRANSACTION",
+     "extra": []
+    },
+    {
+     "code": "transaction.adjust",
+     "name": "SAVINGS_ADJUST_TRANSACTION",
+     "extra": []
+    },
+    {
+     "code": "charge.apply",
+     "name": "SAVINGS_APPLY_CHARGE",
+     "extra": []
+    },
+    {
+     "code": "charge.waive",
+     "name": "SAVINGS_WAIVE_CHARGE",
+     "extra": []
+    },
+    {
+     "code": "charge.pay",
+     "name": "SAVINGS_PAY_CHARGE",
+     "extra": []
+    },
+    {
+     "code": "account.close",
+     "name": "SAVINGS_CLOSE_ACCOUNT",
+     "extra": []
+    }
+   ]
+  },
+  "PostInterestAsOnExceptionType": {
+   "name": "PostInterestAsOnExceptionType",
+   "kind": "no_code",
+   "file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/exception/PostInterestAsOnDateException.java",
+   "nested_in": "PostInterestAsOnDateException",
+   "entries": [
+    {
+     "code": null,
+     "name": "FUTURE_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "VALID_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "ACTIVATION_DATE",
+     "extra": []
+    },
+    {
+     "code": null,
+     "name": "LAST_TRANSACTION_DATE",
+     "extra": []
+    }
+   ]
+  }
+ }
+}

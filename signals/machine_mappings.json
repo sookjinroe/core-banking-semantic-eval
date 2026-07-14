@@ -1,0 +1,1326 @@
+{
+ "mappings": [
+  {
+   "code_table": "AccountType",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "loan_type_enum",
+   "java_field": "loanType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "AccountType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "account_type_enum",
+   "java_field": "accountType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "AccountingRuleType",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "accounting_type",
+   "java_field": "accountingRule",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "AccountingRuleType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "accounting_type",
+   "java_field": "accountingRule",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  },
+  {
+   "code_table": "AmortizationMethod",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "amortization_method_enum",
+   "java_field": "amortizationMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "AmortizationMethod",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "amortization_method_enum",
+   "java_field": "amortizationMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "AmortizationType",
+   "kind": "string_code",
+   "table": "m_loan_amortization_allocation_mapping",
+   "column": "amortization_type",
+   "java_field": "amortizationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanAmortizationAllocationMapping.java"
+  },
+  {
+   "code_table": "BusinessDateType",
+   "kind": "int_code",
+   "table": "m_business_date",
+   "column": "type",
+   "java_field": "type",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/businessdate/domain/BusinessDate.java"
+  },
+  {
+   "code_table": "CacheType",
+   "kind": "int_code",
+   "table": "c_cache",
+   "column": "cache_type_enum",
+   "java_field": "cacheType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/cache/domain/PlatformCache.java"
+  },
+  {
+   "code_table": "CalendarType",
+   "kind": "int_code",
+   "table": "m_calendar",
+   "column": "calendar_type_enum",
+   "java_field": "typeId",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/calendar/domain/Calendar.java"
+  },
+  {
+   "code_table": "ChargeTimeType",
+   "kind": "int_code",
+   "table": "m_loan_charge",
+   "column": "charge_time_enum",
+   "java_field": "chargeTime",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCharge.java"
+  },
+  {
+   "code_table": "ChargeTimeType",
+   "kind": "int_code",
+   "table": "m_savings_account_charge",
+   "column": "charge_time_enum",
+   "java_field": "chargeTime",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountCharge.java"
+  },
+  {
+   "code_table": "ClientIdentifierStatus",
+   "kind": "int_code",
+   "table": "m_client_identifier",
+   "column": "status",
+   "java_field": "status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/ClientIdentifier.java"
+  },
+  {
+   "code_table": "ClientStatus",
+   "kind": "int_code",
+   "table": "m_client",
+   "column": "status_enum",
+   "java_field": "status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/Client.java"
+  },
+  {
+   "code_table": "CommandProcessingResultType",
+   "kind": "int_code",
+   "table": "m_portfolio_command_source",
+   "column": "status",
+   "java_field": "status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/commands/domain/CommandSource.java"
+  },
+  {
+   "code_table": "CreditAllocationTransactionType",
+   "kind": "mixed",
+   "table": "m_loan_credit_allocation_rule",
+   "column": "transaction_type",
+   "java_field": "transactionType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanCreditAllocationRule.java"
+  },
+  {
+   "code_table": "CreditAllocationTransactionType",
+   "kind": "mixed",
+   "table": "m_loan_product_credit_allocation_rule",
+   "column": "transaction_type",
+   "java_field": "transactionType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductCreditAllocationRule.java"
+  },
+  {
+   "code_table": "DaysInYearCustomStrategyType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "days_in_year_custom_strategy",
+   "java_field": "daysInYearCustomStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "DaysInYearCustomStrategyType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "days_in_year_custom_strategy",
+   "java_field": "daysInYearCustomStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "DelinquencyAction",
+   "kind": "no_code",
+   "table": "m_loan_delinquency_action",
+   "column": "action",
+   "java_field": "action",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/delinquency/domain/LoanDelinquencyAction.java"
+  },
+  {
+   "code_table": "DelinquencyBucketType",
+   "kind": "mixed",
+   "table": "m_delinquency_bucket",
+   "column": "bucket_type",
+   "java_field": "bucketType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyBucket.java"
+  },
+  {
+   "code_table": "DelinquencyFrequencyType",
+   "kind": "mixed",
+   "table": "m_wc_delinquency_configuration",
+   "column": "frequency_type",
+   "java_field": "frequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyMinimumPaymentPeriodAndRule.java"
+  },
+  {
+   "code_table": "DelinquencyMinimumPaymentType",
+   "kind": "mixed",
+   "table": "m_wc_delinquency_configuration",
+   "column": "minimum_payment_type",
+   "java_field": "minimumPaymentType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/delinquency/domain/DelinquencyMinimumPaymentPeriodAndRule.java"
+  },
+  {
+   "code_table": "DepositAccountOnClosureType",
+   "kind": "int_code",
+   "table": "m_deposit_account_term_and_preclosure",
+   "column": "on_account_closure_enum",
+   "java_field": "onAccountClosureType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountTermAndPreClosure.java"
+  },
+  {
+   "code_table": "DepositAccountOnHoldTransactionType",
+   "kind": "int_code",
+   "table": "m_deposit_account_on_hold_transaction",
+   "column": "transaction_type_enum",
+   "java_field": "transactionType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountOnHoldTransaction.java"
+  },
+  {
+   "code_table": "EntityAccountType",
+   "kind": "int_code",
+   "table": "AccountNumberFormatConstants.ACCOUNT_NUMBER_FORMAT_TABLE_NAME",
+   "column": "AccountNumberFormatConstants.ACCOUNT_TYPE_ENUM_COLUMN_NAME",
+   "java_field": "accountTypeEnum",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/accountnumberformat/domain/AccountNumberFormat.java"
+  },
+  {
+   "code_table": "ExternalEventStatus",
+   "kind": "no_code",
+   "table": "m_external_event",
+   "column": "status",
+   "java_field": "status",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/infrastructure/event/external/repository/domain/ExternalEvent.java"
+  },
+  {
+   "code_table": "FutureInstallmentAllocationRule",
+   "kind": "string_code",
+   "table": "m_loan_payment_allocation_rule",
+   "column": "future_installment_allocation_rule",
+   "java_field": "futureInstallmentAllocationRule",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanPaymentAllocationRule.java"
+  },
+  {
+   "code_table": "FutureInstallmentAllocationRule",
+   "kind": "string_code",
+   "table": "m_loan_product_payment_allocation_rule",
+   "column": "future_installment_allocation_rule",
+   "java_field": "futureInstallmentAllocationRule",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductPaymentAllocationRule.java"
+  },
+  {
+   "code_table": "GroupingTypeStatus",
+   "kind": "int_code",
+   "table": "m_group",
+   "column": "status_enum",
+   "java_field": "status",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/group/domain/Group.java"
+  },
+  {
+   "code_table": "HolidayStatusType",
+   "kind": "int_code",
+   "table": "m_holiday",
+   "column": "status_enum",
+   "java_field": "status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/Holiday.java"
+  },
+  {
+   "code_table": "InterestCalculationPeriodMethod",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "interest_calculated_in_period_enum",
+   "java_field": "interestCalculationPeriodMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "InterestCalculationPeriodMethod",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "interest_calculated_in_period_enum",
+   "java_field": "interestCalculationPeriodMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "InterestMethod",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "interest_method_enum",
+   "java_field": "interestMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "InterestMethod",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "interest_method_enum",
+   "java_field": "interestMethod",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "InterestRecalculationCompoundingMethod",
+   "kind": "int_code",
+   "table": "m_loan_recalculation_details",
+   "column": "compound_type_enum",
+   "java_field": "interestRecalculationCompoundingMethod",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "InterestRecalculationCompoundingMethod",
+   "kind": "int_code",
+   "table": "m_product_loan_recalculation_details",
+   "column": "compound_type_enum",
+   "java_field": "interestRecalculationCompoundingMethod",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "InteropIdentifierType",
+   "kind": "string_code",
+   "table": "interop_identifier",
+   "column": "type",
+   "java_field": "type",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/interoperation/domain/InteropIdentifier.java"
+  },
+  {
+   "code_table": "LegalForm",
+   "kind": "int_code",
+   "table": "m_client",
+   "column": "legal_form_enum",
+   "java_field": "legalForm",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/portfolio/client/domain/Client.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeCalculationType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "buy_down_fee_calculation_type",
+   "java_field": "buyDownFeeCalculationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeCalculationType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "buy_down_fee_calculation_type",
+   "java_field": "buyDownFeeCalculationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeIncomeType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "buy_down_fee_income_type",
+   "java_field": "buyDownFeeIncomeType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeIncomeType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "buy_down_fee_income_type",
+   "java_field": "buyDownFeeIncomeType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeStrategy",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "buy_down_fee_strategy",
+   "java_field": "buyDownFeeStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanBuyDownFeeStrategy",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "buy_down_fee_strategy",
+   "java_field": "buyDownFeeStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeCalculationType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "capitalized_income_calculation_type",
+   "java_field": "capitalizedIncomeCalculationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeCalculationType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "capitalized_income_calculation_type",
+   "java_field": "capitalizedIncomeCalculationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeStrategy",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "capitalized_income_strategy",
+   "java_field": "capitalizedIncomeStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeStrategy",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "capitalized_income_strategy",
+   "java_field": "capitalizedIncomeStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "capitalized_income_type",
+   "java_field": "capitalizedIncomeType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanCapitalizedIncomeType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "capitalized_income_type",
+   "java_field": "capitalizedIncomeType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanChargeOffBehaviour",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "charge_off_behaviour",
+   "java_field": "chargeOffBehaviour",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanChargeOffBehaviour",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "charge_off_behaviour",
+   "java_field": "chargeOffBehaviour",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanPreCloseInterestCalculationStrategy",
+   "kind": "int_code",
+   "table": "m_loan_recalculation_details",
+   "column": "pre_close_interest_calculation_strategy",
+   "java_field": "preCloseInterestCalculationStrategy",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "LoanPreCloseInterestCalculationStrategy",
+   "kind": "int_code",
+   "table": "m_product_loan_recalculation_details",
+   "column": "pre_close_interest_calculation_strategy",
+   "java_field": "preCloseInterestCalculationStrategy",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "LoanProductParamType",
+   "kind": "int_code",
+   "table": "m_product_loan_variations_borrower_cycle",
+   "column": "param_type",
+   "java_field": "paramType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductBorrowerCycleVariations.java"
+  },
+  {
+   "code_table": "LoanProductValueConditionType",
+   "kind": "int_code",
+   "table": "m_product_loan_variations_borrower_cycle",
+   "column": "value_condition",
+   "java_field": "valueConditionType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductBorrowerCycleVariations.java"
+  },
+  {
+   "code_table": "LoanReAgeInterestHandlingType",
+   "kind": "string_code",
+   "table": "m_loan_reage_parameter",
+   "column": "interest_handling_type",
+   "java_field": "interestHandlingType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reaging/LoanReAgeParameter.java"
+  },
+  {
+   "code_table": "LoanReAmortizationInterestHandlingType",
+   "kind": "string_code",
+   "table": "m_loan_reamortization_parameter",
+   "column": "interest_handling_type",
+   "java_field": "interestHandlingType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reamortization/LoanReAmortizationParameter.java"
+  },
+  {
+   "code_table": "LoanRescheduleStrategyMethod",
+   "kind": "int_code",
+   "table": "m_loan_recalculation_details",
+   "column": "reschedule_strategy_enum",
+   "java_field": "rescheduleStrategyMethod",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "LoanRescheduleStrategyMethod",
+   "kind": "int_code",
+   "table": "m_product_loan_recalculation_details",
+   "column": "reschedule_strategy_enum",
+   "java_field": "rescheduleStrategyMethod",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "LoanScheduleProcessingType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "loan_schedule_processing_type",
+   "java_field": "loanScheduleProcessingType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanScheduleProcessingType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "loan_schedule_processing_type",
+   "java_field": "loanScheduleProcessingType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanScheduleType",
+   "kind": "string_code",
+   "table": "m_loan",
+   "column": "loan_schedule_type",
+   "java_field": "loanScheduleType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanScheduleType",
+   "kind": "string_code",
+   "table": "m_product_loan",
+   "column": "loan_schedule_type",
+   "java_field": "loanScheduleType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "LoanStatus",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "loan_status_id",
+   "java_field": "loanStatus",
+   "bases": [
+    "convert",
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanStatus",
+   "kind": "int_code",
+   "table": "m_loan_status_change_history",
+   "column": "status_code",
+   "java_field": "status",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanStatusChangeHistory.java"
+  },
+  {
+   "code_table": "LoanSubStatus",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "loan_sub_status_id",
+   "java_field": "loanSubStatus",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "LoanTermVariationType",
+   "kind": "int_code",
+   "table": "m_loan_term_variations",
+   "column": "term_type",
+   "java_field": "termType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTermVariations.java"
+  },
+  {
+   "code_table": "LoanTransactionRelationTypeEnum",
+   "kind": "int_code",
+   "table": "m_loan_transaction_relation",
+   "column": "relation_type_enum",
+   "java_field": "relationType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransactionRelation.java"
+  },
+  {
+   "code_table": "LoanTransactionType",
+   "kind": "int_code",
+   "table": "m_loan_transaction",
+   "column": "transaction_type_enum",
+   "java_field": "typeOf",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanTransaction.java"
+  },
+  {
+   "code_table": "PaymentAllocationTransactionType",
+   "kind": "mixed",
+   "table": "m_loan_payment_allocation_rule",
+   "column": "transaction_type",
+   "java_field": "transactionType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanPaymentAllocationRule.java"
+  },
+  {
+   "code_table": "PaymentAllocationTransactionType",
+   "kind": "mixed",
+   "table": "m_loan_product_payment_allocation_rule",
+   "column": "transaction_type",
+   "java_field": "transactionType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductPaymentAllocationRule.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "interest_period_frequency_enum",
+   "java_field": "interestPeriodFrequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "repayment_period_frequency_enum",
+   "java_field": "repaymentPeriodFrequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "term_period_frequency_enum",
+   "java_field": "termPeriodFrequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan_reage_parameter",
+   "column": "frequency_type",
+   "java_field": "frequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/reaging/LoanReAgeParameter.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "interest_period_frequency_enum",
+   "java_field": "interestPeriodFrequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "repayment_period_frequency_enum",
+   "java_field": "repaymentPeriodFrequencyType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "PeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "lockin_period_frequency_enum",
+   "java_field": "lockinPeriodFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "RecalculationFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan_recalculation_details",
+   "column": "compounding_frequency_type_enum",
+   "java_field": "compoundingFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "RecalculationFrequencyType",
+   "kind": "int_code",
+   "table": "m_loan_recalculation_details",
+   "column": "rest_frequency_type_enum",
+   "java_field": "restFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/LoanInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "RecalculationFrequencyType",
+   "kind": "int_code",
+   "table": "m_product_loan_recalculation_details",
+   "column": "compounding_frequency_type_enum",
+   "java_field": "compoundingFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "RecalculationFrequencyType",
+   "kind": "int_code",
+   "table": "m_product_loan_recalculation_details",
+   "column": "rest_frequency_type_enum",
+   "java_field": "restFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProductInterestRecalculationDetails.java"
+  },
+  {
+   "code_table": "RepaymentStartDateType",
+   "kind": "int_code",
+   "table": "m_loan",
+   "column": "repayment_start_date_type_enum",
+   "java_field": "repaymentStartDateType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanaccount/domain/Loan.java"
+  },
+  {
+   "code_table": "RepaymentStartDateType",
+   "kind": "int_code",
+   "table": "m_product_loan",
+   "column": "repayment_start_date_type_enum",
+   "java_field": "repaymentStartDateType",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-loan/src/main/java/org/apache/fineract/portfolio/loanproduct/domain/LoanProduct.java"
+  },
+  {
+   "code_table": "RescheduleType",
+   "kind": "int_code",
+   "table": "m_holiday",
+   "column": "rescheduling_type",
+   "java_field": "reschedulingType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-core/src/main/java/org/apache/fineract/organisation/holiday/domain/Holiday.java"
+  },
+  {
+   "code_table": "SavingsAccountStatusType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "status_enum",
+   "java_field": "status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsAccountSubStatusEnum",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "sub_status_enum",
+   "java_field": "sub_status",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsAccountTransactionType",
+   "kind": "int_code",
+   "table": "m_savings_account_transaction",
+   "column": "transaction_type_enum",
+   "java_field": "typeOf",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccountTransaction.java"
+  },
+  {
+   "code_table": "SavingsCompoundingInterestPeriodType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "interest_compounding_period_enum",
+   "java_field": "interestCompoundingPeriodType",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsCompoundingInterestPeriodType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "interest_compounding_period_enum",
+   "java_field": "interestCompoundingPeriodType",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  },
+  {
+   "code_table": "SavingsInterestCalculationDaysInYearType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "interest_calculation_days_in_year_type_enum",
+   "java_field": "interestCalculationDaysInYearType",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsInterestCalculationDaysInYearType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "interest_calculation_days_in_year_type_enum",
+   "java_field": "interestCalculationDaysInYearType",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  },
+  {
+   "code_table": "SavingsInterestCalculationType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "interest_calculation_type_enum",
+   "java_field": "interestCalculationType",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsInterestCalculationType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "interest_calculation_type_enum",
+   "java_field": "interestCalculationType",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  },
+  {
+   "code_table": "SavingsLockOwner",
+   "kind": "no_code",
+   "table": "m_savings_account_locks",
+   "column": "lock_owner",
+   "java_field": "lockOwner",
+   "bases": [
+    "typed"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/cob/savings/SavingsAccountLock.java"
+  },
+  {
+   "code_table": "SavingsPeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_deposit_account_term_and_preclosure",
+   "column": "deposit_period_frequency_enum",
+   "java_field": "depositPeriodFrequency",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/DepositAccountTermAndPreClosure.java"
+  },
+  {
+   "code_table": "SavingsPeriodFrequencyType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "lockin_period_frequency_enum",
+   "java_field": "lockinPeriodFrequencyType",
+   "bases": [
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  },
+  {
+   "code_table": "SavingsPostingInterestPeriodType",
+   "kind": "int_code",
+   "table": "m_savings_account",
+   "column": "interest_posting_period_enum",
+   "java_field": "interestPostingPeriodType",
+   "bases": [
+    "javadoc"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsAccount.java"
+  },
+  {
+   "code_table": "SavingsPostingInterestPeriodType",
+   "kind": "int_code",
+   "table": "m_savings_product",
+   "column": "interest_posting_period_enum",
+   "java_field": "interestPostingPeriodType",
+   "bases": [
+    "javadoc",
+    "usage"
+   ],
+   "entity_file": "fineract-savings/src/main/java/org/apache/fineract/portfolio/savings/domain/SavingsProduct.java"
+  }
+ ],
+ "codevalue_fk": [
+  {
+   "table": "acc_gl_account",
+   "column": "tag_id",
+   "java_field": "tagId",
+   "group": null
+  },
+  {
+   "table": "acc_product_mapping",
+   "column": "charge_off_reason_id",
+   "java_field": "chargeOffReason",
+   "group": null
+  },
+  {
+   "table": "acc_product_mapping",
+   "column": "write_off_reason_id",
+   "java_field": "writeOffReason",
+   "group": null
+  },
+  {
+   "table": "acc_product_mapping",
+   "column": "capitalized_income_classification_id",
+   "java_field": "capitalizedIncomeClassification",
+   "group": null
+  },
+  {
+   "table": "acc_product_mapping",
+   "column": "buydown_fee_classification_id",
+   "java_field": "buydownFeeClassification",
+   "group": null
+  },
+  {
+   "table": "acc_rule_tags",
+   "column": "tag_id",
+   "java_field": "tagId",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "sub_status",
+   "java_field": "subStatus",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "gender_cv_id",
+   "java_field": "gender",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "closure_reason_cv_id",
+   "java_field": "closureReason",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "reject_reason_cv_id",
+   "java_field": "rejectionReason",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "withdraw_reason_cv_id",
+   "java_field": "withdrawalReason",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "client_type_cv_id",
+   "java_field": "clientType",
+   "group": null
+  },
+  {
+   "table": "m_client",
+   "column": "client_classification_cv_id",
+   "java_field": "clientClassification",
+   "group": null
+  },
+  {
+   "table": "m_client_identifier",
+   "column": "document_type_id",
+   "java_field": "documentType",
+   "group": null
+  },
+  {
+   "table": "m_loan_collateral",
+   "column": "type_cv_id",
+   "java_field": "type",
+   "group": null
+  },
+  {
+   "table": "m_group",
+   "column": "closure_reason_cv_id",
+   "java_field": "closureReason",
+   "group": null
+  },
+  {
+   "table": "m_group_roles",
+   "column": "role_cv_id",
+   "java_field": "role",
+   "group": null
+  },
+  {
+   "table": "m_loan",
+   "column": "loanpurpose_cv_id",
+   "java_field": "loanPurpose",
+   "group": null
+  },
+  {
+   "table": "m_loan",
+   "column": "writeoff_reason_cv_id",
+   "java_field": "writeOffReason",
+   "group": null
+  },
+  {
+   "table": "m_loan",
+   "column": "charge_off_reason_cv_id",
+   "java_field": "chargeOffReason",
+   "group": null
+  },
+  {
+   "table": "m_loan_transaction",
+   "column": "classification_cv_id",
+   "java_field": "classification",
+   "group": null
+  },
+  {
+   "table": "m_loan_reage_parameter",
+   "column": "reage_reason_code_value_id",
+   "java_field": "reageReason",
+   "group": null
+  },
+  {
+   "table": "m_loan_reamortization_parameter",
+   "column": "reamortization_reason_code_value_id",
+   "java_field": "reamortizationReason",
+   "group": null
+  },
+  {
+   "table": "m_loan_reschedule_request",
+   "column": "reschedule_reason_cv_id",
+   "java_field": "rescheduleReasonCodeValue",
+   "group": null
+  }
+ ],
+ "conflicts": [],
+ "stats": {
+  "mapping_count": 101,
+  "distinct_code_tables": 63,
+  "distinct_columns": 101,
+  "basis_counts": {
+   "typed": 59,
+   "usage": 35,
+   "javadoc": 14,
+   "convert": 1
+  },
+  "codevalue_fk_count": 24,
+  "conflict_count": 0,
+  "unmapped_int_code_count": 40
+ },
+ "unmapped_int_code_tables": [
+  "AccountNumberPrefixType",
+  "AccrualAccountsForLoan",
+  "AccrualAccountsForSavings",
+  "ActionContext",
+  "CalendarEntityType",
+  "CalendarFrequencyType",
+  "CalendarRemindBy",
+  "CalendarWeekDaysType",
+  "CashAccountsForLoan",
+  "CashAccountsForSavings",
+  "CashAccountsForShares",
+  "ConditionType",
+  "DayNameEnum",
+  "DaysInMonthType",
+  "DaysInYearType",
+  "DepositAccountType",
+  "FinancialActivity",
+  "GLAccountType",
+  "GLAccountUsage",
+  "GlobalEntityType",
+  "GuarantorFundStatusType",
+  "GuarantorType",
+  "InterestIncentiveAttributeName",
+  "InterestIncentiveEntityType",
+  "InterestIncentiveType",
+  "InterestRecalculationPeriodMethod",
+  "JournalEntryType",
+  "LendingStrategy",
+  "NoteType",
+  "NthDayNameEnum",
+  "NthDayType",
+  "PortfolioAccountType",
+  "PortfolioProductType",
+  "PreClosurePenalInterestOnType",
+  "RateAppliesTo",
+  "RecurringDepositType",
+  "RepaymentRescheduleType",
+  "SavingsWithdrawalFeesType",
+  "StaffOrganisationalRoleType",
+  "TransactionEntryType"
+ ]
+}
